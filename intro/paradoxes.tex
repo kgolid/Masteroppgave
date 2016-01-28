@@ -1,0 +1,43 @@
+% !TEX root= ../main.tex
+\subsection{Paradoxes}
+\label{sub:Paradoxes}
+A theory in propositional logic is semantically \textit{inconsistent} if it has no model, i.e., there exists no variable assignment making all formulae in the theory true.
+Consider the following example:
+\begin{align}
+  x \wedge \neg x
+\end{align}
+While a sentence like $\neg a \rightarrow b$ can be satisfied by, for instance, letting both $a$ and $b$ be true, no such assignment can be made for the statement above.
+The statement is therefore inconsistent.
+
+A paradox is usually informally defined as something along the lines of \textit{"a statement that can be neither true nor false"}.
+We can immediately note one thing from this intuitive definition:
+Since no paradoxes can be true, all paradoxes are, by definition, inconsistent.
+It does, however, seem like a stretch to say that all inconsistent theories are paradoxes.  Just consider the inconsistent statement, $x \wedge \neg x$ again: this statement simply seem false, and thus not paradoxical.
+
+A different view is that a paradox is a \textit{dialetheia}, a sentence that is \textit{both} true and false\cite{sep-dialetheism}. We will however not spend much time exploring these philosophical differences, being this is not a philosophical paper and it won't change much for our definitions.
+
+The liar sentence is probably the most famous example of a paradox:
+\begin{align}
+  \textit{"This sentence is false"}.
+\end{align}
+If the statement is true, then the statement is false, but if the statement is false, then the statement is true.
+It can thus neither be true nor false.
+Note how the liar sentence is a statement about other statements (in this case itself).
+In order to study these kinds of meta-statements, we need a way to reference other statements within a statement.
+In propositional logic, we can do this by giving statements "names" in the form of adding fresh variables with equivalences to their correponding statements\todo{bad wording?}.
+Consider the left statements below, together with their corresponding named statements on the right.
+\begin{align}
+  a               && x_1 \leftrightarrow a\\
+  a \wedge \neg a && x_2 \leftrightarrow a \wedge \neg a\\
+  a \vee \neg a   && x_3 \leftrightarrow a \vee \neg a
+\end{align}
+By performing this naming-operation on these statements, one is obviously changing their truth value.
+Even though we have one consistent, one inconsistent and one tautological statement on the left, all the statements become consistent after they have been named.
+This is because we in all the cases above can find a truth value for $x_i$ that matches the one of the corresponding statement.
+This will not be the case for paradoxes, so our new named statements will be consistent if and only if they are not paradoxical.
+
+Consider the liar sentence.  It can be written as a named statement in the following way:
+\begin{align}
+  x \leftrightarrow \neg x
+\end{align}
+This statement is obviously inconsistent, making it a paradox by our newly acquired definition.  The study of \textit{discourses} takes this formalization a step further.

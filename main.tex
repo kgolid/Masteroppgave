@@ -1,0 +1,54 @@
+\documentclass[10pt, a4paper]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+
+\usepackage{geometry}
+\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps with pdflatex; use eps in DVI mode
+\usepackage[english, american]{babel}
+\usepackage{csquotes}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{amsthm}
+\usepackage{stmaryrd}
+\usepackage{verbatim}
+\usepackage{enumerate} % Pretty lists with (i),(ii)...
+\usepackage{color}
+\usepackage{ebproof}
+\usepackage{tikz}
+\usepackage[style=ieee, citestyle=numeric, backend=bibtex]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
+
+\addbibresource{reference.bib}
+
+\def\name{Kjetil Midtgarden Golid}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\newcommand{\todo}[1]{\footnote{#1}}
+
+\usetikzlibrary{matrix}
+
+\title{Master WIP}
+\author{\name}
+\date{\today}
+\begin{document}
+	\maketitle
+  \section{Introduction}
+  \label{sec:Introduction}
+  \input{intro/paradoxes}
+  \input{intro/discourses}
+  \input{intro/kernels}
+  \input{intro/discoursegraphs}
+  \subsection{Proofs}
+  \label{sub:Proofs}
+  \input{proofs/cnf_to_gnf}
+	\printbibliography
+\end{document}

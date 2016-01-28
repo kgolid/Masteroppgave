@@ -1,0 +1,16 @@
+% !TEX root= ../main.tex
+\subsection{Discourses}
+\label{sub:Discourses}
+A propositional theory is in \textbf{graph normal form (GNF)} if all its formulae is on the following form:
+\begin{align}
+  x \leftrightarrow \bigwedge_{i \in I_x} \neg y_i
+\end{align}
+such that every variable occurs at most once on the left of $\leftrightarrow$ across all the formulae in the theory.
+
+There is a simple translation from conjunctive normal from to graph normal form (shown in the end of this section), showing that any propositional theory can be written in GNF. By interpreting the variable on the left as the name of the statement on the right, like shown earlier, one can start using GNF to model meta-statements.
+
+We now formally define a \textbf{discourse} to be a theory in GNF, and a \textbf{paradox} to simply be an inconsistent discourse.
+
+We will later show a very handy correspondence between these discourse theories and certain graphs.
+The correspondence lets us decide the satisfiability of a discourse theory (i.e. whether or not it is paradoxical) by looking for certain properties of the corresponding graph.
+In order to express this logic/graph correspondence, we first need to establish some graph terminology.

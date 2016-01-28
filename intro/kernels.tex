@@ -1,0 +1,31 @@
+% !TEX root= ../main.tex
+\subsection{Graphs, Kernels and Solutions}
+\label{sub:Graphs, Kernels and Solution}
+A directed graph is a pair \textbf{G} = $\langle G,N \rangle$ where $G$ is a set of vertices while $N \subseteq G \times G$ is a binary relation representing the edges in \textbf{G}.
+We use the notation $N(x)$ to denote the set of all vertices that are targeted by edges originating in $x$ (successors of $x$).
+Similarly, $N^-(x)$ denotes the set of all vertices with edges targeting $x$ (predecessors of $x$.
+We define these two predicates formally as follows:
+\begin{align}
+  N(x) := \{y \;|\; (x,y) \in N\}\\
+  N^-(x) := \{ y \;|\; (y,x) \in N \}
+\end{align}
+We extend these relations to sets of vertices in the following way:
+\begin{align}
+  N(X) = \bigcup_{x \in X} N(x)\\
+  N^-(X) = \bigcup_{x \in X} N(x)
+\end{align}
+A kernel is a set of vertices $K \subseteq G$ such that:
+\begin{align}
+  G \setminus K = N^-(K)
+\end{align}
+The above equivalence can ble split up into two inclusions to be more easily understood:
+
+$G \setminus K \subseteq N^-(K)$, saying that each vertex outside the kernel, has to have an edge into the kernel (K is dominating).
+
+$N^-(K) \subseteq G \setminus K$, saying that each edge targeting a vertex within the kernel has to come from outside, thus no two vertices in the kernel are connected by an edge (K is independent).
+
+We get the correspondence between the satisfiability of a discourse theory and the existence of kernels from an alternative kernel definition, called a \textit{solution}. This equivalence was shown by Roy Cook in \cite{}.
+
+Given a directed graph \textbf{G} = $\langle G,N \rangle$, an assignment $\alpha \in 2^G$ is a function mapping every vertex in the graph to either 0 or 1.  A solution is an assignment $\alpha$ such that for all $x \in G: \alpha(x) = 1 \iff \alpha(N(x)) = \{ 0 \}$.  In simple words, this means that for any node $x$, if $x$ is assigned to 1, then all its successors has to be assigned to 0, if $x$ is assigned to 0, then there has to exist a node assigned to 1 among its successors.
+
+The 

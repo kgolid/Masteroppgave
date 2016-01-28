@@ -1,0 +1,19 @@
+% !TEX root= ../main.tex
+\subsubsection{Translating CNF to GNF}
+\label{subs:Translating CNF to GNF}
+Since any PL theory can be expressed in CNF, showing that any theory $P$ in CNF can be translated to a theory $R$ in GNF such that $P \Leftrightarrow R$ gives us that any PL theory can be expressed in GNF.
+
+Given any CNF theory $P$, start with an empty theory $R$ and for each formula in $P$, follow the steps below to acquire its corresponding GNF formulae.
+
+\textbf{Step 1:}
+For each negated literal $\neg x_i$ in the formula, replace it with a fresh non-negated variable $x'_i$ and add the following GNF formula to $R$: $x'_i \leftrightarrow \neg x_i$ (unless this has already been done while translating an earlier formula in the theory).
+
+\textbf{Step 2:}
+At this point, no clauses in the formula contain any negated literals.  Now, for each clause $(x_1 \vee x_2 \vee \dots \vee x_n)$ create a fresh variable $y$ and add the following GNF formula to $R$: \[y \leftrightarrow (\neg x_1 \wedge \neg x_2 \wedge \dots \wedge \neg x_n \wedge \neg y)\]
+The combined set of all these acquired formulae will make up the the corresponding theory $R$.  We have only added proper GNF formulae, so $R$ will indeed be a GNF theory.
+
+\textbf{Example: }
+\begin{align}
+  \text{CNF:\quad}& (a \vee b \vee \neg c) \wedge (\neg d \vee e) \wedge f\\
+  \text{GNF:\quad}& c' \leftrightarrow \neg c, d' \leftrightarrow \neg d, y_1 \leftrightarrow (\neg a \wedge \neg b \wedge \neg c'), y_2 \leftrightarrow (\neg d' \wedge \neg e), y_3 \leftrightarrow \neg f
+\end{align}

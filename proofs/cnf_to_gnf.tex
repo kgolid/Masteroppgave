@@ -1,16 +1,19 @@
 % !TEX root= ../main.tex
 \subsubsection{Translating CNF to GNF}
 \label{subs:Translating CNF to GNF}
-Since any PL theory can be expressed in CNF, showing that any theory $P$ in CNF can be translated to a theory $R$ in GNF such that $P \Leftrightarrow R$ gives us that any PL theory can be expressed in GNF.
+Since any PL theory can be expressed in CNF, showing that any theory $P$ in CNF can be translated to a theory $R$ in GNF such that $P \lar R$ gives us that any PL theory can be expressed in GNF.
 
 Given any CNF theory $P$, start with an empty theory $R$ and for each formula in $P$, follow the steps below to acquire its corresponding GNF formulae.
 
 \textbf{Step 1:}
-For each negated literal $\neg x_i$ in the formula, replace it with a fresh non-negated variable $x'_i$ and add the following GNF formula to $R$: $x'_i \leftrightarrow \neg x_i$ (unless this has already been done while translating an earlier formula in the theory).
+For each literal $\neg x_i$ in the formula, introduce a fresh variable $x'_i$ and add the following two GNF formulae to $R$: $x'_i \lar \neg x_i, x_i \lar \neg x'_i,$ (unless this has already been done while translating an earlier formula in the theory).
 
 \textbf{Step 2:}
-At this point, no clauses in the formula contain any negated literals.  Now, for each clause $(x_1 \vee x_2 \vee \dots \vee x_n)$ create a fresh variable $y$ and add the following GNF formula to $R$: \[y \leftrightarrow (\neg x_1 \wedge \neg x_2 \wedge \dots \wedge \neg x_n \wedge \neg y)\]
-The combined set of all these acquired formulae will make up the the corresponding theory $R$.  We have only added proper GNF formulae, so $R$ will indeed be a GNF theory.
+In each clause, replace every negative literal $\neg x_i$ with its corresponding $x'_i$ fom step 1. Every clause does now contain all positive literals.
+For every clause $(x_1 \vee x_2 \vee \dots \vee x_n)$, create a fresh variable $y$ and add the following GNF formula to $R$:
+\[y \lar (\neg x_1 \wedge \neg x_2 \wedge \dots \wedge \neg x_n \wedge \neg y)\]
+The combined set of all these acquired formulae will make up the the corresponding theory $R$.
+We have only added proper GNF formulae and all variables appear to the left in exactly one clause, so $R$ will indeed be a GNF theory.\\
 
 \textbf{Example: }
 \begin{align}

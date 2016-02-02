@@ -50,3 +50,55 @@ Furthermore, since any natural number has infinitely many numbers strictly large
 The corresponding discourse theory of the Yablo graph would -- informally -- be the situation with an infinite number of statements, all saying "Every statement after this statement is false".
 
 We will later show that this graph is indeed without a kernel, but for now we will take Yablo's word \cite{analysis-yablo} for it.
+
+One thing should be mentioned at this point; neither odd cycles nor infinitely branching vertices \textit{entails} that their respective graphs are paradoxical.
+The two following graphs illustrate this point:
+\begin{align}
+  \begin{aligned}
+    \begin{tikzpicture}
+      [
+      point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
+      collection/.style={thick,rectangle,draw,inner sep=0pt,minimum height=14mm, minimum width= 9mm}
+      ]
+      \node (0) at (0,1) [point,label=above:$x_0$] {};
+      \node (1) at (0,0) [point,label=below:$x_1$] {};
+      \node (2) at (1,0) [point,label=below:$x_2$] {};
+      \draw [-latex] (0) to (1);
+      \draw [-latex] (1) to (2);
+      \draw [-latex, bend left] (2) to (0);
+      \draw [-latex, bend left] (0) to (2);
+    \end{tikzpicture}
+  \end{aligned}
+\end{align}
+The above graph contains an odd cycle, but the singleton set $\{x_2\}$ is a kernel.
+\begin{align}
+  \begin{aligned}
+    \begin{tikzpicture}
+      [
+      point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
+      collection/.style={thick,rectangle,draw,inner sep=0pt,minimum height=14mm, minimum width= 9mm}
+      ]
+      \node (0) at (1,2) [point,label=above:$x_0$] {};
+      \node (1) at (3,1) [point,label=below:$x_1$] {};
+      \node (2) at (2,1) [point,label=below:$x_2$] {};
+      \node (3) at (1,1) [point,label=below:$x_3$] {};
+      \node (4) at (0,1) [] {$\dots$};
+      \draw [-latex] (0) to (1);
+      \draw [-latex] (0) to (2);
+      \draw [-latex] (0) to (3);
+      \draw [dashed] (0) to (4);
+    \end{tikzpicture}
+  \end{aligned}
+\end{align}
+The above graph is has an infinitely branching vertex $x_0$, but the infinite set $\{x_i \;|\; x > 0\}$ is a kernel.
+
+It is shown that every digraph (with at least one edge) can be transformed into a infinitary dag\footnote{Directed acyclic graph} such that $\alpha$ is a solution to the created dag if and only if it is a solution to the original digraph \cite{apal-digraph}.
+This means that for any finitary graph that is paradoxical by the virtue of having an odd cycle, there is an infinitary, \textit{acyclic} digraph that is also paradoxical.
+Furthermore, if one is trying to find ways to identify paradoxical graphs, one does only need to look at dags.
+The reason for this is simple; say you have a method of identifying paradoxical dags.
+Then given any graph, you will be able to decide whether or not it is paradoxical.
+If it is a dag, you use your method.
+If it is cyclic, translate it, then use your method.
+Since the translation preserves the solutions, one can be sure that the cyclic graph is paradoxical if and only if the resulting dag was paradoxical.
+
+This result will be of great importance to us, enabling us to look only at dags when searching for paradoxes. 

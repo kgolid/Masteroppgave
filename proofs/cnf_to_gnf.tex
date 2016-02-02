@@ -15,8 +15,15 @@ For every clause $(x_1 \vee x_2 \vee \dots \vee x_n)$, create a fresh variable $
 The combined set of all these acquired formulae will make up the the corresponding theory $R$.
 We have only added proper GNF formulae and all variables appear to the left in exactly one clause, so $R$ will indeed be a GNF theory.\\
 
-\textbf{Example: }
-\begin{align}
-  \text{CNF:\quad}& (a \vee b \vee \neg c) \wedge (\neg d \vee e) \wedge f\\
-  \text{GNF:\quad}& c' \leftrightarrow \neg c, d' \leftrightarrow \neg d, y_1 \leftrightarrow (\neg a \wedge \neg b \wedge \neg c'), y_2 \leftrightarrow (\neg d' \wedge \neg e), y_3 \leftrightarrow \neg f
-\end{align}
+\begin{example}
+  \begin{align}
+    \text{CNF:\quad}& ( a \vee b )\\
+    \text{GNF:\quad}& ( a \lar \neg a'), (a' \lar \neg a), (b \lar \neg b'), (b' \lar \neg b), (y_1 \lar (\neg a \wedge \neg b \wedge \neg y_1))\\
+    \\
+    \text{CNF:\quad}& (\neg a)\\
+    \text{GNF:\quad}& ( a \lar \neg a'), (a' \lar \neg a), (y_1 \lar (\neg a' \wedge \neg y_1))\\
+    \\
+    \text{CNF:\quad}& (a \vee b \vee \neg c) \wedge (\neg d \vee e) \wedge f\\
+    \text{GNF:\quad}& c' \lar \neg c, d' \lar \neg d, y_1 \lar (\neg a \wedge \neg b \wedge \neg c'), y_2 \lar (\neg d' \wedge \neg e), y_3 \lar \neg f
+  \end{align}
+\end{example}

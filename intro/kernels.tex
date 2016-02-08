@@ -9,7 +9,12 @@ We define these two predicates formally as follows:
   N(x) := \{y \;|\; (x,y) \in N\}\\
   N^-(x) := \{ y \;|\; (y,x) \in N \}
 \end{align}
-We extend these relations to sets of vertices in the following way:
+
+A \textit{path} is a sequence of unique vertices $x_1,x_2,\dots,x_n$ such that for any consecutive pair $x_i,x_{i+1}$ from the sequence, we have $\langle x_i, x_{i+1} \rangle \in N$.
+We say that two paths are \textit{disjoint} if they do not share any vertices (possibly with the exception of their initial nodes).
+We will be using these notions later.
+
+We can extend the predicates $N$ and $N^-$ to sets of vertices in the following way:
 \begin{align}
   N(X) = \bigcup_{x \in X} N(x)\\
   N^-(X) = \bigcup_{x \in X} N(x)

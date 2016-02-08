@@ -1,7 +1,7 @@
 % !TEX root= ../main.tex
 \subsection{Graphs, Kernels and Solutions}
 \label{sub:Graphs, Kernels and Solution}
-A directed graph is a pair \textbf{G} = $\langle G,N \rangle$ where $G$ is a set of vertices while $N \subseteq G \times G$ is a binary relation representing the edges in \textbf{G}.
+A directed graph (digraph) is a pair \textbf{G} = $\langle G,N \rangle$ where $G$ is a set of vertices while $N \subseteq G \times G$ is a binary relation representing the edges in \textbf{G}.
 We use the notation $N(x)$ to denote the set of all vertices that are targeted by edges originating in $x$ (successors of $x$).
 Similarly, $N^-(x)$ denotes the set of all vertices with edges targeting $x$ (predecessors of $x$).
 We define these two predicates formally as follows:
@@ -19,6 +19,7 @@ We can extend the predicates $N$ and $N^-$ to sets of vertices in the following 
   N(X) = \bigcup_{x \in X} N(x)\\
   N^-(X) = \bigcup_{x \in X} N(x)
 \end{align}
+
 A kernel is a set of vertices $K \subseteq G$ such that:
 \begin{align}
   G \setminus K = N^-(K)

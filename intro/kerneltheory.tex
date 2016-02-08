@@ -71,25 +71,27 @@ The two following graphs illustrate this point:
   \end{aligned}
 \end{align}
 The above graph contains an odd cycle, but the singleton set $\{x_2\}$ is a kernel.
-\begin{align}
-  \begin{aligned}
-    \begin{tikzpicture}
-      [
-      point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
-      collection/.style={thick,rectangle,draw,inner sep=0pt,minimum height=14mm, minimum width= 9mm}
-      ]
-      \node (0) at (1,2) [point,label=above:$x_0$] {};
-      \node (1) at (3,1) [point,label=below:$x_1$] {};
-      \node (2) at (2,1) [point,label=below:$x_2$] {};
-      \node (3) at (1,1) [point,label=below:$x_3$] {};
-      \node (4) at (0,1) [] {$\dots$};
-      \draw [-latex] (0) to (1);
-      \draw [-latex] (0) to (2);
-      \draw [-latex] (0) to (3);
-      \draw [dashed] (0) to (4);
-    \end{tikzpicture}
-  \end{aligned}
-\end{align}
+\begin{figure}[!h]
+  \centering
+  \begin{tikzpicture}
+    [
+    point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
+    collection/.style={thick,rectangle,draw,inner sep=0pt,minimum height=14mm, minimum width= 9mm}
+    ]
+    \node (0) at (1,2) [point,label=above:$x_0$] {};
+    \node (1) at (3,1) [point,label=below:$x_1$] {};
+    \node (2) at (2,1) [point,label=below:$x_2$] {};
+    \node (3) at (1,1) [point,label=below:$x_3$] {};
+    \node (4) at (0,1) [] {$\dots$};
+    \draw [-latex] (0) to (1);
+    \draw [-latex] (0) to (2);
+    \draw [-latex] (0) to (3);
+    \draw [dashed] (0) to (4);
+  \end{tikzpicture}
+  \caption{}
+  \label{infinitary_with_kernel}
+\end{figure}
+
 The above graph has an infinitely branching vertex $x_0$, but the infinite set $\{x_i \;|\; x > 0\}$ is a kernel.
 
 It is shown that every digraph (with at least one edge) can be transformed into a infinitary dag\footnote{Directed acyclic graph} such that $\alpha$ is a solution to the created dag if and only if it is a solution to the original digraph \cite{apal-digraph}.

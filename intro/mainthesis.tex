@@ -9,7 +9,8 @@ Michał Walicki has proposed the following thesis:
   \textit{If a dag has no kernel then it has a ray with infinitely many vertices dominating it.}
 \end{align}
 Some terminology:
-A ray is an infinite sequence of unique vertices $x_0, x_1, x_2, \dots$ such that any two consecutive vertices $x_i,x_i+1$ are connected by the edge$\langle x_i,x_{i+1} \rangle$.
-A vertex is dominating a ray if it has infinitely many disjoint paths to it.
+A \textit{ray} is an semi-infinite path, i.e. a path containing an initial vertex and an infinite number of other vertices.
+
+A vertex $x_0$ \textit{dominates} a set of vertices $Y$ if there exists an infinite number of disjoint paths from $x_0$ to some vertex is $Y$.
 
 The contrapositive of Walicki's thesis suggests a weaker condition for a kernel, since a dag having a ray with infinitely many vertices dominating it implies that the dag is infinitary.

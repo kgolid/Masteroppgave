@@ -22,11 +22,11 @@ The \textbf{Yablo Graph} \cite{analysis-yablo} is an example of an acyclic graph
     collection/.style={thick,rectangle,draw,inner sep=0pt,minimum height=14mm, minimum width= 9mm}
     ]
     \node (1) at (0,1) [point,label=below:$x_1$] {};
-    \node (2) at (1,1) [point,label=below:$x_2$] {};
-    \node (3) at (2,1) [point,label=below:$x_3$] {};
-    \node (4) at (3,1) [point,label=below:$x_4$] {};
-    \node (5) at (4,1) [point,label=below:$x_5$] {};
-    \node (6) at (5,1) [] {$\dots$};
+    \node (2) at (2,1) [point,label=below:$x_2$] {};
+    \node (3) at (4,1) [point,label=below:$x_3$] {};
+    \node (4) at (6,1) [point,label=below:$x_4$] {};
+    \node (5) at (8,1) [point,label=below:$x_5$] {};
+    \node (6) at (10,1) [] {$\dots$};
     \draw [-latex] (1) to (2);
     \draw [-latex] (2) to (3);
     \draw [-latex] (3) to (4);
@@ -79,10 +79,10 @@ The above graph contains an odd cycle, but the singleton set $\{x_2\}$ is a kern
     collection/.style={thick,rectangle,draw,inner sep=0pt,minimum height=14mm, minimum width= 9mm}
     ]
     \node (0) at (1,2) [point,label=above:$x_0$] {};
-    \node (1) at (3,1) [point,label=below:$x_1$] {};
-    \node (2) at (2,1) [point,label=below:$x_2$] {};
-    \node (3) at (1,1) [point,label=below:$x_3$] {};
-    \node (4) at (0,1) [] {$\dots$};
+    \node (1) at (0,1) [point,label=below:$x_1$] {};
+    \node (2) at (1,1) [point,label=below:$x_2$] {};
+    \node (3) at (2,1) [point,label=below:$x_3$] {};
+    \node (4) at (3,1) [] {$\dots$};
     \draw [-latex] (0) to (1);
     \draw [-latex] (0) to (2);
     \draw [-latex] (0) to (3);

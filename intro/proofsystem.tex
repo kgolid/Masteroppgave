@@ -1,0 +1,83 @@
+% !TEX root= ../main.tex
+\externaldocument{discoursegraphs}
+\subsection{Resolving GNF-theories}
+\label{sub:Resolving GNF-theories}
+In this section, we will be presenting an inference system introduced by Walicki in \cite{} which handles clausal theories induced from GNF-theories.
+
+Recall that a thoeory written in GNF have formulae on the following form:
+\begin{align}
+  x \lar \bigwedge_{i \in I_x} \neg y_i
+\end{align}
+Using simple operations only, one can manipulate these formulae into an equivalent set of clauses.
+We start by writing the above bi-implication as two implications:
+\begin{align}
+  x \rightarrow \bigwedge_{i \in I_x} \neg y_i \quad\quad \text{and} \quad\quad x \leftarrow \bigwedge_{i \in I_x} \neg y_i
+\end{align}
+The first implication can be rewritten in the following way:
+\begin{align}
+  x \rightarrow \bigwedge_{i \in I_x} \neg y_i
+  \quad=\quad \neg x \vee \bigwedge_{i \in I_x} \neg y_i
+  \quad=\quad \bigwedge_{i \in I_x} (\neg x \vee \neg y_i)
+  \quad=\quad \bigwedge_{i \in I_x} \neg (x \wedge y_i)
+\end{align}
+The second implication can be rewritten in the following way:
+\begin{align}
+  x \leftarrow \bigwedge_{i \in I_x} \neg y_i
+  \quad=\quad x \vee \neg \left( \bigwedge_{i \in I_x} \neg y_i \right)
+  \quad=\quad x \vee \bigvee_{i \in I_x} y_i
+\end{align}
+By splitting the conjunction from the first implication up into individual clauses, we get the following two kinds of clauses for every variable $x$ in the GNF theory:
+\begin{align}
+  \text{OR-clause:}&\quad x \vee \bigvee_{i \in I_x} y_i\\
+  \text{NAND-clauses:}&\quad \neg (x \wedge y_i)\text{, for every }i \in I_x
+\end{align}
+We will treat both the OR-clauses and the NAND-clauses as sets of atoms, denoting NAND-clauses $\neg (x \wedge y)$ as $\overline{xy}$ and OR-clauses $x \vee y_1 \vee y_2 \vee y_3$ as $xy_1y_2y_3$.
+This enables us to state thins like $\overline{xy} \subset \overline{xyz}$.
+A theory will -- as expected -- be a set of clauses.
+
+If we interpret the initial GNF-theory as a graph $\mathbf{G}=\langle G,N\rangle$, for every vertex $x \in G$, there will be one OR-clause $\{ x \} \cup N(x)$ and for every edge $\langle x,y \rangle \in N$ there will be a NAND-clause $\overline{xy}$.
+The graphs from Example~\ref{ex:3graphs} will have the following clausal theories:
+\begin{align}
+  \mathcal{T}(\mathbf{G_1}) &= \{ a, \ol{a} \}\\
+  \mathcal{T}(\mathbf{G_2}) &= \{ abc, b, c, \ol{ab}, \ol{ac} \}\\
+  \mathcal{T}(\mathbf{G_3}) &= \{ abc, bc, \ol{ab}, \ol{bc} \}
+\end{align}
+Further notation: $A\subseteq G$ denotes an OR-clause while $\ol{A} \subseteq$ denotes a NAND-clause.
+Given a graph $\mathbf{G}=\langle G,N\rangle$, we denote the set of all NAND-clauses induced from the graph as NAND and all induced OR-clauses as OR.
+The combined set $\Gamma = NAND + OR$ will be our initial clauses in the inference system.
+\subsubsection{The inference system}
+\label{subs:The inference system}
+We consider the following inference system, but we will focus mainly on proofs using the Axioms together with the (Rneg) rule.
+\begin{align}
+  \text{(Ax)} &\quad \Gamma \vdash C, \quad \text{for } C \in \Gamma\\
+  \text{(Rneg)} &\quad \frac{ \{ \Gamma \vdash \ol{a_iA_i} \; |\; i \in I \} \quad \Gamma \vdash \{ a_i \; |\; i \in I \} }{ \Gamma \vdash \ol{\bigcup_{i \in I} A_i} }\\
+  \text{(Rpos)} &\quad \frac{ \Gamma \vdash A \quad \{\Gamma \vdash B_iK_i \; |\; i \in I \} \quad \{ \Gamma \vdash \ol{a_ik} \; |\; i \in I, k \in K_i \} }{ \Gamma \vdash (A \setminus \{ a_i \; |\; i \in I \} ) \cup \bigcup_{i \in I} B_i }
+\end{align}
+(Rneg) is creating NAND-clauses from NAND-clauses using OR as a side-condition.
+(Rpos) is creating OR-clauses from OR-clauses using NAND as a side-condition.
+In (Rneg), $\ol{a_iA_i}$ denotes the NAND $\ol{\{ a_i \} \cup A_i}$ with a potentially empty $A_i$.
+
+The premise of the (Rneg) rule is a set of $I$ NAND-clauses together with one OR-clause with $I$ elements such that each atom $a_i$ in the OR-clause is contained within a NAND-clause, and such that each NAND-clause contains an atom from the OR-clause.
+The correspondence between the NAND-clauses and the elements of the OR-clause should in other words be bijective.
+The conclusion is the union of all the NAND-clauses without their corresponding atom from the OR.
+
+Here are some examples of incorrect applications of the (Rneg)-rules, followed by some correct applications:
+\begin{align}
+  (1)\;\;\frac{\ol{ax}\quad\ol{by}\quad\ol{cz}}{\ol{xyz}}abx\quad\quad
+  (3)\;\;\frac{\ol{ax}\quad\ol{by}}{\ol{xy}}abx\quad\quad
+  (2)\;\;\frac{\ol{ax}\quad\ol{by}\quad\ol{bz}}{\ol{xyz}}abx
+\end{align}
+(1) is incorrect because the NAND $\ol{cz}$ contains no atoms from the OR $ab$.
+(2) is incorrect because the number of NAND-clauses does not match the length of the OR-clause.
+(3) is incorrect because there exist no bijective correspondence such that the above requirements are met.
+\begin{align}
+  (4)\;\;\frac{\ol{ax}\quad\ol{by}\quad\ol{cz}}{\ol{xyz}}abc\quad\quad
+  (5)\;\;\frac{\ol{ax}\quad\ol{b}}{\ol{x}}ab\quad\quad
+  (6)\;\;\frac{\ol{ax}\quad\ol{by}\quad\ol{xyz}}{\ol{xyz}}abx
+\end{align}
+The three above applications are all unproblematic, since all the atoms in each OR-clause gets matched to exactly one NAND-clause in such a way that no NAND-clause stays unmatched.
+
+We set no restrictions on the cardinality of our clauses, meaning that both the OR-clauses and the NAND-clauses can be both finite and infinite in size.
+Note that an infinite graph gives us infinitely many NAND-clauses, while an infinitary graph also gives us infinitely long OR-clauses.
+Looking at the (Rneg)-rule only, we will be studying the refutation system that arises from this single rule and show how we can recognize paradoxical graphs by proving $\emptyset$ using the (Rneg)-rule.
+It is shown that the (Rneg)-rule can prove

@@ -12,7 +12,7 @@ $\mathcal{G}:$ translating a theory $T$ into a corresponding digraph $\mathcal{G
 
 Given any digraph \textbf{G} we get the theory $\mathcal{T}(\mathbf{G})$ by taking, for each $x \in G$, the formula $x \leftrightarrow \bigwedge_{y \in N(x)} \neg y$ where $\bigwedge \emptyset = 1$.\\
 
-\begin{example}
+\begin{example}\label{ex:3graphs}
   \[
     \begin{tikzpicture}
       [
@@ -46,6 +46,7 @@ Given any digraph \textbf{G} we get the theory $\mathcal{T}(\mathbf{G})$ by taki
     \mathcal{T}(\mathbf{G_2}) &= \big \{ a \leftrightarrow (\neg b \wedge \neg c), b, c \big \}\\
     \mathcal{T}(\mathbf{G_3}) &= \big \{ a \leftrightarrow (\neg b \wedge \neg c), b \leftrightarrow \neg c, c \leftrightarrow \neg b \big \}
   \end{align}
+
 \end{example}
 The fact that $sol(\mathbf{G}) = mod(\mathcal{T}(G))$ is shown in \cite{apal-digraph}.
 Allthough not proving it, we can observe that $\mathbf{G_1}$ has no solution, just like its corresponding theory $\mathcal{T}(\mathbf{G_1})$ has no satisfying models.

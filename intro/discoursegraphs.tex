@@ -60,25 +60,15 @@ All variables in the theory are vertices, and for each formula $x \leftrightarro
 
 \begin{example}
   \begin{align}
-    T_1 &= \neg a &&\iff ( a \lar \neg a'), (a' \lar \neg a), (y_1 \lar (\neg a' \wedge \neg y_1))\\
-    T_2 &= a \vee b &&\iff ( a \lar \neg a'), (a' \lar \neg a), (b \lar \neg b'), (b' \lar \neg b), (y_1 \lar (\neg a \wedge \neg b \wedge \neg y_1))
+    ( a \lar \neg a'), (a' \lar \neg a), (b \lar \neg b'), (b' \lar \neg b), (y_1 \lar (\neg a \wedge \neg b \wedge \neg y_1))
   \end{align}
-  Using $\mathcal{G}$ on the above theories -- translated to GNF -- gives us the following graphs:
+  Using $\mathcal{G}$ on the above GNF theory gives us the following graph:
   \[
     \begin{tikzpicture}
       [
       point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
       collection/.style={thick,rectangle,draw,inner sep=0pt,minimum height=14mm, minimum width= 9mm}
       ]
-      \node (label) at (0,1) [label=left:$(\mathcal{G}(T_1))\;$] {};
-      \node (0) at (0,1) [point,label=above:$y_1$] {};
-      \node (1) at (1,1) [point,label=above:a'] {};
-      \node (2) at (2,1) [point,label=above:a] {};
-      \draw [-latex, loop below] (0) to (0);
-      \draw [-latex] (0) to (1);
-      \draw [-latex, bend right] (1) to (2);
-      \draw [-latex, bend right] (2) to (1);
-
       \node (label) at (5,1) [label=left:$(\mathcal{G}(T_1))\;$] {};
       \node (0) at (5,1) [point,label=above:$y_1$] {};
       \node (1) at (6,0) [point,label=above:b] {};

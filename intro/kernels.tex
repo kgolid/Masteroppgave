@@ -29,7 +29,8 @@ $G \setminus K \subseteq N^-(K)$, saying that each vertex outside the kernel has
 
 $N^-(K) \subseteq G \setminus K$, saying that each edge targeting a vertex within the kernel has to come from outside, thus no two vertices in the kernel are connected by an edge (K is independent).
 
-Kernels heve been of great interest over several decades, mainly within the fields of game theory and economics\cite{neumann}.
+Kernels heve been of great interest over several decades, mainly within the fields of game theory and economics.
+The concept was first defined and used by Neumann and Morgenstern in \cite{neumann}.
 In a graph representing some sort of a turn-based game, where vertices are states and edges are transitions, one can often work out winning strategies whenever one finds a kernel in the graph.
 Whenever one is outside of the kernel, one always has the possibility of moving inside the kernel (since the kernel is absorbing), while inside the kernel one \textit{has} to move out of it (since the kernel is independent).
 If you are the player with the choice outside the kernel, you can control the game and choose to stabilize it by always moving inside the kernel, forcing the opponent to move out again.

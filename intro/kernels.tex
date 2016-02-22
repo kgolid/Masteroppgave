@@ -45,6 +45,6 @@ A \textbf{solution} is an assignment $\alpha$ such that for all $x \in G:$
 \begin{align}
   \alpha(x) = 1 \iff \alpha(N(x)) = \{ 0 \}
 \end{align}
-In simple words, this means that for any node $x$, if $x$ is assigned 1, then all its successors has to be assigned  0, and if $x$ is assigned 0, then there has to exist a node assigned 1 among its successors.
-A consequence of this definition is that all sink nodes (nodes with no outgoing edges) in the graph have to be assigned to 1, since it vacuously does not point to any node assigned to 1.
+This means that for any node $x$, if $x$ is assigned 1, then all its successors has to be assigned  0, and if $x$ is assigned 0, then there has to exist a node assigned 1 among its successors.
+A consequence of this definition is that all sink nodes (nodes with no outgoing edges) in the graph have to be assigned 1, since it vacuously does not point to any node assigned 1.
 We use the notation $sol(\mathbf{G})$ to denote the set of all solutions of the graph \textbf{G}.

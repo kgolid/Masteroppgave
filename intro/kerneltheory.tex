@@ -14,7 +14,8 @@ Intuitively, one is tempted to believe that \textit{all} digraphs without odd cy
 Until now, our paradoxes have always been statements that -- directly or indirectly -- have been referring back to themselves (giving cycles in the graph) and thus causing a logical conflict, and it is hard to imagine any other way to construct paradoxical statements.
 The following construction will however reveal our lack of imagination.
 
-The \textbf{Yablo Graph} \cite{analysis-yablo} is an example of an acyclic graph with no kernel. It is constructed with an infinite set of vertices $\{ x_i | i \in \mathbb{N} \}$ and a set of edges $N$ such that $\langle x_i, x_j \rangle \in N$ iff $i < j$.
+The \textbf{Yablo Graph} is an example of an acyclic graph with no kernel\cite{analysis-yablo}.
+It is constructed with an infinite set of vertices $\{ x_i | i \in \mathbb{N} \}$ and a set of edges $N$ such that $\langle x_i, x_j \rangle \in N$ iff $i < j$.
 \[
   \begin{tikzpicture}
     [
@@ -49,7 +50,7 @@ Furthermore, since any natural number has infinitely many numbers strictly large
 
 The corresponding discourse theory of the Yablo graph would -- informally -- be the situation with an infinite number of statements, all saying "Every statement after this statement is false".
 
-We will later show that this graph is indeed without a kernel, but for now we will take Yablo's word \cite{analysis-yablo} for it.
+We will later show formally that the Yablo-graph is indeed without a kernel, but for now the following explanation will do.
 
 One thing should be mentioned at this point; neither odd cycles nor infinitely branching vertices \textit{entail} that their respective graphs are paradoxical.
 The two following graphs illustrate this point:

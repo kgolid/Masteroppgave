@@ -85,5 +85,39 @@ It is shown in the submitted paper \cite{michal-completeness} that Neg is sound 
 Soundness gives us that proving $\ol{C}$ for any $C \subseteq G$ implies that the vertices in $C$ cannot all be assigned 1 in the graph model.
 Refutational completeness gives us that whenever a graph/theory is inconsistent, we are able to prove $\emptyset$ in Neg.
 
-Having these properties, we are hoping that some proof structural patterns found in Neg proofs could ultimately help us in further weakening the conditions for a kernel.
-The remainder of this thesis will explore such patterns.
+\subsubsection{Inconsistency of the Yablo-graph}
+\label{subs:Inconsistency of the Yablo-graph}
+The inconsistency of the Yablo-graph is easily provable using Neg only.
+Since every vertex $x_i$ (using the notation from earlier) has an edge to each vertex $x_j$ where $j > i$, we get that every pair of distinct vertices is connected by an edge.
+This means that our set of axioms from the Yablo-graph looks like this:
+\begin{align}
+  \text{NAND} = \{ \ol{x_ix_j} \; |\; i < j\}
+  \quad\quad\quad
+  \text{OR} = \{ x_ix_{i+1}x_{i+2}\dots \; |\; i \in \mathbb{N}\}
+\end{align}
+For any vertex $x_i$ from the Yablo-graph, we are now able to prove $\ol{x_i}$ in the following way:
+\begin{prooftree*}
+  \Hypo{\ol{x_ix_{i+1}}}
+  \Hypo{\ol{x_ix_{i+2}}}
+  \Hypo{\ol{x_ix_{i+3}}}
+  \Hypo{\dots}
+  \Infer4[$x_ix_{i+1}x_{i+2}\dots$]{\ol{x_i}}
+\end{prooftree*}
+Proving $\emptyset$ is now simple:
+\begin{prooftree*}
+  \Hypo{\dots}
+  \Infer1{\ol{x_1}}
+  \Hypo{\dots}
+  \Infer1{\ol{x_2}}
+  \Hypo{\dots}
+  \Infer1{\ol{x_3}}
+  \Hypo{\dots}
+  \Infer4[$x_1x_2x_3\dots$]{\emptyset}
+\end{prooftree*}
+Another example of an inconsistent graph is the Stretched Yablo-graph.
+Its inconsistency proof in Neg is not as trivial as the one shown above, and can be found in the appendix together with the definition of Streched Yablo.
+
+It is worth mentioning that even though our focus has been -- and will be -- on theories originating from graphs, the results on soundness and completeness holds for any theory consisting of a set of NANDs and a set of ORs.
+
+An example of this is the pigeonhole problem which easily can be represented as a set of NANDs and ORs, but does not directly correspond to a graph (it can of course be translated to a graph theory, like any other propositional theory).
+Proofs in Neg of pigeonhole problems of different size are to be found in the appendix\todo{some reference system needed}.

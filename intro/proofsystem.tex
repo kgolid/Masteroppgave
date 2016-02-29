@@ -67,9 +67,9 @@ Here are some examples of incorrect applications of the (Rneg)-rules, followed b
   (3)\;\;\frac{\ol{ax}\quad\ol{by}}{\ol{xy}}abx\quad\quad
   (2)\;\;\frac{\ol{ax}\quad\ol{by}\quad\ol{bz}}{\ol{xyz}}abx
 \end{align}
-(1) is incorrect because the NAND $\ol{cz}$ contains no atoms from the OR $ab$.
+(1) is incorrect because the NAND $\ol{cz}$ contains no atoms from the OR $abx$.
 (2) is incorrect because the number of NAND-clauses does not match the length of the OR-clause.
-(3) is incorrect because there exist no bijective correspondence such that the above requirements are met.
+(3) is incorrect because there exist no bijective correspondence of the type described above.
 \begin{align}
   (4)\;\;\frac{\ol{ax}\quad\ol{by}\quad\ol{cz}}{\ol{xyz}}abc\quad\quad
   (5)\;\;\frac{\ol{ax}\quad\ol{b}}{\ol{x}}ab\quad\quad
@@ -114,8 +114,8 @@ Proving $\emptyset$ is now simple:
   \Hypo{\dots}
   \Infer4[$x_1x_2x_3\dots$]{\emptyset}
 \end{prooftree*}
-Another example of an inconsistent graph is the Stretched Yablo-graph.
-Its inconsistency proof in Neg is not as trivial as the one shown above, and can be found in the appendix together with the definition of Streched Yablo.
+A less trivial inconsistency proof is the one on the \textit{Stretched Yablo-graph}.
+This proof can be found in the appendix together with the definition of Stretched Yablo.
 
 It is worth mentioning that even though our focus has been -- and will be -- on theories originating from graphs, the results on soundness and completeness holds for any theory consisting of a set of NANDs and a set of ORs.
 

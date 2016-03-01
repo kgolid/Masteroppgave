@@ -135,3 +135,18 @@ Using $x,y,n$ from above, the proof of D1b follows a similar pattern as D1:
 		\Infer[left label = (O2) $(n-2)^x_y (n-1)^x_y$]2{\ol{1^x_yn^x_y}}
 \end{prooftree*}
 Just like with D1, it is crucial that the path is odd in order for this proof strategy to work.
+\subsubsection{Proof, D2}
+\label{subs:Proof, D2}
+Again, we have a trivial case where $x = y$ making the clause simply an instance of $N1b$.
+We therefore continue under the assumption that $x \neq y$, together with the other restrictions from the definition of $D2$.
+Using the same notation as above, where $n$ is the number of vertices in the peripheral path between $y$ and $z$, we now get the following short proof:
+\begin{prooftree*}
+  \Hypo{(D1)}
+  \Infer[no rule]1{\ol{xz}}
+  \Hypo{(D1b)}
+  \Infer[no rule]1{\ol{1^y_zn^y_z}}
+  \Infer[left label = (O3) $n^y_z$]2{\ol{x1^y_z}}
+\end{prooftree*}
+Both axioms used above are safe to use since $x \neq z$ and $y + 1 < z$.
+\subsubsection{Proof, D3}
+\label{subs:Proof, D3}

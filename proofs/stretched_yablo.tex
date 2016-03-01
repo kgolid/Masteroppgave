@@ -61,6 +61,9 @@ We denote the core vertices by natural numbers.
 The peripheral vertices contained in each path is denoted by $n^x_y$ where $x$ and $y$ is the source and target, respectively, of the path in which the vertex is contained.
 $n$ denoted the relative position on the path.
 
+Note that since two core vertices $x$ and $y$ have a peripheral path between them of length $L^x_y = 2(y-x) - 1$ (from the definition above), each path consists of $L^x_y - 1 = 2(y-x) - 2$ peripheral vertices.
+The vertex pointing back onto the core ray will thus alway be the vertex $(2(y-x)-2)^x_y$.
+
 Based on the given definition of Stretched Yablo and the notation from above, we get the following sets of axioms:
 \begin{align}
   N1a &= \{\; \ol{x(x+1)} \;&&|\; x \in \mathbb{N} \; \} \\

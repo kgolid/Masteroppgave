@@ -81,4 +81,57 @@ One can identify the different axioms by looking at the figure above\footnote{re
 $N1a$ are the edges making up the core ray of the graph, $N1b$ are the edges going from a core vertex onto a peripheral vertex, $N2$ are the edges between two peripheral vertices and $N3$ are the edges going from a peripheral vertex back onto a core vertex.
 $O1$ are the vertices on the core ray, $O2$ and $O3$ are the peripheral vertices, $O3$ being the ones that points back to a core vertex.
 
-In order to prove $\varnothing$ from these axiom, we prove some intermediate clauses.
+In order to prove $\varnothing$ from these axiom, we first prove three sets of intermediate clauses:
+\begin{align}
+  D1 &= \{\; \ol{xy} \;|\; x,y \in \mathbb{N}, x \neq y \; \} \\
+  D1b &= \{\; \ol{1^x_yn^x_y} \;|\; x,y \in \mathbb{N}, x+1 < y, n = 2(y-x)-2 \; \} \\
+  D2 &= \{\; \ol{x1^y_z} \;|\; x,y,z \in \mathbb{N}, x \neq z, y+1 < z \; \} \\
+  D3 &= \{\; \ol{1^1_x1^y_z} \;|\; x,y,z \in \mathbb{N}, x \neq y, x \neq z, y+1 < z \; \}
+\end{align}
+\subsubsection{Proof, D1 and D1b}
+\label{subs:Proof, D1 and D1b}
+We already have $\ol{xy}$ from our axioms whenever $y = x \pm 1$, so let us assume that either $y < x-1$ or $x + 1 < y$.
+In both these cases, we get that there exists a peripheral path between $x$ and $y$.
+Let us -- without loss in generality -- assume that $x + 1 < y$.
+We thus have a path from $x$ to $y$ containing $n = 2 \times (y - x) - 2$ peripheral vertices.
+Consider now the following proof:
+\begin{prooftree*}
+		\Hypo{(N1b)}
+		\Infer[no rule]1{\ol{x1^x_y}}
+		\Hypo{(N2)}
+		\Infer[no rule]1{\ol{2^x_y3^x_y}}
+		\Infer[left label = (O2) $1^x_y2^x_y$]2{\ol{x3^x_y}}
+    \Hypo{(N2)}
+		\Infer[no rule]1{\ol{4^x_y5^x_y}}
+		\Infer[left label = (O2) $3^x_y4^x_y$]2{\ol{x5^x_y}}
+    \Hypo{(N2)}
+		\Infer[no rule]1{\ol{6^x_y7^x_y}}
+		\Infer[left label = (O2) $5^x_y6^x_y$]2{\ol{x7^x_y}}
+		\Ellipsis{}{\ol{x(n-1)^x_y}}
+		\Hypo{(N3)}
+		\Infer[no rule]1{\ol{n^x_yy}}
+		\Infer[left label = (O2) $(n-1)^x_y n^x_y$]2{\ol{xy}}
+\end{prooftree*}
+Intuitively, this proof follows along the peripheral path between the two core vertices.
+It is important to notice that since all our peripheral paths are odd in length, $(n-1)$ is always odd.
+This guarantees that we are able to prove $\ol{x(n-1)^x_y}$ in $n/2$ steps using the strategy above.
+
+Using $x,y,n$ from above, the proof of D1b follows a similar pattern as D1:
+\begin{prooftree*}
+		\Hypo{(N2)}
+		\Infer[no rule]1{\ol{1^x_y2^x_y}}
+		\Hypo{(N2)}
+		\Infer[no rule]1{\ol{3^x_y4^x_y}}
+		\Infer[left label = (O2) $2^x_y3^x_y$]2{\ol{1^x_y4^x_y}}
+    \Hypo{(N2)}
+		\Infer[no rule]1{\ol{5^x_y6^x_y}}
+		\Infer[left label = (O2) $4^x_y5^x_y$]2{\ol{1^x_y6^x_y}}
+    \Hypo{(N2)}
+		\Infer[no rule]1{\ol{7^x_y8^x_y}}
+		\Infer[left label = (O2) $6^x_y7^x_y$]2{\ol{1^x_y8^x_y}}
+		\Ellipsis{}{\ol{1^x_y(n-2)^x_y}}
+		\Hypo{(N2)}
+		\Infer[no rule]1{\ol{(n-1)^x_yn^x_y}}
+		\Infer[left label = (O2) $(n-2)^x_y (n-1)^x_y$]2{\ol{1^x_yn^x_y}}
+\end{prooftree*}
+Just like with D1, it is crucial that the path is odd in order for this proof strategy to work.

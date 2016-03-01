@@ -66,15 +66,17 @@ The vertex pointing back onto the core ray will thus alway be the vertex $(2(y-x
 
 Based on the given definition of Stretched Yablo and the notation from above, we get the following sets of axioms:
 \begin{align}
-  N1a &= \{\; \ol{x(x+1)} \;&&|\; x \in \mathbb{N} \; \} \\
-	N1b &= \{\; \ol{x1^x_y} \;&&|\; x,y \in \mathbb{N}, x+1 < y \; \} \\
-	N2 &= \{\; \ol{n^x_y(n+1)^x_y} \;&&|\; n,x,y \in \mathbb{N}, x+1 < y, n < 2(y-x) - 2 \; \} \\
-	N3 &= \{\; \ol{(2(y-x)-1)^x_yy} \;&&|\; n,x,y \in \mathbb{N}, x+1 < y \; \} \\
-	O1 &= \{\; x(x+1)1^x_{x+2}1^x_{x+3}\dots \;&&|\; x \in \mathbb{N} \; \} \\
-  O2 &= \{\; n^x_y(n+1)^x_y \;&&|\; n,x,y \in \mathbb{N}, x+1 < y, n < 2(y-x) - 2 \; \} \\
-	O3 &= \{\; (2(y-x)-1)^x_yy \;&&|\; n,x,y \in \mathbb{N}, x+1 < y \; \}
+  N1a &= \{\; \ol{x(x+1)} \;|\; x \in \mathbb{N} \; \} \\
+	N1b &= \{\; \ol{x1^x_y} \;|\; x,y \in \mathbb{N}, x+1 < y \; \} \\
+	N2 &= \{\; \ol{n^x_y(n+1)^x_y} \;|\; n,x,y \in \mathbb{N}, x+1 < y, n < 2(y-x) - 2 \; \} \\
+	N3 &= \{\; \ol{n^x_yy} \;|\; n,x,y \in \mathbb{N}, x+1 < y, n = 2(y-x)-2 \; \} \\
+	O1 &= \{\; x(x+1)1^x_{x+2}1^x_{x+3}\dots \;|\; x \in \mathbb{N} \; \} \\
+  O2 &= \{\; n^x_y(n+1)^x_y \;|\; n,x,y \in \mathbb{N}, x+1 < y, n < 2(y-x) - 2 \; \} \\
+	O3 &= \{\; (n^x_yy \;|\; n,x,y \in \mathbb{N}, x+1 < y, n = 2(y-x)-2 \; \}
 \end{align}
-We get that NAND = $N1a \cup N1b \cup N2 \cup N3$ and that OR = $O1 \cup O2 \cup O3$.
+\begin{align}
+  \text{NAND} = N1a \cup N1b \cup N2 \cup N3 \quad\quad\quad \text{OR} = O1 \cup O2 \cup O3
+\end{align}
 One can identify the different axioms by looking at the figure above\footnote{recall how NANDs corresponds to edges, while ORs corresponds to vertices}:
 $N1a$ are the edges making up the core ray of the graph, $N1b$ are the edges going from a core vertex onto a peripheral vertex, $N2$ are the edges between two peripheral vertices and $N3$ are the edges going from a peripheral vertex back onto a core vertex.
 $O1$ are the vertices on the core ray, $O2$ and $O3$ are the peripheral vertices, $O3$ being the ones that points back to a core vertex.

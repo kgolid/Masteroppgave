@@ -16,8 +16,23 @@ Every clause in the formula does now contain positive literals only.
 \textbf{Step 3:}
 For every clause $(x_1 \vee x_2 \vee \dots \vee x_n)$, replace it with the following formula, where $y$ is fresh:
 \[y \lar (\neg x_1 \wedge \neg x_2 \wedge \dots \wedge \neg x_n \wedge \neg y)\]
-The combined set of all these acquired formulae will make up the the corresponding theory $R$.
-We have only added proper GNF formulae and all variables appear to the left in exactly one clause, so $R$ will indeed be a GNF theory.\\
+
+This formula is equisatisfiable with our original clause.
+
+The combined set of all these acquired formulae will make up our GNF-theory.
+We have only added proper GNF formulae and all variables appear to the left in exactly one clause, so $R$ will indeed be a GNF theory.
+
+Step 1 is adding a bi-implication formula that is always satisfiable, since one of two variables in it is fresh.
+One can think of it as a labelling of an already existing variable.
+Thus, adding these formulae to a theory does not change its satisfiability/non-satisfiability.
+
+Step 2 is replacing each negative literal with its label, also not changing the satisfiability.
+
+Step 3 is replacing one formula with an equisatisfiable formula, thus not changing the overall satisfiability.
+
+Since none of the steps above change the satisfiability of the theory, we can conclude that our acquired theory is equisatisfiable with to original CNF theory.
+
+Below are some examples of CNF-theories with their corresponding GNF-theories.\\
 
 \begin{example}
   \begin{align}

@@ -150,3 +150,12 @@ Using the same notation as above, where $n$ is the number of vertices in the per
 Using $D1$ and $D1b$ in the above proof, restricts us to cases where $x \neq z$ and where $y+1 < z$, but these are restrictions we have already assumed.
 \subsubsection{Proof, D3}
 \label{subs:Proof, D3}
+$n$ now denotes the number of vertices in the peripheral path between $y$ and $z$.
+\begin{prooftree*}
+  \Hypo{(D2)}
+  \Infer[no rule]1{\ol{1^1_xz}}
+  \Hypo{(D1b)}
+  \Infer[no rule]1{\ol{1^y_zn^y_z}}
+  \Infer[left label = (O3) $n^y_zz$]2{\ol{1^1_x1^y_z}}
+\end{prooftree*}
+We are again restricting our cases by using $D3$ and $D1b$, but these restrictions are already assumed.

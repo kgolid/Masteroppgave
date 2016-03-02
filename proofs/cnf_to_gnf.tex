@@ -10,8 +10,11 @@ For each literal $\neg x_i$ in the formula, introduce a fresh variable $x'_i$ an
 $x'_i \lar \neg x_i, x_i \lar \neg x'_i,$ (unless this has already been done while translating an earlier formula in the theory).
 
 \textbf{Step 2:}
-In each clause, replace every negative literal $\neg x_i$ with its corresponding $x'_i$ fom step 1. Every clause does now contain all positive literals.
-For every clause $(x_1 \vee x_2 \vee \dots \vee x_n)$, create a fresh variable $y$ and add the following GNF formula to $R$:
+In each clause of the formula, replace every negative literal $\neg x_i$ with its corresponding $x'_i$ fom step 1.
+Every clause in the formula does now contain positive literals only.
+
+\textbf{Step 3:}
+For every clause $(x_1 \vee x_2 \vee \dots \vee x_n)$, replace it with the following formula, where $y$ is fresh:
 \[y \lar (\neg x_1 \wedge \neg x_2 \wedge \dots \wedge \neg x_n \wedge \neg y)\]
 The combined set of all these acquired formulae will make up the the corresponding theory $R$.
 We have only added proper GNF formulae and all variables appear to the left in exactly one clause, so $R$ will indeed be a GNF theory.\\

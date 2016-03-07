@@ -1,0 +1,37 @@
+% !TEX root= ../main.tex
+\section{The importance of binary NAND-clauses}
+\label{sec:The importance of binary NAND-clauses}
+\subsection{Inconsistency and unary NAND-clauses}
+\label{sub:Inconsistency and unary NAND-clauses}
+
+Since our proof system, Neg, has only one rule, the last step of an inconsistency proof will always look the same:
+\begin{prooftree*}
+  \Hypo{\ol{x_1}}
+  \Hypo{\ol{x_2}}
+  \Hypo{\ol{x_3}}
+  \Hypo{\dots}
+  \Infer4[$x_1x_2x_3\dots$]{\varnothing}
+\end{prooftree*}
+The last step will always consist of a collection of NAND-clauses, each of length 1, together with an OR-clause equal to the union of all the NAND-clauses.
+It is easy to see that none of the NAND-clauses can be binary, since that would result in a non-empty NAND-clause in the conclusion.
+The OR-clause has to equal the union of the NAND-clauses simply by definition of the (RNeg)-rule.
+
+We know from the definition that any OR-clause used in the proof system corresponds to a single vertex with its successors in the graph.
+We do however not know what the NAND-clauses of length 1 might correspond to.
+Knowing this would, by soundness and completeness of Neg, give us a complete picture of the graph structure needed for a kernel not to exist.\todo{Currently brushing over the restrictions set to the proofs of completeness and soundness. Will fix this later.}
+
+The only thing we \textit{do} know about unary NAND-clauses is that they correspond to vertices that is assigned 0 in all models of the graph.
+We get this from soundness of Neg.
+This is however not a graph structural property, which is what we are ultimately looking for.
+
+So what does a unary NAND-clause proven in Neg correspond to in the graph?
+Similarly to a proof of $\varnothing$, there is really just one way to prove a unary NAND-clause.
+\begin{prooftree*}
+  \Hypo{\ol{xy_1}}
+  \Hypo{\ol{xy_2}}
+  \Hypo{\dots}
+  \Hypo{\ol{y_n}}
+  \Hypo{\ol{y_{n+1}}}
+  \Hypo{\dots}
+  \Infer6[$y_1y_2\dots y_ny_{n+1}\dots$]{\ol{x}}
+\end{prooftree*}

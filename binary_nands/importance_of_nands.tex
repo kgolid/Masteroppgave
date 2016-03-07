@@ -3,8 +3,7 @@
 \label{sec:The importance of binary NAND-clauses}
 \subsection{Inconsistency and unary NAND-clauses}
 \label{sub:Inconsistency and unary NAND-clauses}
-
-Since our proof system, Neg, has only one rule, the last step of an inconsistency proof will always look the same:
+Since our proof system, Neg, only has one rule, the last step of an inconsistency proof will always look the same:
 \begin{prooftree*}
   \Hypo{\ol{x_1}}
   \Hypo{\ol{x_2}}
@@ -16,6 +15,10 @@ The last step will always consist of a collection of NAND-clauses, each of lengt
 It is easy to see that none of the NAND-clauses can be binary, since that would result in a non-empty NAND-clause in the conclusion.
 The OR-clause has to equal the union of the NAND-clauses simply by definition of the (RNeg)-rule.
 
+This fact was also observed and formalized by Walicki in \cite{michal-completeness}:
+\begin{align}
+  \Gamma \vdash_{Neg} \{\} \Leftrightarrow \exists K \in \text{OR}: (\forall  k \in K: \Gamma \vdash_{Neg} \ol{k})
+\end{align}
 We know from the definition that any OR-clause used in the proof system corresponds to a single vertex with its successors in the graph.
 We do however not know what the NAND-clauses of length 1 might correspond to.
 Knowing this would, by soundness and completeness of Neg, give us a complete picture of the graph structure needed for a kernel not to exist.\todo{Currently brushing over the restrictions set to the proofs of completeness and soundness. Will fix this later.}

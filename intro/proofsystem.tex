@@ -1,7 +1,7 @@
 % !TEX root= ../main.tex
 \externaldocument{discoursegraphs}
-\subsection{Resolving GNF-theories}
-\label{sub:Resolving GNF-theories}
+\section{Resolving GNF-theories}
+\label{sec:Resolving GNF-theories}
 In this section, we will be presenting an inference system introduced by Walicki in \cite{} which handles clausal theories induced from GNF-theories.
 
 Recall that a thoeory written in GNF has formulae of the following form:
@@ -45,8 +45,8 @@ The graphs from Example~\ref{ex:3graphs} will have the following clausal theorie
 Further notation: $A\subseteq G$ denotes an OR-clause while $\ol{A} \subseteq G$ denotes a NAND-clause.
 Given a graph $\mathbf{G}=\langle G,N\rangle$, we denote the set of all NAND-clauses induced from the graph as NAND and all induced OR-clauses as OR.
 The combined set $\Gamma = NAND + OR$ will be our initial clauses in the inference system.
-\subsubsection{The inference system}
-\label{subs:The inference system}
+\subsection{The inference system}
+\label{sub:The inference system}
 We consider the following inference system, but we will focus mainly on proofs using the Axioms together with the (Rneg) rule.
 \begin{align}
   \text{(Ax)} &\quad \Gamma \vdash C, \quad \text{for } C \in \Gamma\\
@@ -85,8 +85,8 @@ It is shown in the submitted paper \cite{michal-completeness} that Neg is sound 
 Soundness gives us that proving $\ol{C}$ for any $C \subseteq G$ implies that the vertices in $C$ cannot all be assigned 1 in the graph model.
 Refutational completeness gives us that whenever a graph/theory is inconsistent, we are able to prove $\emptyset$ in Neg.
 
-\subsubsection{Inconsistency of the Yablo-graph}
-\label{subs:Inconsistency of the Yablo-graph}
+\subsection{Inconsistency of the Yablo-graph}
+\label{sub:Inconsistency of the Yablo-graph}
 The inconsistency of the Yablo-graph is easily provable using Neg only.
 Since every vertex $x_i$ (using the notation from earlier) has an edge to each vertex $x_j$ where $j > i$, we get that every pair of distinct vertices is connected by an edge.
 This means that our set of axioms from the Yablo-graph looks like this:

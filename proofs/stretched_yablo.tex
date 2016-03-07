@@ -1,7 +1,6 @@
 % !TEX root= ../main.tex
-\subsection{Inconsistency of Stretched Yablo}
-\label{sub:Inconsistency of Stretched Yablo}
-
+\section{Inconsistency of Stretched Yablo}
+\label{sec:Inconsistency of Stretched Yablo}
 One variation of the Yablo-graph is the Stretched Yablo-graph, presented by Walicki in \cite{michal-completeness}.
 While the Yablo-graph is a ray where each vertex on it has direct edges to all the vertices after it, the Stretched Yablo-graph is a ray where each vertex has \textit{disjoint paths} (with certain properties depending on the variation of Stretched Yablo) to all vertices in after it.
 
@@ -88,8 +87,8 @@ In order to prove $\varnothing$ from these axiom, we first prove three sets of i
   D2 &= \{\; \ol{x1^y_z} \;|\; x,y,z \in \mathbb{N}, x \neq z, y+1 < z \; \} \\
   D3 &= \{\; \ol{1^1_x1^y_z} \;|\; x,y,z \in \mathbb{N}, x \neq z, y+1 < z \; \}
 \end{align}
-\subsubsection{Proof, D1 and D1b}
-\label{subs:Proof, D1 and D1b}
+\subsection{Proof, D1 and D1b}
+\label{sub:Proof, D1 and D1b}
 We already have $\ol{xy}$ from our axioms whenever $y = x \pm 1$, so let us assume that either $y < x-1$ or $x + 1 < y$.
 In both these cases, we get that there exists a peripheral path between $x$ and $y$.
 Let us -- without loss in generality -- assume that $x + 1 < y$.
@@ -135,8 +134,8 @@ Using $x,y,n$ from above, the proof of D1b follows a similar pattern as D1:
 		\Infer[left label = (O2) $(n-2)^x_y (n-1)^x_y$]2{\ol{1^x_yn^x_y}}
 \end{prooftree*}
 Just like with D1, it is crucial that the path is odd in order for this proof strategy to work.
-\subsubsection{Proof, D2}
-\label{subs:Proof, D2}
+\subsection{Proof, D2}
+\label{sub:Proof, D2}
 Again, we have a trivial case where $x = y$ making the clause simply an instance of $N1b$.
 We therefore continue under the assumption that $x \neq y$, together with the other restrictions from the definition of $D2$.
 Using the same notation as above, where $n$ is the number of vertices in the peripheral path between $y$ and $z$, we now get the following short proof:
@@ -148,8 +147,8 @@ Using the same notation as above, where $n$ is the number of vertices in the per
   \Infer[left label = (O3) $n^y_zz$]2{\ol{x1^y_z}}
 \end{prooftree*}
 Using $D1$ and $D1b$ in the above proof, restricts us to cases where $x \neq z$ and where $y+1 < z$, but these are restrictions we have already assumed.
-\subsubsection{Proof, D3}
-\label{subs:Proof, D3}
+\subsection{Proof, D3}
+\label{sub:Proof, D3}
 $n$ now denotes the number of vertices in the peripheral path between $y$ and $z$.
 \begin{prooftree*}
   \Hypo{(D2)}
@@ -159,8 +158,8 @@ $n$ now denotes the number of vertices in the peripheral path between $y$ and $z
   \Infer[left label = (O3) $n^y_zz$]2{\ol{1^1_x1^y_z}}
 \end{prooftree*}
 We are again restricting our cases by using $D3$ and $D1b$, but these restrictions are already assumed.
-\subsubsection{Proof, $\varnothing$}
-\label{subs:Proof, emptyset}
+\subsection{Proof, $\varnothing$}
+\label{sub:Proof, emptyset}
 We will prove the inconsistency of Stretched Yablo by first proving $\ol{1},\ol{2},\ol{1^1_3},\ol{1^1_4}\ol{1^1_5}\dots$.
 
 Proving $\ol{1}$:

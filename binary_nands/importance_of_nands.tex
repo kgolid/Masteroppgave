@@ -38,3 +38,14 @@ Similarly to a proof of $\varnothing$, there is really just one way to prove a u
   \Hypo{\dots}
   \Infer6[$y_1y_2\dots y_ny_{n+1}\dots$]{\ol{x}}
 \end{prooftree*}
+Any derivation of a unary NAND-clause $\ol{x}$ must end with a rule application using $K \in \text{OR}$ where the NAND-clauses in the premises are either unary, $\ol{k}$ or binary, $\ol{xk}$, both such that $k \in K$.
+
+We formalize this observation in the following way:
+\begin{align}
+  \Gamma \vdash_{Neg} \ol{x} \Leftrightarrow \exists K \in \text{OR}: (\forall k \in K: \Gamma \vdash_{Neg} \ol{kx} \vee \Gamma \vdash_{Neg} \ol{k}) \wedge (\exists k \in K: \Gamma \vdash_{Neg} \ol{kx})
+\end{align}
+Just as we reduced the problem of inconsistency to the problem of unary NAND-clauses, we are able to reduce the problem further to binary NAND-clauses.
+We could even continue the reduction further to ternary clauses, quaternary clauses and so on, but without a change of strategy at some point, this seems pointless.
+
+There might actually be a good reason for changing our strategy when reaching the problem of describing \textit{binary} NAND-clauses.
+Observe that all Neg-proofs shown in this thesis has used unary and binary NAND-clauses only. 

@@ -15,7 +15,7 @@ The premise will always consist of a collection of NAND-clauses, each of length 
 It is easy to see that none of the NAND-clauses can be larger than unary, since that would result in a non-empty NAND-clause in the conclusion.
 The OR-clause has to equal the union of the NAND-clauses simply by definition of the (RNeg)-rule.
 
-This fact was also observed and formalized by Walicki in \cite{michal-completeness}:
+This fact was also observed and formalized by Walicki\cite{michal-completeness}:
 \begin{align}
   \Gamma \vdash_{Neg} \{\} \Leftrightarrow \exists K \in \text{OR}: (\forall  k \in K: \Gamma \vdash_{Neg} \ol{k})
 \end{align}

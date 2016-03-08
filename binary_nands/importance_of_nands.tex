@@ -11,8 +11,8 @@ Since our proof system, Neg, only has one rule, the last step of an inconsistenc
   \Hypo{\dots}
   \Infer4[$x_1x_2x_3\dots$]{\varnothing}
 \end{prooftree*}
-The last step will always consist of a collection of NAND-clauses, each of length 1, together with an OR-clause equal to the union of all the NAND-clauses.
-It is easy to see that none of the NAND-clauses can be binary, since that would result in a non-empty NAND-clause in the conclusion.
+The premise will always consist of a collection of NAND-clauses, each of length 1, together with an OR-clause equal to the union of all the NAND-clauses.
+It is easy to see that none of the NAND-clauses can be larger than unary, since that would result in a non-empty NAND-clause in the conclusion.
 The OR-clause has to equal the union of the NAND-clauses simply by definition of the (RNeg)-rule.
 
 This fact was also observed and formalized by Walicki in \cite{michal-completeness}:

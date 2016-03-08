@@ -49,5 +49,8 @@ We formalize this observation in the following way:
 Just as we reduced the problem of inconsistency to the problem of unary NAND-clauses, we are able to reduce the problem further to binary NAND-clauses.
 We could even continue the reduction further to ternary clauses, quaternary clauses and so on, but without a change of strategy at some point, this seems pointless.
 
-There might actually be a good reason for changing our strategy when reaching the problem of describing \textit{binary} NAND-clauses.
-Observe that all Neg-proofs shown in this thesis has used unary and binary NAND-clauses only. 
+Our current reduction lets us ask how two vertices $x,y$ are \textit{connected} in the graph when their binary NAND $\ol{xy}$ is proven in Neg.
+Oberve that we have parts of this correspondence down already, with our axioms being all binary.
+Vertices directly connected by an edge must therefore be a part of the corresponding graph structure.
+
+Finding some graph strucural relation that corresponds to binary NAND-clauses might give us some knowledge about a potential standard form of binary-NAND-proofs.

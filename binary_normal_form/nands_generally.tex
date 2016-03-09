@@ -1,0 +1,97 @@
+% !TEX root= ../main.tex
+\section{Proving inconsistency of unrestricted theories}
+\label{sec:Proving inconsistency of unrestricted theories}
+This section will show that there exist inconsistencies in non-graph-based theories that are not possible to prove in Neg using only unary and binary NAND-clauses.
+We will prove the pigeonhole principle to examplify this.
+
+The pigeonhole principle states that whenever you have $n$ pigeons and $m$ holes such that $n > m$, then at least one hole must contain more than one pigeon.
+We can prove this principle in Neg by proving an inconsistency in the theory that (1) all $n$ pigeons are contained in a hole and (2) each hole contains only one pigeon.
+
+Letting the atom $x_i$ denote the pigeon $i$ occupying the hole $x$, the above theory, with $n$ pigeons and $m$ holes, can be formalized in the following way:
+\begin{align}
+  \text{(1):}\quad &\{ \; 1_i2_i3_i\dots m_i \;|\; i \leq n \; \}\\
+  \text{(2):}\quad &\{ \; x_ix_j \;|\; i < j \leq n, x \leq m \; \}
+\end{align}
+\subsection{Proving the pigeonhole principle - 4 pigeons, 3 holes}
+\label{sub:Proving the pigeonhole principle - 4 pigeons, 3 holes}
+The pigeonhole principle for 4 pigeons and 3 holes will have the following axioms:
+\begin{align}
+  \text{OR} &= \{ \; 1_12_13_1,\; 1_22_23_2,\; 1_32_33_3,\; 1_42_43_4 \; \}\\
+  \text{NAND} &= \left \{
+  \begin{tabular}{c}
+    $\ol{1_11_2},\;\ol{1_11_3},\;\ol{1_11_4},\;\ol{1_21_3},\;\ol{1_21_4},\;\ol{1_31_4},$\\
+    $\ol{2_12_2},\;\ol{2_12_3},\;\ol{2_12_4},\;\ol{2_22_3},\;\ol{2_22_4},\;\ol{2_32_4},$\\
+    $\ol{3_12_2},\;\ol{3_13_3},\;\ol{3_13_4},\;\ol{3_23_3},\;\ol{3_23_4},\;\ol{3_33_4}$
+  \end{tabular}
+  \right \}
+\end{align}
+
+From the axioms above we can prove inconsistency in the following way:
+
+Proving $\ol{1_4}$:
+\begin{prooftree*}[separation=0.8em, rule margin=1ex]
+  \Hypo{\ol{1_31_4}}
+    \Hypo{\ol{1_21_4}}
+    \Hypo{\ol{2_22_3}}
+      \Hypo{\ol{1_11_4}}
+      \Hypo{\ol{2_12_3}}
+      \Hypo{\ol{3_13_2}}
+    \Infer[right label = $1_12_13_1$]3{\ol{3_22_31_4}}
+  \Infer[right label = $1_22_23_2$]3{\ol{2_31_4}}
+    \Hypo{\ol{1_21_4}}
+      \Hypo{\ol{1_11_4}}
+      \Hypo{\ol{2_12_2}}
+      \Hypo{\ol{3_13_3}}
+    \Infer[right label = $1_12_13_1$]3{\ol{2_23_31_4}}
+    \Hypo{\ol{3_23_3}}
+  \Infer[right label = $1_22_23_2$]3{\ol{3_31_4}}
+\Infer[right label = $1_32_33_3$, separation=0em]3{\ol{1_4}}
+\end{prooftree*}
+
+Proving $\ol{2_4}$:
+\begin{prooftree*}[separation=0.8em, rule margin=1ex]
+    \Hypo{\ol{1_21_3}}
+    \Hypo{\ol{2_22_4}}
+      \Hypo{\ol{1_11_3}}
+      \Hypo{\ol{2_12_4}}
+      \Hypo{\ol{3_13_2}}
+    \Infer[right label = $1_12_13_1$]3{\ol{3_21_32_4}}
+  \Infer[right label = $1_22_23_2$]3{\ol{1_32_4}}
+  \Hypo{\ol{2_32_4}}
+      \Hypo{\ol{1_11_2}}
+      \Hypo{\ol{2_12_4}}
+      \Hypo{\ol{3_13_3}}
+    \Infer[left label = $1_12_13_1$]3{\ol{1_23_32_4}}
+    \Hypo{\ol{2_22_4}}
+    \Hypo{\ol{3_23_3}}
+  \Infer[left label = $1_22_23_2$]3{\ol{3_32_4}}
+\Infer[right label = $1_32_33_3$, separation=0em]3{\ol{2_4}}
+\end{prooftree*}
+
+Proving $\ol{3_4}$:
+\begin{prooftree*}[separation=0.8em, rule margin=1ex]
+    \Hypo{\ol{1_21_3}}
+      \Hypo{\ol{1_11_3}}
+      \Hypo{\ol{2_12_2}}
+      \Hypo{\ol{3_13_4}}
+    \Infer[left label = $1_12_13_1$]3{\ol{2_21_33_4}}
+    \Hypo{\ol{3_23_4}}
+  \Infer[left label = $1_22_23_2$]3{\ol{1_33_4}}
+      \Hypo{\ol{1_11_2}}
+      \Hypo{\ol{2_12_3}}
+      \Hypo{\ol{3_13_4}}
+    \Infer[left label = $1_12_13_1$]3{\ol{1_22_33_4}}
+    \Hypo{\ol{2_22_3}}
+    \Hypo{\ol{3_23_4}}
+  \Infer[left label = $1_22_23_2$]3{\ol{2_33_4}}
+  \Hypo{\ol{3_33_4}}
+\Infer[left label = $1_32_33_3$, separation=0em]3{\ol{3_4}}
+\end{prooftree*}
+
+With these three unary clauses proven, we can now prove $\varnothing$ in one step:
+\begin{prooftree*}[rule margin=1ex]
+  \Hypo{\ol{1_4}}
+  \Hypo{\ol{2_4}}
+  \Hypo{\ol{3_4}}
+  \Infer[left label = $1_42_43_4$]3{\varnothing}
+\end{prooftree*}

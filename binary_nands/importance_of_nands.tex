@@ -1,8 +1,6 @@
 % !TEX root= ../main.tex
 \section{Unary and binary NAND-clauses in graphs}
 \label{sec:Unary and binary NAND-clauses in graphs}
-\subsection{Inconsistency and unary NAND-clauses}
-\label{sub:Inconsistency and unary NAND-clauses}
 Since our proof system, Neg, only has one rule, the last step of an inconsistency proof will always look the same:
 \begin{prooftree*}
   \Hypo{\ol{x_1}}
@@ -44,8 +42,6 @@ We formalize this observation in the following way:
 \begin{align}
   \Gamma \vdash_{Neg} \ol{x} \Leftrightarrow \exists K \in \text{OR}: (\forall k \in K: \Gamma \vdash_{Neg} \ol{kx} \vee \Gamma \vdash_{Neg} \ol{k}) \wedge (\exists k \in K: \Gamma \vdash_{Neg} \ol{kx})
 \end{align}
-\subsection{Why binary?}
-\label{sub:Why binary?}
 Just as we reduced the problem of inconsistency to the problem of unary NAND-clauses, we are able to reduce the problem further to binary NAND-clauses.
 We could even continue the reduction further to ternary clauses, quaternary clauses and so on, but without a change of strategy at some point, this seems pointless.
 

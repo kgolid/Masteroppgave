@@ -1,5 +1,42 @@
+% !TEX root= ../main.tex
 \section{Proving inconsistency in graph theories}
 \label{sec:Proving inconsistency in graph theories}
 We have just shown that in the case of unrestricted theories, we have no guarantee that an inconsistency proof can be constructed using unary and binary NAND-clauses only, so whhat about graph theories?
 After all, it is these theories that motivated the search for this property in the first place.
 Unfortunately, it turns out that even for these kinds of theories, there are inconsistency proofs that requires some non-binary NAND-clauses.
+
+We will show this fact by presenting a graph containing a provable binary NAND-clause, an show that the only way to prove it is through using non-binary NAND-clauses.
+We will later extend the graph so that it becomes inconsistent, and show that the only way to show this inconsistency is by using the mentioned binary NAND, thus showing that the inconsistency proof must contain a non-binary NAND-clause.
+
+The graph is question is the following:
+\[
+  \begin{tikzpicture}
+    [
+    point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
+    collection/.style={thick,rectangle,draw,inner sep=0pt,minimum height=14mm, minimum width= 9mm}
+    ]
+    \node (a) at (0,2) [point,label=left:$a$] {};
+    \node (x1) at (0,4) [point,label=left:$x_1$] {};
+    \node (x2) at (0,0) [point,label=left:$x_2$] {};
+    \node (b) at (2,2) [point,label=right:$b$] {};
+    \node (y1) at (2,4) [point,label=right:$y_1$] {};
+    \node (y2) at (2,0) [point,label=right:$y_2$] {};
+    \node (c1) at (1,3) [point,label=right:$c_1$] {};
+    \node (c2) at (1,1) [point,label=right:$c_2$] {};
+    \draw [-latex] (a) to (x1);
+    \draw [-latex] (a) to (x2);
+    \draw [-latex] (b) to (y1);
+    \draw [-latex] (b) to (y2);
+    \draw [-latex] (x1) to (y1);
+    \draw [-latex] (x1) to (c1);
+    \draw [-latex] (x2) to (y2);
+    \draw [-latex] (x2) to (c2);
+    \draw [-latex] (c1) to (c2);
+  \end{tikzpicture}
+\]
+We will be treating the vertices $y_1$, $y_2$ and $c_2$ in the above graph as if each of them are initial vertices of (non-depicted) disjoint rays, and not sinks, as the figure suggests.
+This gives the following axiom set:
+\begin{align}
+  \text{OR} &= \{ ax_1x_2,\; x_1y_1c_1,\; x_2y_2c_2,\; by_1y_2,\; c_1c_2 \}\\
+  \text{NAND} &= \{ \ol{ax_1},\; \ol{ax_2},\; \ol{x_1y_1},\; \ol{x_1c_1},\; \ol{x_2y_2},\; \ol{x_2c_2},\; \ol{by_1},\; \ol{by_2},\; \ol{c_1c_2} \}
+\end{align}

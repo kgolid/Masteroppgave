@@ -109,3 +109,14 @@ In addition, since all OR-clauses contains exactly one atom from each hole, each
 Looking at the NAND-clauses in the axiom set, we see that none of them contains atoms from two different holes, so the three axiomatic NAND-clauses eligible in a premise has to be completely disjoint.
 Since all three are binary, we have a total of 6 different axioms in the premise, and with the OR-clause shaving of 3 of these, our conclusion must contain 3 different atoms.
 Any NAND-clause derived directly from axioms must therefore be of length 3.
+\begin{prooftree*}
+  \Hypo{\ol{1_i1_j}}
+  \Hypo{\ol{2_i2_k}}
+  \Hypo{\ol{3_i3_l}}
+  \Infer[left label = $1_i2_i3_i$]3{\ol{1_j2_k3_l}}
+\end{prooftree*}
+
+It is easy to see that this generalizes to any version of the pigeonhole principle.
+When you have $n$ holes and $>n$ pigeons, the OR-clauses will be of length $n$, requiring $n$ disjoint NAND-clauses in the premise, thus resulting in a NAND-clause of length $n$.
+
+This means not only that we are unable to keep the clause length at 2, but also that cannot control these clause lengths at all.

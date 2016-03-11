@@ -33,7 +33,7 @@ Kernels heve been of great interest over several decades, mainly within the fiel
 The concept was first defined and used by Neumann and Morgenstern in \cite{neumann}.
 In a graph representing some sort of a turn-based game, where vertices are states and edges are transitions between states, one can often work out winning strategies whenever one finds a kernel in the graph.
 Whenever one is outside of the kernel, one always has the possibility of moving inside the kernel (since the kernel is absorbing), while inside the kernel one \textit{has} to move out of it (since the kernel is independent).
-If you are the player with the choice outside the kernel, you can control the game and choose to stabilize it by always moving inside the kernel, forcing the opponent to move out again.
+If you are the player with the choice outside the kernel, you can control the game and choose to stabilize it by always moving into the kernel, forcing the opponent to move out again on the next turn.
 
 Deciding the existence of kernels in finite graphs has been shown to be an NP-complete problem\cite{chvatal}.
 This should not be surprising, since we are in the middle of showing the equivalence between this problem and the problem of finding satisying models of PL theories (SAT), which we know is NP-complete \footnote{We are concerned with SAT over infinitary formulae in this paper, not the finite version from computer science.}.

@@ -40,3 +40,19 @@ This gives the following axiom set:
   \text{OR} &= \{ ax_1x_2,\; x_1y_1c_1,\; x_2y_2c_2,\; by_1y_2,\; c_1c_2 \}\\
   \text{NAND} &= \{ \ol{ax_1},\; \ol{ax_2},\; \ol{x_1y_1},\; \ol{x_1c_1},\; \ol{x_2y_2},\; \ol{x_2c_2},\; \ol{by_1},\; \ol{by_2},\; \ol{c_1c_2} \}
 \end{align}
+Note that we do not include the clauses corresponding to the elements of the above-mentioned rays, since these will not contribute to any useful results\todo{This needs an explanation}.
+
+The NAND-clause that we want to prove is $\ol{ab}$, and this is one way to prove it in Neg:
+\begin{prooftree*}
+  \Hypo{\ol{ax_2}}
+  \Hypo{\ol{by_2}}
+  \Hypo{\ol{c_1c_2}}
+  \Infer[left label = $x_2y_2c_2$]3{\ol{abc_1}}
+  \Hypo{\ol{ax_1}}
+  \Hypo{\ol{by_1}}
+  \Hypo{\ol{c_1c_2}}
+  \Infer[right label = $x_1y_1c_1$]3{\ol{abc_2}}
+  \Infer[left label = $c_1c_2$]2{\ol{ab}}
+\end{prooftree*}
+In the premise of the last step in this proof, we have two non-binary NAND-clauses.
+How do we know that this cannot be avoided?

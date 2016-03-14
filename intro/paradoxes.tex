@@ -35,10 +35,11 @@ Consider the examples below; with normal propositional statements to the left, t
   a \wedge \neg a && x_2 \leftrightarrow a \wedge \neg a\\
   a \vee \neg a   && x_3 \leftrightarrow a \vee \neg a
 \end{align}
-By performing this naming-operation on these statements, one is obviously changing their truth value.
+Labelling statements in this way obviously changes their truth value.
 Even though we have one consistent, one inconsistent and one tautological statement on the left, all the statements become consistent after they have been named.
-This is because we in all the cases above can find a truth value for $x_i$ that matches the one of the corresponding statement.
-This will not be the case for paradoxes, so our new named statements will be consistent if and only if they are not paradoxical.
+This is because we can find truth values for both $x_1$, $x_2$ and $x_3$ that match their corresponding statements, making each equivalence true.
+In other words, the truth value of a labelled statement does not refer to whether the unnamed statement is consistent, but whether or not a truth value can be found at all.
+Since we have defined a paradox to be a statement that is neither true nor false, we get that a statement is paradoxical if and only if labelling it makes it inconsistent.
 
 Consider the liar sentence.  It can be written as a named statement in the following way:
 \begin{align}

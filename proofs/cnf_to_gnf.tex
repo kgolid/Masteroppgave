@@ -6,7 +6,7 @@ Since any PL theory can be expressed in CNF, showing that any theory $P$ in CNF 
 Given any CNF theory $P$, for each formula in it, follow the steps below to acquire its corresponding GNF theory.
 
 \textbf{Step 1:}
-For each literal $\neg x_i$ in the formula, introduce a fresh variable $x'_i$ and add the following two GNF formulae to $P$:
+For each atom $x_i$ in the formula, introduce a fresh variable $x'_i$ and add the following two GNF formulae to $P$:
 $x'_i \lar \neg x_i, x_i \lar \neg x'_i,$ (unless this has already been done while translating an earlier formula in the theory).
 
 \textbf{Step 2:}

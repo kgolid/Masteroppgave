@@ -7,12 +7,11 @@ A propositional theory over a set of variables $\Sigma$ is in \textit{graph norm
 \end{align}
 where $I_x \subseteq \Sigma$ and such that every variable occurs exactly once on the left of $\leftrightarrow$ across all the formulae in the theory.
 
-There is a simple translation from conjunctive normal from to graph normal form (shown in the appendix), showing that any propositional theory has an equisatisfiable GNF theory.
-By interpreting the variable on the left as the name of the statement on the right, like shown earlier, one can start using GNF to model meta-statements.
+There is a simple translation from a theory in conjunctive normal form to an equisatisfiable theory in graph normal form (shown in the appendix).
+Since conjunctive normal form is expressively complete, we get that any propositional theory, including our labelled statements, has an equisatisfiable GNF theory.
 
-We now formally define a \textbf{discourse} to be a theory in GNF, and a \textbf{paradox} to simply be an inconsistent discourse.
+This means that any discourse can be represented with a GNF theory such that the discourse is paradoxical if and only if the GNF theory is inconsistent.
+This GNF representation of discourses is interesting to us because GNF theories has a tight correspondence to graphs.
+This correspondence lets us not only decide the satisfiability of a discourse theory by looking at certain features in the corresponding graph, but the graph also provide us with the actual models of the discourse, if they exist.
 
-We will later show a very handy correspondence between these discourse theories and certain graphs.
-The correspondence lets us not only decide the satisfiability of a discourse theory (i.e. whether or not it is paradoxical) by looking at certain properties of the corresponding graph.
-The properties in the graph also provide us with the satisfying models, if they exist.
 In order to express this logic/graph correspondence, we first need to establish some graph terminology.

@@ -1,11 +1,11 @@
 % !TEX root= ../main.tex
-A propositional theory is in \textbf{graph normal form (GNF)} if all its formulae have the following form:
 \section{Graph Normal Form}
 \label{sec:Graph Normal Form}
+A propositional theory over a set of variables $\Sigma$ is in \textit{graph normal form (GNF)}\cite{apal-digraph} if all its formulae have the following form:
 \begin{align}
   x \leftrightarrow \bigwedge_{i \in I_x} \neg y_i
 \end{align}
-such that every variable occurs exactly once on the left of $\leftrightarrow$ across all the formulae in the theory.
+where $I_x \subseteq \Sigma$ and such that every variable occurs exactly once on the left of $\leftrightarrow$ across all the formulae in the theory.
 
 There is a simple translation from conjunctive normal from to graph normal form (shown in the appendix), showing that any propositional theory has an equisatisfiable GNF theory.
 By interpreting the variable on the left as the name of the statement on the right, like shown earlier, one can start using GNF to model meta-statements.

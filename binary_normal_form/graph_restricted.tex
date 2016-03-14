@@ -58,6 +58,7 @@ In the premise of the last step in this proof, we have two non-binary NAND-claus
 How do we know that this cannot be avoided?
 
 By taking a closer look at the graph, we can work out these 6 solutions (black vertices being assigned 1, while white vertices being assigned 0):
+
 \[
   \begin{tikzpicture}
     [
@@ -216,6 +217,7 @@ By taking a closer look at the graph, we can work out these 6 solutions (black v
     \draw [-latex] (c1) to (c2);
   \end{tikzpicture}
 \]
+
 Based on these solutions, we can say a lot about the provability of various binary NAND-clauses.
 Any pair of vertices from the graph that can be 1 under the same assignment will not be a Neg-provable NAND.
 We get this from soundness of Neg, since when two vertices $v$ and $u$ are both 1 under some assignment, we get that $\nvDash \ol{vu}$ and by soundness of Neg that $\vdash_{Neg} \ol{vu}$.

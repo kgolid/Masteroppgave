@@ -252,3 +252,174 @@ This gives us the following information: since both the possible OR-clauses are 
 Looking at our table again, we see that the potentially provable NAND-clauses containing a $c$ are again the axioms only.
 Since there are no provable NAND-clauses on the form $ac_i$ or $bc_i$, we get that the conclusion of our rule cannot possibly be of length 2, thus contradicting our assumption.
 We can therefore conclude that $\ol{ab}$ cannot be proven in Neg using unary and binary NAND-clauses only.
+
+Observe that we also in this case can expand the graph to require arbitrarily long NAND-clauses.
+Consider the following variation of our original graph:
+\[
+  \begin{tikzpicture}
+    [
+    point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
+    collection/.style={thick,rectangle,draw,inner sep=0pt,minimum height=14mm, minimum width= 9mm}
+    ]
+    \node (a) at (0,2) [point,label=left:$a$] {};
+    \node (x1) at (0,4) [point,label=left:$x_1$] {};
+    \node (x2) at (0,0) [point,label=left:$x_2$] {};
+    \node (b) at (6,2) [point,label=right:$b$] {};
+    \node (y1) at (6,4) [point,label=right:$y_1$] {};
+    \node (y2) at (6,0) [point,label=right:$y_2$] {};
+    \node (c1) at (1,3) [point,label=below right:$c^1_1$] {};
+    \node (c2) at (1,1) [point,label=above right:$c^1_2$] {};
+    \node (d1) at (2,3) [point,label=below right:$c^2_1$] {};
+    \node (d2) at (2,1) [point,label=above right:$c^2_2$] {};
+    \node (e1) at (3,3) [point,label=below right:$c^3_1$] {};
+    \node (e2) at (3,1) [point,label=above right:$c^3_2$] {};
+    \node (etc) at (4,2) [] {\dots};
+    \node (z1) at (5,3) [point,label=below right:$c^n_1$] {};
+    \node (z2) at (5,1) [point,label=above right:$c^n_2$] {};
+    \draw [-latex] (a) to (x1);
+    \draw [-latex] (a) to (x2);
+    \draw [-latex] (b) to (y1);
+    \draw [-latex] (b) to (y2);
+    \draw [-latex] (x1) to (y1);
+    \draw [-latex] (x1) to (c1);
+    \draw [-latex] (x1) to (d1);
+    \draw [-latex] (x1) to (e1);
+    \draw [-latex] (x1) to (z1);
+    \draw [-latex] (x2) to (y2);
+    \draw [-latex] (x2) to (c2);
+    \draw [-latex] (x2) to (d2);
+    \draw [-latex] (x2) to (e2);
+    \draw [-latex] (x2) to (z2);
+    \draw [-latex] (c1) to (c2);
+    \draw [-latex] (d1) to (d2);
+    \draw [-latex] (e1) to (e2);
+    \draw [-latex] (z1) to (z2);
+  \end{tikzpicture}
+\]
+
+What provable binary NAND-clauses does this extension introduce?
+As it turns out, almost none.
+The following assignment shows us that any two vertices on the form $c^i_k$ and $c^j_k$ can be assigned 1 simultaneously, resulting in $\nvdash_{Neg} c^i_kc^j_k$ by soundness.
+
+\[
+  \begin{tikzpicture}
+    [
+    point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
+    one/.style={fill=black},
+    collection/.style={thick,rectangle,draw,inner sep=0pt,minimum height=14mm, minimum width= 9mm}
+    ]
+    \node (a) at (0,2) [point,one,label=left:$a$] {};
+    \node (x1) at (0,4) [point,label=left:$x_1$] {};
+    \node (x2) at (0,0) [point,label=left:$x_2$] {};
+    \node (b) at (6,2) [point,label=right:$b$] {};
+    \node (y1) at (6,4) [point,one,label=right:$y_1$] {};
+    \node (y2) at (6,0) [point,one,label=right:$y_2$] {};
+    \node (c1) at (1,3) [point,one,label=below right:$c^1_1$] {};
+    \node (c2) at (1,1) [point,label=above right:$c^1_2$] {};
+    \node (d1) at (2,3) [point,one,label=below right:$c^2_1$] {};
+    \node (d2) at (2,1) [point,label=above right:$c^2_2$] {};
+    \node (e1) at (3,3) [point,one,label=below right:$c^3_1$] {};
+    \node (e2) at (3,1) [point,label=above right:$c^3_2$] {};
+    \node (etc) at (4,2) [] {\dots};
+    \node (z1) at (5,3) [point,one,label=below right:$c^n_1$] {};
+    \node (z2) at (5,1) [point,label=above right:$c^n_2$] {};
+    \draw [-latex] (a) to (x1);
+    \draw [-latex] (a) to (x2);
+    \draw [-latex] (b) to (y1);
+    \draw [-latex] (b) to (y2);
+    \draw [-latex] (x1) to (y1);
+    \draw [-latex] (x1) to (c1);
+    \draw [-latex] (x1) to (d1);
+    \draw [-latex] (x1) to (e1);
+    \draw [-latex] (x1) to (z1);
+    \draw [-latex] (x2) to (y2);
+    \draw [-latex] (x2) to (c2);
+    \draw [-latex] (x2) to (d2);
+    \draw [-latex] (x2) to (e2);
+    \draw [-latex] (x2) to (z2);
+    \draw [-latex] (c1) to (c2);
+    \draw [-latex] (d1) to (d2);
+    \draw [-latex] (e1) to (e2);
+    \draw [-latex] (z1) to (z2);
+  \end{tikzpicture}
+  \hspace{5mm}
+  \begin{tikzpicture}
+    [
+    point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
+    one/.style={fill=black},
+    collection/.style={thick,rectangle,draw,inner sep=0pt,minimum height=14mm, minimum width= 9mm}
+    ]
+    \node (a) at (0,2) [point,one,label=left:$a$] {};
+    \node (x1) at (0,4) [point,label=left:$x_1$] {};
+    \node (x2) at (0,0) [point,label=left:$x_2$] {};
+    \node (b) at (6,2) [point,label=right:$b$] {};
+    \node (y1) at (6,4) [point,one,label=right:$y_1$] {};
+    \node (y2) at (6,0) [point,one,label=right:$y_2$] {};
+    \node (c1) at (1,3) [point,label=below right:$c^1_1$] {};
+    \node (c2) at (1,1) [point,one,label=above right:$c^1_2$] {};
+    \node (d1) at (2,3) [point,label=below right:$c^2_1$] {};
+    \node (d2) at (2,1) [point,one,label=above right:$c^2_2$] {};
+    \node (e1) at (3,3) [point,label=below right:$c^3_1$] {};
+    \node (e2) at (3,1) [point,one,label=above right:$c^3_2$] {};
+    \node (etc) at (4,2) [] {\dots};
+    \node (z1) at (5,3) [point,label=below right:$c^n_1$] {};
+    \node (z2) at (5,1) [point,one,label=above right:$c^n_2$] {};
+    \draw [-latex] (a) to (x1);
+    \draw [-latex] (a) to (x2);
+    \draw [-latex] (b) to (y1);
+    \draw [-latex] (b) to (y2);
+    \draw [-latex] (x1) to (y1);
+    \draw [-latex] (x1) to (c1);
+    \draw [-latex] (x1) to (d1);
+    \draw [-latex] (x1) to (e1);
+    \draw [-latex] (x1) to (z1);
+    \draw [-latex] (x2) to (y2);
+    \draw [-latex] (x2) to (c2);
+    \draw [-latex] (x2) to (d2);
+    \draw [-latex] (x2) to (e2);
+    \draw [-latex] (x2) to (z2);
+    \draw [-latex] (c1) to (c2);
+    \draw [-latex] (d1) to (d2);
+    \draw [-latex] (e1) to (e2);
+    \draw [-latex] (z1) to (z2);
+  \end{tikzpicture}
+\]
+Similarily, any two vertices on the form $c^i_1$ and $c^j_2$ can also be 1 simultaneously with the following (partial) assignment
+\[
+  \begin{tikzpicture}
+  [
+  point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
+  one/.style={fill=black},
+  collection/.style={thick,rectangle,draw,inner sep=0pt,minimum height=14mm, minimum width= 9mm}
+  ]
+  \node (a) at (0,2) [point,one,label=left:$a$] {};
+  \node (x1) at (0,4) [point,label=left:$x_1$] {};
+  \node (x2) at (0,0) [point,label=left:$x_2$] {};
+  \node (b) at (6,2) [point,label=right:$b$] {};
+  \node (y1) at (6,4) [point,one,label=right:$y_1$] {};
+  \node (y2) at (6,0) [point,one,label=right:$y_2$] {};
+  \node (etc1) at (1,2) [] {\dots};
+  \node (c1) at (2,3) [point,one,label=below right:$c^i_1$] {};
+  \node (c2) at (2,1) [point,label=above right:$c^i_2$] {};
+  \node (etc2) at (3,2) [] {\dots};
+  \node (z1) at (4,3) [point,label=below right:$c^j_1$] {};
+  \node (z2) at (4,1) [point,one,label=above right:$c^j_2$] {};
+  \node (etc3) at (5,2) [] {\dots};
+  \draw [-latex] (a) to (x1);
+  \draw [-latex] (a) to (x2);
+  \draw [-latex] (b) to (y1);
+  \draw [-latex] (b) to (y2);
+  \draw [-latex] (x1) to (y1);
+  \draw [-latex] (x1) to (c1);
+  \draw [-latex] (x1) to (z1);
+  \draw [-latex] (x2) to (y2);
+  \draw [-latex] (x2) to (c2);
+  \draw [-latex] (x2) to (z2);
+  \draw [-latex] (c1) to (c2);
+  \draw [-latex] (z1) to (z2);
+  \end{tikzpicture}
+\]
+
+Compared to our original graph, the extended variant only provide axiomatic NAND-clauses to the set of provable binary NAND-clauses.
+
+Each $c^i_1$ and $c^i_2$ will form the exact same provable binary NAND-clauses, that our original $c_1$ and $c_2$ did

@@ -58,10 +58,9 @@ This is now impossible, since the out-neighborhood of $x_{a+1}$ is a subset of t
 Since $x_a$ was chosen without any restrictions, no vertex can be inside the kernel, making it empty.
 This is oviously not possible, so the Yablo-graph is without a kernel.
 
-\begin{align}
-  \begin{aligned}
 One thing should be mentioned at this point, the inverse of Richardson's statement is not valid; neither odd cycles nor infinitely branching vertices \textit{entail} that their respective graphs are paradoxical.
 The following two graphs illustrate this point:
+\[
     \begin{tikzpicture}
       [
       point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
@@ -75,8 +74,7 @@ The following two graphs illustrate this point:
       \draw [-latex, bend left] (2) to (0);
       \draw [-latex, bend left] (0) to (2);
     \end{tikzpicture}
-  \end{aligned}
-\end{align}
+\]
 The above graph contains an odd cycle, but the singleton set $\{x_2\}$ is a kernel.
 \begin{figure}[!h]
   \centering

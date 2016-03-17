@@ -1,5 +1,6 @@
 % !TEX root= ../main.tex
 \externaldocument{discoursegraphs}
+\externaldocument{kerneltheory}
 \section{Resolving GNF-theories}
 \label{sec:Resolving GNF-theories}
 In this section, we will be presenting an inference system introduced by Walicki in \cite{} which handles clausal theories induced from GNF-theories.
@@ -88,7 +89,7 @@ Refutational completeness gives us that whenever a graph/theory is inconsistent,
 \subsection{Inconsistency of the Yablo-graph}
 \label{sub:Inconsistency of the Yablo-graph}
 The inconsistency of the Yablo-graph is easily provable using Neg only.
-Since every vertex $x_i$ (using the notation from earlier) has an edge to each vertex $x_j$ where $j > i$, we get that every pair of distinct vertices is connected by an edge.
+Since every vertex $x_i$ (using the notation from Figure~\ref{fig:yablo-graph}) has an edge to each vertex $x_j$ where $j > i$, we get that every pair of distinct vertices is connected by an edge.
 This means that our set of axioms from the Yablo-graph looks like this:
 \begin{align}
   \text{NAND} = \{ \ol{x_ix_j} \; |\; i < j\}

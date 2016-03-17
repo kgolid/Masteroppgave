@@ -15,7 +15,8 @@ The following construction will however reveal our lack of imagination.
 
 The \textit{Yablo Graph}\cite{analysis-yablo} is an example of an acyclic graph with no kernel.
 It is constructed with an infinite set of vertices $\{ x_i | i \in \mathbb{N} \}$ and a set of edges $N$ such that $\langle x_i, x_j \rangle \in N$ iff $i < j$.
-\[
+\begin{figure}[!h]
+  \centering
   \begin{tikzpicture}
     [
     point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
@@ -43,7 +44,9 @@ It is constructed with an infinite set of vertices $\{ x_i | i \in \mathbb{N} \}
     \draw [dashed, bend left] (2) to (6);
     \draw [dashed, bend right] (1) to (6);
   \end{tikzpicture}
-\]
+  \caption{}
+  \label{fig:yablo-graph}
+\end{figure}
 Since there exist no two numbers $x,y \in \mathbb{N}$ such that $x < y$ and $y < x$, we get that the Yablo graph indeed is acyclic\todo{This is a bit over-simplified}.
 Furthermore, since any natural number has infinitely many numbers strictly larger than it, we get that all the vertices are infinitely branching, making the Yablo graph infinitary.
 

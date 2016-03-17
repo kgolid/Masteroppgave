@@ -17,15 +17,15 @@ We start by writing the above bi-implication as two implications:
 The first implication can be rewritten in the following way:
 \begin{align}
   x \rightarrow \bigwedge_{i \in I_x} \neg y_i
-  \quad=\quad \neg x \vee \bigwedge_{i \in I_x} \neg y_i
-  \quad=\quad \bigwedge_{i \in I_x} (\neg x \vee \neg y_i)
-  \quad=\quad \bigwedge_{i \in I_x} \neg (x \wedge y_i)
+  \quad\Leftrightarrow\quad \neg x \vee \bigwedge_{i \in I_x} \neg y_i
+  \quad\Leftrightarrow\quad \bigwedge_{i \in I_x} (\neg x \vee \neg y_i)
+  \quad\Leftrightarrow\quad \bigwedge_{i \in I_x} \neg (x \wedge y_i)
 \end{align}
 The second implication can be rewritten in the following way:
 \begin{align}
   x \leftarrow \bigwedge_{i \in I_x} \neg y_i
-  \quad=\quad x \vee \neg \left( \bigwedge_{i \in I_x} \neg y_i \right)
-  \quad=\quad x \vee \bigvee_{i \in I_x} y_i
+  \quad\Leftrightarrow\quad x \vee \neg \left( \bigwedge_{i \in I_x} \neg y_i \right)
+  \quad\Leftrightarrow\quad x \vee \bigvee_{i \in I_x} y_i
 \end{align}
 By splitting the conjunction from the first implication up into individual clauses, we get the following two kinds of clauses for every variable $x$ in the GNF theory:
 \begin{align}

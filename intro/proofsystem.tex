@@ -84,7 +84,7 @@ Note that an infinite graph gives infinitely many NAND-clauses, while an infinit
 We study the refutation system that arises from the Axioms and the (Rneg)-rule, calling it Neg.
 It is shown in the submitted paper \cite{michal-completeness} that Neg is sound and refutationally complete for theories with only a countable number of OR-clauses.
 Soundness gives us that proving $\ol{C}$ for any $C \subseteq G$ implies that the vertices in $C$ cannot all be assigned 1 in the graph model.
-Refutational completeness gives us that whenever a graph/theory is inconsistent, we are able to prove $\emptyset$ in Neg.
+Refutational completeness gives us that whenever a graph/theory is inconsistent, we are able to prove $\varnothing$ in Neg.
 
 \subsection{Inconsistency of the Yablo-graph}
 \label{sub:Inconsistency of the Yablo-graph}
@@ -104,7 +104,7 @@ For any vertex $x_i$ from the Yablo-graph, we are now able to prove $\ol{x_i}$ i
   \Hypo{\dots}
   \Infer4[$x_ix_{i+1}x_{i+2}\dots$]{\ol{x_i}}
 \end{prooftree*}
-Proving $\emptyset$ is now simple:
+Proving $\varnothing$ is now simple:
 \begin{prooftree*}
   \Hypo{\dots}
   \Infer1{\ol{x_1}}
@@ -113,7 +113,7 @@ Proving $\emptyset$ is now simple:
   \Hypo{\dots}
   \Infer1{\ol{x_3}}
   \Hypo{\dots}
-  \Infer4[$x_1x_2x_3\dots$]{\emptyset}
+  \Infer4[$x_1x_2x_3\dots$]{\varnothing}
 \end{prooftree*}
 A less trivial inconsistency proof is the one on the \textit{Stretched Yablo-graph}.
 This proof can be found in the appendix together with the definition of Stretched Yablo.

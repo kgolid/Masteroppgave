@@ -5,7 +5,7 @@ This section will show that there exist inconsistencies in non-graph-based theor
 We will prove the pigeonhole principle to examplify this.
 
 The pigeonhole principle states that whenever you have $n$ pigeons and $m$ holes such that $n > m$, then at least one hole must contain more than one pigeon.
-We can prove this principle in Neg by proving an inconsistency in the theory that (1) all $n$ pigeons are contained in a hole and (2) each hole contains only one pigeon.
+We can prove this principle in Neg by proving an inconsistency of the theory that (1) all $n$ pigeons are contained in a hole and (2) each hole contains only one pigeon.
 
 Letting the atom $x_i$ denote the pigeon $i$ occupying the hole $x$, the above theory, with $n$ pigeons and $m$ holes, can be formalized in the following way:
 \begin{align}
@@ -104,7 +104,7 @@ As mentioned earlier, the only strategy in proving inconsistencies in Neg is to 
 
 Now, what possible ways are there to create new NAND-clauses from our given pigeonhole axioms?
 The OR-clauses are what dictates the ways new NAND-clauses can, be created, and since all OR-clauses are of length 3, we get that any premise must consist of exactly 3 NAND-clauses.
-In addition, since all OR-clauses contains exactly one atom from each hole, each of the three NAND-clauses must contain atoms from different holes.
+In addition, since all OR-clauses contain exactly one atom from each hole, each of the three NAND-clauses must contain atoms from different holes.
 
 Looking at the NAND-clauses in the axiom set, we see that none of them contains atoms from two different holes, so the three axiomatic NAND-clauses eligible in a premise has to be completely disjoint.
 Since all three are binary, we have a total of 6 different axioms in the premise, and with the OR-clause shaving of 3 of these, our conclusion must contain 3 different atoms.

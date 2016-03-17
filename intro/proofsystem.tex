@@ -34,7 +34,7 @@ By splitting the conjunction from the first implication up into individual claus
 \end{align}
 We will treat both the OR-clauses and the NAND-clauses as sets of atoms, denoting NAND-clauses $\neg (x \wedge y)$ as $\overline{xy}$ and OR-clauses $x \vee y_1 \vee y_2 \vee y_3$ as $xy_1y_2y_3$.
 This enables us to state things like $\overline{xy} \subset \overline{xyz}$.
-A theory will -- as expected -- be a set of clauses.
+A theory will -- as expected -- be a set of OR- and NAND-clauses.
 
 If we interpret the initial GNF-theory as a graph $\mathbf{G}=\langle G,N\rangle$, for every vertex $x \in G$, there will be one OR-clause $\{ x \} \cup N(x)$ and for every edge $\langle x,y \rangle \in N$ there will be a NAND-clause $\overline{xy}$.
 The graphs from Example~\ref{ex:3graphs} will have the following clausal theories:

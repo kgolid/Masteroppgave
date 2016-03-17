@@ -30,8 +30,8 @@ A consequence of this is that a kernel has to be non-empty, unless the graph is 
 
 $N^-(K) \subseteq G \setminus K$, saying that each edge targeting a vertex within the kernel has to come from outside, thus no two vertices in the kernel are connected by an edge (K is \textit{independent}).
 
-Kernels heve been of great interest over several decades, mainly within the fields of game theory and economics.
 The concept was first defined and used by Neumann and Morgenstern in \cite{neumann}.
+Kernels heve been studied over several decades, not only in graph theory, but also within the fields of game theory and economics.
 In a graph representing some sort of a turn-based game, where vertices are states and edges are transitions between states, one can often work out winning strategies whenever one finds a kernel in the graph.
 Whenever one is outside of the kernel, one always has the possibility of moving inside the kernel (since the kernel is absorbing), while inside the kernel one \textit{has} to move out of it (since the kernel is independent).
 If you are the player with the choice outside the kernel, you can control the game and choose to stabilize it by always moving into the kernel, forcing the opponent to move out again on the next turn.

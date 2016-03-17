@@ -4,7 +4,7 @@
 A directed graph (digraph) is a pair \textbf{G} = $\langle G,N \rangle$ where $G$ is a set of vertices while $N \subseteq G \times G$ is a binary relation representing the edges in \textbf{G}.
 We use the notation $N(x)$ to denote the set of all vertices that are targeted by edges originating in $x$ (successors of $x$).
 Similarly, $N^-(x)$ denotes the set of all vertices with edges targeting $x$ (predecessors of $x$).
-We define these two predicates formally as follows:
+We define these two functions formally as follows:
 \begin{align}
   N(x) := \{y \;|\; (x,y) \in N\}\\
   N^-(x) := \{ y \;|\; (y,x) \in N \}
@@ -13,7 +13,7 @@ We define these two predicates formally as follows:
 A simple \textit{path} is a sequence of distinct vertices $x_1,x_2,\dots,x_n$ such that for any consecutive pair $x_i,x_{i+1}$ from the sequence, we have $(x_i, x_{i+1}) \in N$.
 We say that two paths are \textit{disjoint} if they do not share any vertices (possibly with the exception of their initial nodes).
 
-The predicates $N$ and $N^-$ can be extended pointwise to sets in the following way:
+The functions $N$ and $N^-$ can be extended pointwise to sets in the following way:
 \begin{align}
   N(X) = \bigcup_{x \in X} N(x)\\
   N^-(X) = \bigcup_{x \in X} N(x)

@@ -10,7 +10,7 @@ We define these two functions formally as follows:
   N^-(x) := \{ y \;|\; (y,x) \in N \}
 \end{align}
 
-A simple \textit{path} is a sequence of distinct vertices $x_1,x_2,\dots,x_n$ such that for any consecutive pair $x_i,x_{i+1}$ from the sequence, we have $(x_i, x_{i+1}) \in N$.
+A simple \textit{path} is a sequence of distinct vertices $x_1,x_2,\dots,x_n$ such that for each consecutive pair $x_i,x_{i+1}$ from the sequence, we have $(x_i, x_{i+1}) \in N$.
 We say that two paths are \textit{disjoint} if they do not share any vertices (possibly with the exception of their initial nodes).
 
 The functions $N$ and $N^-$ can be extended pointwise to sets in the following way:
@@ -23,7 +23,7 @@ A kernel is a set of vertices $K \subseteq G$ such that:
 \begin{align}
   G \setminus K = N^-(K)
 \end{align}
-The above equivalence can be split up into two inclusions to be more easily understood:
+The above equivalence can be split into two inclusions to be more easily understood:
 
 $G \setminus K \subseteq N^-(K)$, saying that each vertex outside the kernel has to have an edge into the kernel (K is absorbing).
 

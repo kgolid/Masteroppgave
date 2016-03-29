@@ -81,6 +81,8 @@ Consider for example the following graph:
     \node (6) at (5,1) [point,label=above:$x_6$] {};
     \node (7) at (6,1) [point,label=above:$x_7$] {};
     \node (8) at (7,1) [point,label=above:$x_8$] {};
+    \node (9) at (8,1) [point,label=above:$x_9$] {};
+    \node (10) at (9,1) [point,label=above:$x_{10}$] {};
     \draw [-latex] (1) to (2);
     \draw [-latex] (2) to (3);
     \draw [-latex] (3) to (4);
@@ -88,6 +90,8 @@ Consider for example the following graph:
     \draw [-latex] (5) to (6);
     \draw [-latex] (6) to (7);
     \draw [-latex] (7) to (8);
+    \draw [-latex] (8) to (9);
+    \draw [-latex] (9) to (10);
 
     \node (e1) [above left=4mm and 6mm of 1]  {};
     \node (e2) [left=8mm of 1] {};
@@ -103,7 +107,8 @@ Consider for example the following graph:
     \draw [dashed] (e6) to (10);
   \end{tikzpicture}
 \]
-$\ol{x_1x_8}$ can be proven in Neg in the following way:
+
+$\ol{x_1x_{10}}$ can now be proven in Neg in the following way:
 \begin{prooftree*}
   \Hypo{\ol{x_1x_2}}
   \Hypo{\ol{x_3x_4}}
@@ -112,5 +117,8 @@ $\ol{x_1x_8}$ can be proven in Neg in the following way:
   \Infer[left label=$x_4x_5$]2{\ol{x_1x_6}}
   \Hypo{\ol{x_7x_8}}
   \Infer[left label=$x_6x_7$]2{\ol{x_1x_8}}
+  \Hypo{\ol{x_9x_10}}
+  \Infer[left label=$x_8x_9$]2{\ol{x_1x_10}}
+\end{prooftree*}
 \end{prooftree*}
 More generally, whenever two vertices are connected by a path of odd length, their corresponding NAND-clause is provable.

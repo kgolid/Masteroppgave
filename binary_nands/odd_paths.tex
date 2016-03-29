@@ -1,8 +1,32 @@
 % !TEX root= ../main.tex
 \section{Odd paths}
 \label{sec:Odd paths}
-We already know that whenever to vertices are connected by an edge, their binary NAND is provable in Neg, but it is easy to find a case examplifying how the implication does not go in the other direction.
+We already know that whenever two vertices are connected by an edge, like the two vertices in the graph below\footnote{Dashed lines will represent possible edges to irrelevant parts of the graph.  If a vertex has no dashed edges, it means that we disallow it}, their binary NAND is provable in Neg.
+\[
+  \begin{tikzpicture}
+    [
+    node distance=1.5cm,
+    point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
+    ]
+    \node (1) at (1,1) [point] {};
+    \node (2) at (2,1) [point] {};
+    \draw [-latex] (1) to (2);
 
+    \node (e1) [above left=4mm and 6mm of 1]  {};
+    \node (e2) [left=8mm of 1] {};
+    \node (e3) [below left=4mm and 6mm of 1] {};
+    \node (e4) [above right=4mm and 6mm of 2] {};
+    \node (e5) [right=8mm of 2] {};
+    \node (e6) [below right=4mm and 6mm of 2] {};
+    \draw [dashed] (e1) to (1);
+    \draw [dashed] (e2) to (1);
+    \draw [dashed] (e3) to (1);
+    \draw [dashed] (e4) to (2);
+    \draw [dashed] (e5) to (2);
+    \draw [dashed] (e6) to (2);
+  \end{tikzpicture}
+\]
+It is however easy to find a case examplifying how the implication does not hold in the opposite direction.
 \[
   \begin{tikzpicture}
     [

@@ -63,10 +63,11 @@ From these axioms, we can now, despite the fact that the vertices $x_1$ and $x_4
   \Hypo{\ol{x_3x_4}}
   \Infer[left label=$x_2x_3$]2{\ol{x_1x_4}}
 \end{prooftree*}
-Making the path between two vertices longer does not affect the provability of the corresponding binary NAND.
-Consider the below graph.
 
 Intuitively, one can imagine that the proof above is connecting two NAND-clauses using an OR-clause, resulting in a new binary NAND-clause containing vertices that are weaklier connected than the ones we started with.
+This can be done repeatedly, resulting in the ability to prove binary NAND-clauses from vertices that are connected by arbitrarily long paths of the kind above.
+
+Consider for example the following graph:
 \[
   \begin{tikzpicture}
     [

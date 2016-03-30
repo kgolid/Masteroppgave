@@ -10,7 +10,6 @@ If a vertex has no dashed edges, it means that we disallow any additonal edges g
 \[
   \begin{tikzpicture}
     [
-    node distance=1.5cm,
     point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
     ]
     \node (1) at (1,1) [point] {};
@@ -31,6 +30,7 @@ If a vertex has no dashed edges, it means that we disallow any additonal edges g
     \draw [dashed] (e6) to (2);
   \end{tikzpicture}
 \]
+Two vertices are thus vel-connected when one is the successor of the other.
 It is however easy to find a case examplifying how the implication does not hold in the opposite direction.
 \[
   \begin{tikzpicture}

@@ -197,3 +197,7 @@ With the above proof in mind, consider the following graph:
 The axioms we get from this graph does not differ significantly from the fully trimmed variant.
 Since the vertices $x_1, x_3, x_5, \dots ,x_{k_1}$ no longer have single successors, their corresponding OR-clauses, will no longer be binary.
 The NAND-clauses and remainding OR-clauses stay unchanged, and since these are the only clauses we use in the above proof, this proof will also be valid in the above graph.
+In the above graph, only every other vertex are restricted to only have one successor.
+We will call this path variant an \textit{oddly trimmed path}, and define it formally as follows:
+A path $\langle x_0,x_k\rangle$ is oddly trimmed if for each odd $i < k$, $N(x_i) = \{x_{i+1}\}$.
+One can immediately note that any fully trimmed path is also oddly trimmed.

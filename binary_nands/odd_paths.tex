@@ -131,7 +131,8 @@ This is an important point.
 NAND-clauses containing vertices connected only by paths of \textit{even} length cannot be proven in the same manner as above.
 Usually, such NAND-clauses cannot be proven at all.
 
-Generalizing this, we get that whenever two vertices, $x_1$ and $x_k$ are connected by a path of odd length, their corresponding NAND-clause can be proven in Neg in the following way:
+Generalizing this, we get that whenever two vertices, $x_1$ and $x_k$, are connected by a fully trimmed path of odd length, they are vel-connected.
+Their corresponding NAND-clause $\ol{x_1x_k}$ can be proven in Neg in the following way:
 \begin{prooftree*}
   \Hypo{\ol{x_1x_2}}
   \Hypo{\ol{x_3x_4}}

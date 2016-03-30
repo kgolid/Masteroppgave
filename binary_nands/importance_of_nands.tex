@@ -37,7 +37,8 @@ Similarly to a proof of $\varnothing$, there is really just one way to prove a u
   \Hypo{\dots}
   \Infer6[$y_1y_2\dots y_ny_{n+1}\dots$]{\ol{x}}
 \end{prooftree*}
-Any derivation of a unary NAND-clause $\ol{x}$ must end with a rule application using $K \in \text{OR}$ where the NAND-clauses in the premises are either unary, $\ol{k}$ or binary, $\ol{xk}$, both such that $k \in K$.
+Any derivation of a unary NAND-clause $\ol{x}$ must end with a rule application using $K \in \text{OR}$ where for each $k \in K$, there is a NAND-clause in the premise that is either unary, $\ol{k}$ or binary, $\ol{xk}$.
+In addition, we require the premise to contain at least one binary NAND-clause, in order to actually be able to conclude with $\ol x$ and not $\varnothing$.
 
 We formalize this observation in the following way:
 \begin{align}

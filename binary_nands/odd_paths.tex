@@ -131,6 +131,9 @@ This is an important point.
 NAND-clauses containing vertices connected only by paths of \textit{even} length cannot be proven in the same manner as above.
 Usually, such NAND-clauses cannot be proven at all.
 
+It is also worth noting that all the paths so far have been stripped for any branching, keeping the OR-clauses binary in length.
+We will call these kinds of paths \textit{fully trimmed paths}, and formally define them as paths where for each contained vertex $x$ and its successor in the path $y$, we have that $N(x) = \{y\}$.
+
 Generalizing this, we get that whenever two vertices, $x_1$ and $x_k$, are connected by a fully trimmed path of odd length, they are vel-connected.
 Their corresponding NAND-clause $\ol{x_1x_k}$ can be proven in Neg in the following way:
 \begin{prooftree*}

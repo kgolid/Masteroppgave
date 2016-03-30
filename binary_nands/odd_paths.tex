@@ -37,10 +37,10 @@ It is however easy to find a case examplifying how the implication does not hold
     [
     point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
     ]
-    \node (1) at (0,1) [point,label=above:$x_1$] {};
-    \node (2) at (1,1) [point,label=above:$x_2$] {};
-    \node (3) at (2,1) [point,label=above:$x_3$] {};
-    \node (4) at (3,1) [point,label=above:$x_4$] {};
+    \node (1) at (0,1) [point,label=above:$x_0$] {};
+    \node (2) at (1,1) [point,label=above:$x_1$] {};
+    \node (3) at (2,1) [point,label=above:$x_2$] {};
+    \node (4) at (3,1) [point,label=above:$x_3$] {};
     \draw [-latex] (1) to (2);
     \draw [-latex] (2) to (3);
     \draw [-latex] (3) to (4);
@@ -60,13 +60,13 @@ It is however easy to find a case examplifying how the implication does not hold
   \end{tikzpicture}
 \]
 The above graph provides us the following axioms:
-$NAND = \{\ol{x_1x_2},\ol{x_2x_3},\ol{x_3x_4}\}$, $OR = \{x_1x_2,x_2x_3,x_3x_4\}$.
-From these axioms, we can now, despite the fact that the vertices $x_1$ and $x_4$ are not connected by an edge, easily prove the NAND-clause $\ol{x_1x_4}$:.
+$NAND = \{\ol{x_0x_1},\ol{x_1x_2},\ol{x_2x_3}\}$, $OR = \{x_0x_1,x_1x_2,x_2x_3\}$.
+From these axioms, we can now, despite the fact that the vertices $x_0$ and $x_3$ are not connected by an edge, easily prove the NAND-clause $\ol{x_1x_4}$:.
 
 \begin{prooftree*}
-  \Hypo{\ol{x_1x_2}}
-  \Hypo{\ol{x_3x_4}}
-  \Infer[left label=$x_2x_3$]2{\ol{x_1x_4}}
+  \Hypo{\ol{x_0x_1}}
+  \Hypo{\ol{x_2x_3}}
+  \Infer[left label=$x_1x_2$]2{\ol{x_0x_3}}
 \end{prooftree*}
 
 Intuitively, one can imagine that the proof above is connecting two NAND-clauses using an OR-clause, resulting in a new binary NAND-clause containing vertices that are weaklier connected than the ones we started with.
@@ -78,16 +78,16 @@ Consider for example the following graph:
     [
     point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
     ]
-    \node (1) at (0,1) [point,label=above:$x_1$] {};
-    \node (2) at (1,1) [point,label=above:$x_2$] {};
-    \node (3) at (2,1) [point,label=above:$x_3$] {};
-    \node (4) at (3,1) [point,label=above:$x_4$] {};
-    \node (5) at (4,1) [point,label=above:$x_5$] {};
-    \node (6) at (5,1) [point,label=above:$x_6$] {};
-    \node (7) at (6,1) [point,label=above:$x_7$] {};
-    \node (8) at (7,1) [point,label=above:$x_8$] {};
-    \node (9) at (8,1) [point,label=above:$x_9$] {};
-    \node (10) at (9,1) [point,label=above:$x_{10}$] {};
+    \node (1) at (0,1) [point,label=above:$x_0$] {};
+    \node (2) at (1,1) [point,label=above:$x_1$] {};
+    \node (3) at (2,1) [point,label=above:$x_2$] {};
+    \node (4) at (3,1) [point,label=above:$x_3$] {};
+    \node (5) at (4,1) [point,label=above:$x_4$] {};
+    \node (6) at (5,1) [point,label=above:$x_5$] {};
+    \node (7) at (6,1) [point,label=above:$x_6$] {};
+    \node (8) at (7,1) [point,label=above:$x_7$] {};
+    \node (9) at (8,1) [point,label=above:$x_8$] {};
+    \node (10) at (9,1) [point,label=above:$x_9$] {};
     \draw [-latex] (1) to (2);
     \draw [-latex] (2) to (3);
     \draw [-latex] (3) to (4);
@@ -113,20 +113,20 @@ Consider for example the following graph:
   \end{tikzpicture}
 \]
 
-$\ol{x_1x_{10}}$ can now be proven in Neg in the following way:
+$\ol{x_0x_9}$ can now be proven in Neg in the following way:
 \begin{prooftree*}
-  \Hypo{\ol{x_1x_2}}
-  \Hypo{\ol{x_3x_4}}
-  \Infer[left label=$x_2x_3$]2{\ol{x_1x_4}}
-  \Hypo{\ol{x_5x_6}}
-  \Infer[left label=$x_4x_5$]2{\ol{x_1x_6}}
-  \Hypo{\ol{x_7x_8}}
-  \Infer[left label=$x_6x_7$]2{\ol{x_1x_8}}
-  \Hypo{\ol{x_9x_{10}}}
-  \Infer[left label=$x_8x_9$]2{\ol{x_1x_{10}}}
+  \Hypo{\ol{x_0x_1}}
+  \Hypo{\ol{x_2x_3}}
+  \Infer[left label=$x_1x_2$]2{\ol{x_0x_3}}
+  \Hypo{\ol{x_4x_5}}
+  \Infer[left label=$x_4x_5$]2{\ol{x_0x_5}}
+  \Hypo{\ol{x_6x_7}}
+  \Infer[left label=$x_6x_7$]2{\ol{x_0x_7}}
+  \Hypo{\ol{x_8x_9}}
+  \Infer[left label=$x_8x_9$]2{\ol{x_0x_9}}
 \end{prooftree*}
 
-Observe that the above proof is also proving $\ol{x_1x_4}$, $\ol{x_1x_6}$ and $\ol{x_1x_8}$ along the way, all in which contain vertices connected by paths of \textit{odd} length.
+Observe that the above proof is also proving $\ol{x_0x_3}$, $\ol{x_0x_5}$ and $\ol{x_0x_7}$ along the way, all in which contain vertices connected by paths of \textit{odd} length.
 This is an important point.
 NAND-clauses containing vertices connected only by paths of \textit{even} length cannot be proven in the same manner as above.
 Usually, such NAND-clauses cannot be proven at all.
@@ -134,17 +134,17 @@ Usually, such NAND-clauses cannot be proven at all.
 It is also worth noting that all the paths so far have been stripped for any branching, keeping the OR-clauses binary in length.
 We will call these kinds of paths \textit{fully trimmed paths}, and formally define them as paths where for each contained vertex $x$ and its successor in the path $y$, we have that $N(x) = \{y\}$.
 
-Generalizing this, we get that whenever two vertices, $x_1$ and $x_k$, are connected by a fully trimmed path of odd length, they are vel-connected.
-Their corresponding NAND-clause $\ol{x_1x_k}$ can be proven in Neg in the following way:
+Generalizing this, we get that whenever two vertices, $x_0$ and $x_k$, are connected by a fully trimmed path of odd length, they are vel-connected.
+Their corresponding NAND-clause $\ol{x_0x_k}$ can be proven in Neg in the following way:
 \begin{prooftree*}
-  \Hypo{\ol{x_1x_2}}
-  \Hypo{\ol{x_3x_4}}
-  \Infer[left label=$x_2x_3$]2{\ol{x_1x_4}}
-  \Hypo{\ol{x_5x_6}}
-  \Infer[left label=$x_4x_5$]2{\ol{x_1x_6}}
-  \Ellipsis{}{\ol{x_1x_{k-2}}}
+  \Hypo{\ol{x_0x_1}}
+  \Hypo{\ol{x_2x_3}}
+  \Infer[left label=$x_1x_2$]2{\ol{x_0x_3}}
+  \Hypo{\ol{x_4x_5}}
+  \Infer[left label=$x_3x_4$]2{\ol{x_0x_5}}
+  \Ellipsis{}{\ol{x_0x_{k-2}}}
   \Hypo{\ol{x_{k-1}x_k}}
-  \Infer[left label=$x_{k-2}x_{k-1}$]2{\ol{x_1x_k}}
+  \Infer[left label=$x_{k-2}x_{k-1}$]2{\ol{x_0x_k}}
 \end{prooftree*}
 
 All the OR-clauses used are indeed binary, letting us prove our NAND-clause without introducing any other clauses than the ones we get from the path itself.
@@ -157,10 +157,10 @@ With the above proof in mind, consider the following graph:
     [
     point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
     ]
-    \node (1) at (0,1) [point,label=above:$x_1$] {};
-    \node (2) at (1,1) [point,label=above:$x_2$] {};
-    \node (3) at (2,1) [point,label=above:$x_3$] {};
-    \node (4) at (3,1) [point,label=above:$x_4$] {};
+    \node (1) at (0,1) [point,label=above:$x_0$] {};
+    \node (2) at (1,1) [point,label=above:$x_1$] {};
+    \node (3) at (2,1) [point,label=above:$x_2$] {};
+    \node (4) at (3,1) [point,label=above:$x_3$] {};
     \node (dots) at (4,1) [] {\dots};
     \node (k2) at (5,1) [point,label=above:$x_{k-2}$] {};
     \node (k1) at (6,1) [point,label=above:$x_{k-1}$] {};

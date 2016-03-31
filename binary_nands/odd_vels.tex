@@ -1,0 +1,43 @@
+% !TEX root= ../main.tex
+\section{Odd vels}
+\label{sec:Odd vels}
+Consider the following graph:
+\[
+  \begin{tikzpicture}
+    [
+    point/.style={circle,draw,inner sep=0pt,minimum size=2mm}
+    ]
+    \node (x0) at (0,3) [point, label=above:$x_0$] {};
+    \node (x1) at (1,2) [point, label=above:$x_1$] {};
+    \node (x2) at (2,1) [point, label=above:$x_2$] {};
+    \node (x3) at (3,0) [point, label=above:$x_3$] {};
+    \node (x4) at (4,1) [point, label=above:$x_4$] {};
+    \node (x5) at (5,2) [point, label=above:$x_5$] {};
+    \draw [-latex] (x0) to (x1);
+    \draw [-latex] (x1) to (x2);
+    \draw [-latex] (x2) to (x3);
+    \draw [-latex] (x4) to (x3);
+    \draw [-latex] (x5) to (x4);
+
+    \node (e1) [below left=6mm and 4mm of x3]  {};
+    \node (e2) [below=8mm of x3] {};
+    \node (e3) [below right=6mm and 4mm of x3] {};
+    \draw [dashed] (e1) to (x3);
+    \draw [dashed] (e2) to (x3);
+    \draw [dashed] (e3) to (x3);
+
+    \node (b0) [below left=6mm and 4mm of x0] {};
+    \node (b2) [below left=6mm and 4mm of x2] {};
+    \node (b5) [below right=6mm and 4mm of x5] {};
+    \draw [dashed] (x0) to (b0);
+    \draw [dashed] (x2) to (b2);
+    \draw [dashed] (x5) to (b5);
+  \end{tikzpicture}
+\]
+From the above graph, $x_0x_5$ can be proven in the same way as in the proof of $x_0x_9$ from earlier.
+Again, the only thing we are changing in terms of the axioms are the OR-clauses that are not used in the proof.
+
+We will call this kind of graph structure an \textit{odd vel} and define it formally in the following way:
+Two vertices $a$ and $b$ have an odd vel between them if there exists a vertex $c$ such that there are oddly trimmed paths from $a$ to $c$ and from $b$ to $c$, one of even length (possibly 0) and one of odd length.
+
+Notice that an oddly trimmed path of odd length is just and instance of an odd vel where the even path is of length 0.

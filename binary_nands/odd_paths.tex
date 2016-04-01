@@ -4,6 +4,10 @@
 Given two vertices $x_1$ and $x_2$ in a graph $G$, if we in Neg are able to prove $\ol{x_1x_2}$ from the axioms we get from $G$, we say that $x_1$ and $x_2$ are \textit{vel-connected}.
 This section will try to answer the question ``what kind of graphs structures imply that certain vertices are vel-connected?''.
 
+Because of soundness of Neg, we get that if two vertices are vel-connected in a graph, for each kernel $K$ in that graph, at least one of the two vertices are outside $K$.
+The counterpositive being that for a graph $G$, if there exists a kernel $K \subseteq G$ such that two vertices, $x_1$ and $x_2$ are both in $K$, then $x_1$ and $x_2$ cannot be vel-connected in $G$.
+This fact will be used in argumenting for why some graph structures are not giving us vel-connected vertices.
+
 We already know that whenever two vertices are connected by an edge, their binary NAND is trivially provable in Neg, since it will be a part of the axioms.
 
 We illustrate this case with the figure below, where dashed lines represent possible out-edges to irrelevant parts of the graph.

@@ -135,10 +135,10 @@ With axioms from the above graph, $\ol{x_0x_9}$ can be proven in Neg in the foll
 Observe that the above proof is also proving $\ol{x_0x_3}$, $\ol{x_0x_5}$ and $\ol{x_0x_7}$ along the way, all of which contain vertices connected by paths of \textit{odd} length.
 This is an important point.
 NAND-clauses containing vertices connected only by paths of \textit{even} length cannot be proven in the same manner as above.
-Usually, such NAND-clauses cannot be proven at all.
 
 It is also worth noting that all the paths so far have been stripped for any branching, keeping the OR-clauses binary in length.
 We will call these kinds of paths \textit{fully trimmed paths}, and formally define them as paths where for each contained vertex $x$ and its successor in the path $y$, we have that $N(x) = \{y\}$.
+In many cases, such NAND-clauses cannot be proven at all.
 
 Generalizing this, we get that whenever two vertices, $x_0$ and $x_k$, are connected by a fully trimmed path of odd length, they are vel-connected.
 Their corresponding NAND-clause $\ol{x_0x_k}$ can be proven in Neg in the following way:

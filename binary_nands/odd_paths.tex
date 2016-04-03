@@ -176,6 +176,40 @@ Restricting our paths to be of odd length lets us avoid cases like the one above
 All the paths so far have been free for any branching, i.e. all vertices in the paths have been of degree 1.
 We will call such paths \textit{fully trimmed paths}, and formally define them as paths where for each pair of vertices $x$ and $y$ consecutive in the path, $N(x) = \{y\}$.
 
+If two vertices $a$ and $b$ are connected by an odd path that is \textit{not} fully trimmed, $\ol{ab}$ is not neseccarily provable in Neg.
+The below graph examplifies this with a kernel containing both $a$ and $b$.
+
+\[
+  \begin{tikzpicture}
+    [
+    point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
+    one/.style={fill=black},
+    ]
+    \node (1) at (0,1) [point, one, label=above:$a$] {};
+    \node (2) at (1,1) [point] {};
+    \node (2b) [point, one, below right=4mm and 6mm of 2] {};
+    \node (3) at (2,1) [point] {};
+    \node (4) at (3,1) [point, one,label=above:$b$] {};
+    \draw [-latex] (1) to (2);
+    \draw [-latex] (2) to (3);
+    \draw [-latex] (2) to (2b);
+    \draw [-latex] (3) to (4);
+
+    \node (e1) [above left=4mm and 6mm of 1]  {};
+    \node (e2) [left=8mm of 1] {};
+    \node (e3) [below left=4mm and 6mm of 1] {};
+    \node (e4) [above right=4mm and 6mm of 4] {};
+    \node (e5) [right=8mm of 4] {};
+    \node (e6) [below right=4mm and 6mm of 4] {};
+    \draw [dashed] (e1) to (1);
+    \draw [dashed] (e2) to (1);
+    \draw [dashed] (e3) to (1);
+    \draw [dashed] (e4) to (4);
+    \draw [dashed] (e5) to (4);
+    \draw [dashed] (e6) to (4);
+  \end{tikzpicture}
+\]
+
 Generalizing this, we get that whenever two vertices, $x_0$ and $x_k$, are connected by a fully trimmed path of odd length, they are vel-connected.
 Their corresponding NAND-clause $\ol{x_0x_k}$ can be proven in Neg in the following way:
 \begin{prooftree*}

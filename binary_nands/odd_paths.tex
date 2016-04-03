@@ -137,6 +137,42 @@ This is an important point.
 NAND-clauses containing vertices connected only by paths of \textit{even} length cannot be proven in the same manner as above.
 
 In many cases, such NAND-clauses cannot be proven at all.
+This is examplified by the below graph, with a kernel containing the vertices $a$ and $b$, showing that the NAND $\ol{ab}$ is unprovable in Neg.
+The kernel in the graph below is represented by the black vertices.
+
+\[
+  \begin{tikzpicture}
+    [
+    point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
+    one/.style={fill=black},
+    ]
+    \node (1) at (0,1) [point, one, label=above:$a$] {};
+    \node (2) at (1,1) [point] {};
+    \node (3) at (2,1) [point, one] {};
+    \node (4) at (3,1) [point] {};
+    \node (5) at (4,1) [point, one, label=above:$b$] {};
+    \draw [-latex] (1) to (2);
+    \draw [-latex] (2) to (3);
+    \draw [-latex] (3) to (4);
+    \draw [-latex] (4) to (5);
+
+    \node (e1) [above left=4mm and 6mm of 1]  {};
+    \node (e2) [left=8mm of 1] {};
+    \node (e3) [below left=4mm and 6mm of 1] {};
+    \node (e4) [above right=4mm and 6mm of 5] {};
+    \node (e5) [right=8mm of 5] {};
+    \node (e6) [below right=4mm and 6mm of 5] {};
+    \draw [dashed] (e1) to (1);
+    \draw [dashed] (e2) to (1);
+    \draw [dashed] (e3) to (1);
+    \draw [dashed] (e4) to (5);
+    \draw [dashed] (e5) to (5);
+    \draw [dashed] (e6) to (5);
+  \end{tikzpicture}
+\]
+
+Restricting our paths to be of odd length lets us avoid cases like the one above, but there are still some cases left to avoid, in order for our implication to hold.
+
 All the paths so far have been free for any branching, i.e. all vertices in the paths have been of degree 1.
 We will call such paths \textit{fully trimmed paths}, and formally define them as paths where for each pair of vertices $x$ and $y$ consecutive in the path, $N(x) = \{y\}$.
 

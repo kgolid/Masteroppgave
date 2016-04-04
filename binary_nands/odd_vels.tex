@@ -51,3 +51,83 @@ We will call this kind of graph structure an \textit{odd vel} and define it form
 Two vertices $a$ and $b$ have an odd vel between them if there exists a vertex $c$ such that there are oddly trimmed paths from $a$ to $c$ and from $b$ to $c$, one of even length (possibly 0) and one of odd length.
 
 Notice that an oddly trimmed path of odd length is just an instance of an odd vel where the even path is of length 0.
+
+There are obviously other ways of altering directions of individual edges in a path.
+The next example will however show that most of them will alter the OR-clauses in such a way that our implication no longer hold.
+
+\begin{figure}[!h]
+  \centering
+  \begin{tikzpicture}
+    [
+    point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
+    one/.style={fill=black},
+    ]
+    \node (x0) at (0,1) [point, one, label=above:$a$] {};
+    \node (x1) at (1,2) [point] {};
+    \node (x2) at (2,1) [point] {};
+    \node (x3) at (3,0) [point, one, label=above:$b$] {};
+
+    \draw [-latex] (x1) to (x0);
+    \draw [-latex] (x1) to (x2);
+    \draw [-latex] (x2) to (x3);
+
+    \node (e1) [below left=6mm and 4mm of x0]  {};
+    \node (e2) [below=8mm of x0] {};
+    \node (e3) [below right=6mm and 4mm of x0] {};
+    \draw [dashed] (e1) to (x0);
+    \draw [dashed] (e2) to (x0);
+    \draw [dashed] (e3) to (x0);
+
+    \node (e1) [below left=6mm and 4mm of x3]  {};
+    \node (e2) [below=8mm of x3] {};
+    \node (e3) [below right=6mm and 4mm of x3] {};
+    \draw [dashed] (e1) to (x3);
+    \draw [dashed] (e2) to (x3);
+    \draw [dashed] (e3) to (x3);
+  \end{tikzpicture}
+  \hspace{5mm}
+  \begin{tikzpicture}
+    [
+    point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
+    one/.style={fill=black},
+    ]
+    \node (x0) at (0,1) [point, one, label=above:$a$] {};
+    \node (x1) at (1,2) [point] {};
+    \node (x2) at (2,1) [point] {};
+    \node (x3) at (3,2) [point, one] {};
+    \node (x4) at (4,1) [point] {};
+    \node (x5) at (5,2) [point, one, label=above:$b$] {};
+
+    \draw [-latex] (x1) to (x0);
+    \draw [-latex] (x1) to (x2);
+    \draw [-latex] (x3) to (x2);
+    \draw [-latex] (x3) to (x4);
+    \draw [-latex] (x5) to (x4);
+
+    \node (e1) [below left=6mm and 4mm of x0]  {};
+    \node (e2) [below=8mm of x0] {};
+    \node (e3) [below right=6mm and 4mm of x0] {};
+    \draw [dashed] (e1) to (x0);
+    \draw [dashed] (e2) to (x0);
+    \draw [dashed] (e3) to (x0);
+
+    \node (e1) [below left=6mm and 4mm of x2]  {};
+    \node (e2) [below=8mm of x2] {};
+    \node (e3) [below right=6mm and 4mm of x2] {};
+    \draw [dashed] (e1) to (x2);
+    \draw [dashed] (e2) to (x2);
+    \draw [dashed] (e3) to (x2);
+
+    \node (e1) [below left=6mm and 4mm of x4]  {};
+    \node (e2) [below=8mm of x4] {};
+    \node (e3) [below right=6mm and 4mm of x4] {};
+    \draw [dashed] (e1) to (x4);
+    \draw [dashed] (e2) to (x4);
+    \draw [dashed] (e3) to (x4);
+  \end{tikzpicture}
+  \caption{}
+  \label{fig:inverse-vel}
+\end{figure}
+
+The figure above shows two examples of odd paths that have had some of their edges flipped.
+In both examples, the shown kernel contains both $a$ and $b$, showing that these constructions are not providing a provable NAND-clause $\ol{ab}$ in Neg.

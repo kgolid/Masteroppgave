@@ -1,0 +1,67 @@
+% !TEX root= ../main.tex
+\externaldocument{../binary_nands/odd_vels}
+\section{Provability of NAND-clauses from vels}
+\label{sec:Provability of NAND-clauses from vels}
+This section will prove the following statement:
+Given a graph where two vertices $a$ and $b$ are connected by a vel, as defined in Section~\ref{sec:Odd vels}, the binary NAND-clause $\ol{ab}$ is provable in Neg.
+
+Let $\mathbf{G} = (G,N)$ be a graph containing the vertices $a,b$ such that they have a vel between them.
+By definition, this means that there exists a vertex $c$ such that there is an oddly trimmed path from $a$ to $c$ and from $b$ to $c$, one of odd length and one of even length.
+
+Let $P$ and $Q$ be the two sets containing the vertices in the path from $a$ to $c$ and from $b$ to $c$, respectively.
+We will denote each element of $P$ as $p_i$ where $i \in \mathbb{N}$ is the position of that vertex in the path, starting at 0.
+The elements of $Q$ will be named $q_i$ by the same rule.
+We immediately have that $a = p_0$ and $b = q_0$.
+As long as the trimming restrictions are met, $P$ and $Q$ might overlap, i.e. we might have cases where $p_j = q_k$ from some $i$ and $j$.
+
+We assume, without any loss of generality, that the path from $a$ to $c$ is of odd length, making the path from $b$ to $c$.
+We denote the lengths of the two paths by the numbers $n$ and $m$, giving us that $c = p_n = q_m$.
+The path from $b$ to $c$ might also be empty, making $b = p_0 = c$.
+
+\begin{figure}[!h]
+  \centering
+  \begin{tikzpicture}
+    [
+    point/.style={circle,draw,inner sep=0pt,minimum size=2mm}
+    ]
+    \node (a) at (0,5) [point, label=left:${a = p_0}$] {};
+    \node (p1) at (1,4) [point, label=left:$p_1$] {};
+    \node (pd) at (2,3) [] {$\dots$};
+    \node (pn2) at (3,2) [point, label=left:$p_{n-2}$] {};
+    \node (pn1) at (4,1) [point, label=left:$p_{n-1}$] {};
+    \node (c) at (5,0) [point, label=right:${c = p_n = q_m}$] {};
+    \node (qm1) at (6,1) [point, label=right:$q_{m-1}$] {};
+    \node (qm2) at (7,2) [point, label=right:$q_{m-2}$] {};
+    \node (qd) at (8,3) [] {$\dots$};
+    \node (q1) at (9,4) [point, label=right:$q_1$] {};
+    \node (b) at (10,5) [point, label=right:${b = q_0}$] {};
+    \draw [-latex] (a) to (p1);
+    \draw [-latex] (p1) to (pd);
+    \draw [-latex] (pd) to (pn2);
+    \draw [-latex] (pn2) to (pn1);
+    \draw [-latex] (pn1) to (c);
+    \draw [-latex] (b) to (q1);
+    \draw [-latex] (q1) to (qd);
+    \draw [-latex] (qd) to (qm2);
+    \draw [-latex] (qm2) to (qm1);
+    \draw [-latex] (qm1) to (c);
+
+    \node (e1) [below left=6mm and 4mm of c]  {};
+    \node (e2) [below=8mm of c] {};
+    \node (e3) [below right=6mm and 4mm of c] {};
+    \draw [dashed] (e1) to (c);
+    \draw [dashed] (e2) to (c);
+    \draw [dashed] (e3) to (c);
+
+    \node (ba) [below left=6mm and 4mm of a] {};
+    \node (bn1) [below left=6mm and 4mm of pn1] {};
+    \node (bb) [below right=6mm and 4mm of b] {};
+    \node (bm2) [below right=6mm and 4mm of qm2] {};
+    \draw [dashed] (ba) to (a);
+    \draw [dashed] (bn1) to (pn1);
+    \draw [dashed] (bb) to (b);
+    \draw [dashed] (bm2) to (qm2);
+  \end{tikzpicture}
+  \caption{A general vel between $a$ and $b$}
+  \label{fig:general_odd_vel}
+\end{figure}

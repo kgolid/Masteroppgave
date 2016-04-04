@@ -78,3 +78,35 @@ This makes us able to work out the following subset of $\text{NAND}_G$:
   \text{OR}_V = \{\; p_ip_{i+1} \;|\; 0 \leq i < n, i\text{ is odd}\;\} \;\cup\; \{\; q_jq_{j+1} \;|\; 0 \leq j < m, j\text{ is odd}\;\}
 \end{align}
 The proof of $\ol{ab}$ can now be worked out, based only on the axioms $\Gamma_V = \text{NAND}_V \cup \text{OR}_V$:
+
+\begin{figure}[h!]
+  \begin{prooftree*}
+    \Hypo{\ol{ap_1}}
+    \Hypo{\ol{p_2p_3}}
+    \Infer[left label=$p_1p_2$]2{\ol{ap_3}}
+    \Hypo{\ol{p_4p_5}}
+    \Infer[left label=$p_3p_4$]2{\ol{ap_5}}
+    \Ellipsis{}{\ol{ap_{n-2}}}
+    \Hypo{\ol{p_{n-1}c}}
+    \Infer[left label=$p_{n-2}p_{n-1}$]2{\ol{ac}}
+    \Hypo{\ol{bq_1}}
+    \Hypo{\ol{q_2q_3}}
+    \Infer[left label=$q_1q_2$]2{\ol{bq_3}}
+    \Hypo{\ol{q_4q_5}}
+    \Infer[left label=$q_3q_4$]2{\ol{bq_5}}
+    \Ellipsis{}{\ol{bq_{m-3}}}
+    \Hypo{\ol{q_{m-2}q_{m-1}}}
+    \Infer[left label=$q_{m-3}q_{m-2}$]2{\ol{bq_{m-1}}}
+    \Infer[left label=$q_{m-1}c$]2{\ol{ab}}
+  \end{prooftree*}
+  \caption{Proof that $a$ and $b$ are vel-connected}
+  \label{fig:general_vel_proof}
+\end{figure}
+
+All the NAND-clauses used as axioms in the above proof are on the form $\ol{x_ix_{i+1}}$ and thus elements of $\text{NAND}_V$.
+All the OR-clauses used as axioms are also on the form $x_ix_{i+1}$, and since $n$ is odd and $m$ is even, we see that all the OR-clauses used in the proof are indeed from $\text{OR}_V$.
+
+Observe that the case where $b = c$ is unproblematic, since the above proof also proves $\ol{ac}$.
+The case where some $p_i = q_j$ does not make any of the axioms change, making it too unproblematic.
+
+All the axioms used are thus in $\Gamma_G$, and since all the rule applications are correct, our proof is valid.

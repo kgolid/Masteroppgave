@@ -65,3 +65,15 @@ The path from $b$ to $c$ might also be empty, making $b = p_0 = c$.
   \caption{A general vel between $a$ and $b$}
   \label{fig:general_odd_vel}
 \end{figure}
+
+Let $\text{NAND}_G$ and $\text{OR}_G$ denote the axiomatic NAND- and OR-clauses we get from our graph.
+We can work out the following subset of $\text{NAND}_G$:
+\begin{align}
+  \text{NAND}_V = \{\; \ol{p_ip_{i+1}} \;|\; 0 \leq i < n\;\} \;\cup\; \{\; \ol{q_jq_{j+1}} \;|\; 0 \leq j < m\;\}
+\end{align}
+Since both paths are oddly trimmed, every vertex at an odd position in its path will only have one out-edge, resulting in a binary OR-clause.
+This makes us able to work out the following subset of $\text{NAND}_V$:
+\begin{align}
+  \text{OR}_V = \{\; p_ip_{i+1} \;|\; 0 \leq i < n, i\text{ is odd}\;\} \;\cup\; \{\; q_jq_{j+1} \;|\; 0 \leq j < m, j\text{ is odd}\;\}
+\end{align}
+The proof of $\ol{ab}$ can now be worked, only based on the axioms $\Gamma_G = \text{NAND}_G \cup \text{OR}_G$:

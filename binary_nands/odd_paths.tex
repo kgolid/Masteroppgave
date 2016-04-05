@@ -11,8 +11,9 @@ This fact will be used when arguing why some graph structures are \textit{not} g
 We already know that whenever two vertices are connected by an edge, their binary NAND is trivially provable in Neg, since it is a part of the axioms.
 
 We illustrate this case with the figure below, where dashed lines represent possible out-edges to irrelevant parts of the graph.
-\[
 If a vertex has no dashed edges, it means that we disallow any additional edges out from this vertex.\par
+\begin{figure}[!h]
+  \centering
   \begin{tikzpicture}
     [
     point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
@@ -34,10 +35,13 @@ If a vertex has no dashed edges, it means that we disallow any additional edges 
     \draw [dashed] (e5) to (2);
     \draw [dashed] (e6) to (2);
   \end{tikzpicture}
-\]
+  \caption{}
+  \label{fig:edge_connected}
+\end{figure}
 The basic example above tells us that two vertices are vel-connected when one is the successor of the other.
-\[
 It is however easy to find a case examplifying how the implication does not hold in the opposite direction.\par
+\begin{figure}[!h]
+  \centering
   \begin{tikzpicture}
     [
     point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
@@ -57,22 +61,28 @@ It is however easy to find a case examplifying how the implication does not hold
     \draw [dashed] (e5) to (4);
     \draw [dashed] (e6) to (4);
   \end{tikzpicture}
-\]
+  \caption{}
+  \label{fig:path_3_connected}
+\end{figure}
 The above graph provides us the following axioms:
 $NAND = \{\ol{x_0x_1},\ol{x_1x_2},\ol{x_2x_3}\}$, $OR = \{x_0x_1,x_1x_2,x_2x_3\}$.
-
-\begin{prooftree*}
-  \Hypo{\ol{x_0x_1}}
-  \Hypo{\ol{x_2x_3}}
-  \Infer[left label=$x_1x_2$]2{\ol{x_0x_3}}
-\end{prooftree*}
-
 From these axioms, we can now, despite the fact that the vertices $x_0$ and $x_3$ are not connected by an edge, easily prove the NAND-clause $\ol{x_0x_3}$:\par
+\begin{figure}[!h]
+  \centering
+  \begin{prooftree*}
+    \Hypo{\ol{x_0x_1}}
+    \Hypo{\ol{x_2x_3}}
+    \Infer[left label=$x_1x_2$]2{\ol{x_0x_3}}
+  \end{prooftree*}
+\caption{}
+\label{fig:proof_x0x3}
+\end{figure}
 Intuitively, one can imagine that the proof above is connecting two NAND-clauses using an OR-clause, resulting in a new binary NAND-clause containing vertices that are weaklier connected than the ones we started with.
 This can be done repeatedly, resulting in the ability to prove binary NAND-clauses from vertices that are connected by arbitrarily long paths of the kind above.
 
-\[
 Consider the following graph:\par
+\begin{figure}[!h]
+  \centering
   \begin{tikzpicture}
     [
     point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
@@ -104,21 +114,27 @@ Consider the following graph:\par
     \draw [dashed] (e5) to (10);
     \draw [dashed] (e6) to (10);
   \end{tikzpicture}
-\]
-\begin{prooftree*}
-  \Hypo{\ol{x_0x_1}}
-  \Hypo{\ol{x_2x_3}}
-  \Infer[left label=$x_1x_2$]2{\ol{x_0x_3}}
-  \Hypo{\ol{x_4x_5}}
-  \Infer[left label=$x_4x_5$]2{\ol{x_0x_5}}
-  \Hypo{\ol{x_6x_7}}
-  \Infer[left label=$x_6x_7$]2{\ol{x_0x_7}}
-  \Hypo{\ol{x_8x_9}}
-  \Infer[left label=$x_8x_9$]2{\ol{x_0x_9}}
-\end{prooftree*}
-
 Observe that the above proof is also proving $\ol{x_0x_3}$, $\ol{x_0x_5}$ and $\ol{x_0x_7}$ along the way, all of which contain vertices connected by paths of \textit{odd} length.
+  \caption{}
+  \label{fig:path_9_connected}
+\end{figure}
 With axioms from the above graph, $\ol{x_0x_9}$ can be proven in Neg in the following way:\par
+\begin{figure}[!h]
+  \centering
+  \begin{prooftree*}
+    \Hypo{\ol{x_0x_1}}
+    \Hypo{\ol{x_2x_3}}
+    \Infer[left label=$x_1x_2$]2{\ol{x_0x_3}}
+    \Hypo{\ol{x_4x_5}}
+    \Infer[left label=$x_4x_5$]2{\ol{x_0x_5}}
+    \Hypo{\ol{x_6x_7}}
+    \Infer[left label=$x_6x_7$]2{\ol{x_0x_7}}
+    \Hypo{\ol{x_8x_9}}
+    \Infer[left label=$x_8x_9$]2{\ol{x_0x_9}}
+  \end{prooftree*}
+  \caption{}
+  \label{fig:proof_x0x9}
+\end{figure}
 This is an important point.
 NAND-clauses containing vertices connected only by paths of \textit{even} length cannot be proven in the same manner as above.
 
@@ -126,7 +142,8 @@ In many cases, such NAND-clauses cannot be proven at all.
 This is examplified by the below graph, with a kernel containing the vertices $a$ and $b$, showing that the NAND $\ol{ab}$ is unprovable in Neg.
 The kernel in the graph below is represented by the black vertices.
 
-\[
+\begin{figure}[!h]
+  \centering
   \begin{tikzpicture}
     [
     point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
@@ -149,7 +166,9 @@ The kernel in the graph below is represented by the black vertices.
     \draw [dashed] (e5) to (5);
     \draw [dashed] (e6) to (5);
   \end{tikzpicture}
-\]
+  \caption{}
+  \label{fig:kernel_even}
+\end{figure}
 
 Restricting our paths to be of odd length lets us avoid cases like the one above, but there are still some cases left to avoid, in order for our implication to hold.
 
@@ -157,8 +176,9 @@ All the paths so far have been free for any branching, i.e. all vertices in the 
 We will call such paths \textit{fully trimmed paths}, and formally define them as paths where for each pair of vertices $x$ and $y$ consecutive in the path, $N(x) = \{y\}$.
 
 If two vertices $a$ and $b$ are connected by an odd path that is \textit{not} fully trimmed, $\ol{ab}$ is not neseccarily provable in Neg.
-\[
 The below graph examplifies this with a kernel containing both $a$ and $b$.\par
+\begin{figure}[!h]
+  \centering
   \begin{tikzpicture}
     [
     point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
@@ -181,27 +201,33 @@ The below graph examplifies this with a kernel containing both $a$ and $b$.\par
     \draw [dashed] (e5) to (4);
     \draw [dashed] (e6) to (4);
   \end{tikzpicture}
-\]
-
+  \caption{}
+  \label{fig:kernel_untrimmed}
+\end{figure}
 Generalizing this, we get that whenever two vertices, $x_0$ and $x_k$, are connected by a fully trimmed path of odd length, they are vel-connected.
-\begin{prooftree*}
-  \Hypo{\ol{x_0x_1}}
-  \Hypo{\ol{x_2x_3}}
-  \Infer[left label=$x_1x_2$]2{\ol{x_0x_3}}
-  \Hypo{\ol{x_4x_5}}
-  \Infer[left label=$x_3x_4$]2{\ol{x_0x_5}}
-  \Ellipsis{}{\ol{x_0x_{k-2}}}
-  \Hypo{\ol{x_{k-1}x_k}}
-  \Infer[left label=$x_{k-2}x_{k-1}$]2{\ol{x_0x_k}}
-\end{prooftree*}
-
 Their corresponding NAND-clause $\ol{x_0x_k}$ can be proven in Neg in the following way:\par
+\begin{figure}[!h]
+  \centering
+  \begin{prooftree*}
+    \Hypo{\ol{x_0x_1}}
+    \Hypo{\ol{x_2x_3}}
+    \Infer[left label=$x_1x_2$]2{\ol{x_0x_3}}
+    \Hypo{\ol{x_4x_5}}
+    \Infer[left label=$x_3x_4$]2{\ol{x_0x_5}}
+    \Ellipsis{}{\ol{x_0x_{k-2}}}
+    \Hypo{\ol{x_{k-1}x_k}}
+    \Infer[left label=$x_{k-2}x_{k-1}$]2{\ol{x_0x_k}}
+  \end{prooftree*}
+\caption{}
+\label{fig:proof_x0xk}
+\end{figure}
 All the OR-clauses used are indeed binary, letting us prove our NAND-clause without introducing any other clauses than the ones we get from the path itself.
 However, notice that only half of the OR-clauses is actually in use in such a proof.
 Thus, we need only to restrict half of the vertices in the path to not branch.
 
-\[
 With the above proof in mind, consider the following graph:\par
+\begin{figure}[!h]
+  \centering
   \begin{tikzpicture}
     [
     point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
@@ -236,8 +262,11 @@ With the above proof in mind, consider the following graph:\par
     \draw [dashed] (3) to (b3);
     \draw [dashed] (k1) to (bk1);
   \end{tikzpicture}
-\]
 In the above graph, only every other vertex are restricted to only have one successor.
+  \caption{An oddly trimmed path of odd length}
+  \label{fig:oddly_trimmed_path}
+\end{figure}
+\FloatBarrier
 We will call this path variant an \textit{oddly trimmed path}, and define it formally as follows:
 A path $\langle x_0,x_k\rangle$\todo{This notation is not explained} is oddly trimmed if for each odd $i < k$, $N(x_i) = \{x_{i+1}\}$.
 One can immediately note that any fully trimmed path is also oddly trimmed.

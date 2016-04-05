@@ -172,8 +172,10 @@ The kernel in the graph below is represented by the black vertices.
 
 Restricting our paths to be of odd length lets us avoid cases like the one above, but there are still some cases left to avoid, in order for our implication to hold.
 
-All the paths so far have been free for any branching, i.e. all vertices in the paths have been of degree 1.
-We will call such paths \textit{fully trimmed paths}, and formally define them as paths where for each pair of vertices $x$ and $y$ consecutive in the path, $N(x) = \{y\}$.
+Given a path and two consecutive vertices $x$ and $y$ from that path, we will say that $x$ is \textit{trimmed}, with respect to that path, if $N(x) = \{y\}$.
+In order words, given any path, if one of its vertices is pointing to its successor in the path only, that vertex is trimmed in that path.
+If all the vertices of a path, except the terminal vertex, is trimmed, we will call the path a \textit{fully trimmed path}.
+All the paths so far in this chapter have been fully trimmed.
 
 If two vertices $a$ and $b$ are connected by an odd path that is \textit{not} fully trimmed, $\ol{ab}$ is not neseccarily provable in Neg.
 The below graph examplifies this with a kernel containing both $a$ and $b$.\par

@@ -58,3 +58,79 @@ This observation lets us generalize our notion of trimmed vertices.
 The big problem with this generalization is that it makes our vel-relation no longer a purely graph-structural one.
 With such a definition, whenever we want to check whether two vertices have a vel between them, we may have to work out the actual provability of certain unary NAND-clauses.
 This is exactly what we try to avoid with our vel-relation.
+
+To make matters worse, consider the following two graphs:\par
+\begin{figure}[h!]
+  \centering
+  \begin{tikzpicture}
+    [
+    point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
+    one/.style={fill=black},
+    ]
+    \node (1) at (0,1) [point, label=above:$a$] {};
+    \node (2) at (1,1) [point, label=above:$x$] {};
+    \node (2b) [point, below right=4mm and 6mm of 2, label=below:$z$] {};
+    \node (3) at (2,1) [point, label=above:$y$] {};
+    \node (4) at (3,1) [point,label=above:$b$] {};
+    \draw [-latex] (1) to (2);
+    \draw [-latex] (2) to (3);
+    \draw [-latex] (2) to (2b);
+    \draw [-latex] (3) to (4);
+    \draw [-latex] (2b) to (1);
+
+    \node (e4) [above right=4mm and 6mm of 4] {};
+    \node (e5) [right=8mm of 4] {};
+    \node (e6) [below right=4mm and 6mm of 4] {};
+    \draw [dashed] (e4) to (4);
+    \draw [dashed] (e5) to (4);
+    \draw [dashed] (e6) to (4);
+  \end{tikzpicture}
+  \hspace{5mm}
+  \begin{tikzpicture}
+    [
+    point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
+    one/.style={fill=black},
+    ]
+    \node (1) at (0,1) [point, label=above:$a$] {};
+    \node (2) at (1,1) [point, label=above:$x$] {};
+    \node (2b) [point, below right=4mm and 6mm of 2, label=below:$z$] {};
+    \node (3) at (2,1) [point, label=above:$y$] {};
+    \node (4) at (3,1) [point,label=above:$b$] {};
+    \draw [-latex] (1) to (2);
+    \draw [-latex] (2) to (3);
+    \draw [-latex] (2) to (2b);
+    \draw [-latex] (3) to (4);
+    \draw [-latex] (2b) to (4);
+
+    \node (e4) [above right=4mm and 6mm of 4] {};
+    \node (e5) [right=8mm of 4] {};
+    \node (e6) [below right=4mm and 6mm of 4] {};
+    \draw [dashed] (e4) to (4);
+    \draw [dashed] (e5) to (4);
+    \draw [dashed] (e6) to (4);
+  \end{tikzpicture}
+  \caption{}
+  \label{fig:path_3_with_backedges}
+\end{figure}
+\FloatBarrier
+Like with the graph from Figure~\ref{fig:path_3_with_loop}, the above graphs are both based on Figure~\ref{fig:kernel_untrimmed}, each with only one edge added.
+The left variant has $\ol{az}$ in its axioms, while the right variant has $\ol{bz}$, again making their respective proofs of $\ol{ab}$ almost trivial.\par
+\begin{figure}[!h]
+  \centering
+  \begin{prooftree}
+    \Hypo{\ol{ax}}
+    \Hypo{\ol{yb}}
+    \Hypo{\ol{az}}
+    \Infer[left label=$xyz$]3{\ol{ab}}
+  \end{prooftree}
+  \hspace{5mm}
+  \begin{prooftree}
+    \Hypo{\ol{ax}}
+    \Hypo{\ol{yb}}
+    \Hypo{\ol{bz}}
+    \Infer[left label=$xyz$]3{\ol{ab}}
+  \end{prooftree}
+  \caption{}
+  \label{fig:proof_loop}
+\end{figure}
+\FloatBarrier

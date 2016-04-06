@@ -35,6 +35,16 @@
 \newtheorem{definition}{Definition}
 \newtheorem{example}[theorem]{Example}
 
+%The following group solves the theorem-spacing problem caused by parskip
+\begingroup
+  \makeatletter
+  \@for\theoremstyle:=definition,plain\do{%
+    \expandafter\g@addto@macro\csname th@\theoremstyle\endcsname{%
+      \addtolength\thm@preskip\parskip
+      }%
+    }
+\endgroup
+
 \newcommand{\lar}{\leftrightarrow}
 \newcommand{\todo}[1]{\footnote{\textcolor{red}{TODO:} #1}}
 \newcommand{\ol}[1]{\overline{\vphantom{b}#1}}

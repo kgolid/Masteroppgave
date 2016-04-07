@@ -39,7 +39,7 @@ If a vertex has no dashed edges, it means that we disallow any additional edges 
   \label{fig:edge_connected}
 \end{figure}
 The basic example above tells us that two vertices are vel-connected when one is the successor of the other.
-It is however easy to find a case examplifying how the implication does not hold in the opposite direction.\par
+It is however easy to find an example where the implication does not hold in the opposite direction.\par
 \begin{figure}[!h]
   \centering
   \begin{tikzpicture}
@@ -65,7 +65,7 @@ It is however easy to find a case examplifying how the implication does not hold
   \label{fig:path_3_connected}
 \end{figure}
 The above graph provides us the following axioms:
-$NAND = \{\ol{x_0x_1},\ol{x_1x_2},\ol{x_2x_3}\}$, $OR = \{x_0x_1,x_1x_2,x_2x_3\}$.
+$\text{NAND} = \{\ol{x_0x_1},\ol{x_1x_2},\ol{x_2x_3}\}$, $\text{OR} = \{x_0x_1,x_1x_2,x_2x_3\}$.
 From these axioms, we can now, despite the fact that the vertices $x_0$ and $x_3$ are not connected by an edge, easily prove the NAND-clause $\ol{x_0x_3}$:\par
 \begin{figure}[!h]
   \centering
@@ -175,11 +175,11 @@ Restricting our paths to be of odd length lets us avoid cases like the one above
 \section{Trimming}
 \label{sec:Trimming}
 Given a path and two consecutive vertices $x$ and $y$ from that path, we will say that $x$ is \textit{trimmed}, with respect to that path, if $N(x) = \{y\}$.
-In order words, given any path, if one of its vertices is pointing to its successor in the path only, that vertex is trimmed in that path.
+In other words, given any path, if one of its vertices is pointing to its successor in the path only, that vertex is trimmed in that path.
 If all the vertices of a path, except the terminal vertex, is trimmed, we will call the path a \textit{fully trimmed path}.
 All the paths so far in this chapter have been fully trimmed.
 
-If two vertices $a$ and $b$ are connected by an odd path that is \textit{not} fully trimmed, $\ol{ab}$ is not neseccarily provable in Neg.
+If two vertices $a$ and $b$ are connected by an odd path that is \textit{not} fully trimmed, $\ol{ab}$ is not necessarily provable in Neg.
 The below graph examplifies this with a kernel containing both $a$ and $b$.\par
 \begin{figure}[!h]
   \centering

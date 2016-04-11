@@ -53,9 +53,17 @@ Vertices directly connected by an edge must therefore be a part of the correspon
 
 Finding some graph strucural relation that corresponds to binary NAND-clauses might also give us some knowledge about a potential standard form of binary-NAND-proofs.\todo{does this make sense?}
 
-The next sections will present various graph structures, each more general than the previous ones, that imply the provability of certain binary NAND-clauses in Neg.
-Ultimately, we are aiming to find a structure such that the opposite implication holds, i.e. such that the absense of the structure in the graph implies the inability to prove a certain binary NAND-clause.
+The next sections will present various graph structures, each implying the provability of certain binary NAND-clauses in Neg.
+This implication will be referred to as \textit{implication (1)} while its opposite will be referred to as \textit{implication (2)}.
 
-For each structure presented, the first implication will be shown, followed by an example disproving the second, opposite implication.
+With $R(G,a,b)$ denoting the existence of some graph structure $R$ between the vertices $a$ and $b$ in the graph $G$, the above implications can be formally defined as follows:
+\begin{align}
+  (1) \quad R(G,a,b) \quad \Rightarrow \quad G \vdash \ol{ab}\\
+  (2) \quad R(G,a,b) \quad \Leftarrow \quad G \vdash \ol{ab}
+\end{align}
+Each presented graph structure will be a generalization of the previous one, ultimately aiming to find a graph structure general enough to satisfy both implication (1) and implication (2).
+Such a structure would be the true graph structural equivalent of a binary NAND provable in Neg.
+We did however not manage to find such a graph structure in this thesis.
 
-These counterexamples will be graphs with the presented structure absent, but with certain NAND-clauses still provable.
+For each structure presented, implication (1) will be shown, followed by an example disproving implication (2).
+The counterexamples will be graphs with the presented structure absent, but with the corresponding NAND-clause still provable.

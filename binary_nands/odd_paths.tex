@@ -6,7 +6,7 @@ The concept of vel-connected vertices is equivalent with the concept of graph st
 
 Because of soundness of Neg, if two vertices are vel-connected in a graph, for any kernel $K$ in that graph, at least one of the two vertices is outside $K$.
 The counterpositive of this observation being that for a graph $G$, if there exists a kernel $K \subseteq G$ such that two vertices, $x_1$ and $x_2$ are both in $K$, then $x_1$ and $x_2$ cannot be vel-connected in $G$.
-This fact will be used when arguing why some graph structures are \textit{not} giving us vel-connected vertices.
+This fact will be used when arguing why some graph structures are \textit{not} satisfying implication (1).
 
 We already know that whenever two vertices are connected by an edge, their binary NAND is trivially provable in Neg, since it is a part of the axioms.
 
@@ -278,4 +278,4 @@ The axioms we get from the oddly trimmed path above do not differ significantly 
 Since the vertices $x_0, x_2, x_4, \dots ,x_{k_1}$ no longer have single successors, their corresponding OR-clauses will no longer be binary.
 However, since none of these OR-clauses are used in the above proof, the proof will remain valid also for the oddly trimmed path.
 
-We can thus generalize further and say that any two vertices connected by an oddly trimmed path of odd length are vel-connected.
+This makes us able to generalize further and say that any two vertices connected by an oddly trimmed path of odd length are vel-connected, thus being a graph structure satisfying implication (1).

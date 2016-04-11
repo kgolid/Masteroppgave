@@ -15,7 +15,7 @@ The OR-clause has to equal the union of the NAND-clauses simply by definition of
 
 This fact was also observed and formalized by Walicki\cite{michal-completeness}:
 \begin{align}
-  \Gamma \vdash_{Neg} \{\} \Leftrightarrow \exists K \in \text{OR}: (\forall  k \in K: \Gamma \vdash_{Neg} \ol{k})
+  \Gamma \vdash \{\} \Leftrightarrow \exists K \in \text{OR}: (\forall  k \in K: \Gamma \vdash \ol{k})
 \end{align}
 We know from the definition that any OR-clause used in the proof system corresponds to a single vertex with its successors in the graph.
 We do however not know what the NAND-clauses of length 1 might correspond to.
@@ -42,7 +42,7 @@ In addition, we require the premise to contain at least one binary NAND-clause, 
 
 We formalize this observation in the following way:
 \begin{align}
-  \Gamma \vdash_{Neg} \ol{x} \Leftrightarrow \exists K \in \text{OR}: (\forall k \in K: \Gamma \vdash_{Neg} \ol{kx} \vee \Gamma \vdash_{Neg} \ol{k}) \wedge (\exists k \in K: \Gamma \vdash_{Neg} \ol{kx})
+  \Gamma \vdash \ol{x} \Leftrightarrow \exists K \in \text{OR}: (\forall k \in K: \Gamma \vdash \ol{kx} \vee \Gamma \vdash \ol{k}) \wedge (\exists k \in K: \Gamma \vdash \ol{kx})
 \end{align}
 Just as we reduced the problem of inconsistency to the problem of unary NAND-clauses, we are able to reduce the problem further to binary NAND-clauses.
 We could even continue the reduction further to ternary clauses, quaternary clauses and so on, but without a change of strategy at some point, this seems pointless.

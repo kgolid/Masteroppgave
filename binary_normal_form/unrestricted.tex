@@ -126,3 +126,6 @@ When you have $n$ holes and $>n$ pigeons, the OR-clauses will be of length $n$, 
 This results in a NAND-clause of length $n$ when derived directly from axioms.
 
 This means not only that we are unable to keep the clause length at 2, but also that the size of the NAND-clauses increases with the size of the OR-clauses, which in this case coincides with the number of holes.
+
+Since $\varnothing$ is not a part of the axioms and not directly derivable from axioms, its proof has to be of height $>2$ and must therefore include a NAND-clause of size equal to the size of the OR-clauses.
+Therefore, as long as the OR-clauses are larger than 2, the inconsistency in the pigeonhole principle is not binary-derivable.

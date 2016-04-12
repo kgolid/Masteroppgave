@@ -48,7 +48,9 @@ From the above graph, $\ol{x_0x_5}$ can be proven in the same way as in the proo
 Again, the only thing we are changing in terms of the axioms are the OR-clauses that are not used in the proof.
 
 We will call this kind of graph structure an \textit{odd vel} and define it formally in the following way:
-Two vertices $a$ and $b$ have an odd vel between them if there exists a vertex $c$ such that there are oddly trimmed paths from $a$ to $c$ and from $b$ to $c$, one of even length (possibly 0) and one of odd length.
+\begin{definition}
+  Two vertices $a$ and $b$ have an \textit{odd vel} between them if there exists a vertex $c$ such that there are oddly trimmed paths from $a$ to $c$ and from $b$ to $c$, one of even length (possibly 0) and one of odd length.
+\end{definition}
 Notice that an oddly trimmed path of odd length is just an instance of an odd vel where the even path is of length 0.
 
 The formal proof why all NAND-clauses from vertices connected by such vels are provable in Neg can be found in Section~\ref{sec:Provability of NAND-clauses from vels}.

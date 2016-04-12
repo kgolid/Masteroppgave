@@ -50,7 +50,6 @@ The NAND-clause $\ol{ab}$ can now easily be proven in the following way:\par
   \caption{}
   \label{fig:proof_loop}
 \end{figure}
-
 This shows the fact that vertices at odd positions in a path can indeed branch off to other vertices than their path successor and still contribute to a provable NAND-clause, just as long as the vertices they branch off to are provably false in Neg.
 If the vertex is provably false, we can use that unary NAND-clause, like we did in the above proof, to handle the non-binary OR-clauses.
 This observation lets us generalize our notion of trimmed vertices.
@@ -112,7 +111,6 @@ To make matters worse, consider the following two graphs:\par
   \caption{}
   \label{fig:path_3_with_backedges}
 \end{figure}
-\FloatBarrier
 Like with the graph from Figure~\ref{fig:path_3_with_loop}, the above graphs are both based on Figure~\ref{fig:kernel_untrimmed}, each with only one edge added.
 The left variant has $\ol{az}$ in its axioms, while the right variant has $\ol{bz}$, again making their respective proofs of $\ol{ab}$ almost trivial.\par
 \begin{figure}[!h]

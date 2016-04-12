@@ -49,24 +49,29 @@ This gives the following axiom set:
 \end{align}
 Note that we do not include the clauses corresponding to the elements of the above-mentioned rays, since these will not contribute to the argument.
 
-The NAND-clause that we want to prove is $\ol{ab}$, and this is one way to prove it in Neg:
-\begin{prooftree*}
-  \Hypo{\ol{ax_2}}
-  \Hypo{\ol{by_2}}
-  \Hypo{\ol{c_1c_2}}
-  \Infer[left label = $x_2y_2c_2$]3{\ol{abc_1}}
-  \Hypo{\ol{ax_1}}
-  \Hypo{\ol{by_1}}
-  \Hypo{\ol{c_1c_2}}
-  \Infer[right label = $x_1y_1c_1$]3{\ol{abc_2}}
-  \Infer[left label = $c_1c_2$]2{\ol{ab}}
-\end{prooftree*}
+The NAND-clause that we want to prove is $\ol{ab}$, and this is one way to prove it in Neg:\par
+\begin{figure}[!h]
+  \centering
+  \begin{prooftree*}
+    \Hypo{\ol{ax_2}}
+    \Hypo{\ol{by_2}}
+    \Hypo{\ol{c_1c_2}}
+    \Infer[left label = $x_2y_2c_2$]3{\ol{abc_1}}
+    \Hypo{\ol{ax_1}}
+    \Hypo{\ol{by_1}}
+    \Hypo{\ol{c_1c_2}}
+    \Infer[right label = $x_1y_1c_1$]3{\ol{abc_2}}
+    \Infer[left label = $c_1c_2$]2{\ol{ab}}
+  \end{prooftree*}
+  \caption{}
+  \label{fig:open_door_proof}
+\end{figure}
 In the premise of the last step, we have two non-binary NAND-clauses.
 How do we know that this cannot be avoided?
 
-By taking a closer look at the graph, we can work out these 6 solutions, among others (black vertices being assigned 1, while white vertices being assigned 0):
-
-\[
+By taking a closer look at the graph, we can work out these 6 solutions, among others (black vertices being assigned 1, while white vertices being assigned 0):\par
+\begin{figure}[!h]
+  \centering
   \begin{tikzpicture}
     [
     point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
@@ -143,9 +148,7 @@ By taking a closer look at the graph, we can work out these 6 solutions, among o
     \draw [-latex] (x2) to (y2);
     \draw [-latex] (x2) to (c2);
     \draw [-latex] (c1) to (c2);
-  \end{tikzpicture}
-\]
-\[
+  \end{tikzpicture}\\
   \begin{tikzpicture}
     [
     point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
@@ -223,8 +226,10 @@ By taking a closer look at the graph, we can work out these 6 solutions, among o
     \draw [-latex] (x2) to (c2);
     \draw [-latex] (c1) to (c2);
   \end{tikzpicture}
-\]
-
+  \caption{}
+  \label{fig:open_door_solution}
+\end{figure}
+\FloatBarrier
 Based on these solutions, we can say a lot about the provability of various binary NAND-clauses.
 Any pair of vertices from the graph that can be 1 under the same assignment will not be a Neg-provable NAND by soundness.
 Also, since all the vertices can be assigned 1 under at least one assignment, no unary NAND can be proven in Neg.

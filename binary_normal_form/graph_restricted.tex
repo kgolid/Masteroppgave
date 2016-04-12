@@ -13,8 +13,9 @@ The theorem will be proven simply by presenting such a graph, containing a prova
 We will then make an attempt to extend the graph, making it inconsistent, and then show that its inconsistency proof has to include the non-binary-derivable NAND-clause.
 This attempt will however prove to be unsuccessful,
 
-The graph in question is the following:
-\[
+The graph in question is the following:\par
+\begin{figure}[!h]
+  \centering
   \begin{tikzpicture}
     [
     point/.style={circle,draw,inner sep=0pt,minimum size=2mm}
@@ -37,8 +38,10 @@ The graph in question is the following:
     \draw [-latex] (x2) to (c2);
     \draw [-latex] (c1) to (c2);
   \end{tikzpicture}
-\]
 We will be treating the vertices $y_1$, $y_2$ and $c_2$ in the above graph as if each of them are initial vertices of (non-depicted) disjoint rays, and not sinks, as the figure suggests.
+  \caption{}
+  \label{fig:open_door}
+\end{figure}
 This gives the following axiom set:
 \begin{align}
   \text{OR} &= \{ ax_1x_2,\; x_1y_1c_1,\; x_2y_2c_2,\; by_1y_2,\; c_1c_2 \}\\

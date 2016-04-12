@@ -226,10 +226,8 @@ By taking a closer look at the graph, we can work out these 6 solutions, among o
 \]
 
 Based on these solutions, we can say a lot about the provability of various binary NAND-clauses.
-Any pair of vertices from the graph that can be 1 under the same assignment will not be a Neg-provable NAND.
-We get this from soundness of Neg, since when two vertices $v$ and $u$ are both 1 under some assignment, we get that $\nvDash \ol{uv}$ and by soundness of Neg that $\nvdash_{Neg} \ol{uv}$.
-
-It is also worth noting that since all the vertices can be assigned 1 under at least one assignment, no unary NAND can be proven in Neg, by the same argument as above.
+Any pair of vertices from the graph that can be 1 under the same assignment will not be a Neg-provable NAND by soundness.
+Also, since all the vertices can be assigned 1 under at least one assignment, no unary NAND can be proven in Neg.
 
 We can make the following table showing what pairs of vertices can be 1 simultaneously and thus consititute a binary NAND unprovable in Neg.
 A cell is filled with a reference to the assignment, if any, examplifying the case.

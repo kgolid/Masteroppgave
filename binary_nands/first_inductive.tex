@@ -148,8 +148,8 @@ For instance, given some graph $\mathbf{G}=(G,N)$, let $V_1 \subseteq G \times G
 
 We can define $V_1$ inductively in the following way, with $a$ and $b$ being arbitrary vertices from $G$.
 \begin{align}
-  \textbf{(BC):}&\quad N(a,b) \vee N(b,a) \quad \Rightarrow \quad  V_1(a,b)\\
-  \textbf{(IS):}&\quad \exists c \in N(a): (N(c) =\{d\} \wedge V_1(d,b)) \quad \Rightarrow \quad V_1(a,b)
+  \textbf{(BC):}&\quad N(a,b) \vee N(b,a) &\Rightarrow  V_1(a,b)\\
+  \textbf{(IS):}&\quad \exists c \in N(a): (N(c) =\{d\} \wedge V_1(d,b)) &\Rightarrow V_1(a,b)
 \end{align}
 The symmetry in the base case is what makes this a definition of a vel and not a path, while the trimmed-ness gets expressed by the restrictions we set on vertex $c$.
 
@@ -157,6 +157,11 @@ Adding the new weaker trimming-restriction is now easy.
 Let $V_2 \subseteq G \times G$ be the set of all pairs of vertices related by our new vel-definition.
 $V_2$ can now be defined inductively in the following way, again with $a$ and $b$ as arbitrary vertices from $G$.
 \begin{align}
-  \textbf{(BC):}&\quad N(a,b) \vee N(b,a) \quad \Rightarrow \quad V_2(a,b)\\
-  \textbf{(IS):}&\quad \exists c \in N(a):\forall d \in N(c): (V_2(d,b) \vee V_2(d,a) \vee V_2(d,d)) \quad \Rightarrow \quad V_2(a,b)
+  \textbf{(BC):}&\quad N(a,b) \vee N(b,a) &\Rightarrow V_2(a,b)\\
+  \textbf{(IS):}&\quad \exists c \in N(a):
+  \left ( \begin{tabular}{l}
+  $\exists d \in N(c): V_2(d,b) \quad \wedge$\\
+  $\forall d \in N(c): V_2(d,b) \vee V_2(d,a) \vee V_2(d,d)$
+  \end{tabular} \right )
+  &\Rightarrow V_2(a,b)
 \end{align}

@@ -7,7 +7,8 @@ After all, it is the graph theories that motivated the conjecture in the first p
 It turns out that even for graph theories, some provable NAND-clauses require non-binary NAND-clauses in their proof, i.e they are \textit{non-binary-derivable}.
 This section will prove the following:
 \begin{theorem}
-  There exixsts a graph $G$ with vertices $a,b$ such that the proof of $G \vdash \ol{ab}$ must include a non-binary NAND-clause.
+  There exists a graph with vertices $a,b$ such that $\ol{ab}$ is non-binary-derivable.
+  \label{thm:non_binary_derivable}
 \end{theorem}
 The theorem will be proven simply by presenting such a graph, containing a provable binary NAND-clause, and show that the only way to prove it is through using non-binary NAND-clauses.
 We will then make an attempt to extend the graph, making it inconsistent, and then show that its inconsistency proof has to include the non-binary-derivable NAND-clause.
@@ -264,7 +265,7 @@ The OR-clauses $x_1y_1c_1$ and $x_2y_2c_2$ are the only ones that contain both a
 This gives us the following information: since both the possible OR-clauses are of length 3, the rule application concluding with $\ol{ab}$ has 3 NAND-clauses in its premise; one containing an $x$, one containing a $y$ and one containing a $c$.
 Looking at our table again, we see that the potentially provable NAND-clauses containing a $c$ are again the axioms only.
 Since there are no provable NAND-clauses on the form $ac_i$ or $bc_i$, we get that the conclusion of our rule cannot possibly be of length 2, thus contradicting our assumption.
-We can therefore conclude that $\ol{ab}$ is \textit{not} binary-derivable.
+We can therefore conclude that $\ol{ab}$ is \textit{not} binary-derivable, thus proving Theorem~\ref{thm:non_binary_derivable}.
 
 Consider now the following extension of our original graph:
 

@@ -16,14 +16,14 @@ Letting the atom $x_i$ denote the pigeon $i$ occupying the hole $x$, the above t
 \label{sub:Proof for 4 pigeons and 3 holes}
 The pigeonhole principle for 4 pigeons and 3 holes will have the following axioms:
 \begin{align}
-  \text{OR} &= \{ \; 1_12_13_1,\; 1_22_23_2,\; 1_32_33_3,\; 1_42_43_4 \; \}\\
+  \text{OR} &= \{ \; 1_12_13_1,\; 1_22_23_2,\; 1_32_33_3,\; 1_42_43_4 \; \} \label{eq:ax1}\\
   \text{NAND} &= \left \{
   \begin{tabular}{c}
     $\ol{1_11_2},\;\ol{1_11_3},\;\ol{1_11_4},\;\ol{1_21_3},\;\ol{1_21_4},\;\ol{1_31_4},$\\
     $\ol{2_12_2},\;\ol{2_12_3},\;\ol{2_12_4},\;\ol{2_22_3},\;\ol{2_22_4},\;\ol{2_32_4},$\\
     $\ol{3_12_2},\;\ol{3_13_3},\;\ol{3_13_4},\;\ol{3_23_3},\;\ol{3_23_4},\;\ol{3_33_4}$
   \end{tabular}
-  \right \}
+  \right \} \label{eq:ax2}
 \end{align}
 
 From the axioms above we can prove inconsistency in the following way:
@@ -97,7 +97,7 @@ With these three unary clauses proven, we can now prove $\varnothing$ in one ste
 \end{prooftree*}
 
 Observe that NAND-clauses of length 3 appear several times in this proof.
-We will show that this is a necessity with the axiom set described above.
+We will show that this is unavoidable in Neg given the axioms from \ref{eq:ax1} and \ref{eq:ax2}
 \subsection{Long NAND-clauses in pigeonhole proofs}
 \label{sub:Long NAND-clauses in pigeonhole proofs}
 As mentioned earlier, the only strategy in proving inconsistencies in Neg is to create new NAND-clauses until you have a set of unary NAND-clauses such that their union matches an OR-clause.

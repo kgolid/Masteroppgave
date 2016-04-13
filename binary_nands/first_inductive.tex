@@ -1,5 +1,6 @@
 % !TEX root= ../main.tex
 \externaldocument{odd_paths}
+\externaldocument{odd_vels}
 \section{Generalizing trimming}
 \label{sec:Generalizing trimming}
 In this section, we will take a closer look at the current concept of trimming, and through some examples introduce a more general definition.
@@ -144,7 +145,7 @@ The definition now bases the provability of $\ol{ab}$ on the provability of a se
 \section{Inductive definitions}
 \label{sec:Inductive definitions}
 All the graph structures presented in this chapter so far can easily be defined inductively.
-For instance, given some graph $\mathbf{G}=(G,N)$, let $V_1 \subseteq G \times G$ denote the set of all pairs of vertices related by our original vel-definition where trimmed meant strictly non-branching.
+For instance, given some graph $\mathbf{G}=(G,N)$, let $V_1 \subseteq G \times G$ denote the set of all pairs of vertices related by our original vel-definition (Definition~\ref{def:vel}) where `trimmed' meant strictly non-branching.
 
 We can define $V_1$ inductively in the following way, with $a$ and $b$ being arbitrary vertices from $G$.
 \begin{align}

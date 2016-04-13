@@ -187,7 +187,10 @@ Using the definition above, the fact that $V_2(a,b) \;\Rightarrow\; \vdash \ol{a
     \caption{}
     \label{fig:proof_v2_partial}
   \end{figure}
-  Let $D_b,D_a,D_d$ be subsets of $D$ such that $d \in D_b \Leftrightarrow V_2(d,b)$, $d \in D_a \Leftrightarrow V_2(d,a)$ and $d \in D_d \Leftrightarrow  V_2(d,d)$.
+  Let $D_b$, $D_a$ and $D_d$ be subsets of $D$ such that for any $d \in D$:
+  \begin{align}
+    d \in D_b \Leftrightarrow V_2(d,b),\quad d \in D_a \Leftrightarrow V_2(d,a),\quad d \in D_d \Leftrightarrow V_2(d,d)
+  \end{align}
   The inductive part of the $V_2$ definition reveals two properties of the sets $D_b$, $D_a$ and $D_d$:
   \begin{itemize}
     \item The set $D_b$ is nonempty, since $\exists d \in N(c): V_2(d,b)$.

@@ -166,3 +166,49 @@ $V_2$ can be defined inductively in the following way, again with $a$ and $b$ as
   \end{tabular} \right )
   &\Rightarrow V_2(a,b)
 \end{align}
+Using the definition above, the fact that $V_2(a,b) \;\Rightarrow\; \vdash \ol{ab}$ can be proven inductively, showing that $V_2$ satisfies implication (1):
+\begin{proof}
+  Given a graph $G$ with two vertices $a$ and $b$ such that $V_2(a,b)$:
+
+  Base case:
+  If $N(a,b)$ or $N(b,a)$, then the NAND-clause $\ol{ab}$ will be an axiom and thus trivially provable.
+
+  Inductive step:
+  The existence of a vertex $c \in N(a)$ gives us that the NAND-clause $\ol{ac}$ is an axiom.
+  Letting $D$ denoting the set $N(c)$ we also have that the OR-clause $cD$ is an axiom.
+  This gives us the following incomplete proof:\par
+  \begin{figure}[!h]
+    \centering
+    \begin{prooftree*}
+      \Hypo{\ol{ac}}
+      \Hypo{\dots}
+      \Infer[right label=$cD$]2{\ol{ab}}
+    \end{prooftree*}
+    \caption{}
+    \label{fig:proof_v2_partial}
+  \end{figure}
+  Let $D_b,D_a,D_d$ be subsets of $D$ such that $d \in D_b \Leftrightarrow V_2(d,b)$, $d \in D_a \Leftrightarrow V_2(d,a)$ and $d \in D_d \Leftrightarrow  V_2(d,d)$.
+  The inductive part of the $V_2$ definition reveals two properties of the sets $D_b$, $D_a$ and $D_d$:
+  \begin{itemize}
+    \item The set $D_b$ is nonempty, since $\exists d \in N(c): V_2(d,b)$.
+    \item $D_b \cup D_a \cup D_d = D$, since $\forall d \in N(c): V_2(d,b) \vee V_2(d,a) \vee V_2(d,d)$.
+  \end{itemize}
+  The induction hypothesis lets us assume the provability of the following sets of NAND-clauses:
+  $\{ \ol{db} \;|\; d \in D_b \},\{ \ol{da} \;|\; d \in D_a \},\{ \ol{d} \;|\; d \in D_d \}$.
+  Inserting these clauses into the incomplete proof from Figure~\ref{fig:proof_v2_partial} results the following proof:\par
+  \begin{figure}[!h]
+    \centering
+    \begin{prooftree*}
+      \Hypo{\ol{ac}}
+      \Hypo{ \{ \ol{db} \;|\; d \in D_b \} }
+      \Hypo{ \{ \ol{da} \;|\; d \in D_a \} }
+      \Hypo{ \{ \ol{d} \;|\; d \in D_d \} }
+      \Infer[right label=$cD$]4{\ol{ab}}
+    \end{prooftree*}
+    \caption{}
+    \label{fig:proof_v2}
+  \end{figure}
+The nonemptiness of $D_b$ gives us the existence of a $b$ in the premise, while he fact that $D_b \cup D_a \cup D_d = D$ guarantees that each atom in the OR-clause $D$ has a match in a NAND-clause.
+
+The proof is thus valid, finishing the inductive step and ultimately proving the fact that $V_2(a,b) \Rightarrow \vdash \ol{ab}$.
+\end{proof}

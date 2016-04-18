@@ -10,3 +10,78 @@ In this section, we will prove the following statement:
 \end{theorem}
 Equivalently, for any Neg-proof $P$ there exists a thin Neg-proof with the same conclusion.
 We will prove this theorem by inducing over the height of $P$.
+
+Base case: If $P$ is of height 1, i.e. it consists only of one rule application, then it is trivially thin, since all the NAND-clauses in the premise must be axioms.
+
+Inductive step: The induction hypothesis lets us assume that for any proof with a height of $k-1$ or less, there exists a thin proof with the same conclusion.
+We will use this hypothesis to prove the same thing for proofs of height $k$.
+Given a proof with a height of $k$, if the $k$th rule application contains an axiom, we are done.
+Therefore, suppose that the $k$th rule application does \textit{not} contain an axiom.
+
+The situation will look like this:\par
+\begin{figure}[!h]
+  \centering
+  \begin{prooftree*}
+    \Hypo{\dots}
+    \Infer[right label=$r_1$]1{\ol{a_1A_1}}
+    \Hypo{\dots}
+    \Infer[right label=$r_2$]1{\ol{a_2A_2}}
+    \Hypo{\dots}
+    \Infer[right label=$r_3$]1{\ol{a_3A_3}}
+    \Hypo{\dots}
+    \Hypo{\dots}
+    \Infer[right label=$r_n$]1{\ol{a_nA_n}}
+    \Infer[left label= (height:$k$), right label=$a_1a_2a_3\dots a_n$]5{\bigcup_{i \leq n} \ol{A_i}}
+  \end{prooftree*}
+  \caption{}
+  \label{fig:non_thin_proof}
+\end{figure}
+We will show that the above proof can be \textit{transformed} into a thin proof, all while preserving the subproofs and the conclusion.
+
+For each rule application $r_i$ in Figure~\ref{fig:non_thin_proof}, letting $r_i = b^i_1b^i_2\dots b^i_m$, we can write its premise as the following collection of NAND-clauses:
+$\ol{b^i_1B^i_1}$, $ \ol{b^i_2B^i_2}$, $\dots$, $ \ol{b^i_j a_i B^i_j}$, $\ol{b^i_mB^i_m}$ such that $\bigcup_{j \leq m} B^i_j = A_i$.
+Note that the NAND-clause with the index $j$ contains $a_i$.
+We will denote this index as $j_i$.
+
+Based purely on these facts, each rule application $r_i$ can be represented as follows without any loss of generality:\par
+\begin{figure}[!h]
+  \centering
+  \begin{prooftree*}
+    \Hypo{\dots}
+    \Infer[]1{\ol{b^i_1B^i_1}}
+    \Hypo{\dots}
+    \Infer[]1{\ol{b^i_2B^i_2}}
+    \Hypo{\dots}
+    \Hypo{\dots}
+    \Infer[]1{\ol{b^i_{j_i}a_iB^i_{j_i}}}
+    \Hypo{\dots}
+    \Hypo{\dots}
+    \Infer[]1{\ol{b^i_mB^i_m}}
+    \Infer[left label = (height:$k-1$), right label=$b^i_1b^i_2\dots b^i_m$]6{\ol{a_iA_i}}
+  \end{prooftree*}
+  \caption{}
+  \label{fig:proof_aiAi}
+\end{figure}
+Now, since the premise of each rule application proving $\ol{a_iA_i}$ has a NAND-clause containing $a_i$, we can make the following proof:\par
+\begin{figure}[!h]
+  \centering
+  \begin{prooftree*}
+    \Hypo{\dots}
+    \Infer[]1{\ol{b^1_{j_1}a_1B^1_{j_1}}}
+    \Hypo{\dots}
+    \Infer[]1{\ol{b^2_{j_2}a_2B^2_{j_2}}}
+    \Hypo{\dots}
+    \Infer[]1{\ol{b^3_{j_3}a_3B^3_{j_3}}}
+    \Hypo{\dots}
+    \Hypo{\dots}
+    \Infer[]1{\ol{b^n_{j_n}a_nB^n_{j_n}}}
+    \Infer[right label=$a_1a_2a_3\dots a_n$]5{\bigcup_{i \leq n} \ol{b^i_{j_i}B^i_{j_i} }}
+  \end{prooftree*}
+  \caption{}
+  \label{fig:proof_biBi}
+\end{figure}
+\FloatBarrier
+Since we defined the proof in Figure~\ref{fig:non_thin_proof} to be of height $k$, all the NAND-clauses on the form $a_iAi$ from that proof can itself not have a proof higher than $k-1$.
+For the same reason, every NAND-clause on the form $b_iB_i$ from Figure~\ref{fig:proof_aiAi} has height of at most $k-2$.
+
+The proof in Figure~\ref{fig:proof_biBi} therefore has a height of at most $k-1$, so by our induction hypothesis there exists a thin proof with the same conclusion.

@@ -264,7 +264,7 @@ To show that the graph in Figure~\ref{fig:v2_counter_graph} is not an instance o
 
 Assume $V_2(a,b)$.
 Since $a$ and $b$ are not connected by an edge, their relation has to be an instance of the inductive step.
-Because of the following requirement: $\exists c \in N(a):\exists d \in N(c): V_2(d,b)$, either $a$  must have a successor $c$ which again has a successor $d$ such that $V_2(d,b)$ or $b$ must have a successor $c$ which again has a successor $d$ such that $V_2(d,a)$.
+Because of the nonemptiness requirement, $\exists c \in N(a):\exists d \in N(c): V_2(d,b)$ from the $V_2$ defintion, either $a$  must have a successor $c$ which again has a successor $d$ such that $V_2(d,b)$ or $b$ must have a successor $c$ which again has a successor $d$ such that $V_2(d,a)$.
 
 $a$ and $b$ has a total of 3 successors of which 2 are sinks and thereby unable to satisfy the requirement.
 The last successor is the vertex $x$, which only has one successor, vertex $y$.\par
@@ -294,5 +294,5 @@ The last successor is the vertex $x$, which only has one successor, vertex $y$.\
   \label{fig:v2_counter_assignment}
 \end{figure}
 The above solution shows us by soundness of Neg that $\ol{yb}$ is unprovable, and therefore by implication (1) that $y$ and $b$ cannot be $V_2$-related.
-Since none of the successors of $a$ and $b$ satisfies the requirement, they also are not $V_2$ related.
+Since none of the successors of $a$ and $b$ satisfies the nonemptiness requirement, they also are not $V_2$ related.
 We can therefore conclude that $V_2$ does not satisfy implication (2).

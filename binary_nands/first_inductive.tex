@@ -158,13 +158,13 @@ Adding the new weaker trimming-restriction is now easy.
 Let $V_2 \subseteq G \times G$ be the set of all pairs of vertices related by our new vel-definition.
 $V_2$ can be defined inductively in the following way, again with $a$ and $b$ as arbitrary vertices from $G$.
 \begin{align}
-  \textbf{(BC):}&\quad N(a,b) \vee N(b,a) &\Rightarrow V_2(a,b)\\
+  \textbf{(BC):}&\quad N(a,b) \vee N(b,a) &\Rightarrow V_2(a,b)\label{eq:V2_BC}\\
   \textbf{(IS):}&\quad \exists c \in N(a):
   \left ( \begin{tabular}{l}
   $\exists d \in N(c): V_2(d,b) \quad \wedge$\\
   $\forall d \in N(c): V_2(d,b) \vee V_2(d,a) \vee V_2(d,d)$
   \end{tabular} \right )
-  &\Rightarrow V_2(a,b)
+  &\Rightarrow V_2(a,b)\label{eq:V2_IS}
 \end{align}
 Using the definition above, the fact that $V_2(a,b) \;\Rightarrow\; \vdash \ol{ab}$ can be proven inductively, showing that $V_2$ satisfies implication (1):
 \begin{proof}
@@ -191,7 +191,7 @@ Using the definition above, the fact that $V_2(a,b) \;\Rightarrow\; \vdash \ol{a
   \begin{align}
     d \in D_b \Leftrightarrow V_2(d,b),\quad d \in D_a \Leftrightarrow V_2(d,a),\quad d \in D_d \Leftrightarrow V_2(d,d)
   \end{align}
-  The inductive part of the $V_2$ definition reveals two properties of the sets $D_b$, $D_a$ and $D_d$:
+  The inductive part of the $V_2$ definition (\ref{eq:V2_IS}) reveals two properties of the sets $D_b$, $D_a$ and $D_d$:
   \begin{itemize}
     \item The set $D_b$ is nonempty, since $\exists d \in N(c): V_2(d,b)$.
     \item $D_b \cup D_a \cup D_d = D$, since $\forall d \in N(c): V_2(d,b) \vee V_2(d,a) \vee V_2(d,d)$.

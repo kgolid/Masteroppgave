@@ -1,3 +1,12 @@
 % !TEX root= ../main.tex
 \section{Axioms in Neg proofs}
 \label{sec:Axioms in Neg proofs}
+\begin{definition}
+  A Neg proof is \textit{thin} if each rule application in the proof contains an axiomatic NAND-clause in its premise.
+\end{definition}
+In this section, we will prove the following statement:
+\begin{theorem}
+  Any NAND-clause provable in Neg has a thin proof.
+\end{theorem}
+Equivalently, for any Neg-proof $P$ there exists a thin Neg-proof with the same conclusion.
+We will prove this theorem by inducing over the height of $P$.

@@ -51,6 +51,33 @@ Using the definition above, the fact that $V_2(a,b) \;\Rightarrow\; \vdash \ol{a
   \begin{align}
     d \in D_b \Leftrightarrow V_2(d,b),\quad d \in D_a \Leftrightarrow V_2(d,a),\quad d \in D_d \Leftrightarrow V_2(d,d)
   \end{align}
+  The current situation is illustrated in Figure~\ref{fig:v2_situation}\par
+  \begin{figure}[!h]
+    \centering
+    \begin{tikzpicture}
+      [
+      point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
+      collection/.style={rectangle,draw,inner sep=0pt,minimum height=8mm, minimum width= 8mm}
+      ]
+      \node (a) at (0,1) [point, label=above:$a$] {};
+      \node (b) at (6,1) [point, label=above:$b$] {};
+      \node (c) at (3,1) [point, label=above:$c$] {};
+      \node (Da) at (2,0) [collection] {$D_a$};
+      \node (Db) at (4,0) [collection] {$D_b$};
+      \node (Dd) at (3,0) [collection] {$D_d$};
+      \draw [-latex] (c) to (Da);
+      \draw [-latex] (a) to (c);
+      \draw [-latex] (c) to (Db);
+      \draw [-latex] (c) to (Dd);
+      \draw [dashed] (a) to (Da);
+      \draw [dashed] (b) to (Db);
+      \draw [dashed, loop below] (Dd) to (Dd);
+    \end{tikzpicture}
+    \caption{The inductive case of a $V_2$ construction.
+    Boxes represents sets of vertices.
+    An edge between a vertex and a box represents a set of edges from the vertex to each of the vertices in the set.}
+    \label{fig:v2_situation}
+  \end{figure}
   The inductive part of the $V_2$ definition (\ref{eq:V2_IS}) reveals two properties of the sets $D_b$, $D_a$ and $D_d$:
   \begin{itemize}
     \item The set $D_b$ is nonempty, since $\exists d \in N(c): V_2(d,b)$.

@@ -1,14 +1,19 @@
 % !TEX root= ../main.tex
 \section{Motivation}
 \label{sec:Motivation}
-Since our proof system, Neg, has only one rule, the last step of any inconsistency proof will always look the same:
-\begin{prooftree*}
-  \Hypo{\ol{x_1}}
-  \Hypo{\ol{x_2}}
-  \Hypo{\ol{x_3}}
-  \Hypo{\dots}
-  \Infer4[$x_1x_2x_3\dots$]{\varnothing}
-\end{prooftree*}
+Since our proof system, Neg, has only one rule, the last step of any inconsistency proof will always look the same:\par
+\begin{figure}[!h]
+  \centering
+  \begin{prooftree*}
+    \Hypo{\ol{x_1}}
+    \Hypo{\ol{x_2}}
+    \Hypo{\ol{x_3}}
+    \Hypo{\dots}
+    \Infer4[$x_1x_2x_3\dots$]{\varnothing}
+  \end{prooftree*}
+  \caption{}
+  \label{fig:proof_unary_nand}
+\end{figure}
 The premise will always consist of a collection of NAND-clauses, each of length 1, together with an OR-clause equal to the union of all the NAND-clauses.
 It is easy to see that none of the NAND-clauses can be larger than unary, since that would result in a non-empty NAND-clause in the conclusion.
 The OR-clause has to equal the union of the NAND-clauses simply by definition of the (RNeg)-rule.
@@ -27,16 +32,21 @@ We get this from soundness of Neg.
 This is however not the graph structural property we are ultimately looking for, but we can at least say that we have reduced the question ``What does an inconsistent graph look like?'' to the question ``What does a provably false vertex look like?''.
 
 So what does a unary NAND-clause proven in Neg correspond to in the graph?
-Similarly to a proof of $\varnothing$, there is really just one way to prove a unary NAND-clause:
-\begin{prooftree*}
-  \Hypo{\ol{xy_1}}
-  \Hypo{\ol{xy_2}}
-  \Hypo{\dots}
-  \Hypo{\ol{y_n}}
-  \Hypo{\ol{y_{n+1}}}
-  \Hypo{\dots}
-  \Infer6[$y_1y_2\dots y_ny_{n+1}\dots$]{\ol{x}}
-\end{prooftree*}
+Similarly to a proof of $\varnothing$, there is really just one way to prove a unary NAND-clause:\par
+\begin{figure}[!h]
+  \centering
+  \begin{prooftree*}
+    \Hypo{\ol{xy_1}}
+    \Hypo{\ol{xy_2}}
+    \Hypo{\dots}
+    \Hypo{\ol{y_n}}
+    \Hypo{\ol{y_{n+1}}}
+    \Hypo{\dots}
+    \Infer6[$y_1y_2\dots y_ny_{n+1}\dots$]{\ol{x}}
+  \end{prooftree*}
+  \caption{}
+  \label{fig:proof_unary_nand}
+\end{figure}
 Any derivation of a unary NAND-clause $\ol{x}$ must end with a rule application using $K \in \text{OR}$ where for each $k \in K$, there is a NAND-clause in the premise that is either unary, $\ol{k}$ or binary, $\ol{xk}$.
 In addition, we require the premise to contain at least one binary NAND-clause, in order to actually be able to conclude with $\ol x$ and not $\varnothing$.
 

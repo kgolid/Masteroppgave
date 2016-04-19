@@ -218,19 +218,26 @@ Requiring $a$ to be in $V_3$-relation to some vertex in $N(c) \cup \{ c \}$ is n
 Looking back at the graph from Figure~\ref{fig:v2_counter_graph}, we see that vertex $z$ is clearly $V_3$-related to $a$ while its successors, $c_1$ and $c_2$, are $V_3$-related to $a$ and $b$, respectively.
 The vertices $a$ and $b$ are thus $V_3$-related.
 
-The proof that $V_3$ satisfies implication (1) is done in much the same way as for $V_2$.
-Let $D = N(c) \cup \{ c \}$ and let $D_a$, $D_b$ and $D_d$ denote the same sets as in the $V_2$ proof.
-The definition of $V_3$ tells us that both $D_a$ and $D_b$ are now nonempty.
-This fact together with the fact that $D = D_a \cup D_b \cup D_d$ lets us form the following proof:\par
-\begin{figure}[!h]
-  \centering
-  \begin{prooftree*}
-    \Hypo{ \{ \ol{da} \;|\; d \in D_a \} }
-    \Hypo{ \{ \ol{db} \;|\; d \in D_b \} }
-    \Hypo{ \{ \ol{d} \;|\; d \in D_d \} }
-    \Infer[right label=$D$]3{\ol{ab}}
-  \end{prooftree*}
-  \caption{}
-  \label{fig:proof_v3}
-\end{figure}
-With no assumptions made on the vertices $a$ and $b$, we can conclude that $V_3(a,b)~\Rightarrow~\;\vdash~\ol{ab}$.
+Implication (1) for $V_3$ is proven in more or less the same way as we proved implication (1) for $V_2$ in Section~\ref{sub:The V2 construction}.
+Therefore, only a condenced version will be shown here:
+\begin{proof}
+  Given a graph $G$ with two vertices $a$ and $b$ such that $V_3(a,b)$:
+
+  Base case: Same as in $V_2$ proof.
+
+  Inductive step: Let $D = N(c) \cup \{ c \}$ and let $D_a$, $D_b$ and $D_d$ denote the same sets as in the $V_2$ proof.
+  The definition of $V_3$ tells us that both $D_a$ and $D_b$ are nonempty.
+  This fact together with the fact that $D = D_a \cup D_b \cup D_d$ lets us form the following proof:\par
+  \begin{figure}[!h]
+    \centering
+    \begin{prooftree*}
+      \Hypo{ \{ \ol{da} \;|\; d \in D_a \} }
+      \Hypo{ \{ \ol{db} \;|\; d \in D_b \} }
+      \Hypo{ \{ \ol{d} \;|\; d \in D_d \} }
+      \Infer[right label=$D$]3{\ol{ab}}
+    \end{prooftree*}
+    \caption{}
+    \label{fig:proof_v3}
+  \end{figure}
+  No assumptions was made on the vertices $a$ and $b$, so we can conclude that $V_3(a,b)~\Rightarrow~\;\vdash~\ol{ab}$.
+\end{proof}

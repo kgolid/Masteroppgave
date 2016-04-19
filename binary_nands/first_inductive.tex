@@ -197,7 +197,8 @@ Like in the definitions of $V_1$ and $V_2$, $a$ and $b$ are vertices from $G$.
   \textbf{(BC):}&\quad N(a,b) \vee N(b,a) &\Rightarrow V_3(a,b)\label{eq:V2_BC}\\
   \textbf{(IS):}&\quad \exists c \in G:
   \left ( \begin{tabular}{l}
-  $\exists d_1,d_2 \in N(c) \cup \{ c \} : V_3(d_1,a) \wedge V_3(d_2,b) \quad \wedge$\\
+  $\exists d \in N(c) \cup \{ c \} : V_3(d,a) \quad \wedge$\\
+  $\exists d \in N(c) \cup \{ c \} : V_3(d,b) \quad \wedge$\\
   $\forall d \in N(c) \cup \{ c \} : V_3(d,a) \vee V_3(d,b) \vee V_3(d,d)$
   \end{tabular} \right )
   &\Rightarrow V_3(a,b)\label{eq:V2_IS}

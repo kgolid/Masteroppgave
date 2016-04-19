@@ -14,6 +14,8 @@ We can define $V_1$ inductively in the following way, with $a$ and $b$ being arb
 \end{align}
 The symmetry in the base case is what makes this a definition of a vel and not a path, while the trimmed-ness gets expressed by the restrictions we set on vertex $c$.
 
+\subsection{The $V_2$ construction}
+\label{sub:The V2 construction}
 It is now  much easier to formally express the new, weaker concept of trimming.
 Let $V_2 \subseteq G \times G$ be the set of all pairs of vertices related by our new vel-definition.
 $V_2$ can be defined inductively in the following way, again with $a$ and $b$ as arbitrary vertices from $G$.
@@ -190,6 +192,8 @@ The above solution shows us by soundness of Neg that $\ol{yb}$ is unprovable, an
 Since none of the successors of $a$ and $b$ satisfies the nonemptiness requirement, they also are not $V_2$ related.
 We can therefore conclude that $V_2$ does not satisfy implication (2).
 
+\subsection{The $V_3$ construction}
+\label{sub:The V3 construction}
 Now, in what way can $V_2$ be generalized in order to include the graph in Figure~\ref{fig:v2_counter_graph}?
 Looking at the proof in Figure~\ref{fig:proof_v2}, we see that the axiomatic NAND-clause $\ol{ac}$ is a crucial part of the premise, representing the $c \in N(a)$ in the definition of $V_2$.
 Observe that a case where $\ol{ac}$ is non-axiomatic would not invalidate this rule application.

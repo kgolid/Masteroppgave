@@ -203,3 +203,25 @@ Like in the definitions of $V_1$ and $V_2$, $a$ and $b$ are vertices from $G$.
   \end{tabular} \right )
   &\Rightarrow V_3(a,b)\label{eq:V2_IS}
 \end{align}
+$V_2$ required $a$ to have an edge to $c$.
+We are now treating $c$ just like its successors by requiring it to be in $V_3$-relation to either $a$, $b$ or itself.
+Requiring $a$ to be in $V_3$-relation to some vertex in $N(c) \cup \{ c \}$ is now what ensures the inclusion of $a$ in the proof.
+
+Looking back at the graph from Figure~\ref{fig:v2_counter_graph}, we see that vertex $z$ is clearly $V_3$-related to $a$ while its successors, $c_1$ and $c_2$, are $V_3$-related to $a$ and $b$, respectively.
+The vertices $a$ and $b$ are thus $V_3$-related.
+
+The proof that $V_3$ satisfies implication (1) is done in much the same way as for $V_2$.
+Let $D = N(c) \cup \{ c \}$ and let $D_a$, $D_b$ and $D_d$ denote the same sets as in the $V_2$ proof.
+The definition of $V_3$ tells us that both $D_a$ and $D_b$ are now nonempty.
+The fact that $D = D_a \cup D_b \cup D_d$ still stands, letting us form the following proof:\par
+\begin{figure}[!h]
+  \centering
+  \begin{prooftree*}
+    \Hypo{ \{ \ol{da} \;|\; d \in D_a \} }
+    \Hypo{ \{ \ol{db} \;|\; d \in D_b \} }
+    \Hypo{ \{ \ol{d} \;|\; d \in D_d \} }
+    \Infer[right label=$D$]3{\ol{ab}}
+  \end{prooftree*}
+  \caption{}
+  \label{fig:proof_v3}
+\end{figure}

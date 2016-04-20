@@ -202,14 +202,14 @@ In other words, the vertex $c$ from the $V_2$ definition does not necessarily ne
 Based on this observation, we define the construction $V_3$ which is a generalization of $V_2$.
 Like in the definitions of $V_1$ and $V_2$, $a$ and $b$ are vertices from $G$.
 \begin{align}
-  \textbf{(BC):}&\quad N(a,b) \vee N(b,a) &\Rightarrow V_3(a,b)\label{eq:V2_BC}\\
+  \textbf{(BC):}&\quad N(a,b) \vee N(b,a) &\Rightarrow V_3(a,b)\label{eq:V3_BC}\\
   \textbf{(IS):}&\quad \exists c \in G:
   \left ( \begin{tabular}{l}
   $\exists d \in N(c) \cup \{ c \} : V_3(d,a) \quad \wedge$\\
   $\exists d \in N(c) \cup \{ c \} : V_3(d,b) \quad \wedge$\\
   $\forall d \in N(c) \cup \{ c \} : V_3(d,a) \vee V_3(d,b) \vee V_3(d,d)$
   \end{tabular} \right )
-  &\Rightarrow V_3(a,b)\label{eq:V2_IS}
+  &\Rightarrow V_3(a,b)\label{eq:V3_IS}
 \end{align}
 $V_2$ required $a$ to have an edge to $c$.
 We are now treating $c$ just like its successors by requiring it to be in $V_3$-relation to either $a$, $b$ or itself.

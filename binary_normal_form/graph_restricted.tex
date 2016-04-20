@@ -1,4 +1,5 @@
 % !TEX root= ../main.tex
+\externdaldocument{../binary_nands/first_inductive}
 \section{Graph theories}
 \label{sec:Graph theories}
 We have just shown that in the case of unrestricted theories, there is no guarantee that an inconsistency is binary-derivable, but what about graph theories?
@@ -14,7 +15,7 @@ The theorem will be proven simply by presenting a graph containing a provable bi
 We will then make an attempt to extend the graph, making it inconsistent, and then show that its inconsistency proof has to include the non-binary-derivable NAND-clause.
 This attempt will however prove to be unsuccessful.
 
-The graph in question is the following:\par
+We consider the graph in Figure~\ref{fig:v3_counter_graph} from Section~\ref{sub:V3 and implication 2}, shown below:\par
 \begin{figure}[!h]
   \centering
   \begin{tikzpicture}
@@ -42,7 +43,7 @@ The graph in question is the following:\par
   \caption{}
   \label{fig:open_door}
 \end{figure}
-We will be treating the vertices $y_1$, $y_2$ and $c_2$ in the above graph as if each of them are initial vertices of (non-depicted) disjoint rays, and not sinks as as the figure suggests.
+As before, the vertices $y_1$, $y_2$ and $c_2$ are still initial vertices of disjoint rays, and not sinks.
 This gives the following axiom set:
 \begin{align}
   \text{OR} &= \{ ax_1x_2,\; x_1y_1c_1,\; x_2y_2c_2,\; by_1y_2,\; c_1c_2 \}\\

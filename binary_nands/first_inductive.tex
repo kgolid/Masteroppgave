@@ -241,12 +241,12 @@ Therefore, only a condenced version will be shown here:
   \end{figure}
   No assumptions was made on the vertices $a$ and $b$, so we can conclude that $V_3(a,b)~\Rightarrow~\;\vdash~\ol{ab}$.
 \end{proof}
-Just like with $V_2$, if $V_3$ satisfies implication (2), it has some considerable consequences for our proof system, Neg.
 \subsection{$V_3$ and implication (2)}
 \label{sub:V3 and implication (2)}
+Just like with $V_2$, if $V_3$ also satisfies implication (2), it has some considerable consequences for our proof system, Neg.
 Figure~\ref{fig:proof_v3} shows that if two vertices $a$ and $b$ are $V_3$-related, not only is $\ol{ab}$ provable in Neg, it is provable in such a way that the premise of the last rule application contains binary NAND-clauses only (the proof has a \textit{binary root}).
 
-If $V_3$ satisfies implication (2), then for any provable binary NAND-clause $\ol{ab}$, by implication (1) and (2), it has a proof with a binary root.
+If $V_3$ satisfies implication (1) and (2), then for any provable binary NAND-clause $\ol{ab}$, by implication (1) and (2), it has a proof with a binary root.
 Applying now the same reasoning on all of the binary NAND-clauses in its premise, we get that all of these also have proofs with binary roots.
 Doing this repeatedly throughout the whole proof of $\ol{ab}$ ultimately gives us a proof containing exclusively binary NAND-clauses.
 Implication (2) thus gives us that for any provable binary NAND-clause there exists a proof in Neg with binary NAND-clauses only.

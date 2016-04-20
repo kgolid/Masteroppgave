@@ -250,3 +250,38 @@ If $V_3$ satisfies implication (1) and (2), then for any provable binary NAND-cl
 Applying now the same reasoning on all of the binary NAND-clauses in its premise, we get that all of these also have proofs with binary roots.
 Doing this repeatedly throughout the whole proof of $\ol{ab}$ ultimately gives us a proof containing exclusively binary NAND-clauses.
 Implication (2) thus gives us that for any provable binary NAND-clause there exists a proof in Neg with binary NAND-clauses only.
+We will however see that implication (2) does \textit{not} hold for $V_3$.\par
+
+The graph in Figure~\ref{fig:v3_counter_graph} provides a provable NAND-clause $\ol{ab}$, but is not an instance of $V_3$.
+
+The graph is admittedly a bit over-simplified.
+Even though the vertices $y_1$, $y_2$ and $c_2$ are depicted like sinks, we will be treating them as initial vertices of (non-depicted) disjoint rays.
+We will however not consider the clauses corresponding to the elements of these rays, since these are not going to contribute to our argument.
+\begin{figure}[!h]
+  \centering
+  \begin{tikzpicture}
+    [
+    point/.style={circle,draw,inner sep=0pt,minimum size=2mm}
+    ]
+    \node (a) at (0,2) [point,label=left:$a$] {};
+    \node (x1) at (0,4) [point,label=left:$x_1$] {};
+    \node (x2) at (0,0) [point,label=left:$x_2$] {};
+    \node (b) at (2,2) [point,label=right:$b$] {};
+    \node (y1) at (2,4) [point,label=right:$y_1$] {};
+    \node (y2) at (2,0) [point,label=right:$y_2$] {};
+    \node (c1) at (1,3) [point,label=right:$c_1$] {};
+    \node (c2) at (1,1) [point,label=right:$c_2$] {};
+    \draw [-latex] (a) to (x1);
+    \draw [-latex] (a) to (x2);
+    \draw [-latex] (b) to (y1);
+    \draw [-latex] (b) to (y2);
+    \draw [-latex] (x1) to (y1);
+    \draw [-latex] (x1) to (c1);
+    \draw [-latex] (x2) to (y2);
+    \draw [-latex] (x2) to (c2);
+    \draw [-latex] (c1) to (c2);
+  \end{tikzpicture}
+  \caption{}
+  \label{fig:v3_counter_graph}
+\end{figure}
+\FloatBarrier

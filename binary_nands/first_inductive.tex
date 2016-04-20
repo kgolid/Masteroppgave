@@ -303,3 +303,206 @@ Here is one way to prove $\ol{ab}$ in Neg given the graph theory from Figure~\re
   \label{fig:v3_counter_proof}
 \end{figure}
 \FloatBarrier
+Now, if implication (2) holds for $V_3$, we would expect $a$ and $b$ to be $V_3$-related in the above graph.
+In other words, we would expect there to be a third vertex in the graph such that it and each of its successors are $V_3$-related to either $a$, $b$ or itself and such that there is at least one
+This can be shown to be impossible.
+
+Consider the following six solutions of the graph:\par
+\begin{figure}[!h]
+  \centering
+  \begin{tikzpicture}
+    [
+    point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
+    one/.style={fill=black},
+    collection/.style={thick,rectangle,draw,inner sep=0pt,minimum height=14mm, minimum width= 9mm}
+    ]
+    \node (label) at (-1,2) {$\alpha_1:$};
+    \node (a) at (0,2) [point, one,label=left:$a$] {};
+    \node (x1) at (0,4) [point,label=left:$x_1$] {};
+    \node (x2) at (0,0) [point,label=left:$x_2$] {};
+    \node (b) at (2,2) [point,label=right:$b$] {};
+    \node (y1) at (2,4) [point, one,label=right:$y_1$] {};
+    \node (y2) at (2,0) [point, one,label=right:$y_2$] {};
+    \node (c1) at (1,3) [point, one,label=right:$c_1$] {};
+    \node (c2) at (1,1) [point,label=right:$c_2$] {};
+    \draw [-latex] (a) to (x1);
+    \draw [-latex] (a) to (x2);
+    \draw [-latex] (b) to (y1);
+    \draw [-latex] (b) to (y2);
+    \draw [-latex] (x1) to (y1);
+    \draw [-latex] (x1) to (c1);
+    \draw [-latex] (x2) to (y2);
+    \draw [-latex] (x2) to (c2);
+    \draw [-latex] (c1) to (c2);
+  \end{tikzpicture}
+  \hspace{5mm}
+  \begin{tikzpicture}
+    [
+    point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
+    one/.style={fill=black},
+    collection/.style={thick,rectangle,draw,inner sep=0pt,minimum height=14mm, minimum width= 9mm}
+    ]
+    \node (label) at (-1,2) {$\alpha_2:$};
+    \node (a) at (0,2) [point, one,label=left:$a$] {};
+    \node (x1) at (0,4) [point,label=left:$x_1$] {};
+    \node (x2) at (0,0) [point,label=left:$x_2$] {};
+    \node (b) at (2,2) [point,label=right:$b$] {};
+    \node (y1) at (2,4) [point, one,label=right:$y_1$] {};
+    \node (y2) at (2,0) [point, one, label=right:$y_2$] {};
+    \node (c1) at (1,3) [point,label=right:$c_1$] {};
+    \node (c2) at (1,1) [point, one, label=right:$c_2$] {};
+    \draw [-latex] (a) to (x1);
+    \draw [-latex] (a) to (x2);
+    \draw [-latex] (b) to (y1);
+    \draw [-latex] (b) to (y2);
+    \draw [-latex] (x1) to (y1);
+    \draw [-latex] (x1) to (c1);
+    \draw [-latex] (x2) to (y2);
+    \draw [-latex] (x2) to (c2);
+    \draw [-latex] (c1) to (c2);
+  \end{tikzpicture}
+  \hspace{5mm}
+  \begin{tikzpicture}
+    [
+    point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
+    one/.style={fill=black},
+    collection/.style={thick,rectangle,draw,inner sep=0pt,minimum height=14mm, minimum width= 9mm}
+    ]
+    \node (label) at (-1,2) {$\alpha_3:$};
+    \node (a) at (0,2) [point,label=left:$a$] {};
+    \node (x1) at (0,4) [point,label=left:$x_1$] {};
+    \node (x2) at (0,0) [point, one,label=left:$x_2$] {};
+    \node (b) at (2,2) [point, one,label=right:$b$] {};
+    \node (y1) at (2,4) [point,label=right:$y_1$] {};
+    \node (y2) at (2,0) [point,label=right:$y_2$] {};
+    \node (c1) at (1,3) [point, one,label=right:$c_1$] {};
+    \node (c2) at (1,1) [point,label=right:$c_2$] {};
+    \draw [-latex] (a) to (x1);
+    \draw [-latex] (a) to (x2);
+    \draw [-latex] (b) to (y1);
+    \draw [-latex] (b) to (y2);
+    \draw [-latex] (x1) to (y1);
+    \draw [-latex] (x1) to (c1);
+    \draw [-latex] (x2) to (y2);
+    \draw [-latex] (x2) to (c2);
+    \draw [-latex] (c1) to (c2);
+  \end{tikzpicture}\\
+  \begin{tikzpicture}
+    [
+    point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
+    one/.style={fill=black},
+    collection/.style={thick,rectangle,draw,inner sep=0pt,minimum height=14mm, minimum width= 9mm}
+    ]
+    \node (label) at (-1,2) {$\alpha_4:$};
+    \node (a) at (0,2) [point,label=left:$a$] {};
+    \node (x1) at (0,4) [point, one,label=left:$x_1$] {};
+    \node (x2) at (0,0) [point,label=left:$x_2$] {};
+    \node (b) at (2,2) [point, one,label=right:$b$] {};
+    \node (y1) at (2,4) [point,label=right:$y_1$] {};
+    \node (y2) at (2,0) [point,label=right:$y_2$] {};
+    \node (c1) at (1,3) [point,label=right:$c_1$] {};
+    \node (c2) at (1,1) [point, one,label=right:$c_2$] {};
+    \draw [-latex] (a) to (x1);
+    \draw [-latex] (a) to (x2);
+    \draw [-latex] (b) to (y1);
+    \draw [-latex] (b) to (y2);
+    \draw [-latex] (x1) to (y1);
+    \draw [-latex] (x1) to (c1);
+    \draw [-latex] (x2) to (y2);
+    \draw [-latex] (x2) to (c2);
+    \draw [-latex] (c1) to (c2);
+  \end{tikzpicture}
+  \hspace{5mm}
+  \begin{tikzpicture}
+    [
+    point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
+    one/.style={fill=black},
+    collection/.style={thick,rectangle,draw,inner sep=0pt,minimum height=14mm, minimum width= 9mm}
+    ]
+    \node (label) at (-1,2) {$\alpha_5:$};
+    \node (a) at (0,2) [point,label=left:$a$] {};
+    \node (x1) at (0,4) [point,label=left:$x_1$] {};
+    \node (x2) at (0,0) [point, one,label=left:$x_2$] {};
+    \node (b) at (2,2) [point,label=right:$b$] {};
+    \node (y1) at (2,4) [point, one, label=right:$y_1$] {};
+    \node (y2) at (2,0) [point,label=right:$y_2$] {};
+    \node (c1) at (1,3) [point, one,label=right:$c_1$] {};
+    \node (c2) at (1,1) [point,label=right:$c_2$] {};
+    \draw [-latex] (a) to (x1);
+    \draw [-latex] (a) to (x2);
+    \draw [-latex] (b) to (y1);
+    \draw [-latex] (b) to (y2);
+    \draw [-latex] (x1) to (y1);
+    \draw [-latex] (x1) to (c1);
+    \draw [-latex] (x2) to (y2);
+    \draw [-latex] (x2) to (c2);
+    \draw [-latex] (c1) to (c2);
+  \end{tikzpicture}
+  \hspace{5mm}
+  \begin{tikzpicture}
+    [
+    point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
+    one/.style={fill=black},
+    collection/.style={thick,rectangle,draw,inner sep=0pt,minimum height=14mm, minimum width= 9mm}
+    ]
+    \node (label) at (-1,2) {$\alpha_6:$};
+    \node (a) at (0,2) [point,label=left:$a$] {};
+    \node (x1) at (0,4) [point, one, label=left:$x_1$] {};
+    \node (x2) at (0,0) [point,label=left:$x_2$] {};
+    \node (b) at (2,2) [point, label=right:$b$] {};
+    \node (y1) at (2,4) [point,label=right:$y_1$] {};
+    \node (y2) at (2,0) [point, one, label=right:$y_2$] {};
+    \node (c1) at (1,3) [point,label=right:$c_1$] {};
+    \node (c2) at (1,1) [point, one, label=right:$c_2$] {};
+    \draw [-latex] (a) to (x1);
+    \draw [-latex] (a) to (x2);
+    \draw [-latex] (b) to (y1);
+    \draw [-latex] (b) to (y2);
+    \draw [-latex] (x1) to (y1);
+    \draw [-latex] (x1) to (c1);
+    \draw [-latex] (x2) to (y2);
+    \draw [-latex] (x2) to (c2);
+    \draw [-latex] (c1) to (c2);
+  \end{tikzpicture}
+  \caption{}
+  \label{fig:v3_counter_solutions}
+\end{figure}
+\FloatBarrier
+Given any pair of vertices $x,y$, if there exists an assignment such that $x$ and $y$ are both assigned 1, then $\ol{xy}$ is not provable in Neg.
+We get this from soundness.
+
+The table in Figure~\ref{fig:v3_counter_table} shows what pairs of vertices can be 1 under the samme assignment and thus constitute a binary NAND-clauses unprovable in Neg.
+A cell is filled with a reference to the solution, if any, examplifying the case.
+\begin{figure}[!h]
+  \centering
+  \[\begin{array}{|c||c|c|c|c|c|c|c|c|}
+    \hline
+    & a & b & x_1 & x_2 & y_1 & y_2 & c_1 & c_2 \\ \hline\hline
+    a & \alpha_1 & & & & \alpha_1 & \alpha_1 & \alpha_1 & \alpha_2 \\ \hline
+    b & & \alpha_4 & \alpha_4 & \alpha_3 & & & \alpha_3 & \alpha_4 \\ \hline
+    x_1 & & & \alpha_4 & & & \alpha_6 & & \alpha_6 \\ \hline
+    x_2 & & & & \alpha_5 & \alpha_5 & & \alpha_5 & \\ \hline
+    y_1 & & & & & \alpha_1 & \alpha_1 & \alpha_1 & \alpha_2 \\ \hline
+    y_2 & & & & & & \alpha_1 & \alpha_1 & \alpha_2 \\ \hline
+    c_1 & & & & & & & \alpha_1 & \\ \hline
+    c_2 & & & & & & & & \alpha_4 \\ \hline
+  \end{array}\]
+  \caption{}
+  \label{fig:v3_counter_table}
+\end{figure}
+\FloatBarrier
+Two important observations are to be made from the above table:
+
+First, for each vertex in the graph, there exists a solution where that vertex is assigned 1.
+By soundness, no unary NAND-clause can therefore be proven in Neg under this theory.
+
+Secondly, among the pairs above that are not shown to be unprovable, only two are not axioms: $\ol{ab}$ and $\ol{x_1x_2}$.
+We are thus left with the following collection of 11 ``not-unprovable'' binary NAND-clauses:
+\begin{align}
+  \{\; \ol{ab},\; \ol{ax_1},\; \ol{ax_2},\; \ol{by_1},\; \ol{by_2},\; \ol{x_1x_2},\; \ol{x_1y_1},\; \ol{x_1c_1},\; \ol{x_2y_2},\; \ol{x_2c_2} \; \ol{c_1c_2},\; \}
+\end{align}
+By the definition of $V_3$ from (\ref{eq:V2_BC}) and (\ref{eq:V2_IS}), in order for $a$ and $b$ to be $V_3$-related, a vertex $c$ has to exist such that it and all its successors are $V_3$-related to either $a$, $b$ or itself and such that at least one of them is $V_3$-related to $a$ and one to $b$.
+
+It turns out that none of the vertices in the graph satisfies this requirement.
+
+$a$ and $b$ are thus not $V_3$-related, even though $\ol{ab}$ is provable, so implication (2) fails.

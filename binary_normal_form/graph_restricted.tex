@@ -47,8 +47,22 @@ As before, the vertices $y_1$, $y_2$ and $c_2$ are initial vertices of disjoint 
 The NAND-clause we will show not to be binary-provable is $\ol{ab}$.
 Figure~\ref{fig:v3_counter_proof} proves $\ol{ab}$, but the proof contains two non-binary NAND-clauses.
 We will show that this is unavoidable.
+In order to do this, we utilize the table from Figure~\ref{fig:v3_counter_table} worked out in Section~\ref{sub:V3 and implication 2}.
+We will show it here for convenience.\par
 \begin{figure}[!h]
   \centering
+  \[\begin{array}{|c||c|c|c|c|c|c|c|c|}
+    \hline
+    & a & b & x_1 & x_2 & y_1 & y_2 & c_1 & c_2 \\ \hline\hline
+    a & \alpha_1 & & & & \alpha_1 & \alpha_1 & \alpha_1 & \alpha_2 \\ \hline
+    b &-& \alpha_4 & \alpha_4 & \alpha_3 & & & \alpha_3 & \alpha_4 \\ \hline
+    x_1 &-&-& \alpha_4 & & & \alpha_6 & & \alpha_6 \\ \hline
+    x_2 &-&-&-& \alpha_5 & \alpha_5 & & \alpha_5 & \\ \hline
+    y_1 &-&-&-&-& \alpha_1 & \alpha_1 & \alpha_1 & \alpha_2 \\ \hline
+    y_2 &-&-&-&-&-& \alpha_1 & \alpha_1 & \alpha_2 \\ \hline
+    c_1 &-&-&-&-&-&-& \alpha_1 & \\ \hline
+    c_2 &-&-&-&-&-&-&-& \alpha_4 \\ \hline
+  \end{array}\]
   \caption{}
   \label{fig:open_door_solution}
 \end{figure}

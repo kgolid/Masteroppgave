@@ -69,16 +69,15 @@ We will show it here for convenience.\par
 
 Let us assume that we have a rule application with all binary NAND-clauses in the premise and with $\ol{ab}$ in the conclusion.
 Based on the (Rneg)-rule, we know that the premise must contain at least one binary NAND-clause containg $a$ and at least one containing $b$.
-The table above tells us that the only provable binary NAND-clauses that contain $a$ or $b$ are the ones in the axiom set:
+The above table tells us that the only provable binary NAND-clauses that contain $a$ or $b$ are the ones in the axiom set:
 $\ol{ax_1}$, $\ol{ax_2}$, $\ol{by_1}$ and $\ol{by_2}$.
-Since we don't want any $x_i$ or $y_i$ in the conclusion, these variables have to be removed by the OR-clause.
+Since we do not want any $x_i$ or $y_i$ in the conclusion, these variables have to be removed by the OR-clause.
 The OR-clauses $x_1y_1c_1$ and $x_2y_2c_2$ are the only ones that contain both an $x$ and a $y$, making them the only OR-clauses that can potentially conclude with $\ol{ab}$.
 
 This gives us the following information: since both the possible OR-clauses are of length 3, the rule application concluding with $\ol{ab}$ has 3 NAND-clauses in its premise; one containing an $x$, one containing a $y$ and one containing a $c$.
 Looking at our table again, we see that the potentially provable NAND-clauses containing a $c$ are again the axioms only.
 Since there are no provable NAND-clauses on the form $ac_i$ or $bc_i$, we get that the conclusion of our rule cannot possibly be of length 2, thus contradicting our assumption.
 We can therefore conclude that $\ol{ab}$ is \textit{not} binary-derivable, thus proving Theorem~\ref{thm:non_binary_derivable}.
-
 \subsection{Inconsistencies}
 \label{sub:Inconsistencies}
 Consider now the following extension of our original graph:

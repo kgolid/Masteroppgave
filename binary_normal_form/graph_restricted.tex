@@ -44,24 +44,8 @@ Let us again consider the graph from Figure~\ref{fig:v3_counter_graph}, Section~
 \end{figure}
 As before, the vertices $y_1$, $y_2$ and $c_2$ are initial vertices of disjoint rays, and not sinks.
 
-The NAND-clause that we want to prove is $\ol{ab}$, and this is one way to prove it in Neg:\par
-\begin{figure}[!h]
-  \centering
-  \begin{prooftree*}
-    \Hypo{\ol{ax_2}}
-    \Hypo{\ol{by_2}}
-    \Hypo{\ol{c_1c_2}}
-    \Infer[left label = $x_2y_2c_2$]3{\ol{abc_1}}
-    \Hypo{\ol{ax_1}}
-    \Hypo{\ol{by_1}}
-    \Hypo{\ol{c_1c_2}}
-    \Infer[right label = $x_1y_1c_1$]3{\ol{abc_2}}
-    \Infer[left label = $c_1c_2$]2{\ol{ab}}
-  \end{prooftree*}
-  \caption{}
-  \label{fig:open_door_proof}
-\end{figure}
-The premise of the last rule application in the proof above contains two non-binary NAND-clauses.
+The NAND-clause we will show not to be binary-provable is $\ol{ab}$.
+Figure~\ref{fig:v3_counter_proof} proves $\ol{ab}$, but the proof contains two non-binary NAND-clauses.
 We will show that this is unavoidable.
 
 By taking a closer look at the graph, we can work out these 6 solutions, among others (black vertices being assigned 1, while white vertices being assigned 0):\par

@@ -66,30 +66,6 @@ We will show it here for convenience.\par
   \caption{}
   \label{fig:open_door_table}
 \end{figure}
-\FloatBarrier
-Based on these solutions, we can say a lot about the provability of various binary NAND-clauses.
-Any pair of vertices from the graph that can be 1 under the same assignment will not be a Neg-provable NAND by soundness.
-Also, since all the vertices can be assigned 1 under at least one assignment, no unary NAND can be proven in Neg.
-
-We can make the following table showing what pairs of vertices can be 1 simultaneously and thus consititute a binary NAND unprovable in Neg.
-A cell is filled with a reference to the assignment, if any, examplifying the case.
-\[
-\begin{array}{|c||c|c|c|c|c|c|c|c|}
-  \hline
-  & a & b & x_1 & x_2 & y_1 & y_2 & c_1 & c_2 \\ \hline\hline
-  a & - & & & & \alpha_1 & \alpha_1 & \alpha_1 & \alpha_2 \\ \hline
-  b & & - & \alpha_4 & \alpha_3 & & & \alpha_3 & \alpha_4 \\ \hline
-  x_1 & & & - & & & \alpha_6 & & \alpha_6 \\ \hline
-  x_2 & & & & - & \alpha_5 & & \alpha_5 & \\ \hline
-  y_1 & & & & & - & \alpha_1 & \alpha_1 & \alpha_2 \\ \hline
-  y_2 & & & & & & - & \alpha_1 & \alpha_2 \\ \hline
-  c_1 & & & & & & & - & \\ \hline
-  c_2 & & & & & & & & - \\ \hline
-\end{array}
-\]
-
-Among the pairs above that are not shown to be unprovable, only two are not axioms: $\ol{ab}$ and $\ol{x_1x_2}$.
-We will use this observation to show that it is impossible to prove $\ol{ab}$ with binary NAND-clauses only.
 
 Let us assume that we have a rule application with all binary NAND-clauses in the premise and with $\ol{ab}$ in the conclusion.
 Based on the (Rneg)-rule, we know that the premise must contain at least one binary NAND-clause containg $a$ and at least one containing $b$.

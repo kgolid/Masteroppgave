@@ -80,8 +80,11 @@ Since there are no provable NAND-clauses on the form $ac_i$ or $bc_i$, we get th
 We can therefore conclude that $\ol{ab}$ is \textit{not} binary-derivable, thus disproving Conjecture~\ref{thm:non_binary_derivable}.
 \subsection{Inconsistencies}
 \label{sub:Inconsistencies}
-Consider now the following extension of our original graph:
+We will to use the fact that some binary NAND-clauses are not binary-derivable in an attempt to show that some \textit{inconsistencies} are not binary-derivable.
 
+The idea is to extend our original graph, making it inconsistent, but in such a way that $\varnothing$ can be proven only by using the NAND-clause $\ol{ab}$ somewhere in the proof.
+
+Consider the following extension to our original graph from Figure~\ref{fig:open_door}:
 \[
   \begin{tikzpicture}
     [

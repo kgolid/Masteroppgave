@@ -97,3 +97,7 @@ We did however not manage to find such a graph structure in this thesis.
 
 For each structure presented, implication (1) will be shown, followed by an example disproving implication (2).
 The counterexamples will be graphs with the presented structure absent, but where the corresponding NAND-clause is still provable.
+
+Because of soundness of Neg, if two vertices correspond to a provable binary NAND in Neg, for any kernel $K$ in that graph, at least one of the two vertices is outside $K$.
+The counterpositive of this observation being that for a graph $G$, if there exists a kernel $K \subseteq G$ such that two vertices, $x_1$ and $x_2$ are both in $K$, then $\ol{x_1x_2}$ is not provable from $G$.
+This fact will be used when arguing why some graph structures are \textit{not} satisfying implication (1).

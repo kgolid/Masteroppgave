@@ -72,8 +72,8 @@ This implication will be referred to as \textit{implication (1)} while its oppos
 
 With $R(G,a,b)$ denoting the existence of some graph structure $R$ between the vertices $a$ and $b$ in the graph $G$, the above implications can be formally defined as follows:
 \begin{align}
-  (1) \quad R(G,a,b) \quad \Rightarrow \quad G \vdash \ol{ab}\\
-  (2) \quad R(G,a,b) \quad \Leftarrow \quad G \vdash \ol{ab}
+  (1) \quad R(a,b) \quad \Rightarrow \quad G \vdash \ol{ab}\\
+  (2) \quad R(a,b) \quad \Leftarrow \quad G \vdash \ol{ab}
 \end{align}
 
 Suppose we managed to find a structure that satisfied both above implications.
@@ -88,8 +88,8 @@ The following equations tells us how that would directly give us a predicate dec
   \end{tabular} \right ) ) )\\
   (2.3)(2.4)&\Leftrightarrow\exists K \in \text{OR}: (\forall  k \in K: ( \exists L \in \text{OR}:
   \left ( \begin{tabular}{l}
-  $\exists l \in L: G \vdash R(G,l,k) \; \wedge$\\
-  $\forall l \in L: G \vdash R(G,l,k) \vee G \vdash R(G,l,l)$
+  $\exists l \in L: G \vdash R(l,k) \; \wedge$\\
+  $\forall l \in L: G \vdash R(l,k) \vee G \vdash R(l,l)$
   \end{tabular} \right ) ) )
 \end{align}
 

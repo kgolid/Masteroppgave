@@ -66,15 +66,12 @@ Observe that we have parts of this correspondence down already, with our axioms 
 Vertices directly connected by an edge must therefore be a part of the corresponding graph structure.
 %Finding some graph strucural relation that corresponds to binary NAND-clauses might also give us some knowledge about a potential standard form of binary-NAND-proofs.\todo{does this make sense?}
 
-
-The next sections will present various graph structures, each implying the provability of certain binary NAND-clauses in Neg.
-This implication will be referred to as \textit{implication (1)} while its opposite will be referred to as \textit{implication (2)}.
-
-With $R(G,a,b)$ denoting the existence of some graph structure $R$ between the vertices $a$ and $b$ in the graph $G$, the above implications can be formally defined as follows:
+Let $R(a,b)$ denote the existence of some graph structure $R$ between the vertices $a$ and $b$ in some graph $G$; our correspondence can now be formally defined as follows:
 \begin{align}
   (1) \quad R(a,b) \quad \Rightarrow \quad G \vdash \ol{ab}\\
   (2) \quad R(a,b) \quad \Leftarrow \quad G \vdash \ol{ab}
 \end{align}
+The two implications will be referred to as \textit{implication (1)} and \textit{implication (2)}, respectively.
 
 Suppose we manage to find a structure $R$ that satisfied both above implications.
 The following equation tells us how that would directly give us a predicate deciding whether or not the graph has a kernel.\todo{This should be rewritten.}
@@ -93,8 +90,8 @@ The following equation tells us how that would directly give us a predicate deci
   $\forall l \in L: G \vdash R(l,k) \vee G \vdash R(l,l)$
   \end{tabular} \right ) ) )
 \end{align}
-
-Each presented graph structure will be a generalization of the previous one, ultimately aiming to find a graph structure general enough to satisfy both implication (1) and implication (2).
+The next sections will present various graph structures, each satisfying implication (1).
+Each presented structure will be a generalization of the previous one, ultimately aiming to find a structure general enough to satisfy both implication (1) and implication (2).
 Such a structure would be the true graph structural equivalent of a binary NAND provable in Neg.
 We did however not manage to find such a graph structure in this thesis.
 

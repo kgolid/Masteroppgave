@@ -79,14 +79,15 @@ With $R(G,a,b)$ denoting the existence of some graph structure $R$ between the v
 Suppose we managed to find a structure that satisfied both above implications.
 The following equations tells us how that would directly give us a predicate deciding whether or not the graph has a kernel\todo{This should be rewritten.}
 \begin{align}
-  Sol(G) = \varnothing &\Leftrightarrow G \vdash \varnothing\\
-  (2.1)&\Leftrightarrow\exists K \in \text{OR}: (\forall  k \in K: G \vdash \ol{k})\\
-  (2.2)&\Leftrightarrow\exists K \in \text{OR}: (\forall  k \in K: ( \exists L \in \text{OR}:
+  &Sol(G) = \varnothing\\
+  \Leftrightarrow\; &G \vdash \varnothing\\
+  \overset{2.1}{\Leftrightarrow}\;&\exists K \in \text{OR}: (\forall  k \in K: G \vdash \ol{k})\\
+  \overset{2.2}{\Leftrightarrow}\;&\exists K \in \text{OR}: (\forall  k \in K: ( \exists L \in \text{OR}:
   \left ( \begin{tabular}{l}
   $\exists l \in L: G \vdash \ol{lk} \; \wedge$\\
   $\forall l \in L: G \vdash \ol{lk} \vee G \vdash \ol{l}$
   \end{tabular} \right ) ) )\\
-  (2.3)(2.4)&\Leftrightarrow\exists K \in \text{OR}: (\forall  k \in K: ( \exists L \in \text{OR}:
+  \overset{2.3}{\underset{2.4}{\Leftrightarrow}}\;&\exists K \in \text{OR}: (\forall  k \in K: ( \exists L \in \text{OR}:
   \left ( \begin{tabular}{l}
   $\exists l \in L: G \vdash R(l,k) \; \wedge$\\
   $\forall l \in L: G \vdash R(l,k) \vee G \vdash R(l,l)$

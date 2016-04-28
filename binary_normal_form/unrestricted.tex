@@ -1,7 +1,7 @@
 % !TEX root= ../main.tex
 \externaldocument{../binary_nands/motivation}
-\section{Unrestricted theories}
-\label{sec:Unrestricted theories}
+\section{Inconsistencies in general theories}
+\label{sec:Inconsistencies in general theories}
 This section will show that there exist inconsistent theories such that their inconsistencies are not possible to prove in Neg using binary NAND-clauses only.
 We will prove the pigeonhole principle in Neg to examplify this.
 
@@ -13,8 +13,8 @@ Letting the atom $x_i$ denote the pigeon $i$ occupying the hole $x$, the above t
   \text{(1):}\quad &\{ \; 1_i2_i3_i\dots m_i \;|\; i \leq n \; \}\\
   \text{(2):}\quad &\{ \; \ol{x_ix_j} \;|\; i < j \leq n, x \leq m \; \}
 \end{align}
-\subsection{Proof for 4 pigeons and 3 holes}
-\label{sub:Proof for 4 pigeons and 3 holes}
+\subsection{Proving the pigeonhole principle}
+\label{sub:Proving the pigeonhole principle}
 The pigeonhole principle for 4 pigeons and 3 holes will have the following axioms:
 \begin{align}
   \text{OR} &= \{ \; 1_12_13_1,\; 1_22_23_2,\; 1_32_33_3,\; 1_42_43_4 \; \} \label{eq:ax1}\\
@@ -99,8 +99,8 @@ With these three unary clauses proven, we can now prove $\varnothing$ in one ste
 
 Observe that NAND-clauses of length 3 appear several times in this proof.
 We will show that this is unavoidable in Neg given the axioms from \ref{eq:ax1} and \ref{eq:ax2}
-\subsection{Long NAND-clauses in pigeonhole proofs}
-\label{sub:Long NAND-clauses in pigeonhole proofs}
+\subsection{Binary-derivability}
+\label{sub:Binary-derivability}
 As observed in \ref{sec:Motivation}, the only strategy in proving inconsistencies in Neg is to create new NAND-clauses until you have a set of unary NAND-clauses such that their union matches an OR-clause.
 
 Now, what possible ways are there to create new NAND-clauses from our given pigeonhole axioms?

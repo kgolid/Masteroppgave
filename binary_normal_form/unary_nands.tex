@@ -73,3 +73,69 @@ This makes the proof of $\ol{a}$ trivial:\par
   \caption{}
   \label{fig:unary_nand_proof}
 \end{figure}
+To show that $\ol{a}$ is not binary-derivable, we will first prove the following lemma:
+\begin{lemma}
+  Based on the graph in Figure~\ref{fig:double_open_door}, the only binary-derivable, non-axiomatic binary NAND-clause containing the atom $a$ is $\ol{at}$.
+\end{lemma}
+
+\begin{proof}
+We prove this lemma by inducing over the proof length of some binary NAND-clause $\ol{a\gamma}$ and show that $\gamma$ always has to equal either some $x$-vertex or the $t$-vertex.
+
+In the base case, the proof length is 1, so all the clauses in the premise must be axiomatic.
+That includes at least one clause containing $a$ and at least one clause containing $\gamma$.
+Figure~\ref{fig:nand_base_case} illustrates the situation.\par
+\begin{figure}[!h]
+  \centering
+  \begin{prooftree*}
+    \Hypo{\ol{ax^K_i}}
+    \Hypo{\ol{\gamma y^K_i}}
+    \Hypo{\ol{\gamma c^K_i}}
+    \Infer[right label=$x^K_iy^K_ic^K_i$]3{\ol{a\gamma}}
+  \end{prooftree*}
+  \caption{}
+  \label{fig:nand_base_case}
+\end{figure}
+\FloatBarrier
+The only axiomatic NAND-clauses containing $a$ are on the form $\ol{ax^K_i}$ ($K$ being either $L$ or $R$ and $i$ either 1 or 2).
+The OR-clause used must be therefore be the corresponding $x^K_iy^K_ic^K_i$, being the only OR-clause containing $x^K_i$.
+Since the OR-clause is of length 3, the premise must contain two other clauses and they must have the following form in order to give us $\ol{a \gamma}$ in the conclusion:
+$\ol{\gamma y^K_i},\ol{\gamma c^K_i}$.
+The only pairs of axioms that matches this description are the ones where $\gamma = x^K_i$.
+With a proof length of 1, we are thus not able to prove binary NAND-clauses containing $a$ that are non-axiomatic.
+
+For the inductive step, we assume that if a binary proof of length $k-1$ or less conclude with a binary non-axiomatic NAND-clause containing $a$ then the clause in question is $\ol{at}$, and will show the same holds for any binary proof of length $k$.
+
+Suppose we have a proof of length $k$ that concludes with some binary NAND-clause $\ol{a\gamma}$;
+like in the base case, we have that the premise of the last proof step must contain at least one NAND-clause containing $a$ and at least one containing $\gamma$.
+Becasue of our induction hypothesis, we have that the only available NAND-clauses containing $a$ are $\ol{at}$ and the four axioms on the form $\ol{ax^K_i}$.
+
+Let us first consider the case where some $\ol{ax^K_i}$ is in the premise.
+This case will be very similar to the base case.
+Like in the base case, the only applicable OR-clause is the corresponding $x^K_iy^K_ic^K_i$, so the premise contains two additional NAND-clauses, one containing $y^K_i$ and one containing $c^K_i$.
+Because of our induction hypothesis, those two cannot contain $a$, so either both contain $\gamma$ or one is unary while the other contain $\gamma$.
+Neither $\ol{y^K_i}$ nor $\ol{c^K_i}$ is provable\todo{show assignments}, so they both have to contain $\gamma$.
+Thus, like in the base case, the two additional NAND-clauses must be on the form $\ol{\gamma y^K_i},\ol{\gamma c^K_i}$.
+Except for the case where $\gamma = x^K_i$, the only $\gamma$-assignment that makes both of these NAND-clauses provable is $\gamma = t$\todo{show assignments}, giving us $\ol{at}$ in the conclusion.
+
+The other case is where $\ol{at}$ appears in the premise.
+Figure~\ref{fig:nand_inductive_step} illustrates this situation.\par
+\begin{figure}[!h]
+  \centering
+  \begin{prooftree*}
+    \Hypo{\ol{at}}
+    \Hypo{\dots}
+    \Infer[]1{\ol{\gamma b^L}}
+    \Hypo{\dots}
+    \Infer[]1{\ol{\gamma b^R}}
+    \Infer[right label=$tb^Lb^R$]3{\ol{a\gamma}}
+  \end{prooftree*}
+  \caption{}
+  \label{fig:nand_inductive_step}
+\end{figure}
+In order to ``strip off'' the $t$, the only applicable OR-clase is $tb^Lb^R$, again giving us three NAND-clauses in the premise.
+The two additional clauses must contain $b^L$ and $b^R$, respectively.
+None of them are provably false\todo{show assignments}, and none of them can contain $a$ because of induction hypothesis, so they both must contain some $\gamma$.
+The only $\gamma$-assignment applicable such that both $\ol{\gamma b^L}$ and $\ol{\gamma b^R}$ is provable is, again, $\gamma = t$\todo{show assignments}, giving us $\ol{at}$ in the conclusion.
+
+The only binary-provable, non-axiomatic, binary NAND-clause containing $a$ is therefore $\ol{at}$.
+\end{proof}

@@ -58,3 +58,18 @@ We will refer to the two copies as the left component and the right component, w
 
 The rest of this section will show that the unary NAND-clause $\ol{a}$ is provable, but not binary derivable.
 
+Both $\ol{ab^L}$ and $\ol{ab^R}$ can be proven in the exact the same manner as $\ol{ab}$ was proven earlier in Figure~\ref{fig:v3_counter_proof}.
+This makes the proof of $\ol{a}$ trivial:\par
+\begin{figure}[!h]
+  \centering
+  \begin{prooftree*}
+    \Hypo{\ol{t}}
+    \Hypo{\dots}
+    \Infer[]1{\ol{ab^L}}
+    \Hypo{\dots}
+    \Infer[]1{\ol{ab^R}}
+    \Infer[right label=$tb^Lb^R$]3{\ol{a}}
+  \end{prooftree*}
+  \caption{}
+  \label{fig:unary_nand_proof}
+\end{figure}

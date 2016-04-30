@@ -62,7 +62,7 @@ The lemma will be proven by inducing over the length of the proof of $\ol{ab}$.
   Suppose there is a proof of length $k$ concluding with $\ol{ab}$.
   Its immediate premise must contain one NAND-clause on the form $\ol{ap}$ and one on the form $\ol{bq}$.
   Again, if either $p=x$ or $q=x$, or if $p \in A$ and $q \in B$, the OR-clause $X$ must be used, by the same argument as in the base case.
-  This leaves us with the case where either $p \nin A$ or $q \nin B$.
+  This leaves us with the case where either $p \not\in A$ or $q \not\in B$.
   Our induction hypothesis gives us that the proof of either of those contains $X$ somewhere.
 
   A proof of length $k$ concluding with $\ol{ab}$ must therefore use the OR-clause $X$, so we can conclude that \textit{any} proof of $\ol{ab}$ must contain $X$.

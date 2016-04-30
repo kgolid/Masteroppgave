@@ -198,3 +198,21 @@ Consider now the following graph, containing 3 copies of our graph from Figure~\
   \caption{}
   \label{fig:triple_double_open_door}
 \end{figure}
+The proof of $\ol{a}$ from Figure~\ref{fig:unary_nand_proof} can be applied to each component in the above graph, giving us the provability of $\ol{a^N}$, $\ol{a^W}$ and $\ol{a^E}$.
+From here, the inconsistency proof is trivial:
+\begin{figure}[!h]
+  \centering
+  \begin{prooftree*}
+    \Hypo{\ol{s}}
+    \Hypo{\dots}
+    \Infer[]1{\ol{a^N}}
+    \Hypo{\dots}
+    \Infer[]1{\ol{a^W}}
+    \Hypo{\dots}
+    \Infer[]1{\ol{a^W}}
+    \Infer[right label=$sa^Na^Wa^E$]4{\varnothing}
+  \end{prooftree*}
+  \caption{}
+  \label{fig:triple_double_open_door_proof}
+\end{figure}
+The above graph is thus provably inconsistent.

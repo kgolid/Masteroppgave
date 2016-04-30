@@ -224,3 +224,24 @@ This tells us that the NAND-clause $\ol{s}$ must be in any inconsistency proof.
 If that was not the case, we would be able to prove $\varnothing$ on a graph that was not inconsistent, violating the fact that Neg is sound.
 
 Having that any inconsistency proof contains $\ol{s}$ immediately gives us that any inconsistency proof contains the OR-clause $sa^Na^Wa^E$, since this is the only OR-clause containing $s$.
+We thus have the following situation somewhere in the proof, where the sets of vertices $P,Q,R$ might be empty:\par
+\begin{figure}[!h]
+  \centering
+  \begin{prooftree*}
+    \Hypo{\ol{s}}
+    \Hypo{\dots}
+    \Infer[]1{\ol{a^NP}}
+    \Hypo{\dots}
+    \Infer[]1{\ol{a^WQ}}
+    \Hypo{\dots}
+    \Infer[]1{\ol{a^WR}}
+    \Infer[right label=$sa^Na^Wa^E$]4{\ol{P \cup Q \cup R}}
+  \end{prooftree*}
+  \caption{}
+  \label{fig:triple_double_proof_step}
+\end{figure}
+The OR-clause in question might obviously appear several places in the proof, but let us assume that this is its \textit{first} appearance, i.e. none of the NAND-clauses in the premise are proven using $sa^Na^Wa^E$.
+
+First of all, each of the sets $P,Q,R$ can not contain more than 1 element, since that would make the NAND-clauses non-binary.
+For the same reason can their union never contain more than two elements, since that would make the concluding NAND-clause non-binary.
+One of them must either be empty, or some of them must contain the same element.

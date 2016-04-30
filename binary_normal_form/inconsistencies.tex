@@ -67,7 +67,134 @@ The lemma will be proven by inducing over the length of the proof of $\ol{ab}$.
 
   A proof of length $k$ concluding with $\ol{ab}$ must therefore use the OR-clause $X$, so we can conclude that \textit{any} proof of $\ol{ab}$ must contain $X$.
 \end{proof}
+
+
+\begin{figure}[!h]
+  \centering
   \begin{tikzpicture}
     [
+    point/.style={circle,draw,inner sep=0pt,minimum size=2mm}
     ]
+    \node (t) at (7,14) [point,label=above:$t$] {};
+    \node (a) at (7,11) [point,label=right:$a$] {};
+    \node (lx1) at (6,13) [point,label=above:$x^L_1$] {};
+    \node (lx2) at (6,9) [point,label=below:$x^L_2$] {};
+    \node (lb) at (3,11) [point,label=left:$b^L$] {};
+    \node (ly1) at (4,13) [point,label=above:$y^L_1$] {};
+    \node (ly2) at (4,9) [point,label=below:$y^L_2$] {};
+    \node (lc1) at (5,12) [point,label=left:$c^L_1$] {};
+    \node (lc2) at (5,10) [point,label=left:$c^L_2$] {};
+    \draw [-latex] (a) to (lx1);
+    \draw [-latex] (a) to (lx2);
+    \draw [-latex] (lb) to (ly1);
+    \draw [-latex] (lb) to (ly2);
+    \draw [-latex] (lx1) to (ly1);
+    \draw [-latex] (lx1) to (lc1);
+    \draw [-latex] (lx2) to (ly2);
+    \draw [-latex] (lx2) to (lc2);
+    \draw [-latex] (lc1) to (lc2);
+    \node (rx1) at (8,13) [point,label=above:$x^R_1$] {};
+    \node (rx2) at (8,9) [point,label=below:$x^R_2$] {};
+    \node (rb) at (11,11) [point,label=right:$b^R$] {};
+    \node (ry1) at (10,13) [point,label=above:$y^R_1$] {};
+    \node (ry2) at (10,9) [point,label=below:$y^R_2$] {};
+    \node (rc1) at (9,12) [point,label=right:$c^R_1$] {};
+    \node (rc2) at (9,10) [point,label=right:$c^R_2$] {};
+    \draw [-latex] (a) to (rx1);
+    \draw [-latex] (a) to (rx2);
+    \draw [-latex] (rb) to (ry1);
+    \draw [-latex] (rb) to (ry2);
+    \draw [-latex] (rx1) to (ry1);
+    \draw [-latex] (rx1) to (rc1);
+    \draw [-latex] (rx2) to (ry2);
+    \draw [-latex] (rx2) to (rc2);
+    \draw [-latex] (rc1) to (rc2);
+    \draw [-latex, rounded corners] (t) -| (lb);
+    \draw [-latex, rounded corners] (t) -| (rb);
+    \draw [-latex, loop below] (t) to (t);
 
+    \node (wt) at (0,4) [point,label=left:$t$] {};
+    \node (wa) at (3,4) [point,label=above:$a$] {};
+    \node (wlx1) at (1,3) [point,label=left:$x^L_1$] {};
+    \node (wlx2) at (5,3) [point,label=right:$x^L_2$] {};
+    \node (wlb) at (3,0) [point,label=below:$b^L$] {};
+    \node (wly1) at (1,1) [point,label=left:$y^L_1$] {};
+    \node (wly2) at (5,1) [point,label=right:$y^L_2$] {};
+    \node (wlc1) at (2,2) [point,label=below:$c^L_1$] {};
+    \node (wlc2) at (4,2) [point,label=below:$c^L_2$] {};
+    \draw [-latex] (wa) to (wlx1);
+    \draw [-latex] (wa) to (wlx2);
+    \draw [-latex] (wlb) to (wly1);
+    \draw [-latex] (wlb) to (wly2);
+    \draw [-latex] (wlx1) to (wly1);
+    \draw [-latex] (wlx1) to (wlc1);
+    \draw [-latex] (wlx2) to (wly2);
+    \draw [-latex] (wlx2) to (wlc2);
+    \draw [-latex] (wlc1) to (wlc2);
+    \node (wrx1) at (1,5) [point,label=left:$x^R_1$] {};
+    \node (wrx2) at (5,5) [point,label=right:$x^R_2$] {};
+    \node (wrb) at (3,8) [point,label=above:$b^R$] {};
+    \node (wry1) at (1,7) [point,label=left:$y^R_1$] {};
+    \node (wry2) at (5,7) [point,label=right:$y^R_2$] {};
+    \node (wrc1) at (2,6) [point,label=above:$c^R_1$] {};
+    \node (wrc2) at (4,6) [point,label=above:$c^R_2$] {};
+    \draw [-latex] (wa) to (wrx1);
+    \draw [-latex] (wa) to (wrx2);
+    \draw [-latex] (wrb) to (wry1);
+    \draw [-latex] (wrb) to (wry2);
+    \draw [-latex] (wrx1) to (wry1);
+    \draw [-latex] (wrx1) to (wrc1);
+    \draw [-latex] (wrx2) to (wry2);
+    \draw [-latex] (wrx2) to (wrc2);
+    \draw [-latex] (wrc1) to (wrc2);
+    \draw [-latex, rounded corners] (wt) |- (wlb);
+    \draw [-latex, rounded corners] (wt) |- (wrb);
+    \draw [-latex, loop right] (wt) to (wt);
+
+    \node (et) at (14,4) [point,label=right:$t$] {};
+    \node (ea) at (11,4) [point,label=above:$a$] {};
+    \node (elx1) at (13,3) [point,label=right:$x^L_1$] {};
+    \node (elx2) at (9,3) [point,label=left:$x^L_2$] {};
+    \node (elb) at (11,0) [point,label=below:$b^L$] {};
+    \node (ely1) at (13,1) [point,label=right:$y^L_1$] {};
+    \node (ely2) at (9,1) [point,label=left:$y^L_2$] {};
+    \node (elc1) at (12,2) [point,label=below:$c^L_1$] {};
+    \node (elc2) at (10,2) [point,label=below:$c^L_2$] {};
+    \draw [-latex] (ea) to (elx1);
+    \draw [-latex] (ea) to (elx2);
+    \draw [-latex] (elb) to (ely1);
+    \draw [-latex] (elb) to (ely2);
+    \draw [-latex] (elx1) to (ely1);
+    \draw [-latex] (elx1) to (elc1);
+    \draw [-latex] (elx2) to (ely2);
+    \draw [-latex] (elx2) to (elc2);
+    \draw [-latex] (elc1) to (elc2);
+    \node (erx1) at (13,5) [point,label=right:$x^R_1$] {};
+    \node (erx2) at (9,5) [point,label=left:$x^R_2$] {};
+    \node (erb) at (11,8) [point,label=above:$b^R$] {};
+    \node (ery1) at (13,7) [point,label=right:$y^R_1$] {};
+    \node (ery2) at (9,7) [point,label=left:$y^R_2$] {};
+    \node (erc1) at (12,6) [point,label=above:$c^R_1$] {};
+    \node (erc2) at (10,6) [point,label=above:$c^R_2$] {};
+    \draw [-latex] (ea) to (erx1);
+    \draw [-latex] (ea) to (erx2);
+    \draw [-latex] (erb) to (ery1);
+    \draw [-latex] (erb) to (ery2);
+    \draw [-latex] (erx1) to (ery1);
+    \draw [-latex] (erx1) to (erc1);
+    \draw [-latex] (erx2) to (ery2);
+    \draw [-latex] (erx2) to (erc2);
+    \draw [-latex] (erc1) to (erc2);
+    \draw [-latex, rounded corners] (et) |- (elb);
+    \draw [-latex, rounded corners] (et) |- (erb);
+    \draw [-latex, loop left] (et) to (et);
+
+    \node (s) at (7,4) [point,label=above right:$s$] {};
+    \draw [-latex] (s) to (a);
+    \draw [-latex] (s) to (wa);
+    \draw [-latex] (s) to (ea);
+    \draw [-latex,loop below] (s) to (s);
+  \end{tikzpicture}
+  \caption{}
+  \label{fig:double_open_door}
+\end{figure}

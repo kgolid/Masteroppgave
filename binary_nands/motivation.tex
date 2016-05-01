@@ -64,7 +64,7 @@ We could even continue the reduction further to ternary clauses, quaternary clau
 Our current reduction lets us ask how two vertices $x,y$ are \textit{connected} in the graph when their binary NAND $\ol{xy}$ is proven in Neg.
 Observe that we have parts of this correspondence down already, with our axioms being all binary.
 Vertices directly connected by an edge must therefore be a part of the corresponding graph structure.
-%Finding some graph strucural relation that corresponds to binary NAND-clauses might also give us some knowledge about a potential standard form of binary-NAND-proofs.\todo{does this make sense?}
+%Finding some graph structural relation that corresponds to binary NAND-clauses might also give us some knowledge about a potential standard form of binary-NAND-proofs.\todo{does this make sense?}
 
 Let $R(a,b)$ denote the existence of some graph structure $R$ between the vertices $a$ and $b$ in some graph $G$; our correspondence can now be formally defined as follows:
 \begin{align}
@@ -99,5 +99,5 @@ For each structure presented, implication (1) will be shown, followed by an exam
 The counterexamples will be graphs with the presented structure absent, but where the corresponding NAND-clause is still provable.
 
 Because of soundness of Neg, if two vertices correspond to a provable binary NAND in Neg, for any kernel $K$ in that graph, at least one of the two vertices is outside $K$.
-The counterpositive of this observation being that for a graph $G$, if there exists a kernel $K \subseteq G$ such that two vertices, $x_1$ and $x_2$ are both in $K$, then $\ol{x_1x_2}$ is not provable from $G$.
+The contrapositive of this observation being that for a graph $G$, if there exists a kernel $K \subseteq G$ such that two vertices, $x_1$ and $x_2$ are both in $K$, then $\ol{x_1x_2}$ is not provable from $G$.
 This fact will be used when arguing why some graph structures are \textit{not} satisfying implication (1).

@@ -157,9 +157,9 @@ To show that the graph in Figure~\ref{fig:v2_counter_graph} is not an instance o
 
 Assume $V_2(a,b)$.
 Since $a$ and $b$ are not connected by an edge, their relation has to be an instance of the inductive step.
-Because of the nonemptiness requirement, $\exists c \in N(a):\exists d \in N(c): V_2(d,b)$ from the $V_2$ defintion, either $a$  must have a successor $c$ which again has a successor $d$ such that $V_2(d,b)$ or $b$ must have a successor $c$ which again has a successor $d$ such that $V_2(d,a)$.
+Because of the non-emptiness requirement, $\exists c \in N(a):\exists d \in N(c): V_2(d,b)$ from the $V_2$ defintion, either $a$  must have a successor $c$ which again has a successor $d$ such that $V_2(d,b)$ or $b$ must have a successor $c$ which again has a successor $d$ such that $V_2(d,a)$.
 
-The vertices $a$ and $b$ have a total of 3 successors, 2 of which are sinks and therefore unable to satisfy the nonemptiness requirement.
+The vertices $a$ and $b$ have a total of 3 successors, 2 of which are sinks and therefore unable to satisfy the non-emptiness requirement.
 The last successor is the vertex $x$, which only has one successor, vertex $y$.\par
 \begin{figure}[!h]
   \centering
@@ -188,7 +188,7 @@ The last successor is the vertex $x$, which only has one successor, vertex $y$.\
 \end{figure}
 \FloatBarrier
 The above solution shows us by soundness of Neg that $\ol{yb}$ is unprovable, and therefore by implication (1) that $y$ and $b$ cannot be $V_2$-related.
-Since none of the successors of $a$ and $b$ satisfies the nonemptiness requirement, they also are not $V_2$ related.
+Since none of the successors of $a$ and $b$ satisfies the non-emptiness requirement, they also are not $V_2$ related.
 We can therefore conclude that $V_2$ does not satisfy implication (2).
 
 \subsection{The $V_3$ construction}
@@ -218,7 +218,7 @@ Looking back at the graph from Figure~\ref{fig:v2_counter_graph}, we see that ve
 The vertices $a$ and $b$ are thus $V_3$-related.
 
 Implication (1) for $V_3$ is proven in more or less the same way as we proved implication (1) for $V_2$ in Section~\ref{sub:The V2 construction}.
-Therefore, only a condenced version will be shown here:
+Therefore, only a condensed version will be shown here:
 \begin{proof}
   Given a graph $G$ with two vertices $a$ and $b$ such that $V_3(a,b)$:
 
@@ -470,8 +470,8 @@ Consider the following six solutions of the graph:\par
 Given any pair of vertices $x,y$, if there exists an assignment such that $x$ and $y$ are both assigned 1, then $\ol{xy}$ is not provable in Neg.
 We get this from soundness.
 
-The table in Figure~\ref{fig:v3_counter_table} shows what pairs of vertices can be 1 under the samme assignment and thus constitute a binary NAND-clauses unprovable in Neg.
-A cell is filled with a reference to the solution, if any, examplifying the case.
+The table in Figure~\ref{fig:v3_counter_table} shows what pairs of vertices can be 1 under the same assignment and thus constitute a binary NAND-clauses unprovable in Neg.
+A cell is filled with a reference to the solution, if any, exemplifying the case.
 \begin{figure}[!h]
   \centering
   \[\begin{array}{|c||c|c|c|c|c|c|c|c|}

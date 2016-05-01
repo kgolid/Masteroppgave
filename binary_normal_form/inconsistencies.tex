@@ -34,7 +34,7 @@ A couple of observations can be made from the above construction:
 \end{itemize}
 Based on graph $G$ from Figure~\ref{fig:components_link} we now introduce the following lemma:
 \begin{lemma}
-  Given two vertice $a \in A$ and $b \in B$; if $\ol{ab}$ is provable in Neg, then the proof must contain the OR-clause $X$.
+  Given two vertices $a \in A$ and $b \in B$; if $\ol{ab}$ is provable in Neg, then the proof must contain the OR-clause $X$.
   \label{thm:or_clause_lemma}
 \end{lemma}
 The lemma will be proven by inducing over the length of the proof of $\ol{ab}$.
@@ -57,7 +57,7 @@ The lemma will be proven by inducing over the length of the proof of $\ol{ab}$.
   Since $X$ is the only OR-clause containing vertices from both $A$ and $B$, $X$ is again our only choice.
   A proof of $\ol{ab}$ of length 1 must hence use the OR-clause $X$.
 
-  For the inductive step, we assume that for any proof of length $k-1$; if it concludes with a NAND-clause $\ol{pq}$ such that $p$ and $q$ are from differen components, then it must use the OR-clause $X$ somewhere.
+  For the inductive step, we assume that for any proof of length $k-1$; if it concludes with a NAND-clause $\ol{pq}$ such that $p$ and $q$ are from different components, then it must use the OR-clause $X$ somewhere.
   This assumption makes us able to prove the inductive step in almost exactly the same way as with the base case.
 
   Suppose there is a proof of length $k$ concluding with $\ol{ab}$.

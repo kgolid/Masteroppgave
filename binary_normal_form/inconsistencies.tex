@@ -244,4 +244,23 @@ The OR-clause in question might obviously appear several places in the proof, bu
 
 First of all, neither of the sets $P,Q,R$ can contain more than 1 element, since that would make the NAND-clauses non-binary.
 For the same reason can their union never contain more than two elements, since that would make the concluding NAND-clause non-binary.
-One of them must either be empty, or some of them must contain the same element.
+One of them must thus either be empty, or some of them must contain the same element.
+
+Let us first assume that neither of $P,Q,R$ are empty.
+This implies that at least two of them contain the same element.
+We will now apply Lemma~\ref{thm:or_clause_lemma} to show that this is not possible.
+
+Observe that our graph consists of three isolated components, $N$, $W$ and $E$, only connected by the vertex $s$ having a vertex from each component in its neighborhood.
+Let, without any loss of generality, $P$ and $Q$ be the two sets with the same element, i.e., $P = Q = \{p\}$.
+That gives us the two NAND-clauses $\ol{a^Np}$ and $\ol{a^Wp}$.
+Since our three components are mutually disjoint, at least one of the above NAND-clauses must contain vertices from two different components.\todo{one of them can be $s$; should be mentioned.}
+Lemma~\ref{thm:or_clause_lemma} gives us that the proof of that NAND-clause therefore must contain the OR-clause $sa^Na^Wa^E$, which contradicts our assumption of it being used for the first time in Figure~\ref{fig:triple_double_proof_step}.
+Therefore, none of the three $a$-clauses in the premise can contain the same element, leaving us with the case where one of them is unary, i.e. either $P$, $Q$ or $R$ is empty.
+
+Now, we know that both $\ol{a^N}$, $\ol{a^W}$ and $\ol{a^E}$ are provable, but the only proof we have seen has been non-binary, using the proofs of $\ol{ab}$ as subproofs.
+The last section showed that $\ol{a}$ was not provable if one was only to use the vertices from within its own component.
+So if one of the $a$-clauses in the premise in Figure~\ref{fig:triple_double_proof_step} is unary, then it has to have been proved using either $s$ or vertices from other components.
+In both cases, we get that such a proof must contain the OR-clause $sa^Na^Wa^E$ somewhere, again contradicting our assumption.
+
+All in all, this gives us that if the proof is binary up until this rule application, the concluding NAND-clause cannot be binary.
+Since the rule application has to be present in the inconsistency proof, the proof therefore has to contain a non-binary NAND-clause, indeed making the inconsistency non-binary-derivable.

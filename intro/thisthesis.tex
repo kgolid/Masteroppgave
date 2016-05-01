@@ -3,25 +3,22 @@
 \label{sec:This thesis}
 \subsection{Motivation}
 \label{sub:Motivation}
-Having that (Neg) is both sound and refutationally complete, together with results linking inconcistency proofs in (Neg) to structures in graphs is of great interest to us, since it can potentially further weaken the current conditions we have for kernels in graphs.
-This thesis will thus be concerned mainly with two kinds of questions;
+The soundness and refutational completeness of Neg makes it a potentially great tool in the overarching endeavor of weakening the conditions for kernels in graphs.
+We know that for any graph $G$, $\varnothing$ can be proven in Neg based on $G$ if and only if $G$ is without a kernel.
+
+With that in mind, this thesis will set out to do two things:
 \begin{enumerate}
-  \item Are there any characterizing qualities of the proof system (Neg), potentially under certain restrictions?
-  \item If the axioms come from a graph, are there any provable results in (Neg) that correspond to certain structures in the graph?
+  \item Define a graph structural relation such that two vertices $a,b$ in a graph $G$ are related if and only if $G \vdash \ol{ab}$.
+  \item Explore whether Neg is still refutationally complete when restricted to only using NAND-clauses of length 1 or 2.
 \end{enumerate}
-The first question covers qualities like proof length (complexity), size and number of clauses used throughout a proof, the existence of certain clauses in certain proofs, or maybe even the existence of an entire proof normal form.
-For instance, an answer to the following question could be of great interest to us: ``Are there certain kinds of clauses that needs to be present in a proof in order to prove $\varnothing$?''.
+Suppose that any inconsistency can be proven using only NAND-clauses of length at most 2, and that all NAND-clauses of length 2 corresponds to vertices related in a certain way in the graph.
+This would in combination give us a condition for kernels, namely the absence of such specifically related vertices.
 
-The second question covers questions like ``What does it mean for the graph that its axioms can prove $\varnothing$?''.
-Of course, we know the answer to this question, it means that the graph has no kernel (by soundness of (Neg)).
-But what about the provability of $\ol{x}$ or $\ol{xy}$ for nodes $x,y$ in the graph?
-What does that mean for the graph and the nodes $x,y$?
-
-Finding a type of clause neccesarily present in an inconsistency proof, together with results on the graph-structural counterpart of that type of clause, gives us in combination a graph-structure neccesarily present in a kernel-free graph (by soundness of (Neg)).
+It will however become apparent that such a relation must be rather complex.
+In addition, it turns out that Neg is \textit{not} refutationally complete under the restrictions mentioned.
 \subsection{Thesis Overview}
 \label{sub:Thesis Overview}
-THIS SECTION IS NOT UP TO DATE WITH THE FOLLOWING CHAPTERS
-Section 2 will take a look at the potential to control the size of NAND-clauses in an inconsistency proof without any restrictions on the axioms.
-Section 3 will study the same potential as above, but with graph-based axioms.
-We are in both cases above particularly concerned with whether we are able to restrict our proofs to only use binary NAND-clauses.
-Section 4 will explore the graph structure that corresponds to unary and binary NAND-clauses, and explain their potential importance.
+In Chapter 2, we will be looking at increasingly general graph structures that ensures the provability of certain NAND-clauses, ultimately attempting to reach a structure general enough so that the provability of a NAND-clause entails the existence of that structure.
+
+Chapter 3 will present graphs where certain NAND-clauses are provable in general, but not under the restrictions mentioned.
+This will be used to show that the restrictions makes Neg unable to prove inconsistencies in certain graphs.

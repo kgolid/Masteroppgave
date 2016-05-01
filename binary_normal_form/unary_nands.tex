@@ -132,7 +132,7 @@ Figure~\ref{fig:nand_inductive_step} illustrates this situation.\par
   \caption{}
   \label{fig:nand_inductive_step}
 \end{figure}
-In order to ``strip off'' the $t$, the only applicable OR-clase is $tb^Lb^R$, again giving us three NAND-clauses in the premise.
+In order to ``strip off'' the $t$, the only applicable OR-clause is $tb^Lb^R$, again giving us three NAND-clauses in the premise.
 The two additional clauses must contain $b^L$ and $b^R$, respectively.
 None of them are provably false\todo{show assignments}, and none of them can contain $a$ because of induction hypothesis, so they both must contain some $\gamma$.
 The only $\gamma$-assignment applicable such that both $\ol{\gamma b^L}$ and $\ol{\gamma b^R}$ is provable is, again, $\gamma = t$\todo{show assignments}, giving us $\ol{at}$ in the conclusion.

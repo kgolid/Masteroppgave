@@ -134,6 +134,20 @@ The graph will thus act as a counterexample for implication (2).\par
     \draw [-latex] (z) to (c1);
     \draw [-latex] (z) to (c2);
     \draw [-latex] (b) to (c2);
+
+    \node (e1) [below left=6mm and 4mm of c1]  {};
+    \node (e2) [below=8mm of c1] {};
+    \node (e3) [below right=6mm and 4mm of c1] {};
+    \draw [dashed] (e1) to (c1);
+    \draw [dashed] (e2) to (c1);
+    \draw [dashed] (e3) to (c1);
+
+    \node (e1) [below left=6mm and 4mm of c2]  {};
+    \node (e2) [below=8mm of c2] {};
+    \node (e3) [below right=6mm and 4mm of c2] {};
+    \draw [dashed] (e1) to (c2);
+    \draw [dashed] (e2) to (c2);
+    \draw [dashed] (e3) to (c2);
   \end{tikzpicture}
   \caption{}
   \label{fig:v2_counter_graph}
@@ -159,7 +173,7 @@ Assume $V_2(a,b)$.
 Since $a$ and $b$ are not connected by an edge, their relation has to be an instance of the inductive step.
 Because of the non-emptiness requirement, $\exists c \in N(a):\exists d \in N(c): V_2(d,b)$ from the $V_2$ defintion, either $a$  must have a successor $c$ which again has a successor $d$ such that $V_2(d,b)$ or $b$ must have a successor $c$ which again has a successor $d$ such that $V_2(d,a)$.
 
-The vertices $a$ and $b$ have a total of 3 successors, 2 of which are sinks and therefore unable to satisfy the non-emptiness requirement.
+The vertices $a$ and $b$ have a total of 3 successors, 2 of which only branch off to irrelevant vertices and therefore are unable to satisfy the non-emptiness requirement.
 The last successor is the vertex $x$, which only has one successor, vertex $y$.\par
 \begin{figure}[!h]
   \centering
@@ -182,6 +196,20 @@ The last successor is the vertex $x$, which only has one successor, vertex $y$.\
     \draw [-latex] (z) to (c1);
     \draw [-latex] (z) to (c2);
     \draw [-latex] (b) to (c2);
+
+    \node (e1) [below left=6mm and 4mm of c1]  {};
+    \node (e2) [below=8mm of c1] {};
+    \node (e3) [below right=6mm and 4mm of c1] {};
+    \draw [dashed] (e1) to (c1);
+    \draw [dashed] (e2) to (c1);
+    \draw [dashed] (e3) to (c1);
+
+    \node (e1) [below left=6mm and 4mm of c2]  {};
+    \node (e2) [below=8mm of c2] {};
+    \node (e3) [below right=6mm and 4mm of c2] {};
+    \draw [dashed] (e1) to (c2);
+    \draw [dashed] (e2) to (c2);
+    \draw [dashed] (e3) to (c2);
   \end{tikzpicture}
   \caption{}
   \label{fig:v2_counter_assignment}

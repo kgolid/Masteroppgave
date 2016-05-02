@@ -86,6 +86,23 @@ It is shown in \cite{michal-completeness} that Neg is sound and refutationally c
 Soundness gives us that proving $\ol{C}$ for any $C \subseteq G$ implies that the vertices in $C$ cannot all be assigned 1 in the graph model.
 Refutational completeness gives us that whenever a graph/theory is inconsistent, we are able to prove $\varnothing$ in Neg.
 
+Note that Neg is not complete.
+The following inconsistent graph exemplifies this:\par
+\begin{figure}[!h]
+  \centering
+  \begin{tikzpicture}
+    [
+    point/.style={circle,draw,inner sep=0pt,minimum size=2mm}
+    ]
+    \node (1) at (0,0) [point, label=above:$a$] {};
+    \node (2) at (1,0) [point, label=above:$b$] {};
+    \draw [-latex, loop below] (1) to (1);
+  \end{tikzpicture}
+  \caption{}
+  \label{fig:neg_not_complete}
+\end{figure}
+Bacause of the loop on vertex $a$, the graph has no solutions.
+We therefore have $\vDash \ol{b}$, but we are unable to prove $\ol{b}$ in Neg.
 \subsection{Inconsistency of the Yablo-graph}
 \label{sub:Inconsistency of the Yablo-graph}
 The inconsistency of the Yablo-graph is easily proven using Neg only.

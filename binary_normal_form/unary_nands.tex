@@ -143,7 +143,7 @@ Like in the base case, the only applicable OR-clause is the corresponding $x^K_i
 Because of our induction hypothesis, those two cannot contain $a$, so either both contain $\gamma$ or one is unary while the other contain $\gamma$.
 Neither $\ol{y^K_i}$ nor $\ol{c^K_i}$ is provable\todo{show assignments}, so they both have to contain $\gamma$.
 Thus, like in the base case, the two additional NAND-clauses must be on the form $\ol{\gamma y^K_i},\ol{\gamma c^K_i}$.
-Except for the case where $\gamma = x^K_i$, the only $\gamma$-substitution that makes both of these NAND-clauses provable is $\gamma = t$\todo{show assignments}, giving us $\ol{at}$ in the conclusion.
+Except for the case where $\gamma = x^K_i$, the only\todo{show assignments} $\gamma$-substitution that makes both of these NAND-clauses provable is $\gamma = t$, giving us $\ol{at}$ in the conclusion.
 
 The other case is where $\ol{at}$ appears in the premise.
 Figure~\ref{fig:nand_inductive_step} illustrates this situation.\par
@@ -163,7 +163,7 @@ Figure~\ref{fig:nand_inductive_step} illustrates this situation.\par
 In order to ``strip off'' the $t$, the only applicable OR-clause is $tb^Lb^R$, again giving us three NAND-clauses in the premise.
 The two additional clauses must contain $b^L$ and $b^R$, respectively.
 None of them are provably false\todo{show assignments}, and none of them can contain $a$ because of induction hypothesis, so they both must contain some $\gamma$.
-The only $\gamma$-substitution applicable such that both $\ol{\gamma b^L}$ and $\ol{\gamma b^R}$ is provable is, again, $\gamma = t$\todo{show assignments}, giving us $\ol{at}$ in the conclusion.
+The only\todo{show assignments} $\gamma$-substitution applicable such that both $\ol{\gamma b^L}$ and $\ol{\gamma b^R}$ is provable is, again, $\gamma = t$, giving us $\ol{at}$ in the conclusion.
 
 The only binary-provable, non-axiomatic, binary NAND-clause containing $a$ is therefore $\ol{at}$.
 \end{proof}

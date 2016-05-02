@@ -1,7 +1,7 @@
 % !TEX root= ../main.tex
 \section{Unary NAND-clauses in graph theories}
 \label{sec:Unary NAND-clauses in graph theories}
-We will to use the fact that some binary NAND-clauses are not binary-derivable to show that some \textit{unary} NAND-clauses are not binary-derivable.
+The fact that some binary NAND-clauses are not binary-derivable will be used to show that some \textit{unary} NAND-clauses are not binary-derivable.
 
 We use our graph from Figure~\ref{fig:open_door} to make the following, bigger graph:\par
 \begin{figure}[!h]
@@ -110,7 +110,7 @@ like in the base case, we have that the premise of the last proof step must cont
 Because of our induction hypothesis, we have that the only available NAND-clauses containing $a$ are $\ol{at}$ and the four axioms on the form $\ol{ax^K_i}$.
 
 Let us first consider the case where some $\ol{ax^K_i}$ is in the premise.
-This case will be very similar to the base case.
+This case is similar to the base case.
 Like in the base case, the only applicable OR-clause is the corresponding $x^K_iy^K_ic^K_i$, so the premise contains two additional NAND-clauses, one containing $y^K_i$ and one containing $c^K_i$.
 Because of our induction hypothesis, those two cannot contain $a$, so either both contain $\gamma$ or one is unary while the other contain $\gamma$.
 Neither $\ol{y^K_i}$ nor $\ol{c^K_i}$ is provable\todo{show assignments}, so they both have to contain $\gamma$.

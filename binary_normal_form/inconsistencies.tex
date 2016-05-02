@@ -68,8 +68,7 @@ The lemma will be proven by inducing over the length of the proof of $\ol{ab}$.
 
   A proof of length $k$ concluding with $\ol{ab}$ must therefore use the OR-clause $X$, so we can conclude that \textit{any} proof of $\ol{ab}$ must contain $X$.
 \end{proof}
-
-Consider now the following graph, containing 3 copies of our graph from Figure~\ref{fig:double_open_door}, one northern (N), one western (W) and one eastern (E).\par
+\pagebreak
 \begin{figure}[!h]
   \centering
   \begin{tikzpicture}
@@ -199,8 +198,10 @@ Consider now the following graph, containing 3 copies of our graph from Figure~\
   \caption{}
   \label{fig:triple_double_open_door}
 \end{figure}
+Consider now the graph in Figure~\ref{fig:triple_double_open_door} containing 3 copies of our graph from Figure~\ref{fig:double_open_door}; one northern (N), one western (W) and one eastern (E).\par
+
 The proof of $\ol{a}$ from Figure~\ref{fig:unary_nand_proof} can be applied to each component in the above graph, giving us the provability of $\ol{a^N}$, $\ol{a^W}$ and $\ol{a^E}$.
-From here, the inconsistency proof is trivial:\par
+From here, the inconsistency proof is trivial; shown in Figure~\ref{fig:triple_double_open_door_proof}.
 \begin{figure}[!h]
   \centering
   \begin{prooftree*}
@@ -216,9 +217,8 @@ From here, the inconsistency proof is trivial:\par
   \caption{}
   \label{fig:triple_double_open_door_proof}
 \end{figure}
-The above graph is thus provably inconsistent.
+The graph is thus provably inconsistent.
 We will now show that the inconsistency is non-binary-derivable.
-
 \begin{proof}
 The first thing to notice is that if one removes the loop on vertex $s$, the graph is no longer inconsistent.
 This tells us that the NAND-clause $\ol{s}$ must be in any inconsistency proof.

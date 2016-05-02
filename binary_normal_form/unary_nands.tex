@@ -79,7 +79,36 @@ To show that $\ol{a}$ is not binary-derivable, we will first prove the following
 \end{lemma}
 
 \begin{proof}
-We prove this lemma by inducing over the proof length of some binary NAND-clause $\ol{a\gamma}$ and show that $\gamma$ always has to equal either some $x$-vertex or the $t$-vertex.
+First, the following Neg-proof shows that $\ol{at}$ is indeed binary-derivable.
+\begin{figure}[!h]
+  \centering
+  \begin{prooftree*}[separation=0.8em, rule margin=1ex]
+    \Hypo{\ol{ax^L_1}}
+    \Hypo{\ol{t}}
+    \Hypo{\ol{tb^R}}
+    \Hypo{\ol{b^Ly^L_1}}
+    \Infer[left label=$tb^Rb^L$]3{\ol{ty^L_1}}
+    \Hypo{\ol{tb^L}}
+    \Hypo{\ol{x^L_2y^L_2}}
+    \Infer[left label=$b^Ly^L_1y^L_2$]3{\ol{tx^L_2}}
+    \Hypo{\ol{c^L_1c^L_2}}
+    \Hypo{\ol{t}}
+    \Hypo{\ol{tb^R}}
+    \Hypo{\ol{b^Ly^L_2}}
+    \Infer[right label=$tb^Rb^L$]3{\ol{ty^L_2}}
+    \Infer[left label=$x^L_2y^L_2c^L_2$]3{\ol{tc^L_1}}
+      \Hypo{\ol{t}}
+      \Hypo{\ol{tb^R}}
+      \Hypo{\ol{b^Ly^L_1}}
+    \Infer[right label=$tb^Rb^L$]3{\ol{ty^L_1}}
+    \Infer[right label=$x^L_1y^L_1c^L_1$]3{\ol{at}}
+  \end{prooftree*}
+  \caption{}
+  \label{fig:at_binary_proof}
+\end{figure}
+\FloatBarrier
+We now show that $\ol{at}$ is the only one.
+This is done by structural induction on the complexity of the proof of some binary NAND-clause $\ol{a\gamma}$, showing that $\gamma$ always has to equal either some $x$-vertex or $t$.
 
 In the base case, the proof length is 1, so all the clauses in the premise must be axiomatic.
 That includes at least one clause containing $a$ and at least one clause containing $\gamma$.

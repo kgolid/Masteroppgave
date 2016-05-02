@@ -132,11 +132,10 @@ $\ol{\gamma y^K_i},\ol{\gamma c^K_i}$.
 The only pairs of axioms that matches this description are the ones where $\gamma = x^K_i$.
 With a proof length of 1, we are thus not able to prove binary NAND-clauses containing $a$ that are non-axiomatic.
 
-For the inductive step, we assume that if a binary proof of length $k-1$ or less conclude with a binary non-axiomatic NAND-clause containing $a$ then the clause in question is $\ol{at}$, and will show the same holds for any binary proof of length $k$.
-
-Suppose we have a proof of length $k$ that concludes with some binary NAND-clause $\ol{a\gamma}$;
+Suppose we have a proof that concludes with some binary NAND-clause $\ol{a\gamma}$;
 like in the base case, we have that the premise of the last proof step must contain at least one NAND-clause containing $a$ and at least one containing $\gamma$.
-Because of our induction hypothesis, we have that the only available NAND-clauses containing $a$ are $\ol{at}$ and the four axioms on the form $\ol{ax^K_i}$.
+The induction hypothesis gives us that if the NAND-clause containing $a$ is non-axiomatic, then it must be $\ol{at}$.
+All NAND-clauses containing $a$ in the premise must therefore be either $\ol{at}$ ore one of the four axioms on the form $\ol{ax^K_i}$.
 
 Let us first consider the case where some $\ol{ax^K_i}$ is in the premise.
 This case is similar to the base case.

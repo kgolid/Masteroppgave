@@ -41,7 +41,7 @@ Based on graph $G$ from Figure~\ref{fig:components_link} we show the following l
   For arbitrary vertices $a_i \in A_i$ and $a_j \in A_j$ such that $i \neq j$; if $\ol{a_ia_j}$ is provable in BNeg, then the proof must contain the OR-clause $X$.
   \label{thm:or_clause_lemma}
 \end{lemma}
-The lemma will be proven by inducing over the length of the proof of $\ol{ab}$.
+The lemma will be proven by structural induction on the complexity of the proof tree for $\ol{a_ia_j}$.
 \begin{proof}
   In the base case, the proof length is 1, so $\ol{ab}$ is the direct conclusion from a premise with axioms only.\par
   \begin{figure}[!h]

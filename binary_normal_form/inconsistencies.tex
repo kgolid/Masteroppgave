@@ -45,35 +45,30 @@ The lemma will be proven by structural induction on the complexity of the proof 
 \begin{proof}
   In the base case, the proof tree is just an axiom.
   $\ol{a_ia_j}$ is not an axiom, since $\bigcap_i N(A_i) = \varnothing$, so the lemma holds vacuously.
+
+  For the inductive step, suppose we have a proof of $\ol{a_ia_j}$ and consider the premise of the last rule application;
+  since we are working within BNeg, this premise must contain one axiom on the form $\ol{a_ip}$ and one on the form $\ol{a_iq}$.\par
   \begin{figure}[!h]
     \centering
     \begin{prooftree*}
-      \Hypo{\ol{ap}}
-      \Hypo{\ol{bq}}
       \Hypo{\dots}
-      \Infer[right label=$X$]3{\ol{ab}}
+      \Infer[]1{\ol{a_ip}}
+      \Hypo{\dots}
+      \Infer[]1{\ol{a_jq}}
+      \Hypo{\dots}
+      \Infer[right label=$X$]3{\ol{a_ia_j}}
     \end{prooftree*}
     \caption{}
     \label{fig:ab_proof_bc}
   \end{figure}
-  The premise must contain one axiom on the form $\ol{ap}$ and one on the form $\ol{bq}$.
-  If either $p = x$ or $q = x$, then the OR-clause used in the proof step must be $X$, being the only OR-clause containing $x$.
-  On the other hand, if neither $p$ nor $q$ equals $x$, then $p \in A$ and $q \in B$.
-  Since $X$ is the only OR-clause containing vertices from both $A$ and $B$, $X$ is again our only choice.
-  A proof of $\ol{ab}$ of length 1 must hence use the OR-clause $X$.
-
-  For the inductive step, we assume that for any proof of length $k-1$; if it concludes with a NAND-clause $\ol{pq}$ such that $p$ and $q$ are from different components, then it must use the OR-clause $X$ somewhere.
-  This assumption makes us able to prove the inductive step in almost exactly the same way as with the base case.
-
-  Suppose there is a proof of length $k$ concluding with $\ol{ab}$.
-  Its immediate premise must contain one NAND-clause on the form $\ol{ap}$ and one on the form $\ol{bq}$.
-  Again, if either $p=x$ or $q=x$, or if $p \in A$ and $q \in B$, the OR-clause $X$ must be used, by the same argument as in the base case.
-  This leaves us with the case where either $p \not\in A$ or $q \not\in B$.
-  Our induction hypothesis gives us that the proof of either of those contains $X$ somewhere.
-
-  A proof of length $k$ concluding with $\ol{ab}$ must therefore use the OR-clause $X$, so we can conclude that \textit{any} proof of $\ol{ab}$ must contain $X$.
+  \FloatBarrier
+  First, with either $p = x$ or $q = x$, the OR-clause used in the proof step must be $X$, being the only OR-clause containing $x$.
+  This case can thus be ruled out, giving us that both $p$ and $q$ must be inside some component.
+  Our induction hypothesis gives us that any NAND-clause $\ol{cd}$ in the premise, such that $c$ and $d$ are from different components, must have a proof containing the OR-clause $X$.
+  Therefore, in order to avoid $X$ earlier in the proof, $p$ and $q$ must come from $A_i$ and $A_j$, respectively.
+  Since $X$ is the only OR-clause containing vertices from both $A_i$ and $A_j$, $X$ is again our only option.
+  The proof of $\ol{a_ia_j}$ must therefore contain the OR-clause $X$.
 \end{proof}
-\pagebreak
 \begin{figure}[!h]
   \centering
   \begin{tikzpicture}
@@ -203,6 +198,7 @@ The lemma will be proven by structural induction on the complexity of the proof 
   \caption{}
   \label{fig:triple_double_open_door}
 \end{figure}
+\FloatBarrier
 Consider now the graph in Figure~\ref{fig:triple_double_open_door} containing 3 copies of our graph from Figure~\ref{fig:double_open_door}; one northern (N), one western (W) and one eastern (E).\par
 
 The proof of $\ol{a}$ from Figure~\ref{fig:unary_nand_proof} can be applied to each component in the above graph, giving us the provability of $\ol{a^N}$, $\ol{a^W}$ and $\ol{a^E}$.

@@ -16,11 +16,15 @@ The induced subgraphs we get from each $A_i$ will be referred to as \textit{comp
     point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
     collection/.style={rectangle,draw,inner sep=0pt,minimum height=10mm, minimum width= 18mm}
     ]
-    \node (x) at (2,0) [point, label=above:$x$] {};
-    \node (A) at (0,0) [collection] {$A$};
-    \node (B) at (4,0) [collection] {$B$};
-    \draw [-latex] (x) to (A);
-    \draw [-latex] (x) to (B);
+    \node (x) at (3,2) [point, label=above:$x$] {};
+    \node (A1) at (0,0) [collection] {$A_1$};
+    \node (A2) at (2,0) [collection] {$A_2$};
+    \node (dots) at (4,0) [] {\dots};
+    \node (An) at (6,0) [collection] {$A_n$};
+    \draw [-latex] (x) to (A1);
+    \draw [-latex] (x) to (A2);
+    \draw [-latex, dashed] (x) to (dots);
+    \draw [-latex] (x) to (An);
   \end{tikzpicture}
   \caption{Graph $G$}
   \label{fig:components_link}

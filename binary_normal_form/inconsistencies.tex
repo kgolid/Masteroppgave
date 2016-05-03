@@ -223,8 +223,8 @@ The graph is thus provably inconsistent.
 We will now show that the inconsistency is non-binary-derivable.
 \begin{proof}
 The first thing to notice is that if one removes the loop on vertex $s$, the graph is no longer inconsistent.
-This tells us that the NAND-clause $\ol{s}$ must be in any inconsistency proof.
-If that was not the case, we would be able to prove $\varnothing$ on a graph that was not inconsistent, violating the fact that Neg is sound.
+This tells us that the NAND-clause $\ol{s}$ must be a part of every inconsistency proof.
+If that was not the case, we would be able to prove $\varnothing$ on a consistent graph, violating the fact that Neg is sound.
 
 Having that any inconsistency proof contains $\ol{s}$ immediately gives us that any inconsistency proof contains the OR-clause $sa^Na^Wa^E$, since this is the only OR-clause containing $s$.
 We thus have the following situation somewhere in the proof, where the sets of vertices $P,Q,R$ might be empty:\par

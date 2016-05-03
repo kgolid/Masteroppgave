@@ -43,7 +43,8 @@ Based on graph $G$ from Figure~\ref{fig:components_link} we show the following l
 \end{lemma}
 The lemma will be proven by structural induction on the complexity of the proof tree for $\ol{a_ia_j}$.
 \begin{proof}
-  In the base case, the proof length is 1, so $\ol{ab}$ is the direct conclusion from a premise with axioms only.\par
+  In the base case, the proof tree is just an axiom.
+  $\ol{a_ia_j}$ is not an axiom, since $\bigcap_i N(A_i) = \varnothing$, so the lemma holds vacuously.
   \begin{figure}[!h]
     \centering
     \begin{prooftree*}

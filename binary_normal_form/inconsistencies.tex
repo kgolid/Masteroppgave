@@ -29,13 +29,12 @@ The induced subgraphs we get from each $A_i$ will be referred to as \textit{comp
   \caption{Graph $G$}
   \label{fig:components_link}
 \end{figure}
-A couple of observations can be made from the above construction:
+A couple of observations can be made based on the above graph-construction $G$:
 \begin{itemize}
   \item The vertex $x$ only appears in 1 OR-clause, since it is a source vertex.
-  This is also the only OR-clause containing a vertex from both $A$ and $B$.
+  This is also the only OR-clause containing vertices from different components.
   We will call this OR-clause $X$ and formally define it as $N(x) \cup \{ x\}$.
-  \item For any vertex $p$ in $A$ we have that $p$ only appears in axiomatic NAND-clauses together with either $t$ or other vertices in $A$.
-  The same obviously holds for any vertex in $B$.
+  \item For any vertex $p$ except $x$, we have that $p$ only appears in axiomatic NAND-clauses together with either $x$ or other vertices in the same component.
 \end{itemize}
 Based on graph $G$ from Figure~\ref{fig:components_link} we now introduce the following lemma:
 \begin{lemma}

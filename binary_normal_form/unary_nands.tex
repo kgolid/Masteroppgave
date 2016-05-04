@@ -115,6 +115,11 @@ The only axiomatic $\ol{a\gamma}$ are the ones where $\gamma$ is an $x$-vertex, 
 
 For the induction step, suppose we have a proof that concludes with some binary NAND-clause $\ol{a\gamma}$;
 we have that the premise of the last proof step must contain at least one NAND-clause containing $a$ and at least one containing $\gamma$.
+
+Our induction hypothesis gives us that if the NAND-clause containing $a$ in the premise is non-axiomatic, then it must be $\ol{at}$.
+All NAND-clauses containing $a$ in the premise must therefore be either $\ol{at}$ or one of the four axioms on the form $\ol{ax^K_i}$ ($K$ being either $L$ or $R$ and $i$ either 1 or 2).
+
+Let us first consider the case where some $\ol{ax^K_i}$ is in the premise.
 Figure~\ref{fig:nand_base_case} illustrates the situation.\par
 \begin{figure}[!h]
   \centering
@@ -129,12 +134,6 @@ Figure~\ref{fig:nand_base_case} illustrates the situation.\par
   \caption{}
   \label{fig:nand_base_case}
 \end{figure}
-
-The induction hypothesis gives us that if the NAND-clause containing $a$ is non-axiomatic, then it must be $\ol{at}$.
-All NAND-clauses containing $a$ in the premise must therefore be either $\ol{at}$ ore one of the four axioms on the form $\ol{ax^K_i}$.
-
-Let us first consider the case where some $\ol{ax^K_i}$ is in the premise.
-This case is similar to the base case.
 Like in the base case, the only applicable OR-clause is the corresponding $x^K_iy^K_ic^K_i$, so the premise contains two additional NAND-clauses, one containing $y^K_i$ and one containing $c^K_i$.
 Because of our induction hypothesis, those two cannot contain $a$, so either both contain $\gamma$ or one is unary while the other contain $\gamma$.
 Neither $\ol{y^K_i}$ nor $\ol{c^K_i}$ is provable\todo{show assignments}, so they both have to contain $\gamma$.

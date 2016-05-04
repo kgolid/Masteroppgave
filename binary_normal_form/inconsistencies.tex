@@ -221,7 +221,6 @@ From here, the inconsistency proof is trivial; shown in Figure~\ref{fig:triple_d
   \label{fig:triple_double_open_door_proof}
 \end{figure}
 The graph is thus provably inconsistent.
-We will now show that the inconsistency is non-binary-derivable.
 
 We will now use Lemma~\ref{thm:or_clause_lemma} to prove the following lemma:
 \begin{lemma}
@@ -245,6 +244,8 @@ We will now use Lemma~\ref{thm:or_clause_lemma} to prove the following lemma:
   If all the external clauses are unary, in order to not prove $\varnothing$, one clause must be binary and from the N-component.
   Since $sa^Na^Wa^E$ is the only OR-clause containing vertices from different components, this is the OR-clause that must be used.
 \end{proof}
+
+We will now show that the inconsistency of the graph in Figure~\ref{fig:triple_double_open_door} is non-binary-derivable.
 \begin{proof}
 The first thing to notice is that if one removes the loop on vertex $s$, the graph is no longer inconsistent.
 This tells us that the NAND-clause $\ol{s}$ must be a part of every inconsistency proof.

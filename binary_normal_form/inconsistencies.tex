@@ -252,46 +252,43 @@ This tells us that the NAND-clause $\ol{s}$ must be a part of every inconsistenc
 If that was not the case, we would be able to prove $\varnothing$ on a consistent graph, violating the fact that Neg is sound.
 
 Having that any inconsistency proof contains $\ol{s}$ immediately gives us that any inconsistency proof contains the OR-clause $sa^Na^Wa^E$, since this is the only OR-clause containing $s$.
-We thus have the following situation somewhere in the proof, where the sets of vertices $P,Q,R$ might be empty:\par
+The OR-clause in question might obviously appear several places in the proof, so let us assume that the proof step in Figure~\ref{fig:triple_double_proof_step} is its \textit{first} appearance i.e. none of the NAND-clauses in the premise are proven using the OR-clause $sa^Na^Wa^E$.
+Note that this first appearance might not have the axiom $\ol{s}$ in its premise, but rather some other NAND-clause containing $s$.\par
 \begin{figure}[!h]
   \centering
   \begin{prooftree*}
-    \Hypo{\ol{s}}
+    \Hypo{\dots}
+    \Infer[]1{\ol{sM}}
     \Hypo{\dots}
     \Infer[]1{\ol{a^NP}}
     \Hypo{\dots}
     \Infer[]1{\ol{a^WQ}}
     \Hypo{\dots}
     \Infer[]1{\ol{a^WR}}
-    \Infer[right label=$sa^Na^Wa^E$]4{\ol{P \cup Q \cup R}}
+    \Infer[right label=$sa^Na^Wa^E$]4{\ol{M \cup P \cup Q \cup R}}
   \end{prooftree*}
-  \caption{}
+  \caption{First appearance of $sa^Na^Wa^E$. $M,P,Q,R$ being possibly empty}
   \label{fig:triple_double_proof_step}
 \end{figure}
-The OR-clause in question might obviously appear several places in the proof, but let us assume that this is its \textit{first} appearance\todo{the first appearance of the OR-clause might not have a unary $\ol{s}$ in the premise.  this should be mentioned.  It does however not change our argumentation}, i.e. none of the NAND-clauses in the premise are proven using the OR-clause $sa^Na^Wa^E$.
-
-First of all, neither of the sets $P,Q,R$ can contain more than 1 element, since that would make the NAND-clauses non-binary.
+First of all, neither of the sets $M,P,Q,R$ can contain more than 1 element, since that would make the NAND-clause containing them non-binary.
 For the same reason can their union never contain more than two elements, since that would make the concluding NAND-clause non-binary.
-One of them must thus either be empty, or some of them must contain the same element.
+Therefore, either two of the four sets are empty, or some of them contain the same element.
 
-Let us first assume that neither of $P,Q,R$ are empty.
-This implies that at least two of them contain the same element.
-We will now apply Lemma~\ref{thm:or_clause_lemma} to show that this is not possible.
+Let us first look at the case where two of them are empty.
+The unary NAND-clause $\ol{s}$ is an axiom, so $M$ being empty is not problematic.
+We have however just showed in Lemma~\ref{thm:a_binary_derivable} that if any of the unary NAND-clauses $\ol{a^N}$, $\ol{a^W}$ or $\ol{a^E}$ are binary-derivable, then their proof must contain $sa^Na^Wa^E$, contradicting our original assumption of it being used for the first time in Figure~\ref{fig:triple_double_proof_step}.
 
-Observe that our graph consists of three isolated components, $N$, $W$ and $E$, only connected by the vertex $s$ having a vertex from each component in its neighborhood.
-Let, without any loss of generality, $P$ and $Q$ be the two sets with the same element, i.e., $P = Q = \{p\}$.
-That gives us the two NAND-clauses $\ol{a^Np}$ and $\ol{a^Wp}$.
-Since our three components are mutually disjoint, at least one of the above NAND-clauses must contain vertices from two different components.\todo{one of them can be $s$; should be mentioned.}
-Lemma~\ref{thm:or_clause_lemma} gives us that the proof of that NAND-clause therefore must contain the OR-clause $sa^Na^Wa^E$, which contradicts our assumption of it being used for the first time in Figure~\ref{fig:triple_double_proof_step}.
-Therefore, none of the three $a$-clauses in the premise can contain the same element, leaving us with the case where one of them is unary, i.e. either $P$, $Q$ or $R$ is empty.
+This leaves us with the second option where $P,Q,R$ are all nonempty.
+In order for the concluding NAND-clause to be binary, two of the three sets $P,Q,R$ must contain the same element.
+We will apply Lemma~\ref{thm:or_clause_lemma} to show that this is not possible.
 
-Now, we know that both $\ol{a^N}$, $\ol{a^W}$ and $\ol{a^E}$ are provable, but the only proof we have seen has been non-binary, using the proofs of $\ol{ab}$ as subproofs.
-The last section showed that $\ol{a}$ was not provable if one was only to use the vertices from within its own component.
-So if one of the $a$-clauses in the premise in Figure~\ref{fig:triple_double_proof_step} is unary, then it has to have been proved using either $s$ or vertices from other components.
-In both cases, we get that such a proof must contain the OR-clause $sa^Na^Wa^E$ somewhere, again contradicting our assumption.
+Let, without any loss of generality, $P$ and $Q$ be the two sets containing the same element, i.e. $P = Q = \{p\}$, giving us the two NAND-clauses $\ol{a^Np}$ and $\ol{a^Wp}$.
+If $p \neq s$, we get the situation where $p$ must be in a component different from either $a^N$ or $a^W$, since $a^N$ and $a^W$ are in different components.
+From this, Lemma~\ref{thm:or_clause_lemma} gives us that the proof of that NAND-clause must contain the OR-clause $sa^Na^Wa^E$, which contradicts our assumption of it being used for the first time in Figure~\ref{fig:triple_double_proof_step}.
 
-All in all, this gives us that if the proof is binary up until this rule application, the concluding NAND-clause cannot be binary.
-Since the rule application has to be present in the inconsistency proof, the proof therefore has to contain a non-binary NAND-clause, indeed making the inconsistency non-binary-derivable.
+The only option left at this point is the one where $p = s$, i.e. the case where $\ol{a^Ns}$ and $\ol{a^Ws}$ appear in the premise.
+In this case, the conclusion will always contain $s$ leaving us with no OR-clauses are able to remove $s$-vertices from clauses in the premise.
+Since $s$ must be a part of the proof, and we have no way of removing it, reaching $\varnothing$ is impossible.
+
+The inconsistency in Figure~\ref{fig:triple_double_open_door} is thus not binary-derivable.
 \end{proof}
-
-This proof shows that even though Neg in general is refutationally complete, BNeg is not.

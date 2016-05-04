@@ -113,6 +113,8 @@ This is done by structural induction on the complexity of the proof tree for som
 In the base case, the proof tree is just an axiom.
 The only axiomatic $\ol{a\gamma}$ are the ones where $\gamma$ is an $x$-vertex, so the lemma holds.
 
+For the induction step, suppose we have a proof that concludes with some binary NAND-clause $\ol{a\gamma}$;
+we have that the premise of the last proof step must contain at least one NAND-clause containing $a$ and at least one containing $\gamma$.
 Figure~\ref{fig:nand_base_case} illustrates the situation.\par
 \begin{figure}[!h]
   \centering
@@ -128,8 +130,6 @@ Figure~\ref{fig:nand_base_case} illustrates the situation.\par
   \label{fig:nand_base_case}
 \end{figure}
 
-Suppose we have a proof that concludes with some binary NAND-clause $\ol{a\gamma}$;
-like in the base case, we have that the premise of the last proof step must contain at least one NAND-clause containing $a$ and at least one containing $\gamma$.
 The induction hypothesis gives us that if the NAND-clause containing $a$ is non-axiomatic, then it must be $\ol{at}$.
 All NAND-clauses containing $a$ in the premise must therefore be either $\ol{at}$ ore one of the four axioms on the form $\ol{ax^K_i}$.
 
@@ -146,7 +146,8 @@ Figure~\ref{fig:nand_inductive_step} illustrates this situation.\par
 \begin{figure}[!h]
   \centering
   \begin{prooftree*}
-    \Hypo{\ol{at}}
+    \Hypo{\dots}
+    \Infer[]1{\ol{at}}
     \Hypo{\dots}
     \Infer[]1{\ol{\gamma b^L}}
     \Hypo{\dots}

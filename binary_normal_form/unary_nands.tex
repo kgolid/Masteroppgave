@@ -110,27 +110,23 @@ First, the following Neg-proof shows that $\ol{at}$ is indeed binary-derivable.
 We now show that $\ol{at}$ is the only one.
 This is done by structural induction on the complexity of the proof tree for some binary NAND-clause $\ol{a\gamma}$, showing that $\gamma$ always has to equal either some $x$-vertex or $t$.
 
-In the base case, the proof length is 1, so all the clauses in the premise must be axiomatic.
-That includes at least one clause containing $a$ and at least one clause containing $\gamma$.
+In the base case, the proof tree is just an axiom.
+The only axiomatic $\ol{a\gamma}$ are the ones where $\gamma$ is an $x$-vertex, so the lemma holds.
+
 Figure~\ref{fig:nand_base_case} illustrates the situation.\par
 \begin{figure}[!h]
   \centering
   \begin{prooftree*}
     \Hypo{\ol{ax^K_i}}
-    \Hypo{\ol{\gamma y^K_i}}
-    \Hypo{\ol{\gamma c^K_i}}
+    \Hypo{\dots}
+    \Infer[]1{\ol{\gamma y^K_i}}
+    \Hypo{\dots}
+    \Infer[]1{\ol{\gamma c^K_i}}
     \Infer[right label=$x^K_iy^K_ic^K_i$]3{\ol{a\gamma}}
   \end{prooftree*}
   \caption{}
   \label{fig:nand_base_case}
 \end{figure}
-\FloatBarrier
-The only axiomatic NAND-clauses containing $a$ are on the form $\ol{ax^K_i}$ ($K$ being either $L$ or $R$ and $i$ either 1 or 2).
-The OR-clause used must therefore be the corresponding $x^K_iy^K_ic^K_i$, being the only OR-clause containing $x^K_i$.
-Since the OR-clause is of length 3, the premise must contain two other clauses and they must have the following form in order to give us $\ol{a \gamma}$ in the conclusion:
-$\ol{\gamma y^K_i},\ol{\gamma c^K_i}$.
-The only pairs of axioms that matches this description are the ones where $\gamma = x^K_i$.
-With a proof length of 1, we are thus not able to prove binary NAND-clauses containing $a$ that are non-axiomatic.
 
 Suppose we have a proof that concludes with some binary NAND-clause $\ol{a\gamma}$;
 like in the base case, we have that the premise of the last proof step must contain at least one NAND-clause containing $a$ and at least one containing $\gamma$.

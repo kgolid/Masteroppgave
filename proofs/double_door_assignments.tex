@@ -1,0 +1,29 @@
+% !TEX root= ../main.tex
+\section{Provability of NAND-clauses in Figure~\ref{fig:double_open_door}}
+\label{sec:Provability of NAND-clauses in double door}
+Like our previous table in Figure~\ref{fig:v3_counter_table}, the following table shows what pair of vertices from Figure~\ref{fig:double_open_door} can be 1 under the same assignment and thus correspond to a binary NAND-clause unprovable in Neg.
+\begin{figure}[!h]
+  \centering
+  \[\begin{array}{|c||c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+    \hline
+          & a & b^L & x^L_1 & x^L_2 & y^L_1 & y^L_2 & c^L_1 & c^L_2 & b^R & x^R_1 & x^R_2 & y^R_1 & y^R_2 & c^R_1 & c^R_2 & t\\ \hline\hline
+    a     & & & & & & & & & & & & & & & & \\ \hline
+    b^L   &-& X & X & X & & & X & X & X & X & X & X & X & X & X & \\ \hline
+    x^L_1 &-&-& X & & & X & & X & X & X & X & X & X & X & X & \\ \hline
+    x^L_2 &-&-&-& X & X & & X & & X & X & X & X & X & X & X & \\ \hline
+    y^L_1 &-&-&-&-& X & X & X & X & X & X & X & & & X & X & \\ \hline
+    y^L_2 &-&-&-&-&-& X & X & X & X & X & X & & & X & X & \\ \hline
+    c^L_1 &-&-&-&-&-&-& X & & X & X & X & X & X & X & X & \\ \hline
+    c^L_2 &-&-&-&-&-&-&-& X & X & X & X & X & X & X & X & \\ \hline
+    b^R   &-&-&-&-&-&-&-&-& X & X & X & & & X & X & \\ \hline
+    x^R_1 &-&-&-&-&-&-&-&-&-& X & & & X & & X & \\ \hline
+    x^R_2 &-&-&-&-&-&-&-&-&-&-& X & X & & X & & \\ \hline
+    y^R_1 &-&-&-&-&-&-&-&-&-&-&-& X & X & X & X & \\ \hline
+    y^R_2 &-&-&-&-&-&-&-&-&-&-&-&-& X & X & X & \\ \hline
+    c^R_1 &-&-&-&-&-&-&-&-&-&-&-&-&-& X & & \\ \hline
+    c^R_2 &-&-&-&-&-&-&-&-&-&-&-&-&-&-& X & \\ \hline
+    t     &-&-&-&-&-&-&-&-&-&-&-&-&-&-&-& \\ \hline
+  \end{array}\]
+  \caption{}
+  \label{fig:double_door_counter_table}
+\end{figure}

@@ -222,6 +222,29 @@ From here, the inconsistency proof is trivial; shown in Figure~\ref{fig:triple_d
 \end{figure}
 The graph is thus provably inconsistent.
 We will now show that the inconsistency is non-binary-derivable.
+
+We will now use Lemma~\ref{thm:or_clause_lemma} to prove the following lemma:
+\begin{lemma}
+  Given any of the three $a$-vertices in the graph in Figure~\ref{fig:triple_double_open_door}, if $\ol{a}$ is binary-derivable, then its proof contains the OR-clause $sa^Na^Wa^E$.
+  \label{thm:a_binary_derivable}
+\end{lemma}
+\begin{proof}
+  Suppose, without any loss of generality, that $a^N$ is the vertex such that $\ol{a^N}$ is binary-derivable.
+  From Section~\ref{sec:Unary NAND-clauses in graph theories} we get that $\ol{a^N}$ is not binary-derivable using clauses from the N-component only.
+  Therefore, its proof must contain NAND-clauses containing either the vertex $s$ or some vertex from the two other components.
+
+  If its proof contains some NAND-clause containing $s$, then the proof must also have a step removing this $s$, since we do not want that atom in our conclusion.
+  The OR-clause $sa^Na^Wa^E$ is the only clause that can do this, being the only OR-clause containing $s$.
+
+  If its proof contains NAND-clauses with vertices from component W or E (let us call them \textit{external clauses}), then consider the proof step where they last appear.
+  Either all external clauses appear as unary NAND-clauses or at least one of them appear as a binary NAND-clause.
+  If one external clause is binary then it cannot contain two vertices from outside component $N$, because only one of the two vertices would be removed in that step, so it would not possibly be the last appearance of an external clause.
+  Therefore, the binary clause must contain one vertex from the N-component and one from outside.
+  Lemma~\ref{thm:or_clause_lemma} gives us that $sa^Na^Wa^E$ must have been used to prove it.
+
+  If all the external clauses are unary, in order to not prove $\varnothing$, one clause must be binary and from the N-component.
+  Since $sa^Na^Wa^E$ is the only OR-clause containing vertices from different components, this is the OR-clause that must be used.
+\end{proof}
 \begin{proof}
 The first thing to notice is that if one removes the loop on vertex $s$, the graph is no longer inconsistent.
 This tells us that the NAND-clause $\ol{s}$ must be a part of every inconsistency proof.

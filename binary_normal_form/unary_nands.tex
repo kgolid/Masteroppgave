@@ -134,11 +134,11 @@ Figure~\ref{fig:nand_base_case} illustrates the situation.\par
   \caption{}
   \label{fig:nand_base_case}
 \end{figure}
-Like in the base case, the only applicable OR-clause is the corresponding $x^K_iy^K_ic^K_i$, so the premise contains two additional NAND-clauses, one containing $y^K_i$ and one containing $c^K_i$.
+The only applicable OR-clause is the corresponding $x^K_iy^K_ic^K_i$, so the premise must contain two additional NAND-clauses, one containing $y^K_i$ and one containing $c^K_i$.
 Because of our induction hypothesis, those two cannot contain $a$, so either both contain $\gamma$ or one is unary while the other contain $\gamma$.
 Neither $\ol{y^K_i}$ nor $\ol{c^K_i}$ is provable\todo{show assignments}, so they both have to contain $\gamma$.
-Thus, like in the base case, the two additional NAND-clauses must be on the form $\ol{\gamma y^K_i},\ol{\gamma c^K_i}$.
 Except for the case where $\gamma = x^K_i$, the only\todo{show assignments} $\gamma$-substitution that makes both of these NAND-clauses provable is $\gamma = t$, giving us $\ol{at}$ in the conclusion.
+Therefore, the two additional NAND-clauses must be on the form $\ol{\gamma y^K_i},\ol{\gamma c^K_i}$.
 
 The other case is where $\ol{at}$ appears in the premise.
 Figure~\ref{fig:nand_inductive_step} illustrates this situation.\par

@@ -164,7 +164,11 @@ The only\footnote{\label{table_reference} See Appendix~\ref{sec:Provability of N
 The only binary-provable, non-axiomatic, binary NAND-clause containing $a$ is therefore $\ol{at}$.
 \end{proof}
 
-It is now easy to show that $\ol{a}$ is indeed not binary-provable.
+We can now easily prove the following lemma:
+\begin{lemma}
+  Given the graph from Figure~\ref{fig:double_open_door}, $\ol{a}$ is not binary-derivable.
+  \label{thm:a_not_binary_derivable}
+\end{lemma}
 Suppose we have a binary proof concluding with $\ol{a}$.
 There must exists a NAND-clause in the immediate premise of this conclusion containing either $\ol{at}$ or some $\ol{ax^K_i}$.
 Because of the above proof, we know that no other binary NAND-clauses containing $a$ are binary-derivable.

@@ -48,7 +48,8 @@ Based on graph $G$ from Figure~\ref{fig:components_link} we show the following l
   $\ol{a_ia_j}$ is not an axiom, since $\bigcap_i N(A_i) = \varnothing$, so the lemma holds vacuously.
 
   For the inductive step, suppose we have a proof of $\ol{a_ia_j}$ and consider the premise of the last rule application;
-  since we are working within BNeg, this premise must contain one axiom on the form $\ol{a_ip}$ and one on the form $\ol{a_iq}$.\par
+  since we are working within BNeg, this premise must contain one NAND-clause on the form $\ol{a_ip}$ and one on the form $\ol{a_iq}$.
+  The following figure illustrates the situation:\par
   \begin{figure}[!h]
     \centering
     \begin{prooftree*}

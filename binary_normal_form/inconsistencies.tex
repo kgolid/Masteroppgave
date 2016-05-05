@@ -58,15 +58,15 @@ Based on graph $G$ from Figure~\ref{fig:components_link} we show the following l
       \Hypo{\dots}
       \Infer[]1{\ol{a_jq}}
       \Hypo{\dots}
-      \Infer[right label=$X$]3{\ol{a_ia_j}}
+      \Infer[right label=$Y$]3{\ol{a_ia_j}}
     \end{prooftree*}
     \caption{}
     \label{fig:ab_proof_bc}
   \end{figure}
   \FloatBarrier
-  First, with either $p = x$ or $q = x$, the OR-clause used in the proof step must be $X$, being the only OR-clause containing $x$.
   This case can thus be ruled out, giving us that both $p$ and $q$ must be inside some component.
   Our induction hypothesis gives us that any NAND-clause $\ol{cd}$ in the premise, such that $c$ and $d$ are from different components, must have a proof containing the OR-clause $X$.
+  First, with either $p = x$ or $q = x$, the OR-clause $Y$ used in the proof step must be $X$, being the only OR-clause containing $x$.
   Therefore, in order to avoid $X$ earlier in the proof, $p$ and $q$ must come from $A_i$ and $A_j$, respectively.
   Since $X$ is the only OR-clause containing vertices from both $A_i$ and $A_j$, $X$ is again our only option.
   The proof of $\ol{a_ia_j}$ must therefore contain the OR-clause $X$.

@@ -169,6 +169,7 @@ We can now easily prove the following lemma:
   Given the graph from Figure~\ref{fig:double_open_door}, $\ol{a}$ is not binary-derivable.
   \label{thm:a_not_binary_derivable}
 \end{lemma}
+\begin{proof}
 Suppose we have a binary proof concluding with $\ol{a}$.
 There must exists a NAND-clause in the immediate premise of this conclusion containing either $\ol{at}$ or some $\ol{ax^K_i}$.
 Because of the above proof, we know that no other binary NAND-clauses containing $a$ are binary-derivable.
@@ -180,5 +181,5 @@ In the case with $\ol{ax^K_i}$ in the premise, we get the same problem;
 the only applicable OR-clause is $x^K_iy^K_ic^K_i$, but neither $\ol{a y^K_i}$ nor $\ol{y^K_i}$ is binary-derivable.
 
 We therefore get that no binary proof exists with $\ol{a}$ as its conclusion, making $\ol{a}$ provable, but not binary-derivable.
-
+\end{proof}
 We will use this result in the following chapter to show that there exist inconsistent graphs such that the inconsistency is not binary-derivable.

@@ -186,6 +186,27 @@ We will ultimately show that the inconsistency is not binary-derivable, but firs
   Both of these cases results in having to use the OR-clause $sa^Na^Wa^E$ in the last proof step, since it is the only OR-clause containing $s$ and the only OR-clause containing vertices from different components.
   The premise therefore contains two additional NAND-clauses; one of them containing the $a$-vertex of the component not containing $u$ or $v$ - lets call it $a^t$.
 
+  Figure~\ref{fig:proof_example_uv} contains examples of two possible cases.\par
+  \begin{figure}[!h]
+    \centering
+    \begin{prooftree}
+      \Hypo{\ol{s\dots}}
+      \Hypo{\ol{ua^N}}
+      \Hypo{\ol{va^W}}
+      \Hypo{\ol{a^E\dots}}
+      \Infer[right label=$sa^Na^Wa^E$]4{\ol{uv}}
+    \end{prooftree}
+    \hspace{5mm}
+    \begin{prooftree}
+      \Hypo{\ol{us}}
+      \Hypo{\ol{va^N}}
+      \Hypo{\ol{a^W\dots}}
+      \Hypo{\ol{a^E\dots}}
+      \Infer[right label=$sa^Na^Wa^E$]4{\ol{uv}}
+    \end{prooftree}
+    \caption{}
+    \label{fig:proof_example_uv}
+  \end{figure}
   If the clause containing $a^t$ is unary, we are done.
   If it is binary, it must either contain $u$ or $v$ in order to give $\ol{uv}$ in the conclusion, and since $a^t$ is in a component different from both $u$ and $v$, the induction hypothesis gives us the claim.
 

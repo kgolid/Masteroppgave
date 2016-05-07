@@ -136,6 +136,26 @@ The graph contains 3 copies of the graph from Figure~\ref{fig:double_open_door};
 one northern (N), one western (W) and one eastern (E).
 We call these \textit{components}.
 Every vertex in the graph is contained within exactly one component, except the vertex $s$ which is not inside any component.
+
+The first thing to notice is that the graph is inconsistent;
+the proof of $\ol{a}$ from Figure~\ref{fig:unary_nand_proof} can be applied to each component in the above graph, giving us the provability of $\ol{a^N}$, $\ol{a^W}$ and $\ol{a^E}$.
+From here, the inconsistency proof is trivial;
+shown in Figure~\ref{fig:triple_double_open_door_proof}.\par
+\begin{figure}[!h]
+  \centering
+  \begin{prooftree*}
+    \Hypo{\ol{s}}
+    \Hypo{\dots}
+    \Infer[]1{\ol{a^N}}
+    \Hypo{\dots}
+    \Infer[]1{\ol{a^W}}
+    \Hypo{\dots}
+    \Infer[]1{\ol{a^E}}
+    \Infer[right label=$sa^Na^Wa^E$]4{\varnothing}
+  \end{prooftree*}
+  \caption{}
+  \label{fig:triple_double_open_door_proof}
+\end{figure}
 \begin{lemma}
   Given the graph from Figure ... let the vertices $u$ and $v$ be from different components.
   If $\ol{uv}$ is binary-derivable, then its proof contains either $\ol{a^N}$, $\ol{a^W}$ or $\ol{a^E}$.

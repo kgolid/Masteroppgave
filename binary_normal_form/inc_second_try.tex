@@ -40,3 +40,38 @@
   \label{thm:non_binary_derivable_a}
 \end{lemma}
 
+\begin{proof}
+  We prove it by structural induction over the complexity of the proof tree.
+  Base Case:
+  Neither $\ol{a^N}$, $\ol{a^W}$ nor $\ol{a^E}$ are axioms, so the claim vacuously holds.
+
+  Induction step:
+  Suppose we have a binary proof of $\ol{a}$, where $a$ is either $a^N$, $a^W$ or $a^E$.
+  Since the proof is binary, we get from our induction hypothesis that neither $\ol{a^N}$, $\ol{a^W}$ nor $\ol{a^E}$ appears in the proof.
+
+  We get from Lemma~\ref{} that $\ol{a}$ is not binary-derivable using clauses from within its own component only, so the binary proof must use vertices outside the component containing $a$; either the $s$-vertex or vertices from other components.
+
+  If it uses $s$, consider the last proof step with $s$ in the premise.
+  The OR-clause used in this proof step must be $sa^Na^Wa^E$, being the only OR-clause containing $s$ and thus the only clause able to remove it.
+  This OR-clause contains 4 vertices, so the premise must contain 3 additional NAND-clauses;
+  one containing $a^N$, one containing $a^W$ and one containing $a^E$.
+  We get the following restrictions on these 3 NAND-clauses.
+  \begin{itemize}
+    \item None of them can be unary, from the induction hypothesis.
+    \item None of them can be binary and contain $s$, since that would give an $s$ in the conclusion, contradicting our assumption of this being the last proof step with $s$ in the premise.
+    \item None of them can be binary and contain vertices from two different components, from the induction hypothesis and Lemma~\ref{thm:uv_proof_contains_a}.
+  \end{itemize}
+  The 3 additional NAND-clauses must therefore all contain a second vertex from their own component.
+  Since the three component are disjoint, these three vertices are different, making the conclusion of the proof step non-binary, contradicting our original assumption of the proof being binary.
+
+  If the proof does not contain $s$, then it uses some vertex $p$ from another component.
+  Consider the last proof step with an ``external'' vertex in the premise.
+  The proof step must remove $p$, and conclude with some clause containing vertices only from within the component containing $a$.
+  The premise must obviously contain a NAND-clause containing $p$, but it must also contain at least one binary NAND-clause with a vertex from within N, in order to make the conclusion non-empty.
+  That clause cannot contain any external vertices, from Lemma 1 and IH, so it must a clause with two N-vertices.
+  The OR-clause used must therefore contain the external vertex $p$ and a vertex from N.
+  $sa^Na^Wa^E$ is the only one with this property, but we have assumed that $s$ is not in this proof.
+
+  $\ol{a}$ is thus not binary-derivable.
+
+\end{proof}

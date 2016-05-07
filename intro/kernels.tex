@@ -6,13 +6,14 @@
 \end{definition}
 We use the notation $N(x)$ to denote the set of all vertices that are targeted by edges originating in $x$ (\textit{successors} of $x$).
 Similarly, $N^-(x)$ denotes the set of all vertices with edges targeting $x$ (\textit{predecessors} of $x$).
-If a vertex has no successors, we call it a \textit{sink}; if a vertex has no predecessors, we call it a \textit{source}.
 We define the two functions formally as follows:
 \begin{align}
   N(x) := \{y \;|\; (x,y) \in N\}\\
   N^-(x) := \{ y \;|\; (y,x) \in N \}
 \end{align}
 The number of successors a vertex has is often called the \textit{out-degree} of that vertex.
+The number of predecessors is called the \textit{in-degree}.
+If a vertex has out-degree 0, we call it a \textit{sink}; if it has in-degree 0, we call it a \textit{source}.
 
 We let the length of a path be defined by its number of edges.
 \begin{definition}

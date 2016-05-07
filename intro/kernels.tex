@@ -17,7 +17,11 @@ We define the two functions formally as follows:
   The number of successors a vertex has is often called the \textit{out-degree} of that vertex.
   The number of predecessors is called the \textit{in-degree}.
   If a vertex has out-degree 0, we call it a \textit{sink}; if it has in-degree 0, we call it a \textit{source}.
+  If the out-degree of each vertex in a graph is finite, we say that the graph is \textit{finitary}.
+  A graph that is not finitary is called \textit{infinitary}.
 \end{definition}
+Note the difference between the concept of a finite graph and the one of a finitary graph;
+an infinitary graph is infinite, but a finitary graph is not necessarily finite.
 \begin{definition}
   A \textit{simple path} is a sequence of distinct vertices $x_1,x_2,\dots,x_n$ such that for each consecutive pair $x_i,x_{i+1}$ from the sequence, we have $(x_i, x_{i+1}) \in N$.
   We say that two paths are \textit{disjoint} if they do not share any vertices (with the possible exception of their initial vertices).

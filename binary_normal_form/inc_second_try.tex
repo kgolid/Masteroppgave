@@ -276,7 +276,20 @@ We will ultimately show that the inconsistency is not binary-derivable, but firs
 \begin{proof}
   We get this directly from Lemma~\ref{thm:uv_proof_contains_a} and Lemma~\ref{thm:non_binary_derivable_a}.
 \end{proof}
+\begin{lemma}
+  Any proof of inconsistency must contain the NAND-clause $\ol{s}$.
+  \label{thm:paradox_proof_use_s}
+\end{lemma}
+\begin{proof}
+  Consider the graph $G$.
+  If one removes the loop on the vertex $s$, the graph is no longer inconsistent;
+  each $a$-vertex can be assigned 0 and $s$ can be assigned 1.
+  Formally, we have that $G' = G \setminus E(s,s) \not\vDash \varnothing$.
+  Because of soundness of Neg, this gives us that $\mathcal{T}(G') = \mathcal{T}(G) \setminus \{\ol{s} \} \not\vdash \varnothing$ (recall the $\mathcal{T}$-notation from Section~\ref{sec:Discourse Theories and Digraphs}).
 
+  Suppose there is a proof of $\mathcal{T}(G)\vdash \varnothing$ that does not use $\ol{s}$;
+  this proof will also be a proof of $\mathcal{T}(G')\vdash \varnothing$ violating the fact that Neg is sound.
+\end{proof}
 \begin{theorem}
   $\varnothing$ is not binary-derivable.
   \label{thm:non_binary_derivable_paradox}

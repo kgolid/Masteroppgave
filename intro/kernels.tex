@@ -1,7 +1,9 @@
 % !TEX root= ../main.tex
 \section{Graphs, Kernels and Solutions}
 \label{sec:Graphs, Kernels and Solutions}
-A directed graph (digraph) is a pair \textbf{G} = $\langle G,N \rangle$ where $G$ is a set of vertices while $N \subseteq G \times G$ is a binary relation representing the edges in \textbf{G}.
+\begin{definition}
+  A \textit{directed graph (digraph)} is a pair \textbf{G} = $\langle G,N \rangle$ where $G$ is a set of vertices while $N \subseteq G \times G$ is a binary relation representing the edges in \textbf{G}.
+\end{definition}
 We use the notation $N(x)$ to denote the set of all vertices that are targeted by edges originating in $x$ (\textit{successors} of $x$).
 Similarly, $N^-(x)$ denotes the set of all vertices with edges targeting $x$ (\textit{predecessors} of $x$).
 If a vertex has no successors, we call it a \textit{sink}; if a vertex has no predecessors, we call it a \textit{source}.
@@ -12,9 +14,11 @@ We define the two functions formally as follows:
 \end{align}
 The number of successors a vertex has is often called the \textit{out-degree} of that vertex.
 
-A \textit{simple path} is a sequence of distinct vertices $x_1,x_2,\dots,x_n$ such that for each consecutive pair $x_i,x_{i+1}$ from the sequence, we have $(x_i, x_{i+1}) \in N$.
-We say that two paths are \textit{disjoint} if they do not share any vertices (possibly with the exception of their initial vertices).
 We let the length of a path be defined by its number of edges.
+\begin{definition}
+  A \textit{simple path} is a sequence of distinct vertices $x_1,x_2,\dots,x_n$ such that for each consecutive pair $x_i,x_{i+1}$ from the sequence, we have $(x_i, x_{i+1}) \in N$.
+  We say that two paths are \textit{disjoint} if they do not share any vertices (with the possible exception of their initial vertices).
+\end{definition}
 
 The functions $N$ and $N^-$ can be extended pointwise to sets in the following way:
 \begin{align}
@@ -22,11 +26,13 @@ The functions $N$ and $N^-$ can be extended pointwise to sets in the following w
   N^-(X) = \bigcup_{x \in X} N(x)
 \end{align}
 
-A kernel is a set of vertices $K \subseteq G$ such that:
-\begin{align}
-  G \setminus K = N^-(K)
-\end{align}
-The above equivalence can be split into two inclusions to be more easily understood:
+\begin{definition}
+  A \textit{kernel} is a set of vertices $K \subseteq G$ such that:
+  \begin{align}
+    G \setminus K = N^-(K)
+  \end{align}
+\end{definition}
+The equivalence in the above definition can be split into two inclusions to be more easily understood:
 
 $G \setminus K \subseteq N^-(K)$, saying that each vertex outside the kernel has an edge into the kernel (K is \textit{absorbing}).
 A consequence of this is that a kernel has to be non-empty, unless the graph is empty.
@@ -43,12 +49,13 @@ Deciding the existence of kernels in finite graphs has been shown to be an NP-co
 This should not be surprising, since we are in the middle of showing the equivalence between this problem and the problem of finding satisfying models of PL theories (SAT), which we know is NP-complete\footnote{We are concerned with SAT over infinitary formulae in this paper, not the finite version from computer science.}.
 
 We will get the correspondence between models of a discourse theory and kernels in a graph through an alternative, equivalent kernel definition called a \textit{solution}.
-
-Given a directed graph \textbf{G} = $\langle G,N \rangle$, an assignment $\alpha \in 2^G$ is a function mapping every vertex in the graph to either 0 or 1.
-A \textit{solution} is an assignment $\alpha$ such that for all $x \in G:$
-\begin{align}
-  \alpha(x) = 1 \iff \alpha(N(x)) = \{ 0 \}
-\end{align}
+\begin{definition}
+  Given a directed graph \textbf{G} = $\langle G,N \rangle$, an \textit{assignment} $\alpha \in 2^G$ is a function mapping every vertex in the graph to either 0 or 1.
+  A \textit{solution} is an assignment $\alpha$ such that for all $x \in G:$
+  \begin{align}
+    \alpha(x) = 1 \iff \alpha(N(x)) = \{ 0 \}
+  \end{align}
+\end{definition}
 This means that for any node $x$, if $x$ is assigned 1, then all its successors have to be assigned  0, and if $x$ is assigned 0, then there has to exist a node assigned 1 among its successors.
 A consequence of this definition is that all sink nodes (nodes with no outgoing edges) in the graph have to be assigned 1, since it vacuously does not point to any node assigned 1.
 We use the notation $sol(\mathbf{G})$ to denote the set of all solutions of the graph \textbf{G}.

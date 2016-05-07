@@ -229,7 +229,7 @@ We will ultimately show that the inconsistency is not binary-derivable, but firs
 
   First, since the proof is binary, we get from our induction hypothesis that neither $\ol{a^N}$, $\ol{a^W}$ nor $\ol{a^E}$ appears in it.
 
-  We get from Lemma~\ref{} that $\ol{a}$ is not binary-derivable using clauses from within its own component only, so the binary proof must use vertices outside the component containing $a$; either the $s$-vertex or vertices from other components.
+  We get from Lemma~\ref{thm:a_not_binary_derivable} that $\ol{a}$ is not binary-derivable if one is using internal vertices only, so the binary proof must use vertices outside the component containing $a$; either the $s$-vertex or external vertices.
 
   If it uses $s$, consider the last proof step with $s$ in the premise.
   The OR-clause used in this proof step must be $sa^Na^Wa^E$, being the only OR-clause containing $s$ and thus the only clause able to remove it.

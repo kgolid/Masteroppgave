@@ -244,14 +244,15 @@ We will ultimately show that the inconsistency is not binary-derivable, but firs
   \end{itemize}
   The 3 additional NAND-clauses must therefore all contain a second vertex $p$ from their own component.
 
-  If the proof does not contain $s$, then it uses some vertex $p$ from another component.
-  Consider the last proof step with an ``external'' vertex in the premise.
-  The proof step must remove $p$, and conclude with some clause containing vertices only from within the component containing $a$.
-  The premise must obviously contain a NAND-clause containing $p$, but it must also contain at least one binary NAND-clause with a vertex from within N, in order to make the conclusion non-empty.
-  That clause cannot contain any external vertices, from Lemma 1 and IH, so it must a clause with two N-vertices.
-  The OR-clause used must therefore contain the external vertex $p$ and a vertex from N.
-  $sa^Na^Wa^E$ is the only one with this property, but we have assumed that $s$ is not in this proof.
   Since the three components are disjoint, these three $p$-vertices are different, making the conclusion of the proof step non-binary, contradicting our original assumption of the proof being binary.
+
+  If the proof does \textit{not} contain $s$, then it uses external vertices.
+  Consider the last proof step containing external vertices in the premise.
+  This proof step removes these vertices and conclude with some clause only internal vertices.
+  The premise must contain, in addition to all the clauses with external vertices, at least one binary NAND-clause with an internal vertex, in order to make the conclusion non-empty.
+  This clause cannot contain any external vertices, from Lemma~\ref{thm:uv_proof_contains_a} and the induction hypothesis, so it must be a clause with two internal vertices.
+  The OR-clause used in the proof step must therefore contain both external vertices and at least one internal vertex.
+  Since $sa^Na^Wa^E$ is the only OR-clause containing vertices from different components, it is the only option, but we just assumed that $s$ is not in this proof, so we reach a contradiction.
 
   $\ol{a}$ is thus not binary-derivable.
 \end{proof}

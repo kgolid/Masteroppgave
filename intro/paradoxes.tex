@@ -9,9 +9,8 @@ Consider the following example:
 While a sentence like $\neg a \rightarrow b$ can be satisfied by, for instance, letting both $a$ and $b$ be true, no such assignment can be made for the statement above.
 The statement is therefore inconsistent.
 
-A paradox is usually informally defined as something along the lines of \textit{``a statement that can be neither true nor false''}.
-We can immediately note one thing from this intuitive definition:
-Since no paradoxes can be true, all paradoxes are, by definition, inconsistent.
+A paradox can be informally defined as \textit{``a statement that can be neither true nor false''}.
+We can immediately note that since no paradoxes can be true, all paradoxes are, by definition, inconsistent.
 It is however not the case that all inconsistent theories are paradoxes.
 Just consider the inconsistent statement, $x \wedge \neg x$ again: this statement simply seems false, and not paradoxical.
 
@@ -29,21 +28,22 @@ A collection of statements where some of them may refer to themselves or other s
 In order to represent such discourses, we need a formal way of referencing other statements within statements.
 In propositional logic, this can be done simply by giving statements ``names'' in the form of adding fresh variables with equivalences to their corresponding statements.
 
-Consider the examples below; with normal propositional statements to the left, together with the corresponding \textit{named} statements to the right.
+Consider the examples below.
+On the left side are normal propositional statements;
+On the right side are their corresponding \textit{named} statements.
 \begin{align}
   a               && x_1 \leftrightarrow a\\
   a \wedge \neg a && x_2 \leftrightarrow a \wedge \neg a\\
   a \vee \neg a   && x_3 \leftrightarrow a \vee \neg a
 \end{align}
 Labelling statements in this way obviously changes their truth value.
-Even though we have one consistent, one inconsistent and one tautological statement on the left, all the statements become consistent after they have been named.
+Even though there is one consistent, one inconsistent and one tautological statement on the left, all the statements on the right are consistent.
 This is because we can find truth values for both $x_1$, $x_2$ and $x_3$ that match their corresponding statements, making each equivalence true.
 In other words, the truth value of a labelled statement does not refer to whether the unnamed statement is consistent, but whether or not a truth value can be found at all.
 Since we have defined a paradox to be a statement that is neither true nor false, we get that a statement is paradoxical if and only if labelling it makes it inconsistent.
 
-Consider the liar sentence.
-We are able to label it and then use its label in order to reference itself.
-Doing this gives us the following result:
+Consider the liar sentence again;
+labelling it and then using its label in order to make it reference itself gives us the following statement:
 \begin{align}
   x \leftrightarrow \neg x
 \end{align}

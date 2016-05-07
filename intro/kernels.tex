@@ -42,12 +42,14 @@ $N^-(K) \subseteq G \setminus K$, saying that each edge targeting a vertex withi
 
 Kernels have been studied over several decades, not only in graph theory, but also within the fields of game theory and economics.
 The concept was first defined and used by von Neumann and Morgenstern in \cite{neumann}.
+
 In a graph representing some sort of a turn-based game, where vertices are states and edges are transitions between states, one can often work out winning strategies whenever one finds a kernel in the graph.
 Whenever one is outside of the kernel, one always has the possibility of moving inside the kernel (since the kernel is absorbing), while inside the kernel one \textit{has} to move out of it (since the kernel is independent).
 If you are the player with the choice outside the kernel, you can control the game and choose to stabilize it by always moving into the kernel, forcing the opponent to move out again on the next turn.
 
-Deciding the existence of kernels in finite graphs has been shown to be an NP-complete problem\cite{chvatal}.
-This should not be surprising, since we are in the middle of showing the equivalence between this problem and the problem of finding satisfying models of PL theories (SAT), which we know is NP-complete\footnote{We are concerned with SAT over infinitary formulae in this paper, not the finite version from computer science.}.
+Deciding whether kernels exist in finite graphs has been shown to be an NP-complete problem\cite{chvatal}.
+This should not be surprising, since we are in the middle of showing the equivalence between this problem and the problem of finding satisfying models of PL-theories (SAT), which we know is NP-complete.
+It should be noted however, that in this thesis, we will mainly concern ourselves with the existence of kernels in \textit{infinitary} graphs and thus also SAT over infinitary formulae.
 
 We will get the correspondence between models of a discourse theory and kernels in a graph through an alternative, equivalent kernel definition called a \textit{solution}.
 \begin{definition}

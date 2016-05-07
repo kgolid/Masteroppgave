@@ -162,7 +162,6 @@ We will ultimately show that the inconsistency is not binary-derivable, but firs
   If $\ol{uv}$ is binary-derivable, then its proof contains either $\ol{a^N}$, $\ol{a^W}$ or $\ol{a^E}$.
   \label{thm:uv_proof_contains_a}
 \end{lemma}
-
 \begin{proof}
   Base Case:
   No axiom $\ol{uv}$ exists such that $u$ and $v$ are vertices from different components, so our claim vacuously holds.
@@ -185,10 +184,10 @@ We will ultimately show that the inconsistency is not binary-derivable, but firs
 
   Otherwise, $u$ and $v$ are each either in a clause together with the vertex $s$ or a vertex from their own component.
   Both of these cases results in having to use the OR-clause $sa^Na^Wa^E$ in the last proof step, since it is the only OR-clause containing $s$ and the only OR-clause containing vertices from different components.
-  The premise therefore contains two additional NAND-clauses; one of them containing the $a$-vertex of the component not containing $u$ or $v$ - lets call it $a^w$.
+  The premise therefore contains two additional NAND-clauses; one of them containing the $a$-vertex of the component not containing $u$ or $v$ - lets call it $a^t$.
 
-  If the clause containing $a^w$ is unary, we are done.
-  If the clause containing $a^w$ is binary, it must either contain $u$ or $v$ in order to give $\ol{uv}$ in the conclusion, and since $a^w$ is in a component different from both $u$ and $v$, the induction hypothesis gives us the claim.
+  If the clause containing $a^t$ is unary, we are done.
+  If it is binary, it must either contain $u$ or $v$ in order to give $\ol{uv}$ in the conclusion, and since $a^t$ is in a component different from both $u$ and $v$, the induction hypothesis gives us the claim.
 
   The proof must therefore contain either $a^N$, $a^W$ or $a^E$.
 \end{proof}

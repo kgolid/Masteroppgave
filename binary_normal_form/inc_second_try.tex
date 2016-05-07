@@ -235,14 +235,14 @@ We will ultimately show that the inconsistency is not binary-derivable, but firs
   The OR-clause used in this proof step must be $sa^Na^Wa^E$, being the only OR-clause containing $s$ and thus the only clause able to remove it.
   This OR-clause contains 4 vertices, so the premise must contain 3 additional NAND-clauses;
   one containing $a^N$, one containing $a^W$ and one containing $a^E$.
+
   We get the following restrictions on these 3 NAND-clauses.
   \begin{itemize}
     \item None of them can be unary, from the induction hypothesis.
     \item None of them can be binary and contain $s$, since that would give an $s$ in the conclusion, contradicting our assumption of this being the last proof step with $s$ in the premise.
     \item None of them can be binary and contain vertices from two different components, from the induction hypothesis and Lemma~\ref{thm:uv_proof_contains_a}.
   \end{itemize}
-  The 3 additional NAND-clauses must therefore all contain a second vertex from their own component.
-  Since the three component are disjoint, these three vertices are different, making the conclusion of the proof step non-binary, contradicting our original assumption of the proof being binary.
+  The 3 additional NAND-clauses must therefore all contain a second vertex $p$ from their own component.
 
   If the proof does not contain $s$, then it uses some vertex $p$ from another component.
   Consider the last proof step with an ``external'' vertex in the premise.
@@ -251,6 +251,7 @@ We will ultimately show that the inconsistency is not binary-derivable, but firs
   That clause cannot contain any external vertices, from Lemma 1 and IH, so it must a clause with two N-vertices.
   The OR-clause used must therefore contain the external vertex $p$ and a vertex from N.
   $sa^Na^Wa^E$ is the only one with this property, but we have assumed that $s$ is not in this proof.
+  Since the three components are disjoint, these three $p$-vertices are different, making the conclusion of the proof step non-binary, contradicting our original assumption of the proof being binary.
 
   $\ol{a}$ is thus not binary-derivable.
 \end{proof}

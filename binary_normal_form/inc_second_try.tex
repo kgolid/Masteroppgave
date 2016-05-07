@@ -218,12 +218,16 @@ We will ultimately show that the inconsistency is not binary-derivable, but firs
 \end{lemma}
 \begin{proof}
   We prove it by structural induction over the complexity of the proof tree.
+
   Base Case:
   Neither $\ol{a^N}$, $\ol{a^W}$ nor $\ol{a^E}$ are axioms, so the claim vacuously holds.
 
   Induction step:
   Suppose we have a binary proof of $\ol{a}$, where $a$ is either $a^N$, $a^W$ or $a^E$.
-  Since the proof is binary, we get from our induction hypothesis that neither $\ol{a^N}$, $\ol{a^W}$ nor $\ol{a^E}$ appears in the proof.
+  The vertices within the same component as the one containing $a$ will be referred to as \textit{internal} vertices, while the vertices within the two other components will be referred to as \textit{external} vertices.
+  Note that since $s$ is not inside any component, it is neither internal nor external.
+
+  First, since the proof is binary, we get from our induction hypothesis that neither $\ol{a^N}$, $\ol{a^W}$ nor $\ol{a^E}$ appears in it.
 
   We get from Lemma~\ref{} that $\ol{a}$ is not binary-derivable using clauses from within its own component only, so the binary proof must use vertices outside the component containing $a$; either the $s$-vertex or vertices from other components.
 

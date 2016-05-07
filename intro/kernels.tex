@@ -13,10 +13,11 @@ We define the two functions formally as follows:
   N(x) := \{y \;|\; (x,y) \in N\}\\
   N^-(x) := \{ y \;|\; (y,x) \in N \}
 \end{align}
-The number of successors a vertex has is often called the \textit{out-degree} of that vertex.
-The number of predecessors is called the \textit{in-degree}.
-If a vertex has out-degree 0, we call it a \textit{sink}; if it has in-degree 0, we call it a \textit{source}.
-
+\begin{definition}
+  The number of successors a vertex has is often called the \textit{out-degree} of that vertex.
+  The number of predecessors is called the \textit{in-degree}.
+  If a vertex has out-degree 0, we call it a \textit{sink}; if it has in-degree 0, we call it a \textit{source}.
+\end{definition}
 \begin{definition}
   A \textit{simple path} is a sequence of distinct vertices $x_1,x_2,\dots,x_n$ such that for each consecutive pair $x_i,x_{i+1}$ from the sequence, we have $(x_i, x_{i+1}) \in N$.
   We say that two paths are \textit{disjoint} if they do not share any vertices (with the possible exception of their initial vertices).

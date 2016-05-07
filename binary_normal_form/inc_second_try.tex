@@ -89,3 +89,21 @@
   $\varnothing$ is not binary-derivable.
   \label{thm:non_binary_derivable_paradox}
 \end{theorem}
+
+\begin{proof}
+  Assume we have a binary proof of $\varnothing$;
+  proof must contain $\ol{s}$.
+  Consider the last proof step with $s$ in the premise:
+  This proof step must remove $s$ and thus use the OR-claus e$sa^Na^Wa^E$.
+  Premise must contain 3 additional NAND-clauses;
+  one containing $a^N$, one containing $a^W$ and one containing $a^E$.
+  \begin{itemize}
+    \item None of them can contain $s$, since that would give an $s$ in the conclusion.
+    \item None of them can be unary, from Lemma 2.
+    \item None of them can contain a second vertex from another component, from Corollary 3.
+  \end{itemize}
+  The 3 additional NAND-clauses must therefore all contain a second vertex from its own component,
+  making the conclusion non-binary, contradiction our original assumption.
+
+  $\varnothing$ is therefore not binary-derivable.
+\end{proof}

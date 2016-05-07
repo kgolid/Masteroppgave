@@ -303,9 +303,9 @@ We will ultimately show that the inconsistency is not binary-derivable, but firs
   one containing $a^N$, one containing $a^W$ and one containing $a^E$.
   We get the following restrictions on these three clauses:
   \begin{itemize}
-    \item None of them can contain $s$, since that would give an $s$ in the conclusion.
-    \item None of them can be unary, from Lemma 2.
-    \item None of them can contain a second vertex from another component, from Corollary 3.
+    \item None of them can be unary, from Lemma~\ref{thm:non_binary_derivable_a}.
+    \item None of them can be binary and contain $s$, since that would give an $s$ in the conclusion, contradicting our assumption of this being the last proof step with $s$ in the premise.
+    \item None of them can be binary and contain vertices from two different components, from Corollary~\ref{thm:non_binary_derivable_uv}.
   \end{itemize}
   The 3 additional NAND-clauses must therefore all contain a second vertex from their own component,
   making the conclusion non-binary, contradicting our original assumption of the proof being binary.

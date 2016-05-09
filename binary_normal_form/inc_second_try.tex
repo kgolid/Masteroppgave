@@ -244,7 +244,7 @@ We will ultimately show that the inconsistency is not binary-derivable, but firs
   \end{itemize}
   The 3 additional NAND-clauses must therefore all contain a second vertex $p$ from their own component.
 
-  Figure~\ref{fig:proof_example_uv} illustrates the situation.\par
+  Figure~\ref{fig:proof_triple_conclusion} illustrates the situation.\par
   \begin{figure}[!h]
     \centering
     \begin{prooftree}
@@ -255,8 +255,9 @@ We will ultimately show that the inconsistency is not binary-derivable, but firs
       \Infer[right label=$sa^Na^Wa^E$]4{\ol{p^Np^Wp^E}}
     \end{prooftree}
     \caption{}
-    \label{fig:proof_example_uv}
+    \label{fig:proof_triple_conclusion}
   \end{figure}
+  \FloatBarrier
   Since the three components are disjoint, these three $p$-vertices are different, making the conclusion of the proof step non-binary, contradicting our original assumption of the proof being binary.
 
   If the proof does \textit{not} contain $s$, then it uses external vertices.

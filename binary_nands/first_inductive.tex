@@ -167,9 +167,9 @@ Given the above graph, $\ol{ab}$ can be proven like follows:\par
   \caption{}
   \label{fig:v2_counter_proof}
 \end{figure}
-To show that the graph in Figure~\ref{fig:v2_counter_graph} is not an instance of $V_2$ demands a closer look at the graph.
+We now show that the graph in Figure~\ref{fig:v2_counter_graph} is not an instance of $V_2$.
 
-Assume $V_2(a,b)$.
+Suppose that $V_2(a,b)$.
 Since $a$ and $b$ are not connected by an edge, their relation has to be an instance of the inductive step.
 Because of the non-emptiness requirement, $\exists c \in N(a):\exists d \in N(c): V_2(d,b)$ from the $V_2$ definition, either $a$  must have a successor $c$ which again has a successor $d$ such that $V_2(d,b)$ or $b$ must have a successor $c$ which again has a successor $d$ such that $V_2(d,a)$.
 

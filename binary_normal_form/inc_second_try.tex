@@ -186,7 +186,7 @@ We will ultimately show that the inconsistency is not binary-derivable, but firs
   Each of these cases implies $Y = sa^Na^Wa^E$ in the last proof step, since it is the only OR-clause containing $s$ and the only OR-clause containing vertices from different components.
   The premise therefore contains two additional NAND-clauses; one of them containing the $a$-vertex of the component not containing $u$ or $v$ -- let us call this vertex $a^t$.
 
-  Figure~\ref{fig:proof_example_uv} contains examples of two possible cases.\par
+  Figure~\ref{fig:proof_example_uv} illustrates the two possible cases.\par
   \begin{figure}[!h]
     \centering
     \begin{prooftree}
@@ -240,7 +240,7 @@ We will ultimately show that the inconsistency is not binary-derivable, but firs
   \begin{itemize}
     \item None of them can be unary, from the induction hypothesis.
     \item None of them can be binary and contain $s$, since that would give an $s$ in the conclusion, contradicting our assumption of this being the last proof step with $s$ in the premise.
-    \item None of them can be binary and contain vertices from two different components, from the induction hypothesis and Lemma~\ref{thm:uv_proof_contains_a}.
+    \item None of them can be binary and contain vertices from two different components, from Lemma~\ref{thm:uv_proof_contains_a} the induction hypothesis.
   \end{itemize}
   The 3 additional NAND-clauses must therefore all contain a second vertex $p$ from their own component.
 

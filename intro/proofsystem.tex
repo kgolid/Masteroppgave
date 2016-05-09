@@ -10,7 +10,7 @@ Recall that a theory written in GNF has formulae of the following form:
 \begin{align}
   x \lar \bigwedge_{i \in I_x} \neg y_i
 \end{align}
-Using simple operations only, one can manipulate these formulae into an equivalent set of clauses.
+Using simple operations only, these formulae can be translated into an equivalent set of clauses.
 We start by writing the above bi-implication as two implications:
 \begin{align}
   x \rightarrow \bigwedge_{i \in I_x} \neg y_i \quad\quad \text{and} \quad\quad x \leftarrow \bigwedge_{i \in I_x} \neg y_i
@@ -38,7 +38,7 @@ This enables us to state things like $\overline{xy} \subset \overline{xyz}$.
 A theory will -- as expected -- be a set of OR- and NAND-clauses.
 
 If we interpret the initial GNF-theory as a graph $\mathbf{G}=\langle G,N\rangle$, for every vertex $x \in G$, there will be one OR-clause $\{ x \} \cup N(x)$ and for every edge $\langle x,y \rangle \in N$ there will be a NAND-clause $\overline{xy}$.
-The graphs from Example~\ref{ex:3graphs} will have the following clausal theories:
+The graphs from Figure~\ref{ex:3graphs} will have the following clausal theories:
 \begin{align}
   \mathcal{T}(\mathbf{G_1}) &= \{ a, \ol{a} \}\\
   \mathcal{T}(\mathbf{G_2}) &= \{ abc, b, c, \ol{ab}, \ol{ac} \}\\
@@ -77,7 +77,7 @@ Here are some examples of incorrect applications of the (Rneg)-rules, followed b
   (5)\;\;\frac{\ol{ax}\quad\ol{b}}{\ol{x}}ab\quad\quad
   (6)\;\;\frac{\ol{ax}\quad\ol{by}\quad\ol{xyz}}{\ol{xyz}}abx
 \end{align}
-The three above applications are all correct, since all the atoms in each OR-clause get matched to exactly one NAND-clause in such a way that no NAND-clause stays unmatched.
+The above applications are all correct, since all the atoms in each OR-clause get matched to exactly one NAND-clause in such a way that no NAND-clause stays unmatched.
 
 We set no restrictions on the number and cardinality of our clauses, meaning that there might be an infinite number of clauses, and both the OR-clauses and the NAND-clauses might be either finite or infinite in size.
 Note that an infinite graph gives infinitely many NAND-clauses, while an infinitary graph also gives us infinitely long OR-clauses.

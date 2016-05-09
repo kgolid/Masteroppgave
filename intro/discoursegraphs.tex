@@ -57,7 +57,7 @@ These are also the only two models of $\mathcal{T}(\mathbf{G_3})$.
 Conversely, given any discourse theory $T$ (in fact, this will work given any PL theory, since we can translate CNF to GNF), we can derive the corresponding graph $\mathcal{G}(T)$ in the following way:
 All variables in the theory are vertices, and for each formula $x \leftrightarrow \bigwedge_{y \in I_x} y$ make a directed edge $\langle x,y \rangle$ for each $y \in I_x$.
   \begin{align}
-    ( a \lar \neg a'), (a' \lar \neg a), (b \lar \neg b'), (b' \lar \neg b), (y_1 \lar (\neg a \wedge \neg b \wedge \neg y_1))
+    T = \{ ( a \lar \neg a'), (a' \lar \neg a), (b \lar \neg b'), (b' \lar \neg b), (y_1 \lar (\neg a \wedge \neg b \wedge \neg y_1)) \}
   \end{align}
   Using $\mathcal{G}$ on the above GNF theory gives us the following graph:\par
   \begin{figure}[!h]

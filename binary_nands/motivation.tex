@@ -25,7 +25,6 @@ This fact was also observed and formalized by Walicki\cite{michal-completeness}:
 We know from the definition that any OR-clause used in the proof system corresponds to a single vertex with its successors in the graph.
 We do however not know what the NAND-clauses of length 1 might correspond to.
 Knowing this would, by soundness and completeness of Neg, give us the graph structure needed for a kernel not to exist.
-\todo{Currently brushing over the restrictions set to the proofs of completeness and soundness. Will fix this later.}
 
 The only thing we \textit{do} know about unary NAND-clauses is that they correspond to vertices that are assigned 0 in all models of the graph.
 We get this from soundness of Neg.
@@ -74,7 +73,7 @@ Let $R(a,b)$ denote the existence of some graph structure $R$ between the vertic
 The two implications will be referred to as \textit{implication (1)} and \textit{implication (2)}, respectively.
 
 Suppose we manage to find a structure $R$ that satisfied both above implications.
-The following equation tells us how that would directly give us a predicate deciding whether or not the graph has a kernel.\todo{This should be rewritten.}
+The following equation tells us how that would directly give us a predicate deciding whether or not the graph has a kernel.
 \begin{align}
   &Sol(G) = \varnothing\\
   \Leftrightarrow\; &G \vdash \varnothing\\

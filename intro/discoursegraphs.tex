@@ -10,43 +10,43 @@ $\mathcal{T}:$ translating a digraph \textbf{G} into a corresponding theory $\ma
 
 $\mathcal{G}:$ translating a theory $T$ into a corresponding digraph $\mathcal{G}(T)$ such that $mod(T) = sol(\mathcal{G}(T))$.
 
-Given any digraph \textbf{G} we get the theory $\mathcal{T}(\mathbf{G})$ by taking, for each $x \in G$, the formula $x \leftrightarrow \bigwedge_{y \in N(x)} \neg y$ where $\bigwedge \emptyset = 1$.
-\begin{example}\label{ex:3graphs}
-  \[
-    \begin{tikzpicture}
-      [
-      point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
-      collection/.style={thick,rectangle,draw,inner sep=0pt,minimum height=14mm, minimum width= 9mm}
-      ]
-      \node (label) at (0,1) [label=left:$(\mathbf{G_1})\;$] {};
-      \node (0) at (0,1) [point,label=above:a] {};
-      \draw [-latex, loop right] (0) to (0);
+Given any digraph \textbf{G} we get the theory $\mathcal{T}(\mathbf{G})$ by taking, for each $x \in G$, the formula $x \leftrightarrow \bigwedge_{y \in N(x)} \neg y$ where $\bigwedge \emptyset = 1$.\par
+\begin{figure}[!h]
+  \centering
+  \begin{tikzpicture}
+    [
+    point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
+    collection/.style={thick,rectangle,draw,inner sep=0pt,minimum height=14mm, minimum width= 9mm}
+    ]
+    \node (label) at (0,1) [label=left:$(\mathbf{G_1})\;$] {};
+    \node (0) at (0,1) [point,label=above:a] {};
+    \draw [-latex, loop right] (0) to (0);
 
-      \node (label) at (3,1) [label=left:$(\mathbf{G_2})\;$] {};
-      \node (0) at (4,1) [point,label=above:a] {};
-      \node (1) at (3,1) [point,label=above:b] {};
-      \node (2) at (5,1) [point,label=above:c] {};
-      \draw [-latex] (0) to (1);
-      \draw [-latex] (0) to (2);
+    \node (label) at (3,1) [label=left:$(\mathbf{G_2})\;$] {};
+    \node (0) at (4,1) [point,label=above:a] {};
+    \node (1) at (3,1) [point,label=above:b] {};
+    \node (2) at (5,1) [point,label=above:c] {};
+    \draw [-latex] (0) to (1);
+    \draw [-latex] (0) to (2);
 
-      \node (label) at (8,1) [label=left:$(\mathbf{G_3})\;$] {};
-      \node (0) at (8,1) [point,label=above:a] {};
-      \node (1) at (8,0) [point,label=left:b] {};
-      \node (2) at (9,0) [point,label=right:c] {};
-      \draw [-latex] (0) to (2);
-      \draw [-latex] (0) to (1);
-      \draw [-latex, bend right] (1) to (2);
-      \draw [-latex, bend right] (2) to (1);
-    \end{tikzpicture}
-  \]
-  The above graphs have the following theories:
-  \begin{align}
-    \mathcal{T}(\mathbf{G_1}) &= \big \{ a \leftrightarrow \neg a \big \} \\
-    \mathcal{T}(\mathbf{G_2}) &= \big \{ a \leftrightarrow (\neg b \wedge \neg c), b, c \big \}\\
-    \mathcal{T}(\mathbf{G_3}) &= \big \{ a \leftrightarrow (\neg b \wedge \neg c), b \leftrightarrow \neg c, c \leftrightarrow \neg b \big \}
-  \end{align}
-
-\end{example}
+    \node (label) at (8,1) [label=left:$(\mathbf{G_3})\;$] {};
+    \node (0) at (8,1) [point,label=above:a] {};
+    \node (1) at (8,0) [point,label=left:b] {};
+    \node (2) at (9,0) [point,label=right:c] {};
+    \draw [-latex] (0) to (2);
+    \draw [-latex] (0) to (1);
+    \draw [-latex, bend right] (1) to (2);
+    \draw [-latex, bend right] (2) to (1);
+  \end{tikzpicture}
+  \caption{}
+  \label{ex:3graphs}
+\end{figure}
+  The graphs in Figure~\ref{ex:3graphs} have the following theories:
+\begin{align}
+  \mathcal{T}(\mathbf{G_1}) &= \big \{ a \leftrightarrow \neg a \big \} \\
+  \mathcal{T}(\mathbf{G_2}) &= \big \{ a \leftrightarrow (\neg b \wedge \neg c), b, c \big \}\\
+  \mathcal{T}(\mathbf{G_3}) &= \big \{ a \leftrightarrow (\neg b \wedge \neg c), b \leftrightarrow \neg c, c \leftrightarrow \neg b \big \}
+\end{align}
 The fact that $sol(\mathbf{G}) = mod(\mathcal{T}(G))$ is shown in \cite{apal-digraph}.
 All though not proving it, we observe that $\mathbf{G_1}$ has no solution, just like its corresponding theory $\mathcal{T}(\mathbf{G_1})$ has no models.
 $\mathbf{G_2}$ has one solution, where one assigns $a=0, b=1, c=1$.

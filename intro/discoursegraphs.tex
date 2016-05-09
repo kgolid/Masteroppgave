@@ -56,18 +56,18 @@ These are also the only two models of $\mathcal{T}(\mathbf{G_3})$.
 
 Conversely, given any discourse theory $T$ (in fact, this will work given any PL theory, since we can translate CNF to GNF), we can derive the corresponding graph $\mathcal{G}(T)$ in the following way:
 All variables in the theory are vertices, and for each formula $x \leftrightarrow \bigwedge_{y \in I_x} y$ make a directed edge $\langle x,y \rangle$ for each $y \in I_x$.
-\begin{example}
   \begin{align}
     ( a \lar \neg a'), (a' \lar \neg a), (b \lar \neg b'), (b' \lar \neg b), (y_1 \lar (\neg a \wedge \neg b \wedge \neg y_1))
   \end{align}
-  Using $\mathcal{G}$ on the above GNF theory gives us the following graph:
-  \[
+  Using $\mathcal{G}$ on the above GNF theory gives us the following graph:\par
+  \begin{figure}[!h]
+    \centering
     \begin{tikzpicture}
       [
       point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
       collection/.style={thick,rectangle,draw,inner sep=0pt,minimum height=14mm, minimum width= 9mm}
       ]
-      \node (label) at (5,1) [label=left:$(\mathcal{G}(T_1))\;$] {};
+      \node (label) at (5,1) [label=left:$(\mathcal{G}(T))\;$] {};
       \node (0) at (5,1) [point,label=above:$y_1$] {};
       \node (1) at (6,0) [point,label=above:b] {};
       \node (2) at (7,0) [point,label=above:b'] {};
@@ -81,9 +81,10 @@ All variables in the theory are vertices, and for each formula $x \leftrightarro
       \draw [-latex, bend right] (3) to (4);
       \draw [-latex, bend right] (4) to (3);
     \end{tikzpicture}
-  \]
-\end{example}
-Again, will we not be proving the correspondence, but notice that $T_2$ has three solutions, where either $a$, $b$ or both are assigned $1$.
+    \caption{}
+    \label{ex:graph_from_theory}
+\end{figure}
+Again, will we not be proving the correspondence, but notice that $T$ has three solutions, where either $a$, $b$ or both are assigned $1$.
 This reflects onto the graph where $y_1$ has to be assigned $0$, thus forcing $a$ or $b$ to be assigned $1$.
 The fact that $\mathcal{G}$ gives us the correspondence we are looking for is shown in \cite{apal-digraph}.
 

@@ -5,4 +5,78 @@ While developing the proof of the refutational incompleteness of BNeg, some addi
 Even though they ultimately didn't turn out useful for the main proof, they do bear some general significance.
 These observations will be presented and proved in this section.
 
-[TO BE WRITTEN]
+\subsection{Observation 1}
+\label{sub:Observation 1}
+Let $\mathbf{G} = \langle G,N \rangle$ be a digraph with a source vertex $x$.
+Let $\{A_i\}$ be a \textit{partitioning} of $G \setminus \{ x \}$ (a set of pairwise disjoint, nonempty subsets of $G$ such that $\bigcup \{A_i\} = G \setminus \{ x \}$) such that for each $A_i$ we have that $N(A_i) \subseteq A_i$ and $N^-(A_i) \setminus A_i = \{ x \}$.
+In words, nothing points out of $A_i$ and only $x$ points in.
+
+The induced subgraphs we get from each $A_i$ will be referred to as \textit{components}.\par
+\begin{figure}[!h]
+  \centering
+  \begin{tikzpicture}
+    [
+    point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
+    collection/.style={rectangle,draw,inner sep=0pt,minimum height=10mm, minimum width= 18mm}
+    ]
+    \node (x) at (3,2) [point, label=above:$x$] {};
+    \node (A1) at (0,0) [collection] {$A_1$};
+    \node (A2) at (2,0) [collection] {$A_2$};
+    \node (dots) at (4,0) [] {\dots};
+    \node (An) at (6,0) [collection] {$A_n$};
+    \draw [-latex] (x) to (A1);
+    \draw [-latex] (x) to (A2);
+    \draw [-latex, dashed] (x) to (dots);
+    \draw [-latex] (x) to (An);
+  \end{tikzpicture}
+  \caption{Graph $G$}
+  \label{fig:components_link}
+\end{figure}
+A couple of observations can be made based on the above graph-construction $G$:
+\begin{itemize}
+  \item The vertex $x$ only appears in 1 OR-clause, since it is a source vertex.
+  This is also the only OR-clause containing vertices from different components.
+  We will call this OR-clause $X$ and formally define it as $N(x) \cup \{ x\}$.
+  \item For any vertex $p$ except $x$, we have that $p$ only appears in axiomatic NAND-clauses together with either $x$ or other vertices in the same component.
+\end{itemize}
+Based on graph $G$ from Figure~\ref{fig:components_link} we show the following lemma:
+\begin{lemma}
+  Given a set of vertices $B \subseteq \bigcup \{ A_i \}$ such that $\forall A \in \{A_i\}: B \neg\subseteq A$;
+  if $G \vdash_{Neg} \ol{B}$ then the proof must contain the OR-clause $X$.
+  \label{thm:or_clause_lemma}
+\end{lemma}
+\begin{proof}
+  The lemma will be proven by structural induction on the complexity of the proof tree for $\ol{B}$.
+
+  In the base case, the proof tree is just an axiom.
+  There exists no axiom in $\bigcup{A_i}$ which is not a subset of some component $A_k$, so our claim vacuously holds.
+
+  For the inductive step, suppose we have a proof of $\ol{B}$ and consider the premise of the last rule application.
+  The following figure illustrates the general situation, with $B = B_1 \cup b_2 \cup \dots \cup B_n$:\par
+  \begin{figure}[!h]
+    \centering
+    \begin{prooftree*}
+      \Hypo{\dots}
+      \Infer[]1{\ol{B_1c_1}}
+      \Hypo{\dots}
+      \Infer[]1{\ol{B_2c_2}}
+      \Hypo{\dots}
+      \Hypo{\dots}
+      \Infer[]1{\ol{B_nc_n}}
+      \Infer[right label=$c_1c_2\dots c_n$]4{\ol{B}}
+    \end{prooftree*}
+    \caption{}
+    \label{fig:B_proof}
+  \end{figure}
+  \FloatBarrier
+  Since $\ol{B}$ does not contain $x$, neither does any of the $B_i$-clauses.
+  If some $c_i = x$, then the OR-clause $c_1c_2\dots c_n = X$, being the only OR-clause containing $x$.
+
+  Otherwise, if some NAND-clause $\ol{B_ic_i}$ contains vertices from two different components, the induction hypothesis tells us that its proof must contain $X$, so we are done.
+
+  The last case is where each NAND-clause $\ol{B_ic_i}$ in the premise contains vertices from one component only.
+  Since $\ol{B}$ contains vertices from at least two different components, it cannot be the case that all the NAND-clauses in the premise take their vertices from the same component.
+  At least two of the $c_i$-vertices therefore come from different components, so the OR-clause used must be $X$, being the only OR-clause containing vertices from different components.
+
+  The proof of $\ol{B}$ must therefore contain the OR-clause $X$.
+\end{proof}

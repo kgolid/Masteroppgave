@@ -1,0 +1,20 @@
+% !TEX root= ../main.tex
+This thesis has found various graph structures implying provability of certain NAND-clauses in Neg.
+The process of continuously generalizing these structures has given several examples of unconventional graphs still providing provable clauses.
+One of these exemplified that some provable binary NAND-clauses are not binary-derivable.
+This example was further extended to show that the inference system is \textit{not} refutationally complete when restricted to using binary NAND-clauses only.
+
+If one where to continue on this work, several aspects of Neg are still left untouched.
+One example is its non-explosiveness.
+Neg is not complete, so it does \textit{not} hold in general that $G \vDash \ol{A} \Rightarrow G \vdash \ol{A}$.
+It seems like Neg can prove a NAND-clause $\ol{A}$ when none of its subsets $\ol{B} \subset \ol{A}$ are provable.
+This can be formalized as the following conjecture:
+\begin{conjecture}
+  Given a graph $G$ and a set of vertices $A \subseteq G$:
+  \begin{align}
+    G \vDash \ol{A} \wedge \forall B \subset A: G \not\vDash \ol{ B } \;\Rightarrow \; \vdash A
+  \end{align}
+\end{conjecture}
+
+Also, more work could be put into exploring graph structural relations $V$ such that $G \vdash \ol{ab} \Rightarrow V(a,b)$.
+In hindsight, such a relation could potentially contribute to Walicki's conjecture in a more direct way than what relations satisfying the inverse implication would.

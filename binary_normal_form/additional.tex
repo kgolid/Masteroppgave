@@ -15,6 +15,15 @@ We now prove the following lemma:
 \begin{lemma}
   Given a graph $\mathbf{G} = \langle G,N \rangle$ and a set of vertices $B \subseteq G$; if $\ol{B}$ is provable in Neg, then all the vertices in $B$ are from the same component.
 \end{lemma}
+\begin{proof}
+  We prove it by structural induction over the complexity of the proof tree of some NAND-clause $\ol{B}$.
+
+  Since no axioms contain vertices from different isolated components, the claim holds for the base case.
+
+  For the inductive step, suppose we have a proof of the NAND-clause $\ol{B}$.
+  The induction hypothesis lets us assume that each of the NAND-clauses in the premise contain vertices from the same component.
+  Since no OR-clause contain vertices from different components, we get that \textit{all} the NAND-clauses in the premise are from the same component, so the concluding $\ol{B}$ must also contain vertices from the same component.
+\end{proof}
 \subsection{Observation 2}
 \label{sub:Observation 2}
 Let $\mathbf{G} = \langle G,N \rangle$ be a digraph with a source vertex $x$.

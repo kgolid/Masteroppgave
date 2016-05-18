@@ -28,5 +28,8 @@ We can formalize this into a corollary on its own:
 \end{corollary}
 In words, if no kernel in $G$ contains $A$, but for each subset $B \subset A$, there is a kernel that contains $B$, then $\ol{A}$ is provable in Neg.
 
-Also, more work could be put into exploring graph structural relations $V$ such that $G \vdash \ol{ab} \Rightarrow V(a,b)$.
-In hindsight, such relations could potentially contribute to Walicki's conjecture in a more direct way than what relations satisfying the inverse implication would.
+Based on this observation, one might be able to find some interesting relations between the kernels in the graph and the set $A$.\todo{examples?}
+
+Also, more work could be put into exploring graph structural relations $V$ such that for a graph $G$ and a set $A \subseteq G$ we have $G \vdash \ol{A} \Rightarrow V(A)$.
+The relation ``being connected in the underlying undirected graph'' is certainly such a relation, as shown in Section~\ref{sub:Observation 1}.
+If one is able to strengthen that relation, it will probably make a bigger contribution to the proof of Walicki's conjecture than relations satisfying the inverse implication.

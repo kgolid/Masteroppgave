@@ -11,8 +11,6 @@ Knowing this, one can move forward by trying to find other characterizing featur
 One example is its non-explosiveness, mentioned in \cite{michal-completeness}
 While more traditional proof systems often are explosive and thus able to prove anything from inconsistent theories, Neg can only prove certain clauses.
 It would be interesting to take a closer look at these clauses that are provable by the virtue of the graph being inconsistent, and potentially develop some definition of the ``explosive range'' of a graph.
-\begin{conjecture}
-  Given a graph $G$ and a set of vertices $A \subseteq G$:
 The concept of \textit{local kernels}, as defined and studied in \cite{synthese-pdl}, might contribute to this definition.
 
 The non-explosiveness of Neg comes from the more general fact that Neg does not have \textit{weakening}, i.e. while rules like $\vdash x \Rightarrow \vdash x \vee y$ are admissible in most proof systems (necessarily so for completeness), this is not the case for Neg.
@@ -22,10 +20,12 @@ An interesting question might therefore be ``\textit{when} does it hold''?
 Corollary~5.1 from \cite{michal-completeness} tells us that $\Gamma \vDash \ol{A} \Leftrightarrow \exists B \subseteq A: \Gamma \vdash \ol{B}$.
 A direct consequence of this is that $\Gamma \vDash \ol{A} \Rightarrow \Gamma \vdash \ol{A}$ holds when $\forall B \subset A: \Gamma \not\vdash B$ and by soundness also when $\forall B \subset A: \Gamma \not\vDash B$
 We can formalize this into a corollary on its own:
+\begin{corollary}
+  Given a graph $\mathbf{G} = \langle G,N \rangle$ and a set of vertices $A \subseteq G$, let $\Gamma = \mathcal{T}(\mathbf{G})$:
   \begin{align}
-    G \vDash \ol{A} \wedge \forall B \subset A: G \not\vDash \ol{ B } \;\Rightarrow \; \vdash A
+    \Gamma \vDash \ol{A} \wedge \forall B \subset A: \Gamma \not\vDash \ol{ B } \;\Rightarrow \; \Gamma \vdash \ol{A}
   \end{align}
-\end{conjecture}
+\end{corollary}
 
 Also, more work could be put into exploring graph structural relations $V$ such that $G \vdash \ol{ab} \Rightarrow V(a,b)$.
 In hindsight, such relations could potentially contribute to Walicki's conjecture in a more direct way than what relations satisfying the inverse implication would.

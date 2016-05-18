@@ -4,11 +4,11 @@ The process of continuously generalizing these structures has given several exam
 One of these exemplified that some provable binary NAND-clauses are not binary-derivable.
 This example was further extended to show that Neg is \textit{not} refutationally complete when restricted to using binary NAND-clauses only.
 
-If one where to continue on this work, several aspects of Neg are still left untouched.
-One example is its non-explosiveness.
 In our context, this is primarily a negative result.
 If BNeg \textit{was} refutationally complete, our search for a graph-structural equivalent of provable clauses would be easier, allowing us to assume that any clause is provable using binary NAND-clauses only.
 
+Knowing this, one can move forward by trying to find other characterizing features of Neg.
+One example is its non-explosiveness, mentioned in \cite{michal-completeness}
 While more traditional proof systems often are explosive and thus able to prove anything from inconsistent theories, Neg can only prove certain clauses.
 It would be interesting to take a closer look at these clauses that are provable by the virtue of the graph being inconsistent, and potentially develop some definition of the ``explosive range'' of a graph.
 Neg is not complete, so it does not hold in general that $G \vDash \ol{A} \Rightarrow G \vdash \ol{A}$, but it might seem like Neg can prove a semantically true NAND-clause $\ol{A}$ when none of its subsets $\ol{B} \subset \ol{A}$ are provable.

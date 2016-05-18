@@ -7,6 +7,16 @@ These observations will be presented and proved in this section.
 
 \subsection{Observation 1}
 \label{sub:Observation 1}
+Given a graph $\mathbf{G} = \langle G,N \rangle$ and a set of vertices $A \subseteq G$, if $N(A) \subseteq A$ and $N^-(A) \subseteq A$, we call it an \textit{isolated component} of the graph $\mathbf{G}$.
+
+Since there are no edges between any two isolated components, we get that no axiomatic NAND- and OR-clauses can contain vertices from two different isolated components.
+
+We now prove the following lemma:
+\begin{lemma}
+  Given a graph $\mathbf{G} = \langle G,N \rangle$ and a set of vertices $B \subseteq G$; if $\ol{B}$ is provable in Neg, then all the vertices in $B$ are from the same component.
+\end{lemma}
+\subsection{Observation 2}
+\label{sub:Observation 2}
 Let $\mathbf{G} = \langle G,N \rangle$ be a digraph with a source vertex $x$.
 Let $\{A_i\}$ be a \textit{partitioning} of $G \setminus \{ x \}$ (a set of pairwise disjoint, nonempty subsets of $G$ such that $\bigcup \{A_i\} = G \setminus \{ x \}$) such that for each $A_i$ we have that $N(A_i) \subseteq A_i$ and $N^-(A_i) \setminus A_i = \{ x \}$.
 In words, nothing points out of $A_i$ and only $x$ points in.

@@ -7,7 +7,7 @@ This example was further extended to show that Neg is \textit{not} refutationall
 In our context, this is primarily a negative result.
 If BNeg \textit{was} refutationally complete, our search for a graph-structural equivalent of provable clauses would be easier, allowing us to assume that any clause is provable using binary NAND-clauses only.
 
-Knowing this, one can move forward by trying to find other characterizing features of Neg.
+Knowing this, one can move forward by trying to find other features of Neg.
 One example is its non-explosiveness, mentioned in \cite{michal-completeness}
 While classical proof systems are explosive and thus able to prove anything from inconsistent theories, Neg can only prove certain clauses.
 It would be interesting to take a closer look at these clauses that are provable by the virtue of the graph being inconsistent, and potentially develop some definition of the ``explosive range'' of a graph.
@@ -16,19 +16,19 @@ The concept of \textit{local kernels}, as defined and studied in \cite{synthese-
 The non-explosiveness of Neg comes from the more general fact that Neg does not have \textit{weakening}, i.e. while rules like $\Gamma \vdash x \; \Rightarrow \; \Gamma \vdash x \vee y$ are admissible in classical proof systems, this is not the case for Neg.
 
 Since Neg is not complete, it does not hold in general that $\Gamma \vDash \ol{A} \Rightarrow \Gamma \vdash \ol{A}$.
-An interesting question might therefore be ``\textit{when} does it hold''?
+An interesting question might therefore be ``\textit{when} does it hold?''.
 Corollary~5.1 from \cite{michal-completeness} tells us that $\Gamma \vDash \ol{A} \Leftrightarrow \exists B \subseteq A: \Gamma \vdash \ol{B}$.
 A direct consequence of this is that $\Gamma \vDash \ol{A} \Rightarrow \Gamma \vdash \ol{A}$ holds when $\forall B \subset A: \Gamma \not\vdash B$ and by soundness also when $\forall B \subset A: \Gamma \not\vDash B$.
 We can formalize this into a corollary on its own:
 \begin{corollary}
-  Given a graph $\mathbf{G} = \langle G,N \rangle$ and a set of vertices $A \subseteq G$ and let $\Gamma = \mathcal{T}(\mathbf{G})$:
+  Given a graph $\mathbf{G} = \langle G,N \rangle$ and a set of vertices $A \subseteq G$, let $\Gamma = \mathcal{T}(\mathbf{G})$:
   \begin{align}
     \Gamma \vDash \ol{A} \wedge \forall B \subset A: \Gamma \not\vDash \ol{ B } \;\Rightarrow \; \Gamma \vdash \ol{A}
   \end{align}
 \end{corollary}
 In words, if no kernel in $G$ contains $A$, but for each subset $B \subset A$, there is a kernel that contains $B$, then $\ol{A}$ is provable in Neg.
 
-Based on this observation, one might be able to find some interesting relations between the kernels in the graph and the set $A$.\todo{examples?}
+Based on this observation, one might be able to find some interesting relations between the kernels in the graph and the set $A$.
 
 Also, more work could be put into exploring graph structural relations $V$ such that for a graph and a subset $A$ of its vertices, we have $\Gamma \vdash \ol{A} \Rightarrow V(A)$.
 The relation ``being connected in the underlying undirected graph'' is certainly such a relation, as shown in Section~\ref{sub:Observation 1}.

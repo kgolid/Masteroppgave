@@ -13,7 +13,8 @@ Since there are no edges between any two isolated components, we get that no axi
 
 We now prove the following lemma:
 \begin{lemma}
-  Given a graph $\mathbf{G} = \langle G,N \rangle$ and a set of vertices $B \subseteq G$; if $\ol{B}$ is provable in Neg, then all the vertices in $B$ are from the same component.
+  Given a graph $\mathbf{G} = \langle G,N \rangle$ and a set of vertices $B \subseteq G$; if $\ol{B}$ is provable in Neg, then all the vertices in $B$ are from the same isolated component.
+  \label{thm:same_component_provable}
 \end{lemma}
 \begin{proof}
   We prove it by structural induction over the complexity of the proof tree of some NAND-clause $\ol{B}$.

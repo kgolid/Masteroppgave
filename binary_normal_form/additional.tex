@@ -16,6 +16,7 @@ We now prove the following lemma:
   Given a graph $\mathbf{G} = \langle G,N \rangle$ and a set of vertices $B \subseteq G$; if $\ol{B}$ is provable in Neg, then all the vertices in $B$ are from the same isolated component.
   \label{thm:same_component_provable}
 \end{lemma}
+An alternative formulation of Lemma~\ref{thm:same_component_provable} is that the vertices in $B$ must be connected in the underlying undirected graph.
 \begin{proof}
   We prove it by structural induction over the complexity of the proof tree of some NAND-clause $\ol{B}$.
 
@@ -24,6 +25,8 @@ We now prove the following lemma:
   For the inductive step, suppose we have a proof of the NAND-clause $\ol{B}$.
   The induction hypothesis lets us assume that each of the NAND-clauses in the premise contain vertices from the same component.
   Since no OR-clause contain vertices from different components, we get that \textit{all} the NAND-clauses in the premise are from the same component, so the concluding $\ol{B}$ must also contain vertices from the same component.
+
+  Any provable $\ol{B}$ must therefore contain vertices from the same component.
 \end{proof}
 \subsection{Observation 2}
 \label{sub:Observation 2}

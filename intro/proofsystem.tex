@@ -87,6 +87,9 @@ It is shown in \cite{michal-completeness} that Neg is sound for arbitrary theori
 Soundness gives us for any graph $\mathbf{G} = \langle G,N \rangle$ that proving $\ol{C}$ for any $C \subseteq G$ implies that the vertices in $C$ cannot all be assigned 1 in the graph model $\mathcal{T}(\mathbf{G})$.
 Refutational completeness gives us that whenever a graph/theory is inconsistent, we are able to prove $\varnothing$ in Neg.
 
+We will use the notation $\Gamma \vDash \ol{C}$ to express that all the models of the theory $\Gamma$ satisfies the NAND-clause $\ol{C}$.
+Note that because of the model/kernel equivalence presented in Section~\ref{sec:Discourse Theories and Digraphs}, the notation can also be used to express that none of the kernels in the graph $\mathcal{G}(\Gamma)$ contains all the vertices in the set $C$.
+
 Since refutational completeness is only proven for theories with countably many OR-clauses, this thesis will only consider graphs with a countable number of vertices.
 We are thus able to assume both soundness and refutational completeness for all following graph theories.
 

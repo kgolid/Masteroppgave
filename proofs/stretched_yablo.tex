@@ -87,8 +87,6 @@ In order to prove $\varnothing$ from these axiom, we first prove three sets of i
   D2 &= \{\; \ol{x1^y_z} \;|\; x,y,z \in \mathbb{N}, x \neq z, y+1 < z \; \} \\
   D3 &= \{\; \ol{1^1_x1^y_z} \;|\; x,y,z \in \mathbb{N}, x \neq z, y+1 < z \; \}
 \end{align}
-\subsection{Proof, D1 and D1b}
-\label{sub:Proof, D1 and D1b}
 We already have $\ol{xy}$ from our axioms whenever $y = x \pm 1$, so let us assume that either $y < x-1$ or $x + 1 < y$.
 In both these cases, we get that there exists a peripheral path between $x$ and $y$.
 Let us -- without loss in generality -- assume that $x + 1 < y$.
@@ -134,8 +132,6 @@ Using $x,y,n$ from above, the proof of D1b follows a similar pattern as D1:
 		\Infer[left label = (O2) $(n-2)^x_y (n-1)^x_y$]2{\ol{1^x_yn^x_y}}
 \end{prooftree*}
 Just like with D1, it is crucial that the path is odd in order for this proof strategy to work.
-\subsection{Proof, D2}
-\label{sub:Proof, D2}
 Again, we have a trivial case where $x = y$ making the clause simply an instance of $N1b$.
 We therefore continue under the assumption that $x \neq y$, together with the other restrictions from the definition of $D2$.
 Using the same notation as above, where $n$ is the number of vertices in the peripheral path between $y$ and $z$, we now get the following short proof:
@@ -147,8 +143,6 @@ Using the same notation as above, where $n$ is the number of vertices in the per
   \Infer[left label = (O3) $n^y_zz$]2{\ol{x1^y_z}}
 \end{prooftree*}
 Using $D1$ and $D1b$ in the above proof, restricts us to cases where $x \neq z$ and where $y+1 < z$, but these are restrictions we have already assumed.
-\subsection{Proof, D3}
-\label{sub:Proof, D3}
 $n$ now denotes the number of vertices in the peripheral path between $y$ and $z$.
 \begin{prooftree*}
   \Hypo{(D2)}
@@ -158,8 +152,6 @@ $n$ now denotes the number of vertices in the peripheral path between $y$ and $z
   \Infer[left label = (O3) $n^y_zz$]2{\ol{1^1_x1^y_z}}
 \end{prooftree*}
 We are again restricting our cases by using $D3$ and $D1b$, but these restrictions are already assumed.
-\subsection{Proof, $\varnothing$}
-\label{sub:Proof, emptyset}
 We will prove the inconsistency of Stretched Yablo by first proving $\ol{1},\ol{2},\ol{1^1_3},\ol{1^1_4}\ol{1^1_5}\dots$.
 
 Proving $\ol{1}$:

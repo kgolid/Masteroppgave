@@ -14,7 +14,7 @@ The conjecture will be disproven simply by presenting a graph containing a prova
 We will then make an attempt to extend the graph, making it inconsistent, and then show that its inconsistency proof has to include the non-binary-derivable NAND-clause.
 This attempt will however prove to be unsuccessful.
 
-Let us again consider the graph from Figure~\ref{fig:v3_counter_graph}, Section~\ref{sub:V3 and implication 2}:\par
+Let us again consider the graph from Figure~\ref{fig:v3_counter_graph}, shown again here for convenience:\par
 \begin{figure}[!h]
   \centering
   \begin{tikzpicture}
@@ -44,7 +44,7 @@ Let us again consider the graph from Figure~\ref{fig:v3_counter_graph}, Section~
 \end{figure}
 As before, the vertices $y_1$, $y_2$ and $c_2$ are initial vertices of disjoint rays, and not sinks.
 
-The NAND-clause we will show not to be binary-provable is $\ol{ab}$.
+The NAND-clause we show not to be binary-provable is $\ol{ab}$.
 Figure~\ref{fig:v3_counter_proof} proves $\ol{ab}$, but the proof contains two non-binary NAND-clauses.
 We will show that this is unavoidable.
 In order to do this, we utilize the table from Figure~\ref{fig:v3_counter_table}.
@@ -67,7 +67,7 @@ We show it again here for convenience.\par
   \label{fig:open_door_table}
 \end{figure}
 
-Let us assume that we have a rule application with all binary NAND-clauses in the premise and with $\ol{ab}$ in the conclusion.
+Suppose there is a rule application with all binary NAND-clauses in the premise and with $\ol{ab}$ in the conclusion.
 Based on the (Rneg)-rule, we know that the premise must contain at least one binary NAND-clause containing $a$ and at least one containing $b$.
 The above table tells us that the only provable binary NAND-clauses that contain $a$ or $b$ are the ones in the axiom set:
 $\ol{ax_1}$, $\ol{ax_2}$, $\ol{by_1}$ and $\ol{by_2}$.
@@ -76,5 +76,5 @@ The OR-clauses $x_1y_1c_1$ and $x_2y_2c_2$ are the only ones that contain both a
 
 This gives us the following information: since both the possible OR-clauses are of length 3, the rule application concluding with $\ol{ab}$ has 3 NAND-clauses in its premise; one containing an $x$, one containing a $y$ and one containing a $c$.
 Looking at our table again, we see that the potentially provable NAND-clauses containing a $c$ are again the axioms only.
-Since there are no provable NAND-clauses on the form $ac_i$ or $bc_i$, we get that the conclusion of our rule cannot possibly be of length 2, thus contradicting our assumption.
+Since there are no provable NAND-clauses on the form $ac_i$ or $bc_i$, we get that the conclusion of our rule cannot possibly be of length 2, contradicting our assumption.
 We can therefore conclude that $\ol{ab}$ is \textit{not} binary-derivable, thus disproving Conjecture~\ref{thm:non_binary_derivable}.

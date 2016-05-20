@@ -5,8 +5,8 @@ While developing the proof of the refutational incompleteness of BNeg, some addi
 Even though they ultimately didn't turn out useful for the main proof, they do bear some general significance.
 These observations will be presented and proved in this section.
 
-\subsection{Observation 1}
-\label{sub:Observation 1}
+\subsection{Isolated components}
+\label{sub:Isolated components}
 Given a graph $\mathbf{G} = \langle G,N \rangle$ and a set of vertices $A \subseteq G$, if $N(A) \subseteq A$ and $N^-(A) \subseteq A$, we call it an \textit{isolated component} of the graph $\mathbf{G}$.
 
 Since there are no edges between any two isolated components, we get that no axiomatic NAND- and OR-clauses can contain vertices from two different isolated components.
@@ -28,8 +28,8 @@ An alternative formulation of Lemma~\ref{thm:same_component_provable} is that th
 
   Any provable $\ol{B}$ must therefore contain vertices from the same component.
 \end{proof}
-\subsection{Observation 2}
-\label{sub:Observation 2}
+\subsection{Components connected by a common source}
+\label{sub:Components connected by a common source}
 Let $\mathbf{G} = \langle G,N \rangle$ be a digraph with a source vertex $x$.
 Let $\{A_i\}$ be a \textit{partitioning} of $G \setminus \{ x \}$ (a set of pairwise disjoint, nonempty subsets of $G$ such that $\bigcup \{A_i\} = G \setminus \{ x \}$) such that for each $A_i$ we have that $N(A_i) \subseteq A_i$ and $N^-(A_i) \setminus A_i = \{ x \}$.
 In words, nothing points out of $A_i$ and only $x$ points in.

@@ -74,7 +74,7 @@ $\ol{ax_1}$, $\ol{ax_2}$, $\ol{by_1}$ and $\ol{by_2}$.
 Since we do not want any $x_i$ or $y_i$ in the conclusion, these variables have to be removed by the OR-clause.
 The OR-clauses $x_1y_1c_1$ and $x_2y_2c_2$ are the only ones that contain both an $x$ and a $y$, making them the only OR-clauses that can potentially conclude with $\ol{ab}$.
 
-This gives us the following information: since both the possible OR-clauses are of length 3, the rule application concluding with $\ol{ab}$ has 3 NAND-clauses in its premise; one containing an $x$, one containing a $y$ and one containing a $c$.
-Looking at our table again, we see that the potentially provable NAND-clauses containing a $c$ are again the axioms only.
+This gives us the following information: since both the possible OR-clauses are of length 3, the rule application concluding with $\ol{ab}$ has 3 NAND-clauses in its premise; one containing an $x$-vertex (either $x_1$ or $x_2$), one containing a $y$-vertex and one containing a $c$-vertex.
+Looking at our table again, we see that the potentially provable NAND-clauses containing a $c$-vertex are again the axioms only.
 Since there are no provable NAND-clauses on the form $ac_i$ or $bc_i$, we get that the conclusion of our rule cannot possibly be of length 2, contradicting our assumption.
 We can therefore conclude that $\ol{ab}$ is \textit{not} binary-derivable, thus disproving Conjecture~\ref{thm:non_binary_derivable}.

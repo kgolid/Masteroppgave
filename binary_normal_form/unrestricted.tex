@@ -52,13 +52,6 @@ From the axioms above we can prove inconsistency by first proving the three NAND
   \label{fig:proof_14}
 \end{figure}
 
-With these three unary clauses proven, we can now prove $\varnothing$ in one step:
-\begin{prooftree*}[rule margin=1ex]
-  \Hypo{\ol{1_4}}
-  \Hypo{\ol{2_4}}
-  \Hypo{\ol{3_4}}
-  \Infer[left label = $1_42_43_4$]3{\varnothing}
-\end{prooftree*}
 \begin{figure}[!h]
   \centering
   \begin{prooftree*}[separation=0.8em, rule margin=1ex]
@@ -107,6 +100,18 @@ With these three unary clauses proven, we can now prove $\varnothing$ in one ste
   \label{fig:proof_34}
 \end{figure}
 \FloatBarrier
+With these three NAND-clauses proven, we can now prove $\varnothing$ in one step:\par
+\begin{figure}[!h]
+  \centering
+  \begin{prooftree*}[rule margin=1ex]
+    \Hypo{\ol{1_4}}
+    \Hypo{\ol{2_4}}
+    \Hypo{\ol{3_4}}
+    \Infer[left label = $1_42_43_4$]3{\varnothing}
+  \end{prooftree*}
+  \caption{}
+  \label{fig:proof_empty}
+\end{figure}
 Observe that NAND-clauses of length 3 appear several times in this proof.
 We will show that this is unavoidable in Neg given the axioms from \ref{eq:ax1} and \ref{eq:ax2}
 \subsection{Binary-derivability}

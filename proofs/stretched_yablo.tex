@@ -143,39 +143,7 @@ Using $x,y,n$ from above, the proof of D1b follows a similar pattern as D1:\par
   \label{fig:proof_d1b}
 \end{figure}
 Just like with D1, it is crucial that the path is odd in order for this proof strategy to work.
-We will prove the inconsistency of Stretched Yablo by first proving $\ol{1},\ol{2},\ol{1^1_3},\ol{1^1_4}\ol{1^1_5}\dots$.
 
-Proving $\ol{1}$:
-\begin{prooftree*}
-  \Hypo{(N1)}
-  \Infer[no rule]1{\ol{12}}
-  \Hypo{(D1)}
-  \Infer[no rule]1{\ol{13}}
-  \Hypo{(D2)}
-  \Infer[no rule]1{\ol{11^2_4}}
-  \Hypo{(D2)}
-  \Infer[no rule]1{\ol{11^2_5}}
-  \Hypo{(D2)}
-  \Infer[no rule]1{\ol{11^2_6}}
-  \Hypo{\dots}
-  \Infer[left label = (O1) $2 3 1^2_4 1^2_5 1^2_6\dots$]6{\ol{1}}
-\end{prooftree*}
-
-Proving $\ol{2}$:
-\begin{prooftree*}
-  \Hypo{(N1)}
-  \Infer[no rule]1{\ol{23}}
-  \Hypo{(D1)}
-  \Infer[no rule]1{\ol{24}}
-  \Hypo{(D2)}
-  \Infer[no rule]1{\ol{11^3_5}}
-  \Hypo{(D2)}
-  \Infer[no rule]1{\ol{11^3_6}}
-  \Hypo{(D2)}
-  \Infer[no rule]1{\ol{11^3_7}}
-  \Hypo{\dots}
-  \Infer[left label = (O1) $3 4 1^3_5 1^3_6 1^3_7\dots$]6{\ol{2}}
-\end{prooftree*}
 As for the proof of D2, we again have a trivial case where $x = y$ making the clause simply an instance of $N1b$.
 We therefore continue under the assumption that $x \neq y$, together with the other restrictions from the definition of $D2$.
 Using the same notation as above, where $n$ is the number of vertices in the peripheral path between $y$ and $z$, we now get the following short proof:\par
@@ -194,21 +162,6 @@ Using the same notation as above, where $n$ is the number of vertices in the per
 \FloatBarrier
 Using $D1$ and $D1b$ in the above proof restricts us to cases where $x \neq z$ and where $y+1 < z$, but these are restrictions we have already assumed.
 
-Proving $\ol{1^1_3}$:
-\begin{prooftree*}
-  \Hypo{(D2)}
-  \Infer[no rule]1{\ol{1^1_34}}
-  \Hypo{(D2)}
-  \Infer[no rule]1{\ol{1^1_35}}
-  \Hypo{(D3)}
-  \Infer[no rule]1{\ol{1^1_31^4_6}}
-  \Hypo{(D3)}
-  \Infer[no rule]1{\ol{1^1_31^4_7}}
-  \Hypo{(D3)}
-  \Infer[no rule]1{\ol{1^1_31^4_8}}
-  \Hypo{\dots}
-  \Infer[left label = (O1) $4 5 1^4_6 1^4_7 1^4_8\dots$]6{\ol{1^1_3}}
-\end{prooftree*}
 Lastly, we prove D3.
 $n$ now denotes the number of vertices in the peripheral path between $y$ and $z$.\par
 \begin{figure}[!h]
@@ -226,32 +179,108 @@ $n$ now denotes the number of vertices in the peripheral path between $y$ and $z
 \FloatBarrier
 We are again restricting our cases by using $D3$ and $D1b$, but these restrictions are already assumed.
 
-Proving $\ol{1^1_4}$:
-\begin{prooftree*}
-  \Hypo{(D2)}
-  \Infer[no rule]1{\ol{1^1_45}}
-  \Hypo{(D2)}
-  \Infer[no rule]1{\ol{1^1_46}}
-  \Hypo{(D3)}
-  \Infer[no rule]1{\ol{1^1_31^5_7}}
-  \Hypo{(D3)}
-  \Infer[no rule]1{\ol{1^1_31^5_8}}
-  \Hypo{(D3)}
-  \Infer[no rule]1{\ol{1^1_31^6_9}}
-  \Hypo{\dots}
-  \Infer[left label = (O1) $5 6 1^5_7 1^5_8 1^5_9\dots$]6{\ol{1^1_4}}
-\end{prooftree*}
+We now have what we need to prove the inconsistency of Stretched Yablo.
+First, we prove the following NAND-clauses: $\ol{1},\ol{2},\ol{1^1_3},\ol{1^1_4}\ol{1^1_5}\dots$.
 
+Proving $\ol{1}$:\par
+\begin{figure}[!h]
+  \centering
+  \begin{prooftree*}
+    \Hypo{(N1)}
+    \Infer[no rule]1{\ol{12}}
+    \Hypo{(D1)}
+    \Infer[no rule]1{\ol{13}}
+    \Hypo{(D2)}
+    \Infer[no rule]1{\ol{11^2_4}}
+    \Hypo{(D2)}
+    \Infer[no rule]1{\ol{11^2_5}}
+    \Hypo{(D2)}
+    \Infer[no rule]1{\ol{11^2_6}}
+    \Hypo{\dots}
+    \Infer[left label = (O1) $2 3 1^2_4 1^2_5 1^2_6\dots$]6{\ol{1}}
+  \end{prooftree*}
+  \caption{}
+  \label{fig:}
+\end{figure}
+\FloatBarrier
+Proving $\ol{2}$:\par
+\begin{figure}[!h]
+  \centering
+  \begin{prooftree*}
+    \Hypo{(N1)}
+    \Infer[no rule]1{\ol{23}}
+    \Hypo{(D1)}
+    \Infer[no rule]1{\ol{24}}
+    \Hypo{(D2)}
+    \Infer[no rule]1{\ol{11^3_5}}
+    \Hypo{(D2)}
+    \Infer[no rule]1{\ol{11^3_6}}
+    \Hypo{(D2)}
+    \Infer[no rule]1{\ol{11^3_7}}
+    \Hypo{\dots}
+    \Infer[left label = (O1) $3 4 1^3_5 1^3_6 1^3_7\dots$]6{\ol{2}}
+  \end{prooftree*}
+  \caption{}
+  \label{fig:}
+\end{figure}
+\FloatBarrier
+Proving $\ol{1^1_3}$:\par
+\begin{figure}[!h]
+  \centering
+  \begin{prooftree*}
+    \Hypo{(D2)}
+    \Infer[no rule]1{\ol{1^1_34}}
+    \Hypo{(D2)}
+    \Infer[no rule]1{\ol{1^1_35}}
+    \Hypo{(D3)}
+    \Infer[no rule]1{\ol{1^1_31^4_6}}
+    \Hypo{(D3)}
+    \Infer[no rule]1{\ol{1^1_31^4_7}}
+    \Hypo{(D3)}
+    \Infer[no rule]1{\ol{1^1_31^4_8}}
+    \Hypo{\dots}
+    \Infer[left label = (O1) $4 5 1^4_6 1^4_7 1^4_8\dots$]6{\ol{1^1_3}}
+  \end{prooftree*}
+  \caption{}
+  \label{fig:}
+\end{figure}
+\FloatBarrier
+Proving $\ol{1^1_4}$:\par
+\begin{figure}[!h]
+  \centering
+  \begin{prooftree*}
+    \Hypo{(D2)}
+    \Infer[no rule]1{\ol{1^1_45}}
+    \Hypo{(D2)}
+    \Infer[no rule]1{\ol{1^1_46}}
+    \Hypo{(D3)}
+    \Infer[no rule]1{\ol{1^1_31^5_7}}
+    \Hypo{(D3)}
+    \Infer[no rule]1{\ol{1^1_31^5_8}}
+    \Hypo{(D3)}
+    \Infer[no rule]1{\ol{1^1_31^6_9}}
+    \Hypo{\dots}
+    \Infer[left label = (O1) $5 6 1^5_7 1^5_8 1^5_9\dots$]6{\ol{1^1_4}}
+  \end{prooftree*}
+  \caption{}
+  \label{fig:}
+\end{figure}
+\FloatBarrier
 The clauses $\ol{1^1_4},\,\ol{1^1_5},\,\ol{1^1_5},\,\ol{1^1_7},\,\dots$ can be proven in exactly the same manner as above.
-With the results from above we can finally prove $\varnothing$:
-\begin{prooftree*}
-  \Hypo{\ol{1}}
-  \Hypo{\ol{2}}
-  \Hypo{\ol{1^1_3}}
-  \Hypo{\ol{1^1_4}}
-  \Hypo{\ol{1^1_5}}
-  \Hypo{\dots}
-  \Infer[left label = (O1) $1 2 1^1_3 1^1_4 1^1_5\dots$]6{\varnothing}
-\end{prooftree*}
-
+With the results from above, we can finally prove $\varnothing$:\par
+\begin{figure}[!h]
+  \centering
+  \begin{prooftree*}
+    \Hypo{\ol{1}}
+    \Hypo{\ol{2}}
+    \Hypo{\ol{1^1_3}}
+    \Hypo{\ol{1^1_4}}
+    \Hypo{\ol{1^1_5}}
+    \Hypo{\dots}
+    \Infer[left label = (O1) $1 2 1^1_3 1^1_4 1^1_5\dots$]6{\varnothing}
+  \end{prooftree*}
+  \caption{}
+  \label{fig:}
+\end{figure}
+\FloatBarrier
 Having proved $\varnothing$ in Neg, we get from soundness of Neg that our Stretched Yablo-graph is indeed inconsistent.

@@ -120,25 +120,35 @@ This means that our set of axioms from the Yablo-graph looks like this:
   \quad\quad\quad
   \text{OR} = \{ x_ix_{i+1}x_{i+2}\dots \; |\; i \in \mathbb{N}\}
 \end{align}
-For any vertex $x_i$ from the Yablo-graph, we are now able to prove $\ol{x_i}$ in the following way:
-\begin{prooftree*}
-  \Hypo{\ol{x_ix_{i+1}}}
-  \Hypo{\ol{x_ix_{i+2}}}
-  \Hypo{\ol{x_ix_{i+3}}}
-  \Hypo{\dots}
-  \Infer4[$x_ix_{i+1}x_{i+2}\dots$]{\ol{x_i}}
-\end{prooftree*}
-Proving $\varnothing$ is now simple:
-\begin{prooftree*}
-  \Hypo{\dots}
-  \Infer1{\ol{x_1}}
-  \Hypo{\dots}
-  \Infer1{\ol{x_2}}
-  \Hypo{\dots}
-  \Infer1{\ol{x_3}}
-  \Hypo{\dots}
-  \Infer4[$x_1x_2x_3\dots$]{\varnothing}
-\end{prooftree*}
+For any vertex $x_i$ from the Yablo-graph, we are now able to prove $\ol{x_i}$ in the following way:\par
+\begin{figure}[!h]
+  \centering
+  \begin{prooftree*}
+    \Hypo{\ol{x_ix_{i+1}}}
+    \Hypo{\ol{x_ix_{i+2}}}
+    \Hypo{\ol{x_ix_{i+3}}}
+    \Hypo{\dots}
+    \Infer4[$x_ix_{i+1}x_{i+2}\dots$]{\ol{x_i}}
+  \end{prooftree*}
+  \caption{}
+  \label{fig:proof_xi}
+\end{figure}
+Proving $\varnothing$ is now simple:\par
+\begin{figure}[!h]
+  \centering
+  \begin{prooftree*}
+    \Hypo{\dots}
+    \Infer1{\ol{x_1}}
+    \Hypo{\dots}
+    \Infer1{\ol{x_2}}
+    \Hypo{\dots}
+    \Infer1{\ol{x_3}}
+    \Hypo{\dots}
+    \Infer4[$x_1x_2x_3\dots$]{\varnothing}
+  \end{prooftree*}
+  \caption{}
+  \label{fig:proof_yablo}
+\end{figure}
 A less trivial inconsistency proof is the one of the \textit{Stretched Yablo-graph}.
 This proof can be found in Appendix~\ref{sec:Inconsistency of Stretched Yablo} together with the definition of Stretched Yablo.
 

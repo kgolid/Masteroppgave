@@ -32,14 +32,12 @@ Step 3 is replacing one formula with an equisatisfiable formula, thus not changi
 
 Since none of the steps above change the satisfiability of the theory, we can conclude that our acquired theory is equisatisfiable with to original CNF theory.
 
-Below are some examples of CNF-theories with their corresponding GNF-theories.\\
-
+Below are two examples of CNF-theories with their corresponding GNF-theories.\\
 \begin{example}
   \begin{align}
-    \text{CNF:\quad}& ( a \vee b )\\
-    \text{GNF:\quad}& ( a \lar \neg a'), (a' \lar \neg a), (b \lar \neg b'), (b' \lar \neg b), (y_1 \lar (\neg a \wedge \neg b \wedge \neg y_1))\\
-    \\
-    \text{CNF:\quad}& (\neg a)\\
-    \text{GNF:\quad}& ( a \lar \neg a'), (a' \lar \neg a), (y_1 \lar (\neg a' \wedge \neg y_1))\\
+    T1_{\text{CNF}}:\quad& ( a \vee b )\\
+    T1_{\text{GNF}}:\quad& ( a \lar \neg a'), (a' \lar \neg a), (b \lar \neg b'), (b' \lar \neg b), (y_1 \lar (\neg a \wedge \neg b \wedge \neg y_1))\\
+    T2_{\text{CNF}}:\quad& (\neg a)\\
+    T2_{\text{GNF}}:\quad& ( a \lar \neg a'), (a' \lar \neg a), (y_1 \lar (\neg a' \wedge \neg y_1))
   \end{align}
 \end{example}

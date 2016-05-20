@@ -27,67 +27,30 @@ The pigeonhole principle for 4 pigeons and 3 holes will have the following axiom
   \right \} \label{eq:ax2}
 \end{align}
 
-From the axioms above we can prove inconsistency in the following way:
-
-Proving $\ol{1_4}$:
-\begin{prooftree*}[separation=0.8em, rule margin=1ex]
-  \Hypo{\ol{1_31_4}}
-    \Hypo{\ol{1_21_4}}
-    \Hypo{\ol{2_22_3}}
-      \Hypo{\ol{1_11_4}}
-      \Hypo{\ol{2_12_3}}
-      \Hypo{\ol{3_13_2}}
-    \Infer[right label = $1_12_13_1$]3{\ol{3_22_31_4}}
-  \Infer[right label = $1_22_23_2$]3{\ol{2_31_4}}
-    \Hypo{\ol{1_21_4}}
-      \Hypo{\ol{1_11_4}}
-      \Hypo{\ol{2_12_2}}
-      \Hypo{\ol{3_13_3}}
-    \Infer[right label = $1_12_13_1$]3{\ol{2_23_31_4}}
-    \Hypo{\ol{3_23_3}}
-  \Infer[right label = $1_22_23_2$]3{\ol{3_31_4}}
-\Infer[right label = $1_32_33_3$, separation=0em]3{\ol{1_4}}
-\end{prooftree*}
-
-Proving $\ol{2_4}$:
-\begin{prooftree*}[separation=0.8em, rule margin=1ex]
-    \Hypo{\ol{1_21_3}}
-    \Hypo{\ol{2_22_4}}
-      \Hypo{\ol{1_11_3}}
-      \Hypo{\ol{2_12_4}}
-      \Hypo{\ol{3_13_2}}
-    \Infer[right label = $1_12_13_1$]3{\ol{3_21_32_4}}
-  \Infer[right label = $1_22_23_2$]3{\ol{1_32_4}}
-  \Hypo{\ol{2_32_4}}
-      \Hypo{\ol{1_11_2}}
-      \Hypo{\ol{2_12_4}}
-      \Hypo{\ol{3_13_3}}
-    \Infer[left label = $1_12_13_1$]3{\ol{1_23_32_4}}
-    \Hypo{\ol{2_22_4}}
-    \Hypo{\ol{3_23_3}}
-  \Infer[left label = $1_22_23_2$]3{\ol{3_32_4}}
-\Infer[right label = $1_32_33_3$, separation=0em]3{\ol{2_4}}
-\end{prooftree*}
-
-Proving $\ol{3_4}$:
-\begin{prooftree*}[separation=0.8em, rule margin=1ex]
-    \Hypo{\ol{1_21_3}}
-      \Hypo{\ol{1_11_3}}
-      \Hypo{\ol{2_12_2}}
-      \Hypo{\ol{3_13_4}}
-    \Infer[left label = $1_12_13_1$]3{\ol{2_21_33_4}}
-    \Hypo{\ol{3_23_4}}
-  \Infer[left label = $1_22_23_2$]3{\ol{1_33_4}}
-      \Hypo{\ol{1_11_2}}
-      \Hypo{\ol{2_12_3}}
-      \Hypo{\ol{3_13_4}}
-    \Infer[left label = $1_12_13_1$]3{\ol{1_22_33_4}}
-    \Hypo{\ol{2_22_3}}
-    \Hypo{\ol{3_23_4}}
-  \Infer[left label = $1_22_23_2$]3{\ol{2_33_4}}
-  \Hypo{\ol{3_33_4}}
-\Infer[left label = $1_32_33_3$, separation=0em]3{\ol{3_4}}
-\end{prooftree*}
+From the axioms above we can prove inconsistency by first proving the three NAND-clauses $\ol{1_4}$, $\ol{2_4}$ and $\ol{3_4}$:\par
+\begin{figure}[!h]
+  \centering
+  \begin{prooftree*}[separation=0.8em, rule margin=1ex]
+    \Hypo{\ol{1_31_4}}
+      \Hypo{\ol{1_21_4}}
+      \Hypo{\ol{2_22_3}}
+        \Hypo{\ol{1_11_4}}
+        \Hypo{\ol{2_12_3}}
+        \Hypo{\ol{3_13_2}}
+      \Infer[right label = $1_12_13_1$]3{\ol{3_22_31_4}}
+    \Infer[right label = $1_22_23_2$]3{\ol{2_31_4}}
+      \Hypo{\ol{1_21_4}}
+        \Hypo{\ol{1_11_4}}
+        \Hypo{\ol{2_12_2}}
+        \Hypo{\ol{3_13_3}}
+      \Infer[right label = $1_12_13_1$]3{\ol{2_23_31_4}}
+      \Hypo{\ol{3_23_3}}
+    \Infer[right label = $1_22_23_2$]3{\ol{3_31_4}}
+  \Infer[right label = $1_32_33_3$, separation=0em]3{\ol{1_4}}
+  \end{prooftree*}
+  \caption{}
+  \label{fig:proof_14}
+\end{figure}
 
 With these three unary clauses proven, we can now prove $\varnothing$ in one step:
 \begin{prooftree*}[rule margin=1ex]
@@ -96,7 +59,54 @@ With these three unary clauses proven, we can now prove $\varnothing$ in one ste
   \Hypo{\ol{3_4}}
   \Infer[left label = $1_42_43_4$]3{\varnothing}
 \end{prooftree*}
+\begin{figure}[!h]
+  \centering
+  \begin{prooftree*}[separation=0.8em, rule margin=1ex]
+      \Hypo{\ol{1_21_3}}
+      \Hypo{\ol{2_22_4}}
+        \Hypo{\ol{1_11_3}}
+        \Hypo{\ol{2_12_4}}
+        \Hypo{\ol{3_13_2}}
+      \Infer[right label = $1_12_13_1$]3{\ol{3_21_32_4}}
+    \Infer[right label = $1_22_23_2$]3{\ol{1_32_4}}
+    \Hypo{\ol{2_32_4}}
+        \Hypo{\ol{1_11_2}}
+        \Hypo{\ol{2_12_4}}
+        \Hypo{\ol{3_13_3}}
+      \Infer[left label = $1_12_13_1$]3{\ol{1_23_32_4}}
+      \Hypo{\ol{2_22_4}}
+      \Hypo{\ol{3_23_3}}
+    \Infer[left label = $1_22_23_2$]3{\ol{3_32_4}}
+  \Infer[right label = $1_32_33_3$, separation=0em]3{\ol{2_4}}
+  \end{prooftree*}
+  \caption{}
+  \label{fig:proof_24}
+\end{figure}
 
+\begin{figure}[!h]
+  \centering
+  \begin{prooftree*}[separation=0.8em, rule margin=1ex]
+      \Hypo{\ol{1_21_3}}
+        \Hypo{\ol{1_11_3}}
+        \Hypo{\ol{2_12_2}}
+        \Hypo{\ol{3_13_4}}
+      \Infer[left label = $1_12_13_1$]3{\ol{2_21_33_4}}
+      \Hypo{\ol{3_23_4}}
+    \Infer[left label = $1_22_23_2$]3{\ol{1_33_4}}
+        \Hypo{\ol{1_11_2}}
+        \Hypo{\ol{2_12_3}}
+        \Hypo{\ol{3_13_4}}
+      \Infer[left label = $1_12_13_1$]3{\ol{1_22_33_4}}
+      \Hypo{\ol{2_22_3}}
+      \Hypo{\ol{3_23_4}}
+    \Infer[left label = $1_22_23_2$]3{\ol{2_33_4}}
+    \Hypo{\ol{3_33_4}}
+  \Infer[left label = $1_32_33_3$, separation=0em]3{\ol{3_4}}
+  \end{prooftree*}
+  \caption{}
+  \label{fig:proof_34}
+\end{figure}
+\FloatBarrier
 Observe that NAND-clauses of length 3 appear several times in this proof.
 We will show that this is unavoidable in Neg given the axioms from \ref{eq:ax1} and \ref{eq:ax2}
 \subsection{Binary-derivability}

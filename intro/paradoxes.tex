@@ -14,7 +14,8 @@ We can immediately note that since no paradoxes can be true, all paradoxes are, 
 It is however not the case that all inconsistent theories are paradoxes.
 Just consider the inconsistent statement, $x \wedge \neg x$ again: this statement simply seems false, and not paradoxical.
 
-A different view is that a paradox is a \textit{dialetheia}, a sentence that is \textit{both} true and false\cite{sep-dialetheism}. We will however not spend much time exploring these philosophical differences, as this is not a philosophical paper and it won't change much for our definitions.
+A different view is that paradoxes are \textit{dialetheia} -- statements that are \textit{both} true and false\cite{sep-dialetheism}.
+We will however not spend much time exploring these philosophical differences, as this is not a philosophical paper and it will not change much for our definitions.
 
 The liar sentence is probably the most famous example of a paradox:
 \begin{quote}
@@ -25,8 +26,9 @@ It can thus neither be true nor false, since both lead to a contradiction.
 
 Notice how the liar sentence is a statement about other statements (in this case itself).
 A collection of statements where some of them may refer to themselves or other statements, is called a \textit{discourse} in \cite{synthese-pdl}, which we will follow.
-In order to represent such discourses, we need a formal way of referencing other statements within statements.
-In propositional logic, this can be done simply by giving statements ``names'' in the form of adding fresh variables with equivalences to their corresponding statements.
+In order to represent such discourses, we need a formal way of referring to other statements within a statement.
+In propositional logic, this can be done by giving statements names.
+We name a statement by extending it with a bi-implication to a fresh variable.
 
 Consider the examples below.
 On the left side are normal propositional statements;
@@ -49,4 +51,4 @@ labelling it and then using its label in order to make it reference itself gives
 \end{align}
 This statement is obviously inconsistent, making it a paradox by our definition.
 
-The correspondence between paradoxical discourses and inconsistent sets of labelled statements motivates us to study labelled statements closer, trying to uncover patterns that prevent inconsistencies and thus paradoxes in the represented discourse.
+We continue to look at labelled formulae and ways of determining whether or not they are consistent.

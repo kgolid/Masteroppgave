@@ -94,7 +94,7 @@ Since refutational completeness is only proven for theories with countably many 
 We are thus able to assume both soundness and refutational completeness for all following graph theories.
 
 Note that Neg is not generally complete, i.e. we do not always have that $G\vDash {x} \; \Rightarrow \; G \vdash \ol{x}$.
-The following inconsistent graph $G$ exemplifies this:\par
+The inconsistent graph $G$ in Figure~\ref{fig:neg_not_complete} exemplifies this:\par
 \begin{figure}[!h]
   \centering
   \begin{tikzpicture}
@@ -108,6 +108,7 @@ The following inconsistent graph $G$ exemplifies this:\par
   \caption{}
   \label{fig:neg_not_complete}
 \end{figure}
+\FloatBarrier
 Because of the loop on vertex $a$, the graph has no solutions.
 We therefore have $G \vDash \varnothing$ and thus also $G \vDash \ol{b}$, but we are unable to prove $\ol{b}$ in Neg.
 \subsection{Inconsistency of the Yablo-graph}

@@ -16,7 +16,8 @@ $\mathcal{T}:$ translating a digraph \textbf{G} into a corresponding theory $\ma
 
 $\mathcal{G}:$ translating a theory $T$ into a corresponding digraph $\mathcal{G}(T)$ such that $mod(T) = sol(\mathcal{G}(T))$.
 
-Given any digraph \textbf{G} we get the theory $\mathcal{T}(\mathbf{G})$ by taking, for each $x \in G$, the formula $x \leftrightarrow \bigwedge_{y \in N(x)} \neg y$ where $\bigwedge \emptyset = 1$.\par
+Given any digraph \textbf{G} we get the discourse theory $\mathcal{T}(\mathbf{G})$ by, for each vertex $x \in G$, forming the equivalence $x \leftrightarrow \bigwedge_{y \in N(x)} \neg y$.
+For the cases where $N(x) = \varnothing$, instead of adding an equivalence, we simply add $x$.\par
 \begin{figure}[!h]
   \centering
   \begin{tikzpicture}

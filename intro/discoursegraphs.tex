@@ -12,7 +12,7 @@ This correspondence was shown by Roy T. Cook in \cite{cook}.
 Let $mod(T)$ denote the set of models of the theory $T$;
 we get the following definitions from \cite{apal-digraph}.
 
-$\mathcal{T}:$ translating a digraph \textbf{G} into a corresponding theory $\mathcal{T}(\mathbf{G})$ such that $sol(\mathbf{G}) = mod(\mathcal{T}(G))$.
+$\mathcal{T}:$ translating a digraph \textbf{G} into a corresponding theory $\mathcal{T}(\mathbf{G})$ such that $sol(\mathbf{G}) = mod(\mathcal{T}(\mathbf{G}))$.
 
 $\mathcal{G}:$ translating a theory $T$ into a corresponding digraph $\mathcal{G}(T)$ such that $mod(T) = sol(\mathcal{G}(T))$.
 
@@ -55,7 +55,7 @@ For the cases where $N(x) = \varnothing$, instead of adding an equivalence, we s
   \mathcal{T}(\mathbf{G_3}) &= \big \{ a \leftrightarrow (\neg b \wedge \neg c), b \leftrightarrow \neg c, c \leftrightarrow \neg b \big \}
 \end{align}
 The fact that $sol(\mathbf{G}) = mod(\mathcal{T}(G))$ is shown in \cite{apal-digraph}.
-All though not proving it, we observe that $\mathbf{G_1}$ has no solution, just like its corresponding theory $\mathcal{T}(\mathbf{G_1})$ has no models.
+Although not proving it, we observe that $\mathbf{G_1}$ has no solution, just like its corresponding theory $\mathcal{T}(\mathbf{G_1})$ has no models.
 $\mathbf{G_2}$ has one solution, where one assigns $a=0, b=1, c=1$.
 This assignment also works as the only model for $\mathcal{T}(\mathbf{G_2})$.
 In $\mathbf{G_3}$, we get two solutions, both with $a$ assigned 0, but with 0 and 1 distributed between $b$ and $c$.

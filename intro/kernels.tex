@@ -31,7 +31,7 @@ The number of edges in the path is called the \textit{length} of the path.
 The functions $N$ and $N^-$ can be extended pointwise to sets in the following way:
 \begin{align}
   N(X) = \bigcup_{x \in X} N(x)\\
-  N^-(X) = \bigcup_{x \in X} N(x)
+  N^-(X) = \bigcup_{x \in X} N^-(x)
 \end{align}
 
 \begin{definition}
@@ -66,8 +66,8 @@ We will get the correspondence between models of a discourse theory and kernels 
     \alpha(x) = 1 \iff \alpha(N(x)) = \{ 0 \}
   \end{align}
 \end{definition}
-This means that for any node $x$, if $x$ is assigned 1, then all its successors have to be assigned  0, and if $x$ is assigned 0, then there has to exist a node assigned 1 among its successors.
-A consequence of this definition is that all sink nodes (nodes with no outgoing edges) in the graph have to be assigned 1, since it vacuously does not point to any node assigned 1.
+This means that for any vertex $x$, if $x$ is assigned 1, then all its successors have to be assigned  0, and if $x$ is assigned 0, then there has to exist a vertex assigned 1 among its successors.
+A consequence of this definition is that all sink vertices (vertices with no outgoing edges) in the graph have to be assigned 1, since it vacuously does not point to any node assigned 1.
 We use the notation $sol(\mathbf{G})$ to denote the set of all solutions of the graph \textbf{G}.
 
 We get the equivalence between kernels and solutions from the following two facts:

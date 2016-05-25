@@ -3,15 +3,14 @@
 \section{Recognizing dags without kernels}
 \label{sec:Recognizing dags without kernels}
 Knowing that any graph can be translated to an equisatisfiable dag, the challenge is now to find sufficient conditions for dags to have kernels, even weaker than the one proved by Richardson (the fact that any finitary dag has a kernel is a direct consequence of Richardson's Theorem).
-
-Michał Walicki has proposed the following thesis:
-\begin{quote}
-  ``If a dag has no kernel then it has a ray with infinitely many vertices dominating it.''
-\end{quote}
 Some terminology (given a graph $\mathbf{G} = \langle G,N \rangle$):
 A \textit{ray} is an semi-infinite path, i.e. an infintie sequence $(x_1, x_2, \dots)$ of distinct vertices of $G$ such that $(x_i,x_{i+1}) \in N$ for each $i$.
 
 A vertex $x_0$ \textit{dominates} a set of vertices $Y \subseteq G$ if there exists an infinite number of disjoint paths from $x_0$ to distinct vertices of $Y$.
 
+Michał Walicki has proposed the following conjecture:
+\begin{conjecture}
+  If a dag has no kernel then it has a ray with infinitely many vertices dominating it.
+\end{conjecture}
 The contrapositive of Walicki's thesis suggests a condition for a kernel.
 This condition is weaker than the one from Richardson's Theorem, since a dag having a ray with infinitely many vertices dominating it implies that the dag is infinitary.

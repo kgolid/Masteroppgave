@@ -24,9 +24,9 @@ This fact was also observed and formalized by Walicki\cite{michal-completeness}:
 \end{align}
 We know from the definition that any OR-clause used in the proof system corresponds to a single vertex with its successors in the graph.
 We do however not know what the NAND-clauses of length 1 might correspond to.
-Knowing this would, by soundness and completeness of Neg, give us the graph structure needed for a kernel not to exist.
+Knowing this would, by soundness and completeness of Neg, give us a graph structural condition for a kernel not to exist.
 
-The only thing we \textit{do} know about unary NAND-clauses is that they correspond to vertices that are assigned 0 in all models of the graph.
+The only thing we \textit{do} know about unary NAND-clauses is that they correspond to vertices that are assigned 0 in all solutions of the graph.
 We get this from soundness of Neg.
 This is however not the graph structural property we are ultimately looking for, but we can at least say that we have reduced the question ``What does an inconsistent graph look like?'' to the question ``What does a provably false vertex look like?''.
 
@@ -91,11 +91,11 @@ The following equation tells us how that would directly give us a predicate deci
 \end{align}
 The following sections will present various graph structures, each satisfying implication (1).
 Each presented structure will be a generalization of the previous one, ultimately aiming to find a structure general enough to satisfy both implication (1) and implication (2).
-Such a structure would be the true graph structural equivalent of a binary NAND provable in Neg.
-We did however not manage to find such a graph structure in this thesis.
+Such a structure would be a graph structural equivalent of a binary NAND provable in Neg.
+Unfortunately, we did however not manage to find such a graph structure in this thesis.
 
 For each structure presented, implication (1) will be shown, followed by an example disproving implication (2).
-The counterexamples will be graphs with the presented structure absent, but where the corresponding NAND-clause is still provable.
+The counterexamples will be graphs with the presented structure absent, but with the corresponding NAND-clause still provable.
 
 Because of soundness of Neg, if two vertices correspond to a provable binary NAND in Neg, for any kernel $K$ in that graph, at least one of the two vertices is outside $K$.
 The contrapositive of this observation being that for a graph $G$, if there exists a kernel $K \subseteq G$ such that two vertices, $x_1$ and $x_2$ are both in $K$, then $\ol{x_1x_2}$ is not provable from $G$.

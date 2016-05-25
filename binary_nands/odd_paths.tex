@@ -171,13 +171,14 @@ We introduce the following terminology:
 \begin{definition}
   Given a path and two consecutive vertices $x$ and $y$ from that path, we will say that $x$ is \textit{trimmed}, with respect to that path, if $N(x) = \{y\}$.
 \end{definition}
+Note that when a vertex is trimmed, its corresponding OR-clause is binary.
 \begin{definition}
   If all the vertices of a path, except the terminal vertex, are trimmed, we will call the path a \textit{fully trimmed path}.
 \end{definition}
 All the paths presented in this chapter so far have been fully trimmed.
 
 If two vertices $a$ and $b$ are connected by an odd path that is \textit{not} fully trimmed, $\ol{ab}$ is not necessarily provable in Neg.
-The below graph exemplifies this with a kernel containing both $a$ and $b$.\par
+The below graph exemplifies this with a kernel containing both $a$ and $b$, even though they are connected by an odd path.\par
 \begin{figure}[!h]
   \centering
   \begin{tikzpicture}

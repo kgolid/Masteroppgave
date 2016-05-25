@@ -6,6 +6,8 @@
 In this section, I present an inference system introduced by Walicki in \cite{michal-completeness} which reasons over clausal theories induced from GNF-theories.
 The system is refutationally complete as well as non-explosive, allowing us to identify consistent parts of paradoxical discourse theories.
 
+We later show some correlations between certain graph structures and clauses provable in this inference system.
+
 Recall that a GNF theory consists exclusively of formulae of the following form:
 \begin{align}
   x \lar \bigwedge_{i \in I_x} \neg y_i
@@ -38,6 +40,7 @@ This enables us to state things like $\overline{xy} \subset \overline{xyz}$.
 A theory will -- as expected -- be a set of OR- and NAND-clauses.
 
 If we interpret the initial GNF-theory as a graph $\mathbf{G}=\langle G,N\rangle$, for every vertex $x \in G$, there will be one OR-clause $\{ x \} \cup N(x)$ and for every edge $\langle x,y \rangle \in N$ there will be a NAND-clause $\overline{xy}$.
+
 The graphs from Figure~\ref{ex:3graphs} will have the following clausal theories:
 \begin{align}
   \mathcal{T}(\mathbf{G_1}) &= \{ a, \ol{a} \}\\

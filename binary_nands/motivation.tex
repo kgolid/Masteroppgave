@@ -5,11 +5,11 @@ Since our proof system, Neg, has only one rule, the last step of any inconsisten
 \begin{figure}[!h]
   \centering
   \begin{prooftree*}
-    \Hypo{\ol{x_1}}
-    \Hypo{\ol{x_2}}
-    \Hypo{\ol{x_3}}
+    \Hypo{\ol{k_1}}
+    \Hypo{\ol{k_2}}
+    \Hypo{\ol{k_3}}
     \Hypo{\dots}
-    \Infer4[$x_1x_2x_3\dots$]{\varnothing}
+    \Infer4[$k_1k_2k_3\dots$]{\varnothing}
   \end{prooftree*}
   \caption{}
   \label{fig:proof_unary_nand}
@@ -35,13 +35,13 @@ Similarly to a proof of $\varnothing$, there is really just one way to prove a u
 \begin{figure}[!h]
   \centering
   \begin{prooftree*}
-    \Hypo{\ol{xy_1}}
-    \Hypo{\ol{xy_2}}
+    \Hypo{\ol{xk_1}}
+    \Hypo{\ol{xk_2}}
     \Hypo{\dots}
-    \Hypo{\ol{y_n}}
-    \Hypo{\ol{y_{n+1}}}
+    \Hypo{\ol{k_n}}
+    \Hypo{\ol{k_{n+1}}}
     \Hypo{\dots}
-    \Infer6[$y_1y_2\dots y_ny_{n+1}\dots$]{\ol{x}}
+    \Infer6[$k_1k_2\dots k_ny_{k+1}\dots$]{\ol{x}}
   \end{prooftree*}
   \caption{}
   \label{fig:proof_unary_nand}

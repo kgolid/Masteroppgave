@@ -55,6 +55,10 @@ This shows the fact that vertices at odd positions in a path can indeed branch o
 If the vertex is provably false, we can use that unary NAND-clause, like we did in the above proof, to handle the non-binary OR-clauses.
 This observation lets us generalize our definition of trimmed vertices and still have our vel-relation satisfy implication (1).
 
+The new, general notion of trimming can be formally defined like follows:
+\begin{definition}
+  Given a path and two consecutive vertices $x$ and $y$ from that path, we say that $x$ is \textit{trimmed}, with respect to that path, if $c \in N(x)\setminus y \Rightarrow \Gamma \vdash \ol{c}$.
+\end{definition}
 The problem with this generalized definition is that it is using the notion of provability and is thus not a purely graph-structural definition.
 This in turn makes our vel-relation no longer a purely graph-structural definition.
 With such a definition, whenever we want to check whether two vertices have a vel between them, we may have to work out the actual provability of certain unary NAND-clauses, which is exactly what we try to avoid with our vel-relation.

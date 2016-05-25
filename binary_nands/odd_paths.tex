@@ -135,7 +135,7 @@ This is an important point.
 NAND-clauses containing vertices connected only by paths of \textit{even} length cannot be proven in the same manner as above.
 
 In many cases, such NAND-clauses cannot be proven at all.
-This is exemplified by the below graph, with a kernel containing the vertices $a$ and $b$, showing that the NAND $\ol{ab}$ is unprovable in Neg.
+This is exemplified by the below graph, with a kernel containing the vertices $a$ and $b$, showing that the NAND-clause $\ol{ab}$ is unprovable in Neg.
 The kernel in the graph below is represented by the black vertices.\par
 \begin{figure}[!h]
   \centering
@@ -205,7 +205,7 @@ The below graph exemplifies this with a kernel containing both $a$ and $b$.\par
   \caption{}
   \label{fig:kernel_untrimmed}
 \end{figure}
-Whenever two vertices, $x_0$ and $x_k$, \textit{are} connected by a fully trimmed path of odd length, $\ol{x_0x_k}$ is provable in Neg:
+Whenever two vertices, $x_0$ and $x_k$, are connected by a fully trimmed path of odd length, $\ol{x_0x_k}$ is generally provable in Neg in the following way:
 \begin{figure}[!h]
   \centering
   \begin{prooftree*}
@@ -222,7 +222,7 @@ Whenever two vertices, $x_0$ and $x_k$, \textit{are} connected by a fully trimme
 \label{fig:proof_x0xk}
 \end{figure}
 \FloatBarrier
-All the OR-clauses used are indeed binary, letting us prove our NAND-clause without introducing any other clauses than the ones we get from the path itself.
+Since the path is fully trimmed, all the OR-clauses used are binary, letting us prove our NAND-clause without introducing any other clauses than the ones we get from the path itself.
 However, notice that only half of the OR-clauses is actually in use in such a proof.
 Thus, we need only to restrict half of the vertices in the path to not branch.
 
@@ -267,15 +267,15 @@ With the proof from Figure~\ref{fig:proof_x0xk} in mind, consider the following 
   \label{fig:oddly_trimmed_path}
 \end{figure}
 \FloatBarrier
-In the above path between $x_1$ and $x_k$, only every other vertex is trimmed.
+In the above path, between $x_1$ and $x_k$, only every other vertex is trimmed.
 We will call this path variant an \textit{oddly trimmed path}, and define it formally as follows:
 \begin{definition}
-  A path $(x_0, x_1, \dots , x_k\rangle$ is \textit{oddly trimmed} if for each odd $i < k$, $x_i$ is trimmed with respect to that path.
+  A path $(x_0, x_1, \dots , x_k)$ is \textit{oddly trimmed} if for each odd $i < k$, $x_i$ is trimmed with respect to that path.
 \end{definition}
 One can immediately note that any fully trimmed path is also oddly trimmed.
 
 The axioms we get from the oddly trimmed path above do not differ significantly from the fully trimmed variant.
-Since the vertices $x_0, x_2, x_4, \dots ,x_{k_1}$ no longer have single successors, their corresponding OR-clauses will no longer be binary.
 However, since none of these OR-clauses are used in the above proof, the proof will remain valid also for the oddly trimmed path.
+Since the vertices $x_0, x_2, x_4, \dots ,x_{k-1}$ no longer have single successors, their corresponding OR-clauses will no longer be binary.
 
 This makes us able to generalize further and say that any two vertices connected by an oddly trimmed path of odd length satisfies implication (1).

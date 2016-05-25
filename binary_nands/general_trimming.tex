@@ -6,10 +6,10 @@
 In this section, we will take a closer look at the current concept of trimming, and through some examples introduce a more general definition.
 So far, trimming has meant forcing certain vertices to point only at its successor in a path.
 
-In Section~\ref{sec:Odd paths} we motivated the concept of trimmed paths by presenting the Figure~\ref{fig:kernel_untrimmed}.
-The figure shows how a path that normally provides a provable NAND-clause may be ``ruined'' by adding out-edges to certain vertices in the path, making certain vital OR-clauses non-binary and thus making the NAND-clause unprovable.
+In Section~\ref{sec:Odd paths} we motivated the concept of trimmed paths by presenting the graph in Figure~\ref{fig:kernel_untrimmed}.
+The figure showed how adding out-edges to certain vertices in the odd path makes the corresponding NAND-clause unprovable.
 
-Notice however that adding a loop on the vertex to which the path branches, leaves us with a completely different situation.\par
+Notice however that adding a loop on the vertex to which the path branches, leaves us with a different situation.\par
 \begin{figure}[!h]
   \centering
   \begin{tikzpicture}
@@ -51,21 +51,21 @@ The NAND-clause $\ol{ab}$ can now easily be proven in the following way:\par
   \caption{}
   \label{fig:proof_loop}
 \end{figure}
-This shows the fact that vertices at odd positions in a path can indeed branch off to other vertices than their path successor and still contribute to a provable NAND-clause, just as long as the vertices they branch off to are provably false in Neg.
+This shows the fact that vertices at odd positions in a path can indeed branch off to other vertices than their path successor and still contribute to a provable NAND-clause, just as long as the vertices they branch off to satisfy certain criteria.
 If the vertex is provably false, we can use that unary NAND-clause, like we did in the above proof, to handle the non-binary OR-clauses.
-This observation lets us generalize our notion of trimmed vertices.
+This observation lets us generalize our definition of trimmed vertices and still have our vel-relation satisfy implication (1).
 
-The big problem with this generalization is that it makes our vel-relation no longer a purely graph-structural one.
-With such a definition, whenever we want to check whether two vertices have a vel between them, we may have to work out the actual provability of certain unary NAND-clauses.
-This is exactly what we try to avoid with our vel-relation.
+The problem with this generalized definition is that it is using the notion of provability and is thus not a purely graph-structural definition.
+This in turn makes our vel-relation no longer a purely graph-structural definition.
+With such a definition, whenever we want to check whether two vertices have a vel between them, we may have to work out the actual provability of certain unary NAND-clauses, which is exactly what we try to avoid with our vel-relation.
 
-To make matters worse, consider the following two graphs:\par
+In addition to this problem, consider the following two graphs:\par
 \begin{figure}[h!]
   \centering
   \begin{tikzpicture}
     [
     point/.style={circle,draw,inner sep=0pt,minimum size=2mm},
-    one/.style={fill=black},
+    one/.style={fill=black}
     ]
     \node (1) at (0,1) [point, label=above:$a$] {};
     \node (2) at (1,1) [point, label=above:$x$] {};
@@ -137,7 +137,7 @@ The above proofs do not rely on any provably false vertex, but rather make use o
 
 In the case of Figure~\ref{fig:path_3_with_backedges}, $\ol{ab}$ will be provable as long as for all the successors $z$ of $x$, either $\ol{z}$, $\ol{az}$ or $\ol{bz}$ are provable in Neg.
 
-This means that our concept of trimming needs further weakening, taking into account the observation made above.
+This means that our definition of trimming should be generalized even further, taking into account the observation made above.
 Such a weakening will simply add the case where, given a vel between $a$ and $b$, trimmed vertices may branch off to vertices $c$ as long as either $\ol{ac}$ or $\ol{bc}$ are provable in Neg.
 
 The definition now bases the provability of $\ol{ab}$ on the provability of a set of other binary NAND-clauses, suggesting an inductive approach for our definitions.

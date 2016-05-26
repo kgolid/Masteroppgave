@@ -108,7 +108,7 @@ The fact that $V_2(a,b) \;\Rightarrow\; \vdash \ol{ab}$ can now be proven induct
   The proof is thus valid, finishing the inductive step and ultimately proving the fact that $V_2(a,b) \Rightarrow \;\vdash \ol{ab}$.
 \end{proof}
 Having that $V_2$ satisfies implication (1), if one could show that it also satisfies implication (2), the consequences would be considerable.
-It would mean that any provable binary NAND-clause would have a proof that in each step combined a set of already proved binary NAND-clauses with an axiom.
+It would mean that any provable binary NAND-clause would have a proof that in each step combines a set of already proved binary NAND-clauses with an axiom.
 Any provable NAND-clause could in other words be constructed by adding one fresh axiom at every step, hinting at a possible normal form of proofs in Neg.
 
 Unfortunately, $V_2$ does \textit{not} satisfy implication (2).
@@ -330,7 +330,7 @@ Here is one way to prove $\ol{ab}$ in Neg given the graph theory from Figure~\re
   \label{fig:v3_counter_proof}
 \end{figure}
 \FloatBarrier
-Now, if implication (2) holds for $V_3$, we would expect $a$ and $b$ to be $V_3$-related in the above graph.
+If implication (2) holds for $V_3$, we would expect $a$ and $b$ to be $V_3$-related in the above graph.
 In other words, we would expect there to be a third vertex in the graph such that it and each of its successors are $V_3$-related to either $a$, $b$ or itself and such that at least one of them is $V_3$-related to $a$ and one to $b$.
 This can be shown to be impossible.
 
@@ -525,11 +525,11 @@ First, for each vertex in the graph, there exists a solution where that vertex i
 By soundness, no unary NAND-clause can therefore be proven in Neg under this theory.
 
 Secondly, among the pairs above that are not shown to be unprovable, only two are not axioms: $\ol{ab}$ and $\ol{x_1x_2}$.
-We are thus left with the following collection of 11 ``not-unprovable'' binary NAND-clauses:
+We are left with the following collection of 11 ``not-unprovable'' binary NAND-clauses:
 \begin{align}
   \{\; \ol{ab},\; \ol{ax_1},\; \ol{ax_2},\; \ol{by_1},\; \ol{by_2},\; \ol{x_1x_2},\; \ol{x_1y_1},\; \ol{x_1c_1},\; \ol{x_2y_2},\; \ol{x_2c_2} \; \ol{c_1c_2}\; \}
 \end{align}
 By the definition of $V_3$ from (\ref{eq:V2_BC}) and (\ref{eq:V2_IS}), in order for $a$ and $b$ to be $V_3$-related, a vertex $c$ has to exist such that it and all its successors are $V_3$-related to either $a$, $b$ or itself and such that at least one of them is $V_3$-related to $a$ and one to $b$.
 
 It turns out that none of the vertices in the graph satisfies this requirement.
-$a$ and $b$ are therefore not $V_3$-related, and so implication (2) fails.
+$a$ and $b$ are therefore not $V_3$-related, so implication (2) fails.

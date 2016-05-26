@@ -15,8 +15,8 @@ We can define $V_1$ inductively in the following way, with $a$ and $b$ being arb
 The symmetry in the base case is what makes this a definition of a vel and not a path, while the trimmed-ness gets expressed by the restrictions we set on vertex $c$ in the inductive step.
 \subsection{The $V_2$ construction}
 \label{sub:The V2 construction}
-It is now  much easier to formally express the new, weaker concept of trimming.
-Let $V_2 \subseteq G \times G$ be the set of all pairs of vertices related by our new vel-definition.
+It is now much easier to formally express the new vel-definition, based on the generalized concept of trimming from Definition~\ref{def:new_trimming}, without using concepts of provability.
+Let $V_2 \subseteq G \times G$ be the set of all pairs of vertices related by the new vel-definition.
 $V_2$ can be defined inductively in the following way, again with $a$ and $b$ as arbitrary vertices from $G$.
 \begin{align}
   \textbf{(BC):}&\quad N(a,b) \vee N(b,a) &\Rightarrow V_2(a,b)\label{eq:V2_BC}\\

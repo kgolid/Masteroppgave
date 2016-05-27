@@ -90,7 +90,7 @@ It is shown in \cite{michal-completeness} that Neg is sound for arbitrary theori
 Soundness gives us for any graph $\mathbf{G} = \langle G,N \rangle$ that proving $\ol{C}$ for any $C \subseteq G$ implies that the vertices in $C$ cannot all be assigned 1 in the graph model $\mathcal{T}(\mathbf{G})$.
 Refutational completeness gives us that whenever a graph/theory is inconsistent, we are able to prove $\varnothing$ in Neg.
 
-We will use the notation $\Gamma \vDash \ol{C}$ to express that all the models of the theory $\Gamma$ satisfies the NAND-clause $\ol{C}$.
+We use the notation $\Gamma \vDash \ol{C}$ to express that every model of the theory $\Gamma$ satisfies the NAND-clause $\ol{C}$.
 Note that because of the model/kernel equivalence presented in Section~\ref{sec:Discourse Theories and Digraphs}, the notation can also be used to express that none of the kernels in the graph $\mathcal{G}(\Gamma)$ contains all the vertices in the set $C$.
 
 Since refutational completeness is only proven for theories with countably many OR-clauses, this thesis will only consider graphs with a countable number of vertices.
@@ -156,7 +156,7 @@ Proving $\varnothing$ is now simple:\par
 A less trivial inconsistency proof is the one of the \textit{Stretched Yablo-graph}.
 This proof can be found in Appendix~\ref{sec:Inconsistency of Stretched Yablo} together with the definition of Stretched Yablo.
 
-It is worth mentioning that even though our focus has been -- and will be -- on theories originating from graphs, the results on soundness and completeness holds for any theory consisting of a set of NANDs and a set of ORs.
+It is worth mentioning that even though our focus has been -- and will be -- on theories originating from graphs, the results on soundness and completeness hold for any theory consisting of a set of NANDs and a set of ORs.
 
 An example of this is the pigeonhole problem which easily can be represented as a set of NAND- and OR-clauses, but does not directly correspond to a graph (it can of course be translated to a graph theory, like any other propositional theory).
 A Neg-proof of the pigeonhole principle can be found in Section~\ref{sub:Proving the pigeonhole principle}.

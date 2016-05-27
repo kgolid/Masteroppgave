@@ -18,7 +18,7 @@ The premise will always consist of a collection of unary NAND-clauses, together 
 It is easy to see that none of the NAND-clauses can be larger than unary, since that would result in a non-empty NAND-clause in the conclusion.
 The OR-clause has to equal the union of the NAND-clauses simply by definition of the (RNeg)-rule.
 
-This fact was also observed and formalized by Walicki\cite{michal-completeness}:
+This fact was also observed in \cite{michal-completeness}:
 \begin{align}
   \Gamma \vdash \{\} \Leftrightarrow \exists K \in \text{OR}: (\forall  k \in K: \Gamma \vdash \ol{k})
 \end{align}
@@ -49,7 +49,7 @@ Similarly to a proof of $\varnothing$, there is really just one way to prove a u
 Any derivation of a unary NAND-clause $\ol{x}$ must end with a rule application using $K \in \text{OR}$ where for each $k \in K$, there is a NAND-clause in the premise that is either unary, $\ol{k}$ or binary, $\ol{xk}$.
 In addition, we require the premise to contain at least one binary NAND-clause, in order to actually be able to conclude with $\ol x$ and not $\varnothing$.
 
-We formalize this observation in the following way:
+In other words:
 \begin{align}
   \Gamma \vdash \ol{x} \Leftrightarrow \exists K \in \text{OR}:
   \left ( \begin{tabular}{l}

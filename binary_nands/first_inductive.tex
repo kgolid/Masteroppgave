@@ -274,9 +274,6 @@ Therefore, only a condensed version will be shown here:
   \end{figure}
   No assumption was made on the vertices $a$ and $b$, so we can conclude that $V_3(a,b)~\Rightarrow~\;\vdash~\ol{ab}$.
 \end{proof}
-The graph is admittedly a bit over-simplified.
-Even though the vertices $y_1$, $y_2$ and $c_2$ are depicted like sinks, we will be treating them as initial vertices of (non-depicted) disjoint rays.
-We will however not consider the clauses corresponding to the elements of these rays, since these are not going to contribute to our argument.
 We propose the following conditional property for $V_3$:
 \begin{lemma}
   If $V_3$ satisfy implication (2), then given a graph $\mathbf{G} = \langle G,N \rangle$ and any two vertices $a,b \in G$;
@@ -321,6 +318,10 @@ The graph in Figure~\ref{fig:v3_counter_graph} provides a provable NAND-clause $
   \label{fig:v3_counter_graph}
 \end{figure}
 \FloatBarrier
+The graph is admittedly a bit over-simplified.
+Even though the vertices $y_1$, $y_2$ and $c_2$ are depicted like sinks, we treat them as initial vertices of (non-depicted) disjoint rays.
+We will however not consider the clauses corresponding to the elements of these rays, since these are not going to contribute to our argument.
+
 Here is one way to prove $\ol{ab}$ in Neg given the graph theory from Figure~\ref{fig:v3_counter_graph}:\par
 \begin{figure}[!h]
   \centering

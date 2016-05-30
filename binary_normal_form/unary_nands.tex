@@ -115,7 +115,7 @@ This is done by structural induction on the complexity of the proof tree for som
 In the base case, the proof tree is just an axiom.
 The only axiomatic $\ol{a\gamma}$ are the ones where $\gamma$ is an $x$-vertex, so the lemma holds.
 
-For the induction step, suppose we have a proof that concludes with some binary NAND-clause $\ol{a\gamma}$;
+For the inductive step, suppose we have a proof that concludes with some binary NAND-clause $\ol{a\gamma}$;
 we have that the premise of the last proof step must contain at least one NAND-clause containing $a$ and at least one containing $\gamma$.
 
 We introduce a table similar to the one in Figure~\ref{fig:v3_counter_table}, showing what pairs of vertices from the graph in Figure~\ref{fig:double_open_door} can be 1 under the same solution and thus correspond to binary NAND-clauses unprovable in Neg.
@@ -195,7 +195,6 @@ The only $\gamma$-substitution applicable such that both $\ol{\gamma b^L}$ and $
 
 The only binary-provable, non-axiomatic, binary NAND-clause containing $a$ is therefore $\ol{at}$.
 \end{proof}
-
 We can now easily prove the following lemma:
 \begin{lemma}
   Given the graph from Figure~\ref{fig:double_open_door}, $\ol{a}$ is not binary-derivable.

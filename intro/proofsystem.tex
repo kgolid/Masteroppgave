@@ -52,7 +52,7 @@ Given a graph $\mathbf{G}=\langle G,N\rangle$, we denote the set of all NAND-cla
 The combined set $\Gamma = NAND + OR$ will be our initial clauses in the inference system.
 \subsection{The inference system}
 \label{sub:The inference system}
-We consider the following inference system, but we will focus mainly on proofs using the Axioms together with the (Rneg) rule.
+We consider the following inference system, but we will focus on proofs using the axioms together with the (Rneg)-rule.
 \begin{align}
   \text{(Ax)} &\quad \Gamma \vdash C, \quad \text{for } C \in \Gamma\\
   \text{(Rneg)} &\quad \frac{ \{ \Gamma \vdash \ol{a_iA_i} \; |\; i \in I \} \quad \Gamma \vdash \{ a_i \; |\; i \in I \} }{ \Gamma \vdash \ol{\bigcup_{i \in I} A_i} }\\

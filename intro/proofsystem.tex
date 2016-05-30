@@ -69,6 +69,26 @@ The premise of the (Rneg)-rule is a set of $I$ NAND-clauses together with one OR
 The correspondence between the NAND-clauses and the elements of the OR-clause should in other words be bijective.
 The conclusion is the union of all the NAND-clauses without their corresponding atom from the OR-clause.
 
+Whenever it is obvious and/or irrelevant from what theory we are proving something, we leave out this information in the proof to ease readability.
+Additionally, we move the single OR-clause in the premise to the side of the proof to emphasize its role as a side condition.
+These conventions are illustrated below:\par
+\begin{figure}[!h]
+  \centering
+  \begin{prooftree}
+    \Hypo{\Gamma \vdash \ol{ax} }
+    \Hypo{\Gamma \vdash \ol{by} }
+    \Hypo{\Gamma \vdash ab}
+    \Infer[]3{\Gamma \vdash \ol{xy}}
+  \end{prooftree}
+  \hspace{2mm} $\sim$ \hspace{2mm}
+  \begin{prooftree}
+    \Hypo{\ol{ax}}
+    \Hypo{\ol{by}}
+    \Infer[right label = $ab$]2{\ol{xy}}
+  \end{prooftree}
+  \caption{}
+  \label{fig:proof_convention}
+\end{figure}
 Here are some examples of incorrect applications of the (Rneg)-rules, followed by some correct applications:
 \begin{align}
   (1)\;\;\frac{\ol{ax}\quad\ol{by}\quad\ol{cz}}{\ol{xyz}}abx\quad\quad

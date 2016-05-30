@@ -13,7 +13,7 @@ We can define $V_1$ inductively in the following way, with $a$ and $b$ being arb
   \textbf{(IS):}&\quad \exists c \in N(a): (N(c) =\{d\} \wedge V_1(d,b)) &\Rightarrow V_1(a,b)
 \end{align}
 The symmetry in the base case is what makes this a definition of a vel and not a path, while the trimmed-ness gets expressed by the restrictions we set on vertex $c$ in the inductive step.
-\subsection{The $V_2$ construction}
+\subsection{The $V_2$ relation -- a generalization of $V_1$}
 \label{sub:The V2 construction}
 It is now much easier to formally express the new vel-definition, based on the generalized concept of trimming from Definition~\ref{def:new_trimming}, without using concepts of provability.
 Let $V_2 \subseteq G \times G$ be the set of all pairs of vertices related by the new vel-definition.
@@ -219,7 +219,7 @@ The above solution shows us by soundness of Neg that $\ol{yb}$ is unprovable, an
 Since none of the successors of $a$ and $b$ satisfies the non-emptiness requirement, they also are not $V_2$ related.
 We can therefore conclude that $V_2$ does not satisfy implication (2).
 
-\subsection{The $V_3$ construction}
+\subsection{The $V_3$ relation -- a generalization of $V_2$}
 \label{sub:The V3 construction}
 Now, in what way can $V_2$ be generalized in order to include the graph in Figure~\ref{fig:v2_counter_graph}?
 Looking at the proof in Figure~\ref{fig:proof_v2}, we see that the axiomatic NAND-clause $\ol{ac}$ is a crucial part of the premise, representing the $c \in N(a)$ in the definition of $V_2$.

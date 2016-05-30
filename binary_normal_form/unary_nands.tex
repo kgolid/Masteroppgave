@@ -77,6 +77,7 @@ This makes the proof of $\ol{a}$ trivial, as shown in Figure~\ref{fig:unary_nand
 To show that $\ol{a}$ is not binary-derivable, we will first prove the following lemma:
 \begin{lemma}
   Based on the graph in Figure~\ref{fig:double_open_door}, the only binary-derivable, non-axiomatic binary NAND-clause containing the atom $a$ is $\ol{at}$.
+  \label{thm:at_only_provable}
 \end{lemma}
 
 \begin{proof}
@@ -203,7 +204,7 @@ We can now easily prove the following lemma:
 \begin{proof}
 Suppose we have a binary proof concluding with $\ol{a}$.
 There must exists a NAND-clause in the immediate premise of this conclusion containing either $\ol{at}$ or some $\ol{ax^K_i}$.
-Because of the above proof, we know that no other binary NAND-clauses containing $a$ are binary-derivable.
+Because of Lemma~\ref{thm:at_only_provable}, we know that no other binary NAND-clauses containing $a$ are binary-derivable.
 
 In the case with $\ol{at}$, the OR-clause $tb^Lb^R$ must be used.
 Now, in order to prove $\ol{a}$, the premise must contain either $\ol{a b^L}$ or $\ol{b^L}$, but $\ol{a b^L}$ is not binary-derivable and $\ol{b^L}$ is not even provable.

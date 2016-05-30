@@ -44,17 +44,11 @@ The fact that $V_2(a,b) \;\Rightarrow\; \vdash \ol{ab}$ can now be proven induct
   The existence of a vertex $c \in N(a)$ gives us the axiomatic NAND-clause $\ol{ac}$.
   Letting $D = N(c)$ we also have that the OR-clause $cD$ is an axiom.
   This gives us the following incomplete proof:\par
-  \begin{figure}[!h]
-    \centering
-    \begin{prooftree*}
-      \Hypo{\ol{ac}}
-      \Hypo{\dots}
-      \Infer[right label=$cD$]2{\ol{ab}}
-    \end{prooftree*}
-    \caption{}
-    \label{fig:proof_v2_partial}
-  \end{figure}
-  \FloatBarrier
+  \begin{prooftree*}
+    \Hypo{\ol{ac}}
+    \Hypo{\dots}
+    \Infer[right label=$cD$]2{\ol{ab}}
+  \end{prooftree*}
   Let $D_b$, $D_a$ and $D_d$ be subsets of $D$ such that for any $d \in D$:
   \begin{align}
     d \in D_b \Leftrightarrow V_2(d,b),\quad d \in D_a \Leftrightarrow V_2(d,a),\quad d \in D_d \Leftrightarrow V_2(d,d),

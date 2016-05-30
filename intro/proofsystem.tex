@@ -62,7 +62,10 @@ We consider the following inference system, but we will focus mainly on proofs u
 (Rpos) is creating OR-clauses from OR-clauses using NAND as a side-condition.
 In (Rneg), $\ol{a_iA_i}$ denotes the NAND $\ol{\{ a_i \} \cup A_i}$ with a potentially empty $A_i$.
 
-The premise of the (Rneg) rule is a set of $I$ NAND-clauses together with one OR-clause with $I$ elements such that each atom $a_i$ in the OR-clause is contained within a NAND-clause, and such that each NAND-clause contains an atom from the OR-clause.
+A proof in this system is a well-founded derivation, i.e. each of the branches in the proof tree is finite.
+This allows us to induce over the complexity of the proof tree.
+
+The premise of the (Rneg)-rule is a set of $I$ NAND-clauses together with one OR-clause with $I$ elements such that each atom $a_i$ in the OR-clause is contained within a NAND-clause, and such that each NAND-clause contains an atom from the OR-clause.
 The correspondence between the NAND-clauses and the elements of the OR-clause should in other words be bijective.
 The conclusion is the union of all the NAND-clauses without their corresponding atom from the OR-clause.
 

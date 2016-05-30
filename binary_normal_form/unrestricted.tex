@@ -116,9 +116,11 @@ With these three NAND-clauses proven, we can now prove $\varnothing$ in one step
   \label{fig:proof_empty}
 \end{figure}
 Observe that NAND-clauses of length 3 appear several times in this proof.
-\subsection{Binary-derivability}
-\label{sub:Binary-derivability}
 We will show that this is unavoidable in Neg given the axioms from \ref{eq:ax_pigeon}.
+\begin{lemma}
+  The inconsistency from the axioms in \ref{eq:ax_pigeon} is not binary-derivable.
+\end{lemma}
+\begin{proof}
 As observed in Section~\ref{sec:Motivation}, the only strategy in proving inconsistencies in Neg is to create new NAND-clauses until you have a set of unary NAND-clauses such that their union matches an OR-clause.
 
 Now, what possible ways are there to create new NAND-clauses from our given pigeonhole axioms?
@@ -147,3 +149,4 @@ This means not only that we are unable to keep the clause length at 2, but also 
 
 Since $\varnothing$ is not a part of the axioms and not directly derivable from axioms, its proof has to be of height $>2$ and must therefore include a NAND-clause of size equal to the size of the OR-clauses.
 Therefore, with the formulation in (\ref{eq:ax_pigeon}), the inconsistency in the pigeonhole principle is not binary-derivable.
+\end{proof}

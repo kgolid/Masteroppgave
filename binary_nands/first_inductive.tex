@@ -34,11 +34,11 @@ The fact that $V_2(a,b) \;\Rightarrow\; \vdash \ol{ab}$ can now be proven induct
   Given a graph $G$ with two vertices $a$ and $b$ such that $V_2(a,b)$:
 
   Base case:
-  If $N(a,b)$ or $N(b,a)$, then the NAND-clause $\ol{ab}$ will be an axiom and thus trivially provable.
+  If $N(a,b)$ or $N(b,a)$, then the NAND-clause $\ol{ab}$ is an axiom.
 
   Inductive step:
-  The existence of a vertex $c \in N(a)$ gives us that the NAND-clause $\ol{ac}$ is an axiom.
-  Letting $D$ denoting the set $N(c)$ we also have that the OR-clause $cD$ is an axiom.
+  The existence of a vertex $c \in N(a)$ gives us the axiomatic NAND-clause $\ol{ac}$.
+  Letting $D = N(c)$ we also have that the OR-clause $cD$ is an axiom.
   This gives us the following incomplete proof:\par
   \begin{figure}[!h]
     \centering
@@ -53,9 +53,9 @@ The fact that $V_2(a,b) \;\Rightarrow\; \vdash \ol{ab}$ can now be proven induct
   \FloatBarrier
   Let $D_b$, $D_a$ and $D_d$ be subsets of $D$ such that for any $d \in D$:
   \begin{align}
-    d \in D_b \Leftrightarrow V_2(d,b),\quad d \in D_a \Leftrightarrow V_2(d,a),\quad d \in D_d \Leftrightarrow V_2(d,d)
+    d \in D_b \Leftrightarrow V_2(d,b),\quad d \in D_a \Leftrightarrow V_2(d,a),\quad d \in D_d \Leftrightarrow V_2(d,d),
   \end{align}
-  The current situation is illustrated in Figure~\ref{fig:v2_situation}\par
+  as illustrated in Figure~\ref{fig:v2_situation}\par
   \begin{figure}[!h]
     \centering
     \begin{tikzpicture}
@@ -90,7 +90,7 @@ The fact that $V_2(a,b) \;\Rightarrow\; \vdash \ol{ab}$ can now be proven induct
   \end{itemize}
   The induction hypothesis lets us assume the provability of the following sets of NAND-clauses:
   $\{ \ol{db} \;|\; d \in D_b \},\{ \ol{da} \;|\; d \in D_a \},\{ \ol{d} \;|\; d \in D_d \}$.
-  Inserting these clauses into the incomplete proof from Figure~\ref{fig:proof_v2_partial} results the following proof:\par
+  Inserting these clauses into the incomplete proof from Figure~\ref{fig:proof_v2_partial} gives the following proof:\par
   \begin{figure}[!h]
     \centering
     \begin{prooftree*}

@@ -274,22 +274,25 @@ Therefore, only a condensed version will be shown here:
   \end{figure}
   No assumption was made on the vertices $a$ and $b$, so we can conclude that $V_3(a,b)~\Rightarrow~\;\vdash~\ol{ab}$.
 \end{proof}
-\subsection{$V_3$ and implication (2)}
-\label{sub:V3 and implication 2}
-Just like with $V_2$, if $V_3$ also satisfies implication (2), it has some considerable consequences for our proof system, Neg.
-Figure~\ref{fig:proof_v3} shows that if two vertices $a$ and $b$ are $V_3$-related, not only is $\ol{ab}$ provable in Neg, it is provable in such a way that the premise of the last rule application contains binary NAND-clauses only (the proof has a \textit{binary root}).
-
-If $V_3$ satisfies implication (1) and (2), then for any provable binary NAND-clause $\ol{ab}$, by implication (1) and (2), it has a proof with a binary root.
-Applying now the same reasoning on all of the binary NAND-clauses in its premise, we get that all of these also have proofs with binary roots.
-Doing this repeatedly throughout the whole proof of $\ol{ab}$ ultimately gives us a proof containing exclusively binary NAND-clauses.
-Implication (2) thus gives us that for any provable binary NAND-clause there exists a proof in Neg with binary NAND-clauses only.
-We will however see that implication (2) does \textit{not} hold for $V_3$.\par
-
-The graph in Figure~\ref{fig:v3_counter_graph} provides a provable NAND-clause $\ol{ab}$, but is not an instance of $V_3$.
-
 The graph is admittedly a bit over-simplified.
 Even though the vertices $y_1$, $y_2$ and $c_2$ are depicted like sinks, we will be treating them as initial vertices of (non-depicted) disjoint rays.
 We will however not consider the clauses corresponding to the elements of these rays, since these are not going to contribute to our argument.
+We propose the following conditional property for $V_3$:
+\begin{lemma}
+  If $V_3$ satisfy implication (2), then given a graph $\mathbf{G} = \langle G,N \rangle$ and any two vertices $a,b \in G$;
+  if $V_3(a,b)$ then $\ol{ab}$ is provable in Neg using binary NAND-clauses only.
+\end{lemma}
+\begin{proof}
+  Since the vertices $a,b$ from the latest proof are chosen arbitrarily, we have from Figure~\ref{fig:proof_v3} that any two $V_3$-related vertices are provable in such a way that the premise of the last rule application contains binary NAND-clauses only.
+  Implication (2) would give us that each NAND-clause in the premise contains $V_3$-related vertices.
+  These would then also have proofs with binary NAND-clauses only in their last premise.
+  By repeatedly applying the same reasoning through the whole proof, we end up with a proof consisting of binary NAND-clauses only.
+\end{proof}
+\begin{lemma}
+  $V_3$ does not satisfy implication (2), i.e., $\Gamma \vdash \ol{ab} \not \Rightarrow V_3(a,b)$
+\end{lemma}
+\begin{proof}
+The graph in Figure~\ref{fig:v3_counter_graph} provides a provable NAND-clause $\ol{ab}$, but is not an instance of $V_3$.\par
 \begin{figure}[!h]
   \centering
   \begin{tikzpicture}
@@ -539,3 +542,4 @@ By the definition of $V_3$ from (\ref{eq:V2_BC}) and (\ref{eq:V2_IS}), in order 
 
 It turns out that none of the vertices in the graph satisfies this requirement.
 $a$ and $b$ are therefore not $V_3$-related, so implication (2) fails.
+\end{proof}

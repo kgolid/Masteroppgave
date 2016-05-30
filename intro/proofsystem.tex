@@ -90,19 +90,19 @@ These conventions are illustrated below:\par
   \label{fig:proof_convention}
 \end{figure}
 Here are some examples of incorrect applications of the (Rneg)-rules, followed by some correct applications:
-\begin{align}
+\begin{align*}
   (1)\;\;\frac{\ol{ax}\quad\ol{by}\quad\ol{cz}}{\ol{xyz}}abx\quad\quad
   (3)\;\;\frac{\ol{ax}\quad\ol{by}}{\ol{xy}}abx\quad\quad
   (2)\;\;\frac{\ol{ax}\quad\ol{by}\quad\ol{bz}}{\ol{xyz}}abx
-\end{align}
+\end{align*}
 (1) is incorrect because the NAND $\ol{cz}$ contains no atoms from the OR $abx$.
 (2) is incorrect because the number of NAND-clauses does not match the length of the OR-clause.
 (3) is incorrect because there exist no bijective correspondence of the type described above.
-\begin{align}
+\begin{align*}
   (4)\;\;\frac{\ol{ax}\quad\ol{by}\quad\ol{cz}}{\ol{xyz}}abc\quad\quad
   (5)\;\;\frac{\ol{ax}\quad\ol{b}}{\ol{x}}ab\quad\quad
   (6)\;\;\frac{\ol{ax}\quad\ol{by}\quad\ol{xyz}}{\ol{xyz}}abx
-\end{align}
+\end{align*}
 The above applications are all correct, since all the atoms in each OR-clause get matched to exactly one NAND-clause in such a way that no NAND-clause stays unmatched.
 
 The proof system sets no restrictions on the number and cardinality of its clauses, meaning that there might be an infinite number of clauses, and both the OR-clauses and the NAND-clauses might be either finite or infinite in size.

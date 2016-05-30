@@ -117,6 +117,35 @@ The only axiomatic $\ol{a\gamma}$ are the ones where $\gamma$ is an $x$-vertex, 
 For the induction step, suppose we have a proof that concludes with some binary NAND-clause $\ol{a\gamma}$;
 we have that the premise of the last proof step must contain at least one NAND-clause containing $a$ and at least one containing $\gamma$.
 
+We introduce a table similar to the one in Figure~\ref{fig:v3_counter_table}, showing what pairs of vertices from the graph in Figure~\ref{fig:double_open_door} can be 1 under the same solution and thus correspond to binary NAND-clauses unprovable in Neg.
+Clauses in cells with an X are unprovable.
+Since the property is symmetric, the lower half of the table is left out.\par
+\begin{figure}[!h]
+  \centering
+  \[\begin{array}{|c||c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+    \hline
+          & a & b^L & x^L_1 & x^L_2 & y^L_1 & y^L_2 & c^L_1 & c^L_2 & b^R & x^R_1 & x^R_2 & y^R_1 & y^R_2 & c^R_1 & c^R_2 & t\\ \hline\hline
+    a     & & & & & & & & & & & & & & & & \\ \hline
+    b^L   &-& X & X & X & & & X & X & X & X & X & X & X & X & X & \\ \hline
+    x^L_1 &-&-& X & & & X & & X & X & X & X & X & X & X & X & \\ \hline
+    x^L_2 &-&-&-& X & X & & X & & X & X & X & X & X & X & X & \\ \hline
+    y^L_1 &-&-&-&-& X & X & X & X & X & X & X & & & X & X & \\ \hline
+    y^L_2 &-&-&-&-&-& X & X & X & X & X & X & & & X & X & \\ \hline
+    c^L_1 &-&-&-&-&-&-& X & & X & X & X & X & X & X & X & \\ \hline
+    c^L_2 &-&-&-&-&-&-&-& X & X & X & X & X & X & X & X & \\ \hline
+    b^R   &-&-&-&-&-&-&-&-& X & X & X & & & X & X & \\ \hline
+    x^R_1 &-&-&-&-&-&-&-&-&-& X & & & X & & X & \\ \hline
+    x^R_2 &-&-&-&-&-&-&-&-&-&-& X & X & & X & & \\ \hline
+    y^R_1 &-&-&-&-&-&-&-&-&-&-&-& X & X & X & X & \\ \hline
+    y^R_2 &-&-&-&-&-&-&-&-&-&-&-&-& X & X & X & \\ \hline
+    c^R_1 &-&-&-&-&-&-&-&-&-&-&-&-&-& X & & \\ \hline
+    c^R_2 &-&-&-&-&-&-&-&-&-&-&-&-&-&-& X & \\ \hline
+    t     &-&-&-&-&-&-&-&-&-&-&-&-&-&-&-& \\ \hline
+  \end{array}\]
+  \caption{}
+  \label{fig:double_door_counter_table}
+\end{figure}
+\FloatBarrier
 Our induction hypothesis gives us that if the NAND-clause containing $a$ in the premise is non-axiomatic, then it must be $\ol{at}$.
 All NAND-clauses containing $a$ in the premise must therefore be either $\ol{at}$ or one of the four axioms on the form $\ol{ax^K_i}$ ($K$ being either $L$ or $R$ and $i$ either 1 or 2).
 
@@ -137,9 +166,10 @@ Figure~\ref{fig:nand_base_case} illustrates the situation.\par
 \end{figure}
 The only applicable OR-clause is the corresponding $x^K_iy^K_ic^K_i$, so the premise must contain two additional NAND-clauses, one containing $y^K_i$ and one containing $c^K_i$.
 Because of our induction hypothesis, those two cannot contain $a$, so either both contain $\gamma$ or one is unary while the other contain $\gamma$.
-Neither $\ol{y^K_i}$ nor $\ol{c^K_i}$ is provable\footnote{\label{table_reference} See Appendix~\ref{sec:Provability of NAND-clauses in double door}}, so they both have to contain $\gamma$.
+Table~\ref{fig:double_door_counter_table} gives us that neither $\ol{y^K_i}$ nor $\ol{c^K_i}$ is provable, so they both have to contain $\gamma$.
 Therefore, the two additional NAND-clauses must be on the form $\ol{\gamma y^K_i},\ol{\gamma c^K_i}$.
-Except for the case where $\gamma = x^K_i$, the only\footnote{\label{table_reference} See Appendix~\ref{sec:Provability of NAND-clauses in double door}} $\gamma$-substitution that makes both of these NAND-clauses provable is $\gamma = t$, giving us $\ol{at}$ in the conclusion.
+Except for the case where $\gamma = x^K_i$, the only $\gamma$-substitution that makes both of these NAND-clauses provable is $\gamma = t$, giving us $\ol{at}$ in the conclusion.
+We again see this from Table~\ref{fig:double_door_counter_table}.
 
 The other case is where $\ol{at}$ appears in the premise.
 Figure~\ref{fig:nand_inductive_step} illustrates this situation.\par
@@ -159,8 +189,8 @@ Figure~\ref{fig:nand_inductive_step} illustrates this situation.\par
 \end{figure}
 In order to ``strip off'' the $t$, the only applicable OR-clause is $tb^Lb^R$, again giving us three NAND-clauses in the premise.
 The two additional clauses must contain $b^L$ and $b^R$, respectively.
-None of them are provably false\footnote{\label{table_reference} See Appendix~\ref{sec:Provability of NAND-clauses in double door}}, and none of them can contain $a$ because of the induction hypothesis, so they both must contain some $\gamma$.
-The only\footnote{\label{table_reference} See Appendix~\ref{sec:Provability of NAND-clauses in double door}} $\gamma$-substitution applicable such that both $\ol{\gamma b^L}$ and $\ol{\gamma b^R}$ is provable is, again, $\gamma = t$, giving us $\ol{at}$ in the conclusion.
+From Table~\ref{fig:double_door_counter_table}, we get that none of them are provably false, and none of them can contain $a$ because of the induction hypothesis, so they both must contain some $\gamma$.
+The only $\gamma$-substitution applicable such that both $\ol{\gamma b^L}$ and $\ol{\gamma b^R}$ is provable is, again, $\gamma = t$, giving us $\ol{at}$ in the conclusion.
 
 The only binary-provable, non-axiomatic, binary NAND-clause containing $a$ is therefore $\ol{at}$.
 \end{proof}

@@ -13,9 +13,9 @@ Letting the atom $x_i$ denote the pigeon $i$ occupying the hole $x$, the above t
   \text{(1):}\quad &\{ \; 1_i2_i3_i\dots m_i \;|\; i \leq n \; \}\\
   \text{(2):}\quad &\{ \; \ol{x_ix_j} \;|\; i < j \leq n, x \leq m \; \}
 \end{align}
-\subsection{Proving the pigeonhole principle}
-\label{sub:Proving the pigeonhole principle}
+
 We now prove the pigeonhole principle for 4 pigeons and 3 holes.
+\begin{proof}
 This instance of the pigeonhole principle has the following axioms:
 \begin{align}
   \begin{split}
@@ -116,6 +116,7 @@ With these three NAND-clauses proven, we can now prove $\varnothing$ in one step
   \caption{}
   \label{fig:proof_empty}
 \end{figure}
+\end{proof}
 Observe that NAND-clauses of length 3 appear several times in this proof.
 We will show that this is unavoidable in Neg given the axioms from \ref{eq:ax_pigeon}.
 \begin{lemma}

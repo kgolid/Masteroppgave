@@ -10,30 +10,30 @@ We later show some correlations between certain graph structures and clauses pro
 
 Recall that a GNF theory consists exclusively of formulae of the following form:
 \begin{align}
-  x \lar \bigwedge_{i \in I_x} \neg y_i
+  x \lar \bigwedge_{y \in I_x} \neg y
 \end{align}
 Using simple operations only, these formulae can be translated into an equivalent set of clauses.
 We start by writing the above bi-implication as two implications:
 \begin{align}
-  x \rightarrow \bigwedge_{i \in I_x} \neg y_i \quad\quad \text{and} \quad\quad x \leftarrow \bigwedge_{i \in I_x} \neg y_i
+  x \rightarrow \bigwedge_{y \in I_x} \neg y \quad\quad \text{and} \quad\quad x \leftarrow \bigwedge_{y \in I_x} \neg y
 \end{align}
 The first implication can be rewritten in the following way:
 \begin{align}
-  x \rightarrow \bigwedge_{i \in I_x} \neg y_i
-  \quad\Leftrightarrow\quad \neg x \vee \bigwedge_{i \in I_x} \neg y_i
-  \quad\Leftrightarrow\quad \bigwedge_{i \in I_x} (\neg x \vee \neg y_i)
-  \quad\Leftrightarrow\quad \bigwedge_{i \in I_x} \neg (x \wedge y_i)
+  x \rightarrow \bigwedge_{y \in I_x} \neg y
+  \quad\Leftrightarrow\quad \neg x \vee \bigwedge_{y \in I_x} \neg y
+  \quad\Leftrightarrow\quad \bigwedge_{y \in I_x} (\neg x \vee \neg y)
+  \quad\Leftrightarrow\quad \bigwedge_{y \in I_x} \neg (x \wedge y)
 \end{align}
 The second implication can be rewritten in the following way:
 \begin{align}
-  x \leftarrow \bigwedge_{i \in I_x} \neg y_i
-  \quad\Leftrightarrow\quad x \vee \neg \left( \bigwedge_{i \in I_x} \neg y_i \right)
-  \quad\Leftrightarrow\quad x \vee \bigvee_{i \in I_x} y_i
+  x \leftarrow \bigwedge_{y \in I_x} \neg y
+  \quad\Leftrightarrow\quad x \vee \neg \left( \bigwedge_{y \in I_x} \neg y \right)
+  \quad\Leftrightarrow\quad x \vee \bigvee_{y \in I_x} y
 \end{align}
 By splitting the conjunction from the first implication up into individual clauses, we get the following two kinds of clauses for every variable $x$ in the GNF theory:
 \begin{align}
-  \text{OR-clause:}&\quad x \vee \bigvee_{i \in I_x} y_i\\
-  \text{NAND-clauses:}&\quad \neg (x \wedge y_i)\text{, for every }i \in I_x
+  \text{OR-clause:}&\quad x \vee \bigvee_{y \in I_x} y\\
+  \text{NAND-clauses:}&\quad \neg (x \wedge y)\text{, for every }y \in I_x
 \end{align}
 We will treat both the OR-clauses and the NAND-clauses as sets of atoms, denoting NAND-clauses $\neg (x \wedge y)$ as $\overline{xy}$ and OR-clauses $x \vee y_1 \vee y_2 \vee y_3$ as $xy_1y_2y_3$.
 This enables us to state things like $\overline{xy} \subset \overline{xyz}$.

@@ -169,7 +169,7 @@ It is however not the case that all odd paths satisfy implication (1).
 \label{sec:Trimming}
 We introduce the following terminology:
 \begin{definition}
-  Given a path and two consecutive vertices $x$ and $y$ from that path, we will say that $x$ is \textit{trimmed}, with respect to that path, if $N(x) = \{y\}$.
+  Given a path and two consecutive vertices $x$ and $y$ from that path, we will say that $x$ is \textit{trimmed} if $N(x) = \{y\}$.
 \end{definition}
 Note that when a vertex is trimmed, its corresponding OR-clause is binary.
 \begin{definition}
@@ -271,7 +271,7 @@ With the proof from Figure~\ref{fig:proof_x0xk} in mind, consider the following 
 In the above path, between $x_1$ and $x_k$, only every other vertex is trimmed.
 We will call this path variant an \textit{oddly trimmed path}, and define it formally as follows:
 \begin{definition}
-  A path $(x_0, x_1, \dots , x_k)$ is \textit{oddly trimmed} if for each odd $i < k$, $x_i$ is trimmed with respect to that path.
+  A path $(x_0, x_1, \dots , x_k)$ is \textit{oddly trimmed} if for each odd $i < k$, $x_i$ is trimmed.
 \end{definition}
 One can immediately note that any fully trimmed path is also oddly trimmed.
 

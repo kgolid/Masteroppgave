@@ -111,7 +111,7 @@ Note that an infinite graph gives infinitely many NAND- and OR-clauses, while an
 We study the refutation system that arises from the axioms and the (Rneg)-rule, calling it Neg.
 It is shown in \cite{michal-completeness} that Neg is sound for arbitrary theories and refutationally complete for theories with a countable number of OR-clauses.
 Soundness gives us for any graph $\mathbf{G} = \langle G,N \rangle$ that proving $\ol{C}$ for any $C \subseteq G$ implies that the vertices in $C$ cannot all be assigned 1 in the graph model $\mathcal{T}(\mathbf{G})$.
-Refutational completeness gives us the property that whenever a graph/theory is inconsistent, we are able to prove $\varnothing$ in Neg.
+Refutational completeness gives us the property that whenever a graph/theory $\Gamma$ is inconsistent, we are able to prove $\Gamma \vdash \varnothing$ in Neg.
 
 We use the notation $\Gamma \vDash \ol{C}$ to express that every model of the theory $\Gamma$ satisfies the NAND-clause $\ol{C}$.
 Note that because of the model/kernel equivalence presented in Section~\ref{sec:Discourse Theories and Digraphs}, the notation can also be used to express that none of the kernels in the graph $\mathcal{G}(\Gamma)$ contains all the vertices in the set $C$.
